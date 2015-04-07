@@ -1,0 +1,3090 @@
+@CHARSET "ISO-8859-1";
+
+@import	url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+@import	url(http://fonts.googleapis.com/css?family=Raleway:500,600,400,300);
+
+@import	url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
+
+@import	url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,200italic,300italic,400italic,600italic);
+
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+
+@font-face {
+	font-family: 'odin';
+	src: url('fonts/odin_rounded_-_regular-webfont.eot');
+	src: url('fonts/odin_rounded_-_regular-webfont.eot?#iefix')
+		format('embedded-opentype'),
+		url('fonts/odin_rounded_-_regular-webfont.woff') format('woff'),
+		url('/odin_rounded_-_regular-webfont.ttf') format('truetype'),
+		url(fonts/ odin_rounded_-_regular-webfont.svg #odin_roundedregular') format(' svg ');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'odin';
+	src: url('fonts/odin_rounded_-_light-webfont.eot');
+	src: url('fonts/odin_rounded_-_light-webfont.eot?#iefix')
+		format('embedded-opentype'),
+		url('fonts/odin_rounded_-_light-webfont.woff') format('woff'),
+		url('fonts/odin_rounded_-_light-webfont.ttf') format('truetype'),
+		url('fonts/odin_rounded_-_light-webfont.svg#odin_roundedlight')	format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/***************************************Basic*******************************************************/
+::-webkit-scrollbar { /* Scrollbars */
+	width: .875em;
+	height: .275em;
+}
+
+::-webkit-scrollbar-track-piece { /* Fond */
+	background: transparent none;
+	border: solid .25em transparent;
+	border-right-width: .5em;
+	margin: .25em;
+	-webkit-box-shadow: inset .0625em .0625em 0 0 rgb(137, 131, 117), inset
+		-.0625em -.0625em 0 0 rgb(224, 220, 210);
+}
+
+::-webkit-scrollbar-track-piece:horizontal {
+	/* Fond pour la barre du bas */
+	border-right-width: .25em;
+	border-bottom-width: .5em;
+}
+
+::-webkit-scrollbar-thumb { /* Barre */
+	border: solid 0 transparent;
+	border-right-width: .25em;
+	-webkit-border-radius: .3125em;
+	-webkit-border-top-right-radius: .5625em .3125em;
+	-webkit-border-bottom-right-radius: .5625em .3125em;
+	-webkit-box-shadow: inset 0 0 0 .0625em rgb(207, 207, 207), inset 0 0 0
+		.375em rgba(74, 140, 255, 0.55);
+}
+
+::-webkit-scrollbar-thumb:hover { /* Barre */
+	-webkit-box-shadow: inset 0 0 0 .0625em rgb(207, 207, 207), inset 0 0 0
+		.375em rgba(74, 140, 255, 0.9);
+}
+
+::-webkit-scrollbar-thumb:horizontal { /* Barre du bas */
+	border-right-width: 0;
+	border-bottom-width: .25em;
+	-webkit-border-top-right-radius: .3125em;
+	-webkit-border-bottom-right-radius: .3125em .5625em;
+	-webkit-border-bottom-left-radius: .3125em .5625em;
+}
+
+::-webkit-scrollbar-corner { /* Coin de la fenêtre */
+	background: #bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+}
+
+::-webkit-scrollbar-button { /* Boutons */
+	height: 0;
+}
+
+::-webkit-scrollbar-button:increment { /* Boutons incrément */
+	background-position: -1.1875em 50%;
+}
+
+::-webkit-scrollbar-button:horizontal { /* Boutons horizontaux */
+	width: 1.625em;
+	background: url(images/webkit-arrows-horiz.png) 50% .0625em no-repeat,
+		#bfb6a3 url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	-webkit-background-size: .5em 1.75em, auto;
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+	/* Bouton incrément horizontal */
+	background-position: 50% -1.1875em;
+}
+
+body ::-webkit-scrollbar {
+	background: transparent none;
+}
+
+body ::-webkit-scrollbar-button:horizontal:decrement {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,
+		255, 255, .1)), color-stop(100%, rgba(255, 255, 255, .1))) 0 0 repeat,
+		url(images/webkit-arrows-horiz.png) 50% .0625em no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, .1),
+		rgba(255, 255, 255, .1)) 0 0 repeat,
+		url(images/webkit-arrows-horiz.png) 50% .0625em no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: linear-gradient(rgba(255, 255, 255, .1),
+		rgba(255, 255, 255, .1)) 0 0 repeat,
+		url(images/webkit-arrows-horiz.png) 50% .0625em no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	-webkit-background-size: auto, .5em 1.75em, auto;
+}
+
+body ::-webkit-scrollbar-button:horizontal:increment {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,
+		255, 255, .1)), color-stop(100%, rgba(255, 255, 255, .1))) 0 0 repeat,
+		url(images/webkit-arrows-horiz.png) 50% -1.1875em no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, .1),
+		rgba(255, 255, 255, .1)) 0 0 repeat,
+		url(images/webkit-arrows-horiz.png) 50% -1.1875em no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: linear-gradient(rgba(255, 255, 255, .1),
+		rgba(255, 255, 255, .1)) 0 0 repeat,
+		url(images/webkit-arrows-horiz.png) 50% -1.1875em no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	-webkit-background-size: auto, .5em 1.75em, auto;
+	-webkit-border-radius: 0 0 6px 0;
+}
+
+body ::-webkit-scrollbar-button:vertical:decrement {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,
+		255, 255, .2)), color-stop(100%, rgba(255, 255, 255, .1))) 0 0 repeat,
+		url(images/webkit-arrows-vert.png) .0625em 50% no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, .1),
+		rgba(255, 255, 255, .1)) 0 0 repeat,
+		url(images/webkit-arrows-vert.png) .0625em 50% no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: linear-gradient(rgba(255, 255, 255, .1),
+		rgba(255, 255, 255, .1)) 0 0 repeat,
+		url(images/webkit-arrows-vert.png) .0625em 50% no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	-webkit-background-size: auto, 1.75em .5em, auto;
+}
+
+body ::-webkit-scrollbar-button:vertical:increment {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,
+		255, 255, .2)), color-stop(100%, rgba(255, 255, 255, .1))) 0 0 repeat,
+		url(images/webkit-arrows-vert.png) -1.1875em 50% no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, .1),
+		rgba(255, 255, 255, .1)) 0 0 repeat,
+		url(images/webkit-arrows-vert.png) -1.1875em 50% no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	background: linear-gradient(rgba(255, 255, 255, .1),
+		rgba(255, 255, 255, .1)) 0 0 repeat,
+		url(images/webkit-arrows-vert.png) -1.1875em 50% no-repeat, #bfb6a3
+		url(images/bg-blog-repeat.png) 0 0 no-repeat;
+	-webkit-background-size: auto, 1.75em .5em, auto;
+	-webkit-border-radius: 0 0 6px 0;
+}
+
+input[type="text"], input[type="password"], textarea, fieldset {
+	border: 1px solid #CACACA;
+	background: none;
+}
+body,html,b, strong{
+	font-family: Lato;
+}
+.lato{
+	font-family: Lato;
+}
+.fa-1x {
+	font-size: 15px;
+}
+
+.border-circle {
+	border: 1px solid;
+	padding: 3px 5px;
+	border-radius: 50px;
+}
+
+.margin-right {
+	margin-right: 5px;
+}
+
+.margin-left {
+	margin-left: 5px;
+}
+
+.right {
+	float: right;
+}
+
+.left{
+	float: left;
+}
+
+.white {
+	color: #FFF;
+}
+
+.box-border-left {
+	border-left: 1px solid rgba(216, 216, 216, 0.7);
+}
+
+.text-center {
+	text-align: center;
+}
+
+.odin {
+	font-family: odin;
+}
+
+a:hover {
+	color: #337ab7;
+}
+
+/************************************************Header**************************************************/
+div#header div#menu {
+	min-height: 66px;
+}
+
+.community {
+	float: left;
+}
+
+div#header div#menu>ul>li.explore>a, div#header div#menu>ul>li.create>a,
+	div#header div#menu>ul>li.login>a {
+	max-width: 160px;
+	width: 217px;
+	padding: 11px;
+	font-family: Source sans pro;
+	font-size: 17px;
+	font-weight: 500;
+	color: #0a0a0a;
+	text-transform: uppercase;
+}
+
+div#header, div#super-header {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+div#header {
+	height: 90x;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	z-index: 500;
+}
+
+div#header div#menu>ul {
+	padding: 0px;
+	height: 66px;
+	max-width: 1024px;
+}
+
+div#sub-header {
+	margin-bottom: 0;
+	padding: 14px 0 21px;
+	background: rgba(236, 245, 250, 0.6);
+}
+
+div#sub-header>div.clearfix>div {
+	width: auto;
+}
+
+div#sub-header>div, div#sub-header-secondary>div {
+	max-width: 1170px;
+}
+
+div#sub-header>*, div#sub-header>div>h2 {
+	font-family: Odin;
+	text-transform: capitalize;
+	font-size: 20px;
+}
+
+div#header div#menu>ul>li.home {
+	height: 100%;
+}
+
+div#header div#menu ul li>a>*, div#header div#menu ul li>a {
+	font-family: Lato;
+	color: #0a0a0a;
+	text-transform: uppercase;
+	font-family: Source sans pro;
+	font-size: 17px;
+	font-weight: 500;
+	font-size: 17px;
+}
+
+div#header div#menu>ul>li.dashboard>a>img {
+	top: -3px;
+}
+
+div#header div#menu>ul>li.login>a {
+	width: 60px;
+	padding: 0;
+	margin: 0 auto;
+	line-height: 56px;
+}
+
+div#header div#menu  ul li.explore  a:hover, div#header div#menu  ul li.login a:hover,
+	div#header div#menu  ul li.create a:hover {
+	border-bottom: 2px solid rgba(145, 145, 145, 0.6);
+}
+
+.connexion {
+	position: relative;
+	top: 19px;
+}
+
+.connexion a {
+	padding: 8px 24px;
+}
+
+.connexion a:hover {
+	background-color: rgba(255, 255, 255, 0.26);
+	border-radius: 3px;
+}
+
+div#header div#menu  ul li.community:hover, div#header div#menu  ul li.login:hover,
+	div#header div#menu  ul li.dashboard:hover {
+	background-color: rgba(255, 255, 255, 0.26);
+	background-image: none;
+}
+
+div#header div#menu>ul li.community:hover  a:hover, div#header div#menu>ul li.login:hover a:hover,
+	div#header div#menu>ul li.dashboard:hover  a:hover {
+	background-color: none;
+}
+
+div#header div#menu>ul>li.community, div#header div#menu>ul>li.dashboard
+	{
+	background: transparent url('header/down-black.png') no-repeat right
+		20px;
+}
+
+div#header div#menu>ul>li.community, div#header div#menu>ul>li.dashboard
+	{
+	top: 9px;
+}
+
+div#header div#menu>ul>li.community>div>ul, div#header div#menu>ul>li.dashboard>div>ul
+	{
+	background-color: rgba(255, 255, 255, 0.56);
+}
+
+div#header div#menu>ul>li.community:hover *, div#header div#menu>ul>li.login:hover *,
+	div#header div#menu>ul>li.dashboard:hover * {
+	color: #434343;
+}
+
+div#header div#menu>ul>li.community>div>ul, div#header div#menu>ul>li.dashboard>div>ul
+	{
+	background-color: white;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+div#header div#menu>ul>li.community>div>ul>li>a:hover, div#header div#menu>ul>li.dashboard>div>ul>li>a:hover
+	{
+	background-color: #AAE0F4;
+	color: white;
+}
+
+div#header div#menu>ul>li.community>div>ul>li, div#header div#menu>ul>li.dashboard>div>ul>li
+	{
+	border-top: 1px solid #9ED6FF;
+}
+/************************************************footer**************************************************/
+div.footer {
+	padding-top: 1px;
+	background: url("bg.jpg");
+}
+
+div.footer>* {
+	color: #FFF;
+}
+
+div.footer>a:hover {
+	color: #337ab7;
+}
+
+div.footer div.footer-nav {
+	padding: 31px 0px 4px;
+}
+
+div.footer div.shortcuts {
+	padding: 18px 50px;
+	border-top: 1px dotted rgba(163, 163, 163, 0.38);
+	border-bottom: 1px dotted rgba(163, 163, 163, 0.38);
+}
+
+div.footer div.shortcuts h8 {
+	font-family: raleway;
+	font-size: 16px;
+}
+
+div.footer div.shortcuts ul {
+	padding: 0;
+}
+
+div.footer div.shortcuts ul li {
+	list-style: none;
+	padding: 3px 0;
+}
+
+div.footer div.shortcuts ul li a {
+	text-decoration: none;
+	text-transform: capitalize;
+	font-family: PT sans;
+	font-size: 14px;
+	color: rgb(210, 210, 210);
+}
+
+div.footer div.newsletter {
+	padding: 0 30px;
+}
+
+div.footer div.newsletter .btn-news {
+	position: relative;
+	right: 22px;
+	border-radius: 0px 3px 3px 0;
+}
+
+div.footer div.newsletter .news-label {
+	font-size: 11px;
+	padding: 2px 3px;
+}
+
+div.footer div.block-social {
+	padding: 3px 0 0;
+}
+
+div.footer div.block-social div.icons {
+	float: right;
+	padding-top: 3px;
+}
+
+div.footer div.block-social div.icons ul {
+	padding: 0;
+}
+
+div.footer div.block-social div.icons ul li {
+	list-style: none;
+	list-style: none;
+	float: left;
+	padding: 8px 18px;
+}
+
+div.footer div.block-social div.icons ul li .fa:hover {
+	color: #337ab7;
+}
+
+div.footer div.copyright {
+	padding: 0px 0px 12px 0;
+}
+
+div.footer div.copyright div.w940 ul {
+	padding: 0;
+	display: block;
+	clear: both;
+}
+
+div.footer div.copyright div.w940 ul li {
+	list-style: none;
+	float: left;
+	padding: 1px 15px;
+	padding-left: 0;
+}
+
+div.footer div.copyright div.w940 ul li a {
+	text-decoration: none;
+	text-transform: capitalize;
+	font-family: PT sans;
+	font-size: 12px;
+	color: #FFF;
+}
+/***********************************************************Projets***********************************************************************/
+div#projects-phares {
+	margin-bottom: 30px;
+}
+
+div#projects-phares div.widget.project .expand {
+	display: none;
+}
+
+div.widget.project {
+	border: 1px solid rgba(194, 194, 194, 0.34);
+	border-radius: 4px;
+	height: 495px;
+	padding: 0;
+	margin: 19px 0;
+}
+
+div.widget.project:hover {
+	border: 1px solid rgba(194, 194, 194, 0.8);
+	border-radius: 4px;
+}
+
+div.widget.project div.image {
+	background-color: #FFF;
+	height: 180px;
+}
+
+div.widget.project div.image a img {
+	width: 100%;
+	height: 100%;
+	border-radius: 3px;
+}
+
+div.widget.project div.image div.categories {
+	background-color: rgba(51, 122, 183, 0.6);
+	font-family: PT sans;
+	font-size: 14px;
+}
+
+div.widget.project>.title a {
+	font-family: Lato;
+}
+
+div.widget.project.active>.title a {
+	color: #337ab7;
+}
+
+div.widget.project>.author, div.widget.project>.author a {
+	margin-bottom: 10px;
+	font-family: Lato;
+}
+
+div.widget.project div.description {
+	font-family: Lato;
+}
+
+div.widget.project div.meter h2, div.widget.project div.meter h3, div.widget.project div.meter h4,
+	div.widget.project div.meter h5, div.widget.project div.meter h6, div.widget.project div.meter h7,
+	div.widget.project div.meter h8 {
+	font-family: Lato;
+	padding-bottom: 5px;
+}
+
+div.widget.project div.rewards {
+	margin: 40px 12px 8px !important;
+	padding: 9px 0 0 !important;
+	height: 34px;
+}
+
+div.widget.project div.meter {
+	padding: 5px 0 113px !important
+}
+
+div.widget.project div.meter div.graph, div.widget.project div.meter div.graph .minimum
+	{
+	background-color: rgb(87, 188, 250);
+	border-color: rgb(203, 237, 252);
+	border-radius: 7px;
+}
+
+div.widget.project div.meter>h3.ronda {
+	color: #000;
+}
+
+div.widget.project div.meter div.obtained strong {
+	color: #000;
+	font-family: raleway;
+}
+div.widget.project div.meter div.obtained span.percent{
+	font-family: raleway;	
+}
+div.widget.project div.meter dl * {
+	font-family: Lato;
+	color: #337ab7;
+}
+
+div.widget.project div.meter dl dd.days>*, div.widget.project div.meter dl dd.days,
+	div.widget.project div.meter dl dt.days>span {
+	color: #000;
+}
+
+div.widget.project div.rewards h4 {
+	font-family: Lato;
+}
+
+div.widget.project div.meter div.graph .optimum {
+	border-right: 2px solid #0080EC;
+	border-radius: 2px
+}
+
+div.widget.project div.meter div.graph .minimum .left {
+	border-right: 2px solid #0080EC;
+	border-radius: 2px
+}
+
+div.widget.project div.meter dl dt.optimum {
+	color: #337ab7;
+}
+
+/*************************************************************home page*******************************************************************/
+div.panel-scroll {
+	background: #FFF;
+	position: relative;
+	z-index: 100;
+	margin-top: 810px;
+}
+
+div.features {
+	padding: 15px 0 0;
+	background: #e9e9e9;
+	border-top: 1px solid #d3d3d3;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+h4.service {
+	font-family: PT sans;
+	text-transform: capitalize;
+}
+
+div#projects-phares ul {
+	padding: 0;
+}
+
+.photostack>div {
+	background: url('../parteners/css/img/partenaires-bg.jpg');
+	background-size: 100% 100%;
+}
+
+/*posts*/
+div#posts div.post {
+	width: 100%;
+	margin: 0 auto;
+	padding: 35px;
+	margin-bottom: 25px;
+	border: 1px solid rgba(161, 161, 161, 0.62);
+	border-radius: 8px;
+}
+
+div#posts div.post div.embed {
+	height: 321px;
+}
+
+div#posts div.post div.image {
+	width: 100%;
+}
+
+div#posts div.post div.image img {
+	width: 100%;
+}
+
+div#posts div.post h3 {
+	margin: 31px 0 10px;
+	overflow: hidden;
+	max-height: 33px;
+}
+
+div#posts div.post h3>a {
+	font-family: PT sans;
+	text-transform: capitalize;
+	font-size: 26px;
+}
+
+div#posts div.post div.image {
+	overflow: hidden;
+	width: 100%;
+	height: 296px;
+}
+
+div#posts div.post div.author a, div#posts div.post div.date {
+	font-family: PT sans;
+	font-size: 13px;
+	color: #000;
+}
+
+div#posts div.post h3>a:active, div#posts div.post h3>a:hover {
+	text-decoration: none;
+	color: #337ab7;
+}
+
+div#posts div.post div.description {
+	padding: 10px 0 0;
+	text-align: left;
+	min-height: 149px;
+}
+
+div#posts div.post div.description>* {
+	margin: 0;
+	width: 100%;
+	max-width: 100%;
+	text-align: left;
+	font-family: raleway;
+}
+
+div#posts div.post div.read_more {
+	margin: 30px 0 0;
+}
+
+div#posts div.post div.read_more a {
+	text-decoration: none;
+	padding: 17px;
+	border: 1px solid lightgrey;
+	font-family: Lato;
+	color: #000;
+	font-size: 13px;
+}
+
+div.widget.project div.meter div.graph .minimum .done {
+	background: rgb(53, 128, 213);
+	content: "";
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255,
+		255, .2)), color-stop(.25, transparent), color-stop(.5, transparent),
+		color-stop(.5, rgba(255, 255, 255, .2)),
+		color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
+		to(transparent));
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2)
+		25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%,
+		rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	z-index: 1;
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	background-size: 50px 50px;
+	-webkit-animation: move-inverse 2s linear infinite;
+	-moz-animation: move-inverse 2s linear infinite;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+div#posts div.post div.read_more a:hover {
+	background-color: rgba(87, 188, 250, 0.2);
+}
+/*********************************Connexion page****************************************/
+div.bg_login {
+	background: url('images/connexion-bg.png');
+}
+
+.box-panel {
+	width: 40%;
+	margin: 0 auto;
+	padding: 27px 33px;
+	text-align: left;
+	background-color: #fff;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+div.login-form {
+	padding: 50px 0 100px;
+}
+
+div.login-form h2 {
+	text-transform: capitalize;
+	font-family: Lato;
+	font-size: 25px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+div.login-form p {
+	float: left;
+	padding: 3px 12px 6px 0px;
+}
+
+div.login-form p a {
+	font-family: source sans pro;
+	text-decoration: none;
+	color: rgb(103, 173, 253);
+	font-size: 12px;
+}
+
+div.login-form input[type='submit'] {
+	font-family: PT sans;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+div.login-form label {
+	text-align: left;
+	font-family: PT sans;
+	font-weight: 500;
+	padding: 5px 2px;
+}
+
+div.login-form>* {
+	font-weight: normal;
+	font-family: Lato;
+}
+
+div.login-form div.external-login ul {
+	text-align: left;
+	width: 235px;
+	margin: 0 auto;
+}
+
+div.login-form div.external-login ul li {
+	height: 50px;
+	border: 1px solid;
+}
+
+div.login-form div.external-login ul li span {
+	position: absolute;
+	padding: 4px 3px;
+}
+
+div.login-form div.external-login ul li.facebook a, div.login-form div.external-login ul li.twitter a,
+	div.login-form div.external-login ul li.google a, div.login-form div.external-login ul li.yahoo a,
+	div.login-form div.external-login ul li.linkedin a {
+	background: none;
+}
+
+div.login-form div.external-login ul li.facebook {
+	color: white;
+	background: rgb(51, 122, 183);
+	-moz-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	-webkit-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	-o-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	box-shadow: 1px 1px 10px 0px #cfcfcf;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf,
+		Direction=134, Strength=10);
+}
+
+div.login-form div.external-login ul li.twitter {
+	color: white;
+	background: #55acee;
+	-moz-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	-webkit-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	-o-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	box-shadow: 1px 1px 10px 0px #cfcfcf;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf,
+		Direction=134, Strength=10);
+}
+
+div.login-form div.external-login ul li.google {
+	color: white;
+	background: rgb(228, 78, 78);
+	-moz-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	-webkit-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	-o-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	box-shadow: 1px 1px 10px 0px #cfcfcf;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf,
+		Direction=134, Strength=10);
+}
+
+div.login-form div.external-login ul li.yahoo {
+	color: white;
+	background: #5D6CD5;
+	-moz-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	-webkit-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	-o-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	box-shadow: 1px 1px 10px 0px #cfcfcf;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf,
+		Direction=134, Strength=10);
+}
+
+div.login-form div.external-login ul li.linkedin {
+	color: white;
+	background: rgb(51, 122, 183);
+	-moz-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	-webkit-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	-o-box-shadow: 1px 1px 10px 0px #cfcfcf;
+	box-shadow: 1px 1px 10px 0px #cfcfcf;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf,
+		Direction=134, Strength=10);
+}
+/*******************************************Projets****************************/
+div.widget.projects {
+	padding:0;
+}
+
+div.widget.project div.rewards ul {
+	left: 17px;
+}
+
+div.login-form div.external-login ul li a {
+	padding: 16px 49px;
+	padding-left: 60px;
+	line-height: 47px;
+	font-family: PT sans;
+	font-size: 14px;
+	color: #FFF;
+}
+
+body.js div.superform>div.hint {
+	background: none;
+}
+
+div.searcher #text-query {
+	width: 100%;
+	margin: 7px 0 0;
+	border: 1px solid rgb(203, 203, 203);
+	border-radius: 3px;
+}
+
+body.project-show div#main>div.side>div.widget {
+	width: 308px;
+}
+
+div.searcher {
+	width: 241px;
+}
+
+.searcher .filter {
+	width: 194px;
+	margin-bottom: 16px;
+}
+
+.searcher .text-filter label, .searcher .filter label {
+	border-bottom: 1px solid rgb(207, 203, 203);
+	font-family: raleway;
+}
+
+.searcher .filter #category, .searcher .filter #reward, .searcher .filter #location
+	{
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 8px 15px 0px 0px;
+	margin: 14px 0 0px;
+	border-radius: 3px;
+	font-family: Lato;
+	max-height: 220px;
+}
+
+.searcher .filter #category input[type="checkbox"], .searcher .filter #reward input[type="checkbox"],
+	.searcher .filter #location input[type="checkbox"] {
+	margin: 4px 6px;
+	position: relative;
+	top: 1px;
+}
+
+#projects-area {
+	width: 80%;
+}
+
+div.widget.projects div.project {
+	background-color: #FFF;
+	margin: 0 30px 30px 0;
+	width: 350px;
+}
+
+div.widget.projects>.title, .header-title {
+	margin-bottom: 20px;
+	font-family: odin;
+	background: none;
+	font-size: 24px;
+	margin: 18px 0 15px;
+	padding: 0px;
+	font-weight: 300;
+	width: 88%;
+	border-bottom: 1px solid rgba(184, 184, 184, 0.56);
+	padding-bottom: 2px;
+}
+
+div.widget.projects>.title .seeall {
+	float: right;
+	padding-right: 5px;
+	padding-top: 11px;
+}
+
+div.widget.projects>.title .seeall>a {
+	text-transform: capitalize;
+	text-decoration: none;
+	font-size: 13px;
+}
+/****************************** Fiche produit**************************************/
+body.project-show div.project-menu ul {
+	height: 35px;
+}
+
+body.project-show div.project-menu ul li {
+	height: 35px;
+}
+
+body.project-show div.project-menu ul li.needs a, body.project-show div.project-menu ul li.supporters a,
+	body.project-show div.project-menu ul li.home a, body.project-show div.project-menu ul li.messages a,
+	body.project-show div.project-menu ul li.updates a {
+	background: none;
+	border: 1px solid rgb(199, 199, 199);
+	height: 35px;
+	color: #000;
+	font-family: Source sans pro;
+	text-align: center;
+	font-size: 13px;
+	border-bottom: none;
+}
+
+body.project-show div.project-menu ul li.activated a {
+	background-color: white;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border: 1px solid rgba(0, 0, 0, 0.37);
+	-webkit-box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.175);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border-bottom: none;
+}
+
+body.project-show div#sub-header div.project-header h2>span {
+	line-height: 63px;
+	font-family: raleway;
+	font-weight: 300;
+}
+
+body.project-show div#sub-header div.project-subtitle {
+	font-family: Source sans pro;
+	font-size: 15px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	border-left: 2px solid rgb(213, 213, 213);
+	margin-left: 4px;
+}
+
+body.project-show div#sub-header div.project-by a {
+	color: rgb(28, 123, 216);
+	font-family: source sans pro;
+	font-size: 12px;
+}
+
+body.project-show div#sub-header div.categories h3 {
+	font-family: Lato;
+	font-size: 15px;
+	text-shadow: 1px 1px rgb(203, 203, 203);
+	color: #FFF;
+	margin: 31px 0 0;
+}
+
+body.project-show div#sub-header div.categories a {
+	font-family: raleway;
+	font-size: 13px;
+	color: #FFF;
+}
+
+body.project-show div#sub-header div.categories a:hover {
+	color: rgb(28, 123, 216);
+}
+
+body.project-show div#sub-header div.categories {
+	position: absolute;
+	text-align: right;
+	top: 0px;
+	max-width: none;
+	width: 240px;
+}
+/***************************bouton de partage facebook et twitter*********************************/
+.buttons-share section, section div {
+	/* See it in slo-mo, you can change this */
+	transition-duration: .6s;
+}
+
+.buttons-share section, .button {
+	transition-timing-function: ease;
+}
+
+.buttons-share section {
+	display: inline-block;
+	position: relative;
+	padding: .375rem .375rem 0;
+	height: 3.5rem;
+	background: #A9ADB6;
+	border-radius: .25rem;
+	perspective: 300;
+	box-shadow: 0 -1px 2px #fff, inset 0 1px 2px rgba(0, 0, 0, .2), inset 0
+		.25rem 1rem rgba(0, 0, 0, .1);
+}
+
+.buttons-share .button {
+	opacity: 0;
+	width: 90px;
+}
+
+.buttons-share .cover {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transform-origin: center bottom;
+	transform-style: preserve-3d;
+	font: 1.90em/2 "icon";
+	color: white;
+	text-align: center;
+	pointer-events: none;
+	z-index: 100;
+}
+
+.buttons-share .innie, .outie, .spine, .shadow {
+	position: absolute;
+	width: 100%;
+}
+
+.buttons-share .innie, .outie {
+	height: 100%;
+	background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, .1)
+		100%);
+	border-radius: .25rem;
+}
+
+.buttons-share .innie:after, .outie:after {
+	
+}
+
+.buttons-share .innie {
+	background-color: #67E2FE;
+	text-shadow: 0 -2px 4px rgba(0, 0, 0, .2);
+}
+
+.buttons-share .spine {
+	top: .25rem;
+	background: #20C7F3;
+	height: .25rem;
+	transform: rotateX(90deg);
+	transform-origin: center top;
+}
+
+.buttons-share .shadow {
+	top: 100%;
+	left: 0;
+	height: 4.5rem;
+	transform-origin: center top;
+	transform: rotateX(90deg);
+	opacity: 0;
+	z-index: 0;
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, .6) 0%,
+		transparent 100%);
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .6) 0%,
+		transparent 100%);
+	border-radius: .4rem;
+}
+
+.buttons-share .outie {
+	background-color: #2EC8FA;
+	transform: translateZ(.25rem);
+	text-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.buttons-share section:hover {
+	background: #EBEFF2;
+}
+
+.buttons-share section:hover .button {
+	opacity: 1;
+}
+
+.buttons-share section:hover .cover, section:hover .innie, section:hover .spine,
+	section:hover .outie, section:hover .spine {
+	transition-timing-function: cubic-bezier(.2, .7, .1, 1.1);
+}
+
+.buttons-share section:hover .cover {
+	transform: rotateX(-120deg);
+}
+
+.buttons-share section:hover .innie {
+	background-color: #3ADAFC;
+}
+
+.buttons-share section:hover .spine {
+	background-color: #52B1E0;
+}
+
+.buttons-share section:hover .outie {
+	background-color: #2174A0;
+	color: rgba(255, 255, 255, 0);
+}
+
+.buttons-share section:hover .shadow {
+	opacity: 1;
+	transform: rotateX(45deg) scale(.95);
+}
+
+.buttons-share section .button a {
+	font-family: raleway;
+	text-align: center;
+	text-decoration: none;
+	line-height: 28px;
+	font-size: 16px;
+}
+/***********************************Button share**********************************/
+div.buttons-share {
+	padding: 10px 0 0;
+}
+
+div.widget.project-share {
+	height: 140px;
+	border-bottom: 1px solid rgb(234, 234, 234);
+	width: 94%;
+	margin: 0 auto;
+	padding-left: 0;
+}
+
+div.widget.project-share h4 {
+	font-family: raleway;
+	font-size: 21px;
+	margin: 10px 0;
+}
+
+div.widget.project-share li {
+	padding: 0;
+	margin: 0;
+}
+
+div.widget.project-share li#url-project {
+	padding: 1px 11px;
+	border: 1px solid rgb(224, 224, 224);
+	border-radius: 2px;
+	background: rgba(205, 205, 205, 0.32);
+}
+
+div.widget.project-share li#url-project input {
+	border: none;
+}
+
+div.widget.project-summary h4, div.widget.project-summary h5, div.widget.project-summary h6
+	{
+	font-family: Lato;
+	font-size: 20px;
+}
+
+div.widget.project-summary h1, div.widget.project-summary h2, div.widget.project-summary h3
+	{
+	font-family: Lato;
+	font-weight: 400;
+	font-size: 31px;
+	padding: 0px 0 13px;
+}
+
+div.widget.project-summary>div {
+	font-family: Source sans pro;
+	font-size: 15px;
+	background: #fff;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	-webkit-border-radius: 3px;
+	padding: 25px;
+	margin-bottom: 14px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+div.widget.project-summary .gallery-image {
+	text-align: center;
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0 0 10px;
+	box-shadow: none;
+}
+
+div.widget.project-summary .gallery-image img {
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+}
+
+.widget-area {
+	padding-top: 20px;
+}
+a.collab{
+	font-family: Lato;
+	font-size: 14px;
+	color: #FFF;
+	
+}
+div.widget.project-support, div.widget.project-rewards, div.widget.user,div.widget.project-collaborations,
+	div.widget.project-investors,div.widget.project-score,div.widget.project-status,div#payment-panel,.project-updates .post{
+	font-family: Lato;
+	font-size: 15px;
+	background: #fff;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	-webkit-border-radius: 3px;
+	padding: 15px;
+	margin-bottom: 14px;
+	background-color: white;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+}
+div.widget.project-support h4.supertitle {
+	font-family: Lato;
+	border-bottom: 1px solid #70B1FA !important;
+}
+
+div.widget .title {
+	background: none;
+	font-family: Lato;
+}
+
+div.widget.project-support div.graph {
+	background: rgba(87, 188, 250, 0.32);
+	width: 9px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-left: 55px;
+}
+
+div.widget.project-support div.graph>div.minimum {
+	background: rgb(87, 188, 250);
+	width: 9px;
+	margin-right: 4px;
+	border-top: 2px solid rgb(107, 107, 107);
+}
+
+div.widget.project-support div.graph>div.optimum {
+	background: rgba(87, 188, 250, 0.54);
+	width: 9px;
+	border-top: 2px solid rgb(107, 107, 107);
+}
+
+div.widget.project-support div.graph>div.minimum>div.done strong {
+	width: 40px;
+	margin-left: -40px;
+}
+
+@-webkit-keyframes move {
+	0% {
+	background-position: 50px 50px;
+	}
+
+	100%
+	{
+	background-position:0 0;
+	}
+}
+@-webkit-keyframes move-inverse {
+	0% {
+	background-position: 0 0;
+	}
+
+	100%
+	{
+	background-position:50px 50px;
+	}
+}
+div.widget.project-support div.graph>div.minimum>div.done {
+	background: rgb(53, 128, 213);
+	content: "";
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255,
+		255, .2)), color-stop(.25, transparent), color-stop(.5, transparent),
+		color-stop(.5, rgba(255, 255, 255, .2)),
+		color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
+		to(transparent));
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2)
+		25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%,
+		rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	z-index: 1;
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	background-size: 50px 50px;
+	-webkit-animation: move 2s linear infinite;
+	-moz-animation: move 2s linear infinite;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+div.widget.project-support div.buttons {
+	position: static;
+	padding: 5px 0 4px;
+	margin: 0 auto;
+	width: 95%;
+}
+
+div.widget.project-support a.more {
+	position: absolute;
+	top: 12px;
+	right: 16px;
+	font-family: Lato;
+	font-size: 13px;
+}
+.button-cof{
+    display: inline-block;
+    margin: 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow:    0 6px 0 #00608B, 0 5px 10px rgba(0, 0, 0, .35);
+    -moz-box-shadow: 0 6px 0 #00608B, 0 5px 10px rgba(0, 0, 0, .35);
+    box-shadow: 0 6px 0 #00608B, 0 5px 10px rgba(0, 0, 0, .35);
+    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
+    -moz-transition: -moz-box-shadow .1s ease-in-out;
+    -o-transition: -o-box-shadow .1s ease-in-out;
+    transition: box-shadow .1s ease-in-out;
+    font-size: 50px;
+    color: #fff;
+}
+.button-cof span p{
+	font-family: 'raleway', Arial, sans-serif;
+	line-height: 1;
+	text-shadow: 0 -1px 1px rgba(74, 169, 228, 0.7);
+	text-align: center;
+	padding: 11px 0 0;
+	font-size: 18px;
+	margin-bottom: 0;
+}
+.button-cof span {
+    display: inline-block;
+    padding: 20px 30px;
+    background-color: #009fe6;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));
+    background-image: -webkit-linear-gradient(hsla(194, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    background-image: -moz-linear-gradient(hsla(194, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    background-image: -o-linear-gradient(hsla(194, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+    -moz-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+    font-family: 'raleway', Arial, sans-serif;
+    line-height: 1;
+    text-shadow: 0 -1px 1px rgba(74, 169, 228, 0.7);
+    -webkit-transition: background-color .2s ease-in-out, -webkit-transform .1s ease-in-out;
+    -moz-transition: background-color .2s ease-in-out, -moz-transform .1s ease-in-out;
+    -o-transition: background-color .2s ease-in-out, -o-transform .1s ease-in-out;
+    transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+    color: #FFF;
+	font-size: 26px;
+}
+
+.button-cof:hover span {
+    background-color: rgba(0, 166, 240, 0.94);
+    text-shadow: 0 -1px 1px rgba(0, 48, 95, 1), 0 0 5px rgba(255, 255, 255, .8);
+}
+
+.button-cof:active, .button:focus {
+    -webkit-box-shadow:    0 68px 0 #00608B, 0 0px 0px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 6px 0 #00608B, 0 0px 0px rgba(0, 0, 0, .3);
+    box-shadow:    0 6px 0 #00608B, 0 0px 0px rgba(0, 0, 0, .3);
+}
+
+.button-cof:active span {
+    -webkit-transform: translate(0, 4px);
+    -moz-transform: translate(0, 4px);
+    -o-transform: translate(0, 4px);
+    transform: translate(0, 4px);
+}
+div.widget.project-support dl dt.optimum, div.widget.project-support dl dt.minimum,
+	div.widget.project-support dl dd.minimum, div.widget.project-support dl dd.optimum strong,
+	div.widget.project-support dl dd.minimum strong, div.widget.project-support dl dt.minimum,
+	div.widget.project-support dl dd.minimum, div.widget.project-support dl dd.reached
+	{
+	color: rgb(67, 123, 210);
+	font-family: raleway;
+}
+
+div.widget.project-support dl dt.reached>*, div.widget.project-support dl dt>*,
+	div.widget.project-support dl dd>*, div.widget.project-support dl dt.supporters>*,
+	div.widget.project-support dl dd.supporters>* {
+	font-family: raleway;
+}
+
+div.widget.project-support div.buttons .cofinancer {
+	font-family: Lato;
+	font-size: 15px;
+	color: white;
+}
+
+div.widget.project-rewards h4.supertitle {
+	border-bottom: 1px solid #70B1FA !important;
+}
+
+div.widget.project-media {
+	width: 100% !important;
+	max-width: none !important;
+	height: 415px;
+}
+
+div.widget.project-media>iframe, div.widget.project-media>object, div.widget.project-media>embed
+	{
+	width: 100% !important;
+	max-width: none !important;
+	padding: 4px 23px 0;
+	height: 415px !important;
+}
+
+div.widget.project-summary div.project-motivation-video {
+	margin: 0 auto;
+	width: 100% !important;
+	height: 460px;
+}
+
+div.widget.project-invest div.social h4.title, div.widget.project-rewards div.social h4.title,
+	#rewards-summary div.social h4.title {
+	color: rgb(55, 141, 255) !important
+}
+
+div.widget.project-support h4.supertitle {
+	border-bottom: 1px solid #70B1FA !important;
+}
+
+div.widget.project-invest div.individual h4.title, div.widget.project-rewards div.individual h4.title,
+	#rewards-summary div.individual h4.title {
+	color: rgb(55, 141, 255) !important;
+}
+
+div.widget.project-invest>div.social ul li, div.widget.project-rewards>div.social ul li,
+	#rewards-summary>div.social ul li, div.widget.project-invest>div.individual ul li,
+	div.widget.project-rewards>div.individual ul li, #rewards-summary>div.individual ul li
+	{
+	background-color: #FFF;
+	font-family: Source sans pro;
+}
+
+div.widget.project-invest>div.social ul li.active, div.widget.project-rewards>div.social ul li.active,
+	#rewards-summary>div.social ul li.active, div.widget.project-invest>div.individual ul li.active,
+	div.widget.project-rewards>div.individual ul li.active,
+	#rewards-summary>div.individual ul li.active {
+	background-color: rgb(247, 247, 247);
+}
+
+div.widget.project-rewards>div.individual ul li div.amount,
+	#rewards-summary>div.individual ul li div.amount {
+	color: black;
+	border-bottom: 1px solid rgb(210, 210, 210);
+}
+
+div.widget.project-rewards>div.individual ul li span.taken,
+	#rewards-summary>div.individual ul li span.taken {
+	font-family: Lato;
+	border-radius: 12px;
+}
+
+div.widget.project-rewards>div.individual ul li div.investors,
+	#rewards-summary>div.individual ul li div.investors {
+	font-family: Source sans pro;
+}
+
+div.widget.user div.image .username {
+	position: relative;
+	left: 88px;
+	font-family: Lato;
+	font-size: 22px;
+	top: -55px;
+}
+
+div.widget.user blockquote.about {
+	border: none;
+	font-family: Lato;
+	font-size: 14px;
+}
+
+div.widget.user dl dd.message a {
+	color: rgb(121, 164, 255);
+	font-family: Lato;
+}
+
+div.widget.project-rewards>a.more, div.widget.user a.button, div.widget.project-investors a.more
+	{
+	text-decoration: none;
+	font-family: Lato;
+	font-size: 14px;
+	color: #434343;
+}
+
+div.widget.user dl dd.message {
+	padding-left: 0;
+	text-indent: 0;
+	background: none;
+}
+/******************budget**************************/
+div.widget.project-needs table tbody tr.req {
+	
+}
+
+div.widget.project-needs table th.summary div.click blockquote {
+	font-family: Source sans pro;
+	font-size: 15px;
+	border: none;
+	padding: 6px 10px 16px;
+}
+
+div.widget.project-needs table *.min {
+	font-family: raleway;
+	font-size: 14px;
+}
+
+div.widget.project-needs table *.min, div.widget.project-needs table *.max
+	{
+	font-family: raleway;
+	font-size: 16px;
+	padding: 13px;
+}
+
+div.widget.project-needs div#legend div.min, div.widget.project-needs div#legend div.max,
+	div.widget.project-needs table thead.task th.summary, div.widget.project-needs table tfoot th.total,
+	div.widget.project-needs table th.summary div.click span {
+	font-family: raleway;
+}
+
+div.widget.project-needs table tbody {
+	background: #fff;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	-webkit-border-radius: 3px;
+	padding: 25px;
+	margin-bottom: 14px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+div.widget.project-needs, div.widget.project-schedule {
+	background: #fff;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	-webkit-border-radius: 3px;
+	padding: 25px;
+	margin-bottom: 14px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+div.widget.project-needs table {
+	margin-bottom: 20px;
+}
+
+div.widget.project-needs table tfoot tr th {
+	font-size: 17px;
+	font-weight: 500;
+}
+
+div.widget.project-needs table th.summary div.click span strong {
+	font-family: Lato;
+	font-size: 15px;
+	padding: 0px 8px;
+}
+
+div.project-message div#bocadillo {
+	display: none;
+}
+
+div.project-message {
+	position: relative;
+	max-width: none;
+	width: 100%;
+}
+
+div.widget.project-message textarea {
+	background-color: #FFF;
+	border: 1px solid rgba(192, 192, 192, 0.66);
+	width: 100%;
+}
+/******************************************Messages des projets**************************/
+div.project-messages div.owner, div.project-messages div.message, div.project-messages div.message+div.message,
+	div.project-messages div.child+div.message, div.project-messages div.child
+	{
+	font-family: Lato;
+	font-size: 15px;
+	background: #FFF !important;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	-webkit-border-radius: 3px;
+	padding: 15px;
+	margin-bottom: 14px;
+	background-color: white;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+div.project-messages div.owner:before, div.project-messages div.message:before,
+	div.project-messages div.message:before+div.message:before, div.project-messages div.child:before+div.message:before,
+	div.project-messages div.child:before {
+	content: "";
+	position: absolute;
+	top: 15px;
+	left: -18px;
+	width: 0;
+	height: 0;
+	margin: 0px 0 0 0;
+	border-width: 9px;
+	border-style: solid;
+	border-color: transparent rgba(207, 207, 207, 0.94) transparent
+		transparent;
+}
+
+div.project-messages div.message h3.user a, div.project-messages div.child h3.user a
+	{
+	color: #434343;
+	font-family: Lato;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+div.project-messages div.message blockquote, div.project-messages div.child blockquote
+	{
+	border: none;
+	font-family: raleway;
+	font-size: 16px;
+}
+
+div.project-messages div.message .date>*, div.project-messages div.child .date>*,
+	div.project-messages div.message .actions a, div.project-messages div.child .actions a
+	{
+	font-family: Lato;
+}
+/*************Finpopeurs********************************/
+div.widget.project-supporters dl.summary dt.reached, div.widget.project-supporters dl.summary dd.reached
+	{
+	color: #000000;
+	font-family: raleway;
+}
+div.widget.project-supporters dl.summary dd.supporters {
+	font-family: raleway;
+}
+div.widget.project-supporters .supporters>ul>li dl dd.amount > *{
+	font-family: raleway;
+}
+div.widget.project-supporters .supporters>ul>li {
+	height: 110px !important;
+	width: 295px;
+	font-family: Lato;
+	font-size: 15px;
+	background: #fff;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	-webkit-border-radius: 3px;
+	padding: 15px;
+	margin-bottom: 14px;
+	background-color: white;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	margin-bottom: 0;
+}
+
+div.widget.project-investors .investors ul li dl dt.amount,div.widget.project-investors .investors ul li dl dd.amount
+{
+	color: #000;
+}
+
+div.widget.project-supporters .supporters>ul>li .avatar {
+	padding: 12px;
+}
+
+div.widget.project-supporters .supporters ul li h4 {
+	font-family: Lato;
+	font-size: 14px;
+	height: 18px;
+	color: #000;
+}
+
+div.widget.project-supporters .supporters ul li dl, div.widget.project-supporters .supporters ul li dl dt,
+	div.widget.project-supporters .supporters ul li dl dd {
+	
+}
+
+div.widget.project-supporters .supporters>ul>li dl dd.amount {
+	top: 3px;
+	color: #000;
+}
+
+div.widget.project-supporters .supporters>ul>li dl dt.amount {
+	top: 30px;
+	color: #000;
+}
+
+div.widget.project-supporters .supporters ul li dl dd.date {
+	top: 75px !important;
+	font-family: Lato;
+	color: rgb(144, 144, 144);
+}
+div.widget.project-supporters .supporters ul li dl dd.worthcracy {
+	margin-top: 14px;
+}
+div.widget.project-supporters {
+	margin: 0 auto;
+	padding-bottom: 28px !important;
+	border-bottom: 1px solid rgb(223, 223, 223);
+}
+/*************profile**************************/
+div.widget.user-worthcracy ul li > strong{
+	font-family: Lato;
+	padding: 18px 0 0;
+	color: rgb(31, 31, 31);
+}
+div.widget.worthcracy ul li > em, div.widget.worthcracy ul li > strong,div.widget.worthcracy ul li > span.threshold,div.widget.worthcracy ul li > span.threshold > *,
+div.widget.user-about p{
+	font-family: Lato;
+}
+div.widget.user-about h4,div.widget.worthcracy .title{
+	font-family: Lato;
+	font-size: 18px;
+}
+div.widget.user-about > div.message p a{
+	color: #333;
+	font-family: Lato;
+}
+div.widget.user-about > div.message p{
+	padding: 0;
+	background: none;
+}
+div.widget.project div.image div.investor div.invest{
+	padding: 5px 8px 0;
+	font-family: Lato;
+}
+div.widget.project div.image div.investor div.invest span.amount{
+	font-family: Lato;
+	position: relative;
+	top: 2px;
+}
+div.navi-bar ul.navi li{
+	border-radius: 50%;
+	border: 2px solid rgb(115, 159, 255);
+}
+div.navi-bar ul.navi li > a:hover{
+	background-color: #2F83F2;
+	
+}
+div.navi-bar{
+	display: none;
+}
+div.discover-arrow-right a.discover-arrow:hover{
+	background: url('arrowslider-sprt.png') scroll no-repeat 0 -24px;
+	text-decoration: none;
+}
+div.discover-arrow-left a.discover-arrow:hover{
+	background: url('arrowslider-sprt.png') scroll no-repeat 0 0;
+	text-decoration: none;
+}
+div.widget.user-supporters,div.widget.user-mates,div.widget.worthcracy.user-worthcracy,div.widget.user-about,div.widget.projects,body.dashboard div#project-selector,div.user-project-title,div.user-project-status,body.dashboard div#meter-big,div.gestrew,div.widget.project-posts,div.widget.user-message{
+	font-family: Lato;
+	font-size: 15px;
+	background: #fff;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	-webkit-border-radius: 3px;
+	padding: 15px;
+	margin-bottom: 14px;
+	background-color: white;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+div.dashbord-menu ul{
+	padding: 0;
+	margin: 0;
+}
+div.dashbord-menu ul li{
+	list-style: none;
+}
+div.dashbord-menu ul li a{
+	font-family: Source sans pro;
+	font-size: 14px;
+	text-decoration: none;
+}
+div.dashbord-menu ul li a.current {
+	color: #337ab7;
+}
+div.widget.projects div.project div.balloon{
+	background: rgba(240, 240, 240, 0.7);
+	height: 106px;
+}
+div.widget.projects div.project div.balloon > h4 {
+	font-family: Lato;
+}
+div.widget.projects div.project div.balloon > blockquote{
+	border: none;
+	font-family: source sans pro;
+	font-size: 12px;
+}
+div.widget.projects #widget-code {
+	display: inline-table;
+}
+div.widget.projects #widget-code .wc-embed{
+	padding-bottom: 7px;
+	font-family: Lato;
+}
+div.widget.projects #widget-code textarea{
+	background: none;
+	border: 1px solid rgb(208, 208, 208);
+	border-radius: 3px;
+	
+}
+div.widget.user-worthcracy div.worth-amount{
+	color: #000;
+	font-family: Lato;
+	border: none;
+}
+div.widget.projects div.widget.project.activable.balloon{
+	height: 600px;
+}
+body.js div.superform > div.hint blockquote{
+	margin-right: 0;
+	font-family: Lato;
+	border: none;
+	font-size: 13px;
+	color: #333;
+}
+body.js div.superform > div.elements > ol > li.element{
+	margin-right: 0;
+	border-right: none;
+}
+div.superform div.elements > ol > li.required > .title{
+	font-family: Lato;
+	text-transform: capitalize;
+}
+body.js div.superform > div.elements > ol > li.element{
+	border:none;
+	padding: 17px 0;
+}
+div.superform > div.elements,body.js div.superform > div.hint,body.project-edit div#main #project-steps{
+	border:none;
+	font-size: 15px;
+	background: #fff;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+	-webkit-border-radius: 3px;
+	padding: 15px;
+	margin-bottom: 14px;
+	background-color: white;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.175);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+div.superform input[type='text'], div.superform input[type='password'], div.superform textarea,div.superform li.element.textbox > div.contents > input[type="text"], div.superform li.element.textbox > div.contents > input[type="password"], div.superform li.element.textarea > div.contents > textarea{
+	background: none;
+	border: 1px solid rgb(184, 184, 184);
+	border-radius: 3px;
+}
+
+form div.footer{
+	background: none;
+	float: right;
+}
+div.superform input[type="submit"]{
+	padding: 9px 32px !important;
+	font-family: Lato;
+	font-size: 13px!important;
+	font-weight: 400;
+	background: none;
+	border: 1px solid rgb(182, 182, 182);
+	border-radius: 5px;
+	color: #333;
+}
+div.superform input[type="submit"]{
+	color: #000;
+	border-radius: 0px;
+	border-color: #788FA3;
+	padding: 7px 17px !important;
+}
+
+div.superform input[type="submit"]:hover{
+	color: #fff;
+	background-color: #4C92FF;
+	border-color: #3F8AFF;
+}
+div.preferences,div.profile,div.access,div.personal{
+	margin: 0 0 30px;
+}
+body.js div.superform > div.elements > ol > li.element li.element{
+	border: none;
+}
+div.superform div.elements > ol > li.element.checkboxes.cols_3 > div.contents > ul > li, div.superform div.elements > ol > li.element.radios.cols_3 > div.contents > ul > li, div.superform div.elements > ol > li.element.slider.cols_3 > div.contents > ul > li
+{
+	border: 1px solid rgb(218, 218, 218);
+	border-right: none;
+}
+div.superform div.elements > ol > li.element.checkboxes > div.contents > ul, div.superform div.elements > ol > li.element.radios > div.contents > ul, div.superform div.elements > ol > li.element.slider > div.contents > ul
+{
+	padding: 1px;
+	border: none;
+}
+body.js div.superform > div.elements > ol > li.element li.element.avatar_upload
+{
+	width: 306px;	
+	display: inline-block;
+	
+}
+div.widget .supertitle{
+	border-bottom: 1px solid rgb(50, 60, 150);
+}
+body.js div.superform > div.elements > ol > li.element li.element.avatar_upload input[type="submit"]{
+	margin: 20px 0;
+}
+body.js div.superform > div.elements > ol > li.element li.element.avatar-image
+{
+	width: 172px;
+	display: inline-block;
+	
+}
+body.js div.superform > div.elements > ol > li.element li.element .web .title{
+	padding: 0px 0px 17px;
+}
+body.js div.superform > div.elements > ol > li.element li.element .web .title > *{
+	font-family: Lato;
+}
+div.superform div.elements > ol > li.element.checkboxes > div.contents > ul > li, div.superform div.elements > ol > li.element.radios > div.contents > ul > li, div.superform div.elements > ol > li.element.slider > div.contents > ul > li
+{
+	border: 1px dotted rgb(208, 208, 208);
+}
+div.superform button.image-remove{
+	background: none !important;
+	padding: 0px 0px 11px !important;
+	height: 24px;
+	width: 25px;
+	border: 1px solid;
+	font-family: cursive;
+	border-radius: 50%;
+	right: -31px;
+}
+div.superform li.element > div.feedback > div blockquote,div.superform.aqua li.element > div.feedback > div.error + div.hint > blockquote{
+	border: none;
+	font-family: Source sans pro;
+	color: #FFF;
+}
+body.js div.superform div.children > div.elements > ol > li.element > div.feedback{
+	top: 40px;
+}
+body.dashboard div#project-selector select
+{
+	width: auto;
+	text-transform: capitalize;
+	font-family: Source sans pro;
+}
+body.dashboard div#project-selector label{
+	text-transform: capitalize;
+	margin: 0;
+	padding: 7px;
+	height: 35px;
+	width: 100%;
+	text-align: right;
+	font-family: Lato;
+}
+body.dashboard #project-status{
+	padding: 0 !important;
+	width: 80%;
+}
+body.dashboard #project-status > h3{
+	margin: 0;
+	font-family: Source sans pro;
+}
+body.dashboard #project-status  ul{
+	margin: 14px 0 4px;
+}
+body.dashboard #project-status ul > li{
+	margin: 11px 0;
+	list-style: none;
+	font-family: Source sans pro;
+}
+body.dashboard #project-status ul > li strong{
+	font-size: 23px;
+	font-family: raleway;
+	color: rgb(52, 163, 221);
+}
+body.dashboard div#meter-big div.graph{
+	background-color: rgba(87, 188, 250, 0.6);
+	border-right: 40px solid rgba(87, 188, 250, 0.32);
+	margin-top: 62px;
+	border-radius: 2px;
+}
+body.dashboard div#meter-big div.graph .minimum{
+
+}
+body.dashboard div#meter-big div.graph .optimum{
+	border-right: 4px solid #5797FA;
+	border-radius: 2px;
+}
+body.dashboard div#meter-big div.graph .minimum .left{
+	border-right: 2px solid #5797FA;
+border-radius: 2px;
+}
+div.user-project-title > a{
+	
+}
+div.user-project-title p strong{
+	font-family: Lato;
+	font-size: 21px;
+	font-weight: 500;
+	color: rgb(52, 163, 223);
+}
+body.dashboard div#meter-big div.graph .minimum .done{
+		background: rgb(53, 128, 213);
+	content: "";
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255,
+		255, .2)), color-stop(.25, transparent), color-stop(.5, transparent),
+		color-stop(.5, rgba(255, 255, 255, .2)),
+		color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent),
+		to(transparent));
+	background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2)
+		25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%,
+		rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	z-index: 1;
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	background-size: 50px 50px;
+	-webkit-animation: move-inverse 2s linear infinite;
+	-moz-animation: move-inverse 2s linear infinite;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+body.dashboard div#meter-big div.graph .minimum{
+	background-color:rgb(87, 188, 250);
+	border-radius: 4px;
+}
+body.dashboard div#meter-big dl dt.optimum, body.dashboard div#meter-big dl dt.minimum,body.dashboard div#meter-big dl dt.reached,body.dashboard div#meter-big dl dt.days,body.dashboard div#meter-big dl dt.supporters,body.dashboard div#meter-big dl dd.days{
+	font-family: Source sans pro;
+	color: #000;
+}
+body.dashboard div#meter-big dl dd.minimum > *,body.dashboard div#meter-big dl dd.optimum, body.dashboard div#meter-big dl dd.minimum{
+	font-family: raleway;
+	font-size: 21px;
+}
+body.dashboard div#meter-big dl * {
+	font-family: raleway;
+}
+body.dashboard div#meter-big h3.title.ronda{
+	color: #000;
+}
+
+body.dashboard div.superform{
+	padding-left: 0px !important;
+}
+div.supports{
+	padding-bottom: 40px;
+}
+div#menu-user-project{
+	float: right;
+}
+div.gestrew .message{
+	font-family: Source sans pro;
+	font-size: 16px;
+}
+div.rewards.reward{
+	
+}
+div#header div#menu > ul > li.home > a {
+	overflow: hidden;
+	text-indent: 2000px;
+	display: block;
+	line-height: 2000px;
+	width: 149px;
+	height: 45px;
+	position: absolute;
+	top: 36%;
+	margin-left: -45px;
+	margin-top: -18px;
+	background: url('header/main-logo.png') no-repeat left center;
+	background-size: cover;
+	left: 0px;
+}
+div.widget.project-posts div.post > *{
+	font-family: Lato;
+}
+div.widget.project-posts div.post{
+	padding: 25px 0 3px;
+	font-family: Lato;
+	border-bottom: 1px solid rgb(208, 208, 208);
+}
+div.widget.project-posts div.post span.date{
+	font-family: Lato;
+	font-size: 11px;
+}
+li.media div.contents iframe{
+	height: 488px;
+}
+p.info{
+	padding: 13px 8px 0;
+	font-family: Source sans pro;
+	font-size: 16px;
+}
+div.center div.widget.user-message label{
+	display: block;
+	font-family: Lato;
+	font-weight: 400;
+	padding: 9px 0 3px;
+}
+div.center div.widget.user-message input{
+	background-color: #FFF;
+	border: 1px solid rgba(192, 192, 192, 0.66);
+	border-radius: 2px;
+	width: 100%;
+}
+div.center div.widget.user-message textarea{
+	margin: 0;
+	background-color: #FFF;
+	border: 1px solid rgba(192, 192, 192, 0.66);
+	border-radius: 2px;
+	width: 100%;
+}
+div.gestrew div.rewards div.reward{
+	padding: 9px 0;
+}
+div.gestrew div.rewards div.reward div.tiporec{
+	border-left: 2px solid rgb(213, 209, 209);
+	margin-left: 25px;
+}
+div.gestrew div.rewards div.reward div.tiporec ul{
+	padding: 10px 12px;
+	margin: 0;
+}
+div.gestrew div.rewards{
+	border-left: 2px solid rgb(224, 224, 224);
+	margin: 16px 3px;
+	padding-left: 12px;
+}
+div.gestrew div.rewards div.reward div.tiporec ul li{
+	list-style: none;
+	font-family: Lato;
+}
+div.gestrew div.rewards div.reward div.contenedorrecompensa{
+	padding-left: 22px;
+	padding-bottom: 18px;
+}
+div.gestrew div.rewards div.reward div.contenedorrecompensa > span{
+	font-family: Lato;
+}
+div.gestrew div.rewards div.reward div.contenedorrecompensa > span strong{
+	font-family: Lato;
+	color: rgb(0, 129, 255) !important;
+	font-weight: 500;
+}
+div.gestrew div.rewards div.reward a,div.gestrew div.rewards div.reward a:hover{
+	font-family: Source sans pro;
+	font-size: 14px;
+}
+body.dashboard div#colective-messages textarea{
+	background-color: #FFF;
+	border: 1px solid rgba(192, 192, 192, 0.66);
+	width: 100%;
+	margin: 0;
+}
+body.dashboard div#colective-messages button{
+	font-weight: 500;
+	font-family: Lato;
+}
+body.dashboard div#colective-messages input + label{
+	font-weight: 500;
+	font-family: Source sans pro;
+	font-size: 14px;
+}
+body.dashboard div.widget.gestrew div.filters{
+	padding: 17px 0 8px;
+}
+body.dashboard div.widget.gestrew div.filters label{
+	font-family: Source sans pro;
+	font-weight: 500;
+	padding: 0 8px;
+	font-size: 16px;
+}
+body.dashboard div#invests-list div.investor div.left span.amount{
+	font-family: raleway;
+	color: rgb(44, 39, 39);
+	font-size: 16px;
+	padding-right: 22px;
+	font-weight: 500;
+}
+body.project-edit div#sub-header{
+	background: url('images/connexion-bg.png');
+	background-size: 100% 100%;
+	margin: 0 0 56px;
+}
+body.dashboard div#sub-header div.dashboard-header{
+	height: 300px;
+	position: relative;
+	top: 115px;
+}
+body.dashboard div#sub-header div.dashboard-header h2{
+	position: absolute;
+	bottom: 120px;
+	left: 195px;
+}
+body.dashboard div#sub-header div.dashboard-header h2 span{
+	font-family: Odin;
+	font-size: 20px;
+	color: #fff;
+}
+body.user-profile div#sub-header .img-profile,body.project-edit div#sub-header .img-profile{
+	position: relative;
+	top: 33px;
+	border: 1px solid rgb(221, 221, 221);
+	width: 180px;
+	height: 180px;
+	padding: 5px;
+	background: #FFF;
+	border-radius: 2px;
+}
+body.user-profile div#sub-header h2 img{
+	width: auto;
+height: auto;
+position: relative;
+}
+div#public-profile div#sub-header{
+	background: url('images/couverture.jpg');
+	height: 300px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding: 0;
+	margin: 0 0 73px;
+}
+div#public-profile div#sub-header .header-box{
+	position: relative;
+	top: 88px;
+}
+body.user-profile div#sub-header h2{
+	padding-left: 199px;
+	color: #FFF;
+	font-size: 24px;
+}
+body.user-profile div#sub-header .img-profile{
+	top: 50px;
+}
+div#public-profile div#sub-header,body.project-show div#sub-header{
+	background: url('images/couverture.jpg');
+	height: 300px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding: 0;
+}
+div#public-profile div#sub-header, body.project-show div#sub-header > *
+{
+	color:#FFF;
+}
+body.project-show div.project-menu {
+	position: absolute;
+	top: 313px;
+}
+body.project-show div.project-menu ul li {
+	background: rgba(200, 200, 200, 0.54);
+}
+body.project-edit div#main .status h3{
+	font-family: Source sans pro;
+	display: block;
+	color: #434343;
+	font-weight: 400;
+}
+body.project-edit div#main .status ul li{
+	font-family: Source sans pro;
+	display: block;
+}
+body.project-edit div#main .status #project-status ul li strong{
+	font-family: Raleway;
+	background: none;
+	color: #434343;
+	font-size: 16px;
+}
+body.project-edit div#main .status #project-score p{
+	font-family: source sans pro;
+}
+/******************************************steps**********************************/
+body.project-edit div#main #project-steps div.steps ul{
+	margin: 0;
+	padding: 0;
+}
+body.project-edit div#main #project-steps div.steps ul li{
+	list-style: none;
+	float: left;
+	min-width: 90px;
+}
+body.project-edit div#main #project-steps div.steps ul li button{
+	padding: 15px;
+	min-width: 90px;
+	font-family: Source sans pro;
+	font-size: 15px;
+	border: none;
+	background: none;
+	padding: 8px;
+}
+body.project-edit div#main #project-steps div.steps ul li.active button strong,body.project-edit div#main #project-steps div.steps ul li.current button strong{
+	background: rgb(76, 146, 255);
+	color: #FFF;
+}
+body.project-edit div#main #project-steps div.steps ul li.current button{
+	color: rgb(76, 146, 255);
+	font-weight: 700;
+}
+body.project-edit div#main #project-steps div.steps ul li.current button:active,
+body.project-edit div#main #project-steps div.steps ul li.current button:focus,
+body.project-edit div#main #project-steps div.steps ul li.current button:visited{
+	border:none;
+}
+body.project-edit div#main #project-steps div.steps ul li button strong{
+	display: block;
+	width: 63px;
+	height: 59px;
+	line-height: 52px;
+	margin: 0 auto 16px;
+	border: 1px solid rgb(76, 146, 255);
+	border-radius: 50%;
+	font-family: raleway;
+	font-size: 30px;
+	font-weight: 100;
+	color: rgb(48, 48, 48);
+	position: relative;
+	z-index: 100;
+	background: white
+}
+body.project-edit div#main #project-steps div.steps ul li button div{
+	position: relative;
+	top: 31px;
+	left: 60px;
+	z-index: 0;
+	border: 1px solid rgb(205, 205, 205);
+	height:3px;
+	-moz-box-shadow: inset 10px 10px 120px 0px #3AA5FF;
+	-webkit-box-shadow: inset 10px 10px 120px 0px #3AA5FF;
+	-o-box-shadow: inset 10px 10px 120px 0px #3AA5FF;
+	box-shadow: inset 10px 10px 120px 0px #3AA5FF;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#3AA5FF, Direction=134, Strength=120);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+	}
+body.project-edit div#main .status #project-score{
+	padding-left: 0;
+}
+body.project-edit div#main .status #project-score{
+	display: block;
+	width: 100%;
+	padding: 0;
+	padding: 15px;
+	border: 1px solid;
+	border-color: #e5e6e9 #dfe0e4;
+}
+body.project-edit div.superform {
+	border: none;
+}
+body.project-edit div#main div.status{
+	border: none;
+	padding: 0;
+}
+div.superform h3{
+	display:none;
+}
+body.project-edit div#main .status #project-status{
+	padding: 15px;
+}
+body.project-edit div#main div.status #circle strong{
+	position: relative;
+	right: 69px;
+	bottom: 43px;
+	font-size: 25px;
+	font-family: raleway;
+	color: #434343;
+}
+body.js div.superform li.element > div.feedback,body.js div.superform div.children > div.elements > ol > li.element > div.feedback{
+	left: -278px;
+	top: -9px;
+}
+body.js div.superform.aqua li.element > div.feedback{
+	background: none;
+}
+div.superform.aqua li.element > div.feedback > div,div.superform li.element > div.feedback > div{
+	position: absolute;
+	color: #FFFFFF;
+	background: #5A95C7;
+	text-align: left;
+	border-radius: 6px;
+	box-shadow: 0px 2px 5px #808080;
+}
+div.superform.aqua li.element > div.feedback > div.error{
+	position: relative;
+	padding: 14px 17px 9px;
+}
+div.superform.aqua li.element > div.feedback > div.error:after{
+	border:none;
+}
+div.superform li.element > div.feedback > div:after{
+ content: '';
+  position: absolute;
+  top: 20%;
+  left: 100%;
+  margin-top: -8px;
+  width: 0; height: 0;
+  border-left: 8px solid #5A95C7;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+body.js div.superform > div.elements > ol > li.element#user_avatar{
+	padding: 16px 132px;
+	border: 1px solid rgb(199, 199, 199);	
+}
+body.js div.superform > div.elements > ol > li.element#user_avatar h4{
+	font-size: 14px;
+	margin: 14px 0;
+	padding: 7px 0;
+	border-bottom: 1px solid rgb(194, 194, 194);
+}
+body.js div.superform > div.elements > ol > li.element li.element.avatar_upload input[type="submit"]{
+	padding: 8px !important;
+	border-radius: 0;
+	background: none;
+	color: #000;
+}
+body.js div.superform > div.elements > ol > li.element li.element.avatar_upload input[type="file"]{
+	font-family: Lato;
+	border: 1px solid rgb(234, 234, 234);
+	padding: 6px 5px;
+}
+body.js div.superform > div.elements > ol > li.element#user_avatar img{
+	padding: 7px;
+	border: 1px solid rgb(205, 205, 205);
+}
+body.js div.superform  div.elements  ol > li.element#avatar-image img{
+	float: right;
+}
+div.superform button.image-remove:hover{
+	background: #c0c0c0!important;
+}
+body.project-edit div.superform li.element#footer{
+	padding: 20px;
+	margin: 20px 0;
+	border: 1px solid #eee;
+	border-left-width: 5px;
+	border-radius: 3px;
+	border-left-color: #eea236;
+	background: rgb(253, 253, 253);
+}
+body.project-edit div.superform li.element#footer h5{
+	color: #EEA236;
+	font-family: raleway;
+}
+body.project-edit div.superform li.element#footer li#buttons input, body.project-edit div.superform li.element#footer li#buttons button{
+	
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: 2px;
+}
+div.superform li.element > h4, div.superform li.element > h5, div.superform li.element > h6, div.superform li.element > h7, div.superform li.element > h8{
+	text-transform: capitalize;
+	font-family: Lato;
+}
+body.js div.superform > div.elements > ol > li.element li.element#image_upload{
+	border: 1px solid rgb(223, 223, 223);
+	padding: 15px;
+	margin: 24px auto 0;
+}
+body.js div.superform > div.elements > ol > li.element li.element#image_upload input[type="file"]{
+	width: 40%;
+	display: inline;
+}
+body.js div.superform > div.elements > ol > li.element#gallery .elements{
+	border: 1px solid rgb(221, 221, 221);
+	padding: 15px;
+}
+body.js div.superform > div.elements > ol > li.element#gallery .elements img{
+	padding: 7px;
+	border: 1px solid rgb(199, 199, 199);
+}
+body.js div.superform > div.elements > ol > li.element#gallery .elements > ol {
+padding-left: 0;
+margin: 0 auto;
+width: 88%;
+}
+div.superform li#gallery div.elements li.gallery-image{
+	margin: 8px !important;
+}
+input.weak[type="submit"]:hover, input.weak[type="reset"]:hover, button.weak:hover, a.button.weak:hover{
+	background: #b5161e;
+}
+body.js div.superform div.elements ol li.element li.element.required_cost-yes,body.js div.superform div.elements ol li.element li.element.required_cost-no{
+	padding: 15px 10px 15px 15px;
+}
+body.project-edit div#main.costs div.superform li.element.cost div.title {
+width: 75%;
+}
+body.project-edit div#main.costs div.superform li.element.cost div.title > *{
+	font-family: lato;
+}
+body.project-edit div#main.costs div.superform li.element.cost div.description{
+	font-family: Lato;
+	font-size: 13px;
+}
+body.project-edit div#main.costs div.superform li.element.editcost div.children li.element.cost-amount > div.contents > input,
+body.project-edit div#main.rewards div.superform li.element.editindividual_reward div.children li.element.reward-amount > div.contents > input{
+	width: 6em;
+	max-width: 6em;
+	min-width: 6em;
+	padding-right: 26px;
+	text-align: right;
+	font-family: raleway;
+	background-position: 4.7em center;
+	font-weight: 400;
+}
+div.superform > div.elements div.elements > ol{
+	padding: 0;
+}
+body.js div.superform > div.elements > ol > li.element li.element > *
+{
+	font-family: lato;
+}
+body.project-edit div#main.costs div.superform li.element.cost-meter dl{
+	padding: 80px 70px 55px 31px;
+}
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.minimum{
+	border-bottom: 10px solid #4A95F8;
+}
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dt.optimum {
+	border-top: 10px solid rgba(74, 149, 248, 0.44);
+}
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dt.minimum > span{
+	color: rgb(74, 149, 248);
+	font-family: raleway;
+}
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.minimum > span > span.euro{
+	border-left: 5px solid #4A95F8;
+	border-right: 5px solid #4A95F8;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.minimum > span > strong{
+	color: rgb(74, 149, 248);
+	font-family: raleway;
+}
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dt.optimum > span{
+	color: rgb(174, 207, 251);
+	font-family: raleway;
+}
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.optimum > strong{
+	color: rgb(174, 207, 251);
+	font-family: raleway;
+}
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.optimum > span.euro{
+		border-left: 5px solid rgb(174, 207, 251);
+	border-right: 5px solid rgb(174, 207, 251);
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+div.superform li#scope, div.superform li#supports, div.superform li#social_rewards, div.superform li#individual_rewards{
+	padding: 15px;
+}
+div.superform li#social_rewards h4.title, div.superform li#individual_rewards h4.title, div.superform li#supports h4.title, div.superform li#costs h4.title{
+	padding: 0;
+}
+div.superform li#scope, div.superform li#supports, div.superform li#social_rewards, div.superform li#individual_rewards {
+	background-color: #FDFDFD !important;
+	border: 1px solid rgb(237, 237, 237);
+	border-top: none;
+	border-left: 5px solid rgb(167, 219, 240);
+	margin: 4px 0;
+	border-radius: 4px;
+}
+body.project-edit div#main.rewards div.superform li.element.reward div.title {
+	width: 76%;
+}
+body.project-edit div#main.rewards div.superform li.element.reward div.title > *,body.project-edit div#main.rewards div.superform li.element.reward div.description{
+	font-family:Lato;
+}
+div.widget.project-summary div#prjct-gallery{
+	float: none;
+	padding: 0;
+	background: none;
+	border: none;
+	padding-bottom: 36px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+div.widget.project-summary div.prjct-gallery-container{
+	width: 100%;
+	height: 410px;
+	margin-bottom: 10px;
+}
+div.widget.project-summary div.prjct-gallery-container div.gallery-image {
+	width: 707px;
+	height: 400px;
+}
+body.project-edit div.superform li.element#footer li#buttons input.disabled, body.project-edit div.superform li.element#footer li#buttons button.disabled{
+	background: rgba(232, 232, 232, 1);
+	border: 1px inset white;
+	cursor: default;
+}
+body.js div.superform div.elements ol li.element#preview div.widget.project-summary>div,
+body.js div.superform div.elements ol li.element#preview div.widget.project-needs, 
+body.js div.superform div.elements ol li.element#preview div.widget.project-schedule,
+body.js div.superform div.elements ol li.element#preview div.widget.project-support, 
+body.js div.superform div.elements ol li.element#preview div.widget.project-rewards, 
+body.js div.superform div.elements ol li.element#preview div.widget.user,
+body.js div.superform div.elements ol li.element#preview div.widget.project-collaborations,
+body.js div.superform div.elements ol li.element#preview div.widget.project-investors, 
+body.js div.superform div.elements ol li.element#preview div.widget.project-score, 
+body.js div.superform div.elements ol li.element#preview div.widget.project-status{
+	background: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: none;
+	padding: 15px 0;
+}
+div.widget.project-rewards > div.individual ul li span.left, #rewards-summary > div.individual ul li span.left{
+	color: #388DFF;
+	font-family: raleway;
+	font-size: 20px;
+	font-weight: 400;
+	float: none;
+}
+div.widget.project-summary div#prjct-gallery ul.slderpag li a{
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 17px;
+	font-family: Lato;
+	border-radius: 50%;
+	color: #000;
+	background: none;
+	border: 1px solid rgb(51, 122, 183);
+}
+div.widget.project-summary div#prjct-gallery ul.slderpag li.current a{
+	background-color: #337AB7 !important;
+	color: #FFFFFF !important;
+	text-decoration: none;
+}
+div.widget.project-summary div#prjct-gallery ul.slderpag li a:hover{
+	background-color: #337AB7;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+div.widget.project-summary div#prjct-gallery a.next, div.widget.project-summary div#prjct-gallery a.prev{
+	margin-top: 12px;
+}
+div.invest-message{
+	background: none;
+	background-color: rgba(231, 231, 231, 0.5) !important;
+}
+div.widget.project-invest h3.beak{
+	background: none;
+	background-color: rgba(231, 231, 231, 0.5) !important;
+	font-family: lato;
+	font-weight: 400;
+	font-size: 14px !important;
+	text-transform: none !important;
+	padding-right: 34px;
+	padding-bottom: 20px;
+	margin-bottom: 21px;
+}
+div.widget.project-invest h3.beak:after{
+	content: '';
+	position: relative;
+	top: 49px;
+	left: -169px;
+	margin-top: -9px;
+	width: 0;
+	height: 0;
+	border-left: 14px solid transparent;
+	border-top: 14px solid #ECECEC;
+	border-right: 14px solid transparent;
+}
+div.invest-message h2 span{
+	font-family: Lato;
+	font-size: 20px;
+}
+div.invest-message span.message{
+	font-family: Lato;
+	font-size: 16px !important;
+	position: relative;
+	top: 8px;
+}
+div.widget.project-invest #amount{
+	background-color: #FFF;
+	height: 34px;
+	width: 100px;
+	color: #000;
+	font-family: raleway;
+	font-weight: 400;
+	padding: 0px 10px;
+	padding-right: 32px;
+	background-position: 92% center;
+	margin-right: 10px;
+}
+div.widget.project-invest label{
+	font-family: lato;
+	font-weight: 400;
+}
+div.widget.project-invest div.individual ul li label.resign,div.widget.project-invest div.individual ul li label.amount{
+	padding: 15px 45px;
+	border: 1px solid rgb(229, 229, 229);
+	border-radius: 3px;
+	color: #000000;
+}
+div.widget.project-invest div.individual ul li label.amount h5{
+	padding-top: 10px;
+}
+div.widget.project-invest div.individual ul li label span.amount{
+	font-family: raleway;
+}
+div.widget.project-invest div.individual ul li label input[type="radio"]{
+	margin-right: 5px;
+	margin-left: 5px;
+}
+div.widget.project-invest div.individual ul li label span.left{
+	float: none;
+	font-family: raleway;
+	font-size: 18px;
+	color: rgb(8, 115, 255);
+}
+div.widget.project-invest div.individual ul li label > *{
+	color: #000;
+}
+div.widget.project-invest > div{
+	margin-bottom: 0;
+}
+div.widget.project-invest.address table{
+	width: 95%;
+	margin: 25px auto 23px;
+	border: 1px solid rgb(229, 229, 229);
+	border-collapse: separate;
+	border-spacing: 23px;
+	border-radius: 2px;
+}
+div.widget.project-invest p label{
+	padding: 0 17px;
+	font-size: 12px;
+}
+div.widget.project-invest p label input[type="checkbox"] + span.chkbox{
+	margin-top: -14px;
+	margin-left: -3px;
+}
+div.widget.project-invest.address table tr td label{
+	padding: 0;
+	font-size: 14px;
+}
+div.widget.project-invest #fullname, div.widget.project-invest #address,div.widget.project-invest #location,div.widget.project-invest #nif, div.widget.project-invest #zipcode,div.widget.project-invest #country{
+	height: 36px;
+	font-size: 14px;
+	font-family: PT sans;
+	padding: 5px;
+	border-radius: 2px;
+}
+div.widget.project-invest.method p{
+	padding: 24px 5px 20px;
+	border: 1px solid rgb(229, 229, 229);
+	margin: 19px auto;
+}
+div.widget.project-invest.method p button{
+	margin: 6px 9px;
+	font-family: Lato;
+}
+div#woth-invest div.widget.worthcracy.user-worthcracy{
+	border: none;
+	padding: 20px;
+	background: none;
+	box-shadow: none;
+}
+div.widget.user-supporters .supporters > ul > li dl dd.amount strong{
+	color: #000;
+	font-family: raleway;	
+}
+div.project-messages div.message h3.user a:hover, div.project-messages div.child h3.user a:hover,
+div.widget.user-supporters .supporters ul li.active h3,
+div.widget.user-supporters .supporters ul li.active h4,
+div.widget.user-supporters .supporters ul li.active h5,
+div.widget.user-supporters .supporters ul li.active h6 {    
+	color: rgb(46, 125, 252);
+}
+div.widget.user-mates .users ul > li{
+	width: 200px;
+	border: 1px solid rgb(240, 240, 240);
+	height: 80px;
+}
+div.widget.user-mates .users ul li div.user h4 a,div.widget.user-mates .users ul > li .user > a,div.widget.user-mates .users ul > li span.projects{
+	font-family: Lato;
+}
+div.widget.user-mates .users ul > li .user {
+	padding: 0px 6px 3px 77px;
+}
+div.widget.user-mates .users ul > li:hover > div.user > h4 > a{color: rgb(37, 157, 244);}
+div.widget.user-mates .users ul > li span.projects,div.widget.user-mates .users ul > li span.invests{
+	color: #0077FF;
+}
+div.widget.user-mates .users ul > li p{
+	margin: 0;
+}
+div.widget.user-mates .users ul > li p i{
+	font-size: 10px
+}
+div.widget.user-mates .users ul > li p a{
+	font-family: Lato;
+	font-size: 10px!important;
+}
+div.widget.user-mates .users ul > li .avatar {
+	left: 3px;
+	top: 1px;
+	width: 70px;
+	height: 70px;
+}
+.project-updates{
+		width: 100%;
+}
+#blog-content{
+	width: 100%;
+	border-right: 1px solid rgb(218, 218, 218);
+}
+#blog-content .post{
+	padding: 15px 25px 0 0;
+}
+.project-updates .widget.post .gallery-image img{
+	padding: 0;
+	margin: 0;
+	height: 400px;
+}
+div.gallery-image img{
+	width: 100%;
+	height: 100%;
+}
+ div.widget.blog-content-module blockquote,.project-updates .post blockquote,#blog-content .post blockquote{
+ border: none;
+ padding: 20px 0;
+ border-bottom: 1px solid rgb(228, 228, 228);
+ border-top: 1px solid rgb(228, 228, 228);
+ margin: 0;
+ }
+ div.widget.blog-content-module .embed-legend,.project-updates .post .embed-legend, #blog-content .post .embed-legend{
+ 	 margin: 0;
+	padding: 10px 8px;
+	font-family: PT sans;
+	font-style: normal;
+	color: rgb(60, 60, 60);
+}
+.project-updates .post h4 a, #blog-content .post h4 a{
+ 	font-family: lato;
+	text-transform: uppercase;
+ }
+ div.widget.blog-content-module h4 a:hover, #blog-content .post h4 a:hover{
+ 	color: #2388EC;
+ }
+.project-updates .post .date{
+	float: right;
+	font-family: lato;
+}
+div.widget.blog-content-module .date, #blog-content .post .date,#blog-content .post .date{
+	font-family: PT sans;
+	position: absolute;
+	color: #FFF;
+	background: rgba(0, 0, 0, 0.2);
+	padding: 4px 10px;
+	font-size: 11px;
+	top: 48px;
+}
+div#finblog{
+	height: 450px;
+	background-color: rgb(247, 247, 247);
+	background-image: url(images/finblog.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 100% 450px;
+}
+div.gallery-image img {
+	margin: 15px 18px 8px 0;
+}
+div.widget.blog-sidebar-module{
+	padding: 30px 0 0;
+}
+div.widget.blog-sidebar-module .supertitle{
+	padding: 7px 5px;
+	background: rgb(237, 237, 237);
+	border: none;
+	font-family: Lato;
+	color: #EC1B7A;
+	font-size: 13px;
+}
+.project-updates h3,#blog-content h3{
+	margin: 0;
+	font-size: 13px;
+	color: #3189FF;
+	text-transform: capitalize;
+}
+.project-updates div.widget.blog-comment textarea,#blog-content div.widget.blog-comment textarea{
+	background: none;
+	border: 1px solid rgb(213, 213, 213);
+	float: left;
+}
+.project-updates div.widget.blog-comment,#blog-content div.widget.blog-comment{
+	margin: 0;
+	padding: 22px 2px 44px;
+}
+div.widget.blog-comment button,#blog-content div.widget.blog-comment button{
+	margin: 0;
+	float: none;
+	margin-left: 17px;
+	font-weight: 300;
+	font-family: PT sans;
+}
+div.widget.blog-comment button{
+	margin-top: 10px;
+}
+.project-updates .post .embed{
+	width: 100%;
+	height: 400px;
+	margin: 14px 0 6px;
+}
+div.widget.blog-content-module .comments-num, #blog-content .post .comments-num,.project-updates .post .comments-num{
+	padding: 7px 0;
+	background: none;
+}
+div.widget.blog-content-module .comments-num a, #blog-content .post .comments-num a,.project-updates .post .comments-num a{
+	color: #2493FF;
+	font-size: 11px;
+	font-family: PT sans;
+}
+div.read_more a:hover,div.read_more a{
+	color: #2493FF;
+	font-family: PT sans;
+	text-transform: capitalize;
+}
+div.post-comments div.message blockquote{
+	border: none;
+	font-weight: 400;
+	font-family: lato;
+	font-size: 14px;
+	padding-top: 6px;
+	border-top: 1px solid rgb(187, 187, 187);
+	margin-top: 21px;
+}
+div.post-comments div.message h3.user a:hover{
+color: rgba(7, 95, 255,0.6);
+}
+div.post-comments div.message h3.user a{
+	font-family: PT sans;
+	font-size: 15px;
+	font-weight: 300;
+	color: rgb(7, 95, 255);
+}
+div.post-comments div.message{
+	background-color: #F2F2F2 !important;
+	border-radius: 5px;
+}
+div.post-comments div.message .date > *{
+	font-size: 10px;
+	font-family: PT sans;
+	padding: 1px;
+}
+div.widget.blog-sidebar-module ul#blog-side-comments li .date{
+	float: right;
+	font-size: 11px;
+	font-family: PT sans;
+	color: rgb(97, 97, 97);
+}
+div.widget.blog-sidebar-module ul#blog-side-posts li{
+	list-style: none;
+}
+div.widget.blog-sidebar-module ul#blog-side-comments li div div.high-comment > *,div.widget.blog-sidebar-module ul#blog-side-posts li > a{
+	font-family: PT sans
+}
+div.widget.blog-sidebar-module ul#blog-side-comments li div div.high-comment{
+	padding: 4px 12px;
+}
+div.widget.user-mates div.users h3.supertitle{
+	border: none;
+	border-top: 1px solid rgb(221, 221, 221);
+	color: #000;
+	font-family: raleway;
+	padding: 9px 0 0;
+}
+div.widget.user-supporters a.more:hover,div.widget.user-mates a:hover.more,div.widget.user-mates div.categories ul li a:hover{
+	color:#32A2FF;
+}
+div.widget.user-supporters a.more,div.widget.user-mates a.more{
+	font-family: Lato;
+	text-transform: capitalize;
+	font-size: 11px !important;
+}
