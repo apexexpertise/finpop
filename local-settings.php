@@ -8,7 +8,7 @@ define('GOTEO_META_COPYRIGHT', '--copyright--');
 
 //Amazon Web Services Credentials
 define("AWS_KEY", "--------------");
-define("AWS_SECRET", "----------------------------------");
+define("AWS_SECRET", "--------------------------------------");
 define("AWS_REGION", "-----------");
 
 //Mail management: ses (amazon), phpmailer (php library)
