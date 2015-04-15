@@ -78,7 +78,7 @@ $pagedResults = new \Paginated($this['sended'], 20, isset($_GET['page']) ? $_GET
                 <tr>
                     <th width="5%"><!-- Si no ves --></th>
                     <th width="45%">Destinataire</th>
-                    <th width="35%">Modèle</th>
+                    <th width="35%">Mod&eacute;le</th>
                     <th width="15%">Date</th>
                     <th><!-- reenviar --></th>
                 </tr>

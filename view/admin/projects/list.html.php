@@ -107,7 +107,7 @@ $pagedResults = new \Paginated($this['projects'], 10, isset($_GET['page']) ? $_G
             <tr>
                 <th style="width: 250px;">Projet</th> <!-- edit -->
                 <th style="min-width: 150px;">Cr&eacute;ateur</th> <!-- mailto -->
-                <th style="min-width: 75px;">Reçu</th> <!-- enviado a revision -->
+                <th style="min-width: 75px;">Re&ccedil;u</th> <!-- enviado a revision -->
                 <th style="min-width: 80px;">Etat</th>
                 <th style="min-width: 50px;">Noeud</th>
                 <th style="min-width: 50px;">Minimum</th>

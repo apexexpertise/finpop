@@ -85,7 +85,7 @@ $per = 100 / $cols;
             <tr>
             <?php foreach ($this['columns'] as $key=>$label) : ?>
                 <?php if ($key == 'translate') : ?>
-                    <td width="5%"><?php if ($translator) : ?><a href="/translate/<?php echo $this['model'].'/edit/'.$item->id; ?>" >[Traducir]</a><?php endif; ?>
+                    <td width="5%"><?php if ($translator) : ?><a href="/translate/<?php echo $this['model'].'/edit/'.$item->id; ?>" >[Traduire]</a><?php endif; ?>
                     </td>
                 <?php elseif ($key == 'remove') : ?>
                     <td width="5%"><a href="<?php echo $this['url']?>/remove/<?php echo (is_object($item)) ? $item->id : $item['id']; ?>" onclick="return confirm('Bien sûr, vous voulez supprimer cet enregistrement?');">[Supprimer]</a></td>

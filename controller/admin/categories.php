@@ -50,7 +50,7 @@ namespace Goteo\Controller\Admin {
                                 'action' => "$url/edit/",
                                 'submit' => array(
                                     'name' => 'update',
-                                    'label' => 'Añadir'
+                                    'label' => 'Ajouter'
                                 ),
                                 'fields' => array (
                                     'id' => array(
@@ -60,12 +60,12 @@ namespace Goteo\Controller\Admin {
 
                                     ),
                                     'name' => array(
-                                        'label' => 'Categoría',
+                                        'label' => 'Categorie',
                                         'name' => 'name',
                                         'type' => 'text'
                                     ),
                                     'description' => array(
-                                        'label' => 'Descripción',
+                                        'label' => 'Description',
                                         'name' => 'description',
                                         'type' => 'textarea',
                                         'properties' => 'cols="100" rows="2"',
@@ -169,15 +169,15 @@ namespace Goteo\Controller\Admin {
                     'folder' => 'base',
                     'file' => 'list',
                     'model' => 'category',
-                    'addbutton' => 'Nueva categoría',
-                    'otherbutton' => '<a href="/admin/categories/keywords" class="button">Ver Palabras clave</a>',
+                    'addbutton' => 'Nouvelle categorie',
+                    'otherbutton' => '<a href="/admin/categories/keywords" class="button">Voir Mots-cl&eacute;s</a>',
                     'data' => $model::getAll(),
                     'columns' => array(
                         'edit' => '',
-                        'name' => 'Categoría',
-                        'numProj' => 'Proyectos',
-                        'numUser' => 'Usuarios',
-                        'order' => 'Prioridad',
+                        'name' => 'Categorie',
+                        'numProj' => 'Projet',
+                        'numUser' => 'Utilisateur',
+                        'order' => 'Priorit&eacute;',
                         'translate' => '',
                         'up' => '',
                         'down' => '',

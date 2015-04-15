@@ -35,14 +35,14 @@ $template = Template::get($tpl);
 
 ?>
 <div class="widget board">
-    <p>Sélectionnez le modèle. Le contenu traduit est utilisé, peut-être que vous voulez <a href="/admin/templates?group=massive" target="_blank">le revoir</a></p>
-    <p><strong>NOTE:</strong> ce système ne peut pas ajouter des variables dans le contenu, le même contenu est généré pour tous les destinataires<br/>
-    Pour le contenu personnalisé, vous devez utiliser la fonctionnalité <a href="/admin/mailing" >Communications</a>.</p>
-
+    <p><?php echo utf8_encode("Sélectionnez le modèle. Le contenu traduit est utilisé, peut-être que vous voulez ") ?><a href="/admin/templates?group=massive" target="_blank">le revoir</a></p>
+    <p><strong>NOTE:</strong> <?php echo utf8_encode("ce système ne peut pas ajouter des variables dans le contenu, le même contenu est généré pour tous les destinataires<br/>
+    Pour le contenu personnalisé, vous devez utiliser la fonctionnalité  ") ?><a href="/admin/mailing" >Communications</a>.</p>
+ 
     <form action="/admin/newsletter/init" method="post" onsubmit="return confirm(<?php echo utf8_encode("L'expédition sera activé automatiquement, nous continuons?") ?>);">
 
     <p>
-        <label>Modèles massives: 
+        <label>Mod&egrave;les massives: 
             <select id="template" name="template" >
             <?php foreach ($templates as $tplId=>$tplName) : ?>
                 <option value="<?php echo $tplId; ?>" <?php if ( $tplId == $tpl) echo 'selected="selected"'; ?>><?php echo $tplName; ?></option>
@@ -82,10 +82,10 @@ $template = Template::get($tpl);
         <tbody>
             <?php foreach ($list as $item) : ?>
             <tr>
-                <td><a href="/admin/newsletter/detail/<?php echo $item->id; ?>">[Detalles]</a></td>
+                <td><a href="/admin/newsletter/detail/<?php echo $item->id; ?>">[Details]</a></td>
                 <td><?php echo $item->date; ?></td>
                 <td><?php echo $item->subject; ?></td>
-                <td><?php echo $item->active ? '<span style="color:green;font-weight:bold;">Activo</span>' : '<span style="color:red;font-weight:bold;">Inactivo</span>'; ?></td>
+                <td><?php echo $item->active ? '<span style="color:green;font-weight:bold;">Activ&eacute;</span>' : '<span style="color:red;font-weight:bold;">Inactivo</span>'; ?></td>
                 <td><?php echo $item->bloqued ? 'Bloqueado' : ''; ?></td>
                 <td><a href="<?php echo $item->link; ?>" target="_blank">[Si vous ne voyez pas]</a></td>
             </tr>
