@@ -91,6 +91,6 @@ $per = 100 / $cols;
         </tbody>
     </table>
     <?php else : ?>
-    <p>Aucun résultat</p>
+    <p>Aucun r&eacute;sultat</p>
     <?php endif; ?>
 </div>

@@ -60,7 +60,7 @@ $translator = ACL::check('/translate') ? true : false;
                 <?php if ($translator) : ?>
                 <td><a href="/translate/promote/edit/<?php echo $promo->id; ?>" >[Traduire]</a></td>
                 <?php endif; ?>
-                <td><a href="/admin/promote/remove/<?php echo $promo->id; ?>" onclick="return confirm('Vous voulez supprimer cet enregistrement?');">[Supprimer]</a></td>
+                <td><a href="/admin/promote/remove/<?php echo $promo->id; ?>" onclick="return confirm(<?php echo utf8_encode("Vous voulez supprimer cet enregistrement?") ?>);">[Supprimer]</a></td>
             </tr>
             <?php endforeach; ?>
         </tbody>

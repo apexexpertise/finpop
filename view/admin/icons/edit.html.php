@@ -44,6 +44,6 @@ use Goteo\Library\Text;
         <textarea name="description" id="icon-description" cols="60" rows="10"><?php echo $this['icon']->description; ?></textarea>
 
 <br/>
-        <input type="submit" name="save" value="Eregistrer" />
+        <input type="submit" name="save" value="Enregistrer" />
     </form>
 </div>

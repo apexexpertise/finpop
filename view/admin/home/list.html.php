@@ -91,14 +91,14 @@ $admins = Home::_admins();
     <input type="hidden" name="order" value="<?php echo $side_new->order ?>" />
 
     <p>
-        <label for="home-item">Nuevo elemento:</label><br />
+        <label for="home-item">Nouveau element:</label><br />
         <select id="home-item" name="item">
         <?php foreach ($side_availables as $item=>$name) : ?>
             <option value="<?php echo $item; ?>"><?php echo $name; ?></option>
         <?php endforeach; ?>
         </select>
         <br />
-        <input type="submit" name="save" value="A&ntilde;adir" />
+        <input type="submit" name="save" value="Enregistrer" />
     </p>
 
     </form>
@@ -156,7 +156,7 @@ $admins = Home::_admins();
         <?php endforeach; ?>
         </select>
         <br />
-        <input type="submit" name="save" value="A&ntilde;adir" />
+        <input type="submit" name="save" value="Enregistrer" />
     </p>
 
     </form>

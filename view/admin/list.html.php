@@ -61,7 +61,7 @@ $per = 100 / $cols;
             <br />
             <label for="filter-<?php echo $id; ?>"><?php echo $fil['label']; ?></label>
             <input name="<?php echo $id; ?>" value="<?php echo (string) $fil['value']; ?>" />
-            <input type="submit" name="filter" value="Buscar">
+            <input type="submit" name="filter" value="Filtrer">
         <?php endif; ?>
         <?php endforeach; ?>
     </form>

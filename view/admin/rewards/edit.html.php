@@ -14,9 +14,9 @@ foreach ($invest->rewards as $key => $data) {
 ?>
 <div class="widget">
     <p>
-        <strong>Proyecto:</strong> <?php echo $project->name ?> (<?php echo $this['status'][$project->status] ?>)<br />
-        <strong>Usuario: </strong><?php echo $user->name ?><br />
-        <strong>Cantidad aportada: </strong><?php echo $invest->amount ?> &euro; <br />
+        <strong>Projet:</strong> <?php echo $project->name ?> (<?php echo $this['status'][$project->status] ?>)<br />
+        <strong>Utilisateur: </strong><?php echo $user->name ?><br />
+        <strong>Montant des apports: </strong><?php echo $invest->amount ?> &euro; <br />
     </p>
 </div>
 

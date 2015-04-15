@@ -149,7 +149,7 @@ include 'view/header.html.php';
                         <?php endforeach; ?>
                     </div>
 
-                    <a href="/admin/recent/<?php echo isset($_GET['feed']) ? '?feed='.$_GET['feed'] : ''; ?>" style="margin-top:10px;float:right;text-transform:uppercase">Ver más</a>
+                    <a href="/admin/recent/<?php echo isset($_GET['feed']) ? '?feed='.$_GET['feed'] : ''; ?>" style="margin-top:10px;float:right;text-transform:uppercase">Voir plus</a>
                     
                 </div>
             </div>

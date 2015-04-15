@@ -31,12 +31,12 @@ $user = $this['user'];
 $rewards = $invest->rewards;
 array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
 ?>
-<a href="/admin/accounts/update/<?php echo $invest->id ?>" onclick="return confirm('Seguro que deseas cambiarle el estado a este aporte?, esto es delicado')" class="button">Cambiarle el estado</a>
+<a href="/admin/accounts/update/<?php echo $invest->id ?>" onclick="return confirm(<?php echo utf8_encode("Voulez vous changer l'Ètat de cette entrÈe?") ?>)" class="button">Changer l'etat</a>
 &nbsp;&nbsp;&nbsp;
-<a href="/admin/rewards/edit/<?php echo $invest->id ?>" class="button">Gestionar recompensa / direcci√≥n</a>
+<a href="/admin/rewards/edit/<?php echo $invest->id ?>" class="button"><?php echo utf8_encode("GÈrer la recompense/l'adresse") ?></a>
 <?php if ($invest->issue) : ?>
 &nbsp;&nbsp;&nbsp;
-<a href="/admin/accounts/solve/<?php echo $invest->id ?>" onclick="return confirm('Esta incidencia se dar√° por resuelta: se va a cancelar el preaproval, el aporte pasar√° a ser de tipo Cash y en estado Cobrado por goteo, seguimos?')" class="button">Nos han hecho la transferencia</a>
+<a href="/admin/accounts/solve/<?php echo $invest->id ?>" onclick="return confirm(<?php echo utf8_encode("Ce problÈme sera considÈrÈ rÈsolu.La transcaction sera annulÈ et la contribution se transformira en argent et son Ètat sera changer. Voulez vous continuez ?") ?>)" class="button"><?php echo utf8_encode("Nous avons fait le transfert") ?></a>
 <?php endif; ?>
 <div class="widget">
     <p>
@@ -46,22 +46,22 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
     <p>
         <?php if ($invest->status < 1 || ($invest->method == 'tpv' && $invest->status < 2) ||($invest->method == 'cash' && $invest->status < 2)) : ?>
         <a href="/admin/accounts/cancel/<?php echo $invest->id ?>"
-            onclick="return confirm('¬øEst√°s seguro de querer cancelar este aporte y su preapproval?');"
-            class="button">Cancelar este aporte</a>&nbsp;&nbsp;&nbsp;
+            onclick="return confirm(<?php echo utf8_encode("Voulez vous vraiment annuler cette contribution et cette approbation prÈalable?") ?>);"
+            class="button"><?php echo utf8_encode("Annuler cette contribution") ?></a>&nbsp;&nbsp;&nbsp;
         <?php endif; ?>
 
         <?php if ($invest->method == 'paypal' && $invest->status == 0) : ?>
         <a href="/admin/accounts/execute/<?php echo $invest->id ?>"
-            onclick="return confirm('¬øSeguro que quieres ejecutar ahora el cargo del preapproval?');"
-            class="button">Ejecutar cargo ahora</a>
+            onclick="return confirm(<?php echo utf8_encode("Voulez vous maintenant gÈrÈ par l'approbation prÈalable?") ?>);"
+            class="button"><?php echo utf8_encode("ExÈcutez maintenant") ?></a>
         <?php endif; ?>
 
         <?php if ($invest->method != 'paypal' && $invest->status == 1) : ?>
-        <a href="/admin/accounts/move/<?php echo $invest->id ?>" class="button">Reubicar este aporte</a>
+        <a href="/admin/accounts/move/<?php echo $invest->id ?>" class="button"><?php echo utf8_encode("RepÈrez cette contribution") ?></a>
         <?php endif; ?>
 
         <?php if (!$invest->resign && $invest->status == 1 && $invest->status == 3) : ?>
-        <a href="/admin/accounts/resign/<?php echo $invest->id ?>/?token=<?php echo md5('resign'); ?>" class="button">Es donativo</a>
+        <a href="/admin/accounts/resign/<?php echo $invest->id ?>/?token=<?php echo md5('resign'); ?>" class="button"><?php echo utf8_encode("c'est don") ?></a>
         <?php endif; ?>
     </p>
     
@@ -109,7 +109,7 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
                     echo '<br />'.Text::_('Capital riego');
 
                 if (!empty($invest->anonymous))
-                    echo '<br />'.Text::_(Aporte an√≥nimo');
+                    echo '<br />'.Text::_('Aporte an√≥nimo');
 
                 if (!empty($invest->resign))
                     echo "<br />".Text::_('Donativo de').": {$invest->address->name} [{$invest->address->nif}]";

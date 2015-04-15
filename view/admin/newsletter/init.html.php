@@ -27,10 +27,10 @@ $link = SITE_URL.'/mail/'.base64_encode(md5(uniqid()).'Â¬anyÂ¬'.$mailing->mail).
 // mostrar enlace de si no ves y boton para activar
 ?>
 <div class="widget">
-    <p>La newsletter est prêt pour l'expédition avec <a href="<?php echo $link; ?>" target="_blank">ce contenu</a> aux <?php echo $mailing->receivers ?> destinataires.</p>
-    <p>Si tout est bien appuyez sur le bouton pour activer les expéditions automatique Vidéo.<br /> <a href="/admin/newsletter/activate/<?php echo $mailing->id; ?>" class="button" onclick="return confirm('Va commencer à envoyer automatiquement !')">ACTIVER!</a></p>
+    <p><?php echo utf8_encode("La newsletter est prêt pour l'expédition avec ") ?><a href="<?php echo $link; ?>" target="_blank">ce contenu</a> aux <?php echo $mailing->receivers ?> destinataires.</p>
+    <p><?php echo utf8_encode("Si tout est bien appuyez sur le bouton pour activer les expéditions automatique Vidéo. ") ?><br /> <a href="/admin/newsletter/activate/<?php echo $mailing->id; ?>" class="button" onclick="return confirm(<?php echo utf8_encode("Va commencer à envoyer automatiquement !") ?>)">ACTIVER!</a></p>
 
-    <h3>Liste de distinataires</h3>
+    <h3>Liste de destinataires</h3>
     <table>
         <tr>
             <th>Email</th>

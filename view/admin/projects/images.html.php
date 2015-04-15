@@ -85,7 +85,7 @@ function move (img, direction, section) {
                             <td><label>Section:<br /><?php echo the_section($image->section, $image->image, $sections); ?></label></td>
                         </tr>
                         <tr>
-                            <td><label>lien:<br /><?php echo the_link($image->url, $image->image); ?></label></td>
+                            <td><label>Lien:<br /><?php echo the_link($image->url, $image->image); ?></label></td>
                         </tr>
                     </table>
                 </td>

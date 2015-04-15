@@ -74,17 +74,17 @@ $elements = array(
 <div class="widget">
 <p>
     <?php if (!empty($project->passed)) {
-        echo 'Le projet s\'est termin&eacute; la première ronde de la journ&eacute;e <strong>'.date('d/m/Y', strtotime($project->passed)).'</strong>.';
+        echo 'Le projet s\'est termin&eacute; la premi&egrave;re ronde de la journ&eacute;e <strong>'.date('d/m/Y', strtotime($project->passed)).'</strong>.';
         if ($project->passed != $project->willpass) {
             echo '<br />Bien disposition doit avoir termin&eacute; la journ&eacute;e <strong>'.date('d/m/Y', strtotime($project->willpass)).'</strong>.';
         }
     } else {
-        echo 'Le projet prendra fin la première ronde de la journ&eacute;e <strong>'.date('d/m/Y', strtotime($project->willpass)).'</strong>.';
+        echo 'Le projet prendra fin la premi&egrave;re ronde de la journ&eacute;e <strong>'.date('d/m/Y', strtotime($project->willpass)).'</strong>.';
     } ?>
 
 </p>
 
-    <p>La modification des dates peut provoquer des changements dans les jours de campagne d'un projet.</p>
+    <p> <?php echo utf8_encode("La modification des dates peut provoquer des changements dans les jours de campagne d'un projet.") ?></p>
 
     <form method="post" action="/admin/projects" >
         <input type="hidden" name="id" value="<?php echo $project->id ?>" />
@@ -98,7 +98,7 @@ $elements = array(
         <br />
 <?php endforeach; ?>
 
-        <input type="submit" name="save-dates" value="Guardar" />
+        <input type="submit" name="save-dates" value="Enregistrer" />
 
     </form>
 </div>

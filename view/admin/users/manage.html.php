@@ -31,7 +31,7 @@ $langs = $this['langs'];
             <td><a href="/user/profile/<?php echo $user->id ?>" target="_blank"><?php echo $user->name ?></a></td>
         </tr>
         <tr>
-            <td>Connexion acces</td>
+            <td>Connexion acc&egrave;s</td>
             <td><strong><?php echo $user->id ?></strong></td>
         </tr>
         <tr>

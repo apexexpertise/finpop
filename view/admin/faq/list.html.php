@@ -63,13 +63,13 @@ $filters = $this['filters'];
                 <?php if ($translator) : ?>
                 <td><a href="/translate/faq/edit/<?php echo $faq->id; ?>" >[Traduire]</a></td>
                 <?php endif; ?>
-                <td><a href="/admin/faq/remove/<?php echo $faq->id; ?>" onclick="return confirm('Vous voulez supprimer cet enregistrement?');">[Supprimer]</a></td>
+                <td><a href="/admin/faq/remove/<?php echo $faq->id; ?>" onclick="return confirm(<?php echo utf8_encode("Vous voulez supprimer cet enregistrement?") ?>);">[Supprimer]</a></td>
             </tr>
             <?php endforeach; ?>
         </tbody>
 
     </table>
     <?php else : ?>
-    <p>Aucun résultat trouvé</p>
+    <p><?php echo utf8_encode("Aucun résultat trouvé") ?></p>
     <?php endif; ?>
 </div>

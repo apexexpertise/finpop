@@ -44,7 +44,7 @@ if (!$project instanceof Model\Project) {
     }
 </script>
 <div class="widget">
-    <p>Attention! Cambiar la Id del proyecto afecta a <strong>TODO</strong> lo referente al proyecto!.</p>
+    <p>Attention! Changez l' ID de projet affect&eacute; <strong>TOUT</strong> ce qui concerne le projet!.</p>
 
     <form method="post" action="/admin/projects/rebase/<?php echo $project->id; ?>" onsubmit="return idverify();">
         <input type="hidden" name="id" value="<?php echo $project->id ?>" />
@@ -52,7 +52,7 @@ if (!$project instanceof Model\Project) {
 
         <p>
             <label>Nouveau ID pour le projet:<br />
-                <input type="text" name="newid"  id="newid"
+                <input type="text" name="newid"  id="newid"/>
                        
             </label>
         </p>

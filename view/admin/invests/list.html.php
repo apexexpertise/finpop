@@ -49,7 +49,7 @@ $filters = $this['filters'];
         'first' =>  Text::_("Tous"))
 ); ?>
 <div class="widget board">
-    <h3 class="title">Filtros</h3>
+    <h3 class="title">Filtres</h3>
     <form id="filter-form" action="/admin/invests" method="get">
         <input type="hidden" name="filtered" value="yes" />
         <?php foreach ($the_filters as $filter=>$data) : ?>
@@ -73,7 +73,7 @@ $filters = $this['filters'];
         <br clear="both" />
 
         <div style="float:left;margin:5px;">
-            <input type="submit" value="filtrar" />
+            <input type="submit" value="filtrer" />
         </div>
     </form>
     <br clear="both" />
@@ -86,7 +86,7 @@ $filters = $this['filters'];
 <?php elseif (!empty($this['list'])) : ?>
 <?php $Total = 0; foreach ($this['list'] as $invest) { $Total += $invest->amount; } ?>
     <p><strong>TOTAL:</strong>  <?php echo number_format($Total, 0, '', '.') ?> &euro;</p>
-    <p><strong>OJO!</strong> Resultado limitado a 999 registros como mÃ¡ximo.</p>
+    <p><strong>REMARQUE :</strong> Résultats limités :999 dossiers au maximum.</p>
     
     <table width="100%">
         <thead>
@@ -129,6 +129,6 @@ $filters = $this['filters'];
 
     </table>
 <?php else : ?>
-    <p>Aucune contribution qui répondent aux filtres</p>
+    <p><?php echo utf8_encode("Aucune contribution qui répondent aux filtres") ?></p>
 <?php endif;?>
 </div>

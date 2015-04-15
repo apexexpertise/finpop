@@ -78,6 +78,6 @@ jQuery(document).ready(function ($) {
         </p>
 
 
-        <input type="submit" name="save" value="Enregister" />
+        <input type="submit" name="save" value="Enregistrer" />
     </form>
 </div>

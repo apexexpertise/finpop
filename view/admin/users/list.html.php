@@ -130,7 +130,7 @@ $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] 
                 $adminNode = ($user->admin) ? $user->admin_node : null;
                 ?>
             <tr>
-                <td><a href="/user/profile/<?php echo $user->id; ?>" target="_blank" <?php echo ($adminNode != 'goteo') ? 'style="color: green;" title="Admin nodo '.$adminNode.'"' : 'title="Ver perfil público"'; ?>><?php echo substr($user->name, 0, 20); ?></a></td>
+                <td><a href="/user/profile/<?php echo $user->id; ?>" target="_blank" <?php echo ($adminNode != 'goteo') ? 'style="color: green;" title="Admin nodo '.$adminNode.'"' : 'title="Voir le profil en public"'; ?>><?php echo substr($user->name, 0, 20); ?></a></td>
                 <td><strong><?php echo substr($user->id, 0, 20); ?></strong></td>
                 <td><a href="mailto:<?php echo $user->email; ?>"><?php echo $user->email; ?></a></td>
                 <td><?php echo $user->nprojs; ?></td>
@@ -138,12 +138,12 @@ $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] 
                 <td><?php echo $user->register_date; ?></td>
             </tr>
             <tr>
-                <td><a href="/admin/users/manage/<?php echo $user->id; ?>" title="Gestionar">[G&eacute;rer]</a></td>
+                <td><a href="/admin/users/manage/<?php echo $user->id; ?>" title="G&eacute;rer">[G&eacute;rer]</a></td>
                 <td><?php if ($user->nprojs > 0) {
                     if (!isset($_SESSION['admin_node']) || (isset($_SESSION['admin_node']) && $user->node == $_SESSION['admin_node'])) : ?>
-                <a href="/admin/accounts/?name=<?php echo $user->email; ?>" title="Ver sus aportes">[Contributions]</a>
+                <a href="/admin/accounts/?name=<?php echo $user->email; ?>" title="Voir ses apports">[Contributions]</a>
                 <?php else:  ?>
-                <a href="/admin/invests/?name=<?php echo $user->email; ?>" title="Ver sus aportes">[Contributions]</a>
+                <a href="/admin/invests/?name=<?php echo $user->email; ?>" title="Voir ses apports">[Contributions]</a>
                 <?php endif; } ?></td>
                 <td colspan="5" style="color:blue;">
                     <?php echo (!$user->active && $user->hide) ? ' descendre ' : ''; ?>

@@ -152,14 +152,14 @@ $pagedResults = new \Paginated($this['projects'], 10, isset($_GET['page']) ? $_G
                     CHANGEMENT:&nbsp;
                     <a href="<?php echo "/admin/projects/dates/{$project->id}"; ?>">[dates]</a>
                     <a href="<?php echo "/admin/projects/accounts/{$project->id}"; ?>">[comptes]</a>
-                    <?php if ($project->status < 4) : ?><a href="<?php echo "/admin/projects/rebase/{$project->id}"; ?>" onclick="return confirm('Ce est très d&eacute;licat, nous continuons?');">[Id]</a><?php endif; ?>
+                    <?php if ($project->status < 4) : ?><a href="<?php echo "/admin/projects/rebase/{$project->id}"; ?>" onclick="return confirm('Ce est tr&egrave;s d&eacute;licat, nous continuons?');">[Id]</a><?php endif; ?>
                     &nbsp;|&nbsp;
                     <?php if ($project->status < 2) : ?><a href="<?php echo "/admin/projects/review/{$project->id}"; ?>" onclick="return confirm('Le cr&eacute;ateur ne sera pas en mesure de modifier plus, ok?');">[Une r&eacute;vision]</a><?php endif; ?>
                     <?php if ($project->status < 3 && $project->status > 0) : ?><a href="<?php echo "/admin/projects/publish/{$project->id}"; ?>" onclick="return confirm('Le projet d&eacute;butera 40 jours du premier tour de la campagne, Voulez vous continuez?');">[Publier]</a><?php endif; ?>
                     <?php if ($project->status != 1) : ?><a href="<?php echo "/admin/projects/enable/{$project->id}"; ?>" onclick="return confirm('Attention! Le projet est en ligne, Voulez vous l'&eacute;dite?');">[rouvrez &eacute;dition]</a><?php endif; ?>
                     <?php if ($project->status == 4) : ?><a href="<?php echo "/admin/projects/fulfill/{$project->id}"; ?>" onclick="return confirm('Le projet devrait devenir un exemple de r&eacute;ussite, ok?');">[Retour Termin&eacute;]</a><?php endif; ?>
                     <?php if ($project->status == 5) : ?><a href="<?php echo "/admin/projects/unfulfill/{$project->id}"; ?>" onclick="return confirm('Vous allez prendre un peu de recul, ok?');">[Retour en attente]</a><?php endif; ?>
-                    <?php if ($project->status < 3 && $project->status > 0) : ?><a href="<?php echo "/admin/projects/cancel/{$project->id}"; ?>" onclick="return confirm('Le projet ne sera plus dans votre panneau d'admin, et ne peut être extraites de la base de donn&eacute;es, OK?');">[Jeter]</a><?php endif; ?>
+                    <?php if ($project->status < 3 && $project->status > 0) : ?><a href="<?php echo "/admin/projects/cancel/{$project->id}"; ?>" onclick="return confirm('Le projet ne sera plus dans votre panneau d'admin, et ne peut &ecirc;tre extraites de la base de donn&eacute;es, OK?');">[Jeter]</a><?php endif; ?>
                 </td>
             </tr>
             <tr>
@@ -170,7 +170,7 @@ $pagedResults = new \Paginated($this['projects'], 10, isset($_GET['page']) ? $_G
                     <?php if ($project->translate) : ?><a href="<?php echo "/admin/translates/edit/{$project->id}"; ?>">[Traduction]</a>
                     <?php else : ?><a href="<?php echo "/admin/translates/add/?project={$project->id}"; ?>">[Activer la traduction]</a><?php endif; ?>
                     <a href="/admin/projects/images/<?php echo $project->id; ?>">[Organiser les images]</a>
-                    <?php if ($project->status < 3) : ?><a href="<?php echo "/admin/projects/reject/{$project->id}"; ?>" onclick="return confirm('Un email sera envoy&eacute; automatiquement mais l'&eacute;tat ne sera pas chang&eacute;, ok?');">[Rerejet explicite]</a><?php endif; ?>
+                    <?php if ($project->status < 3) : ?><a href="<?php echo "/admin/projects/reject/{$project->id}"; ?>" onclick="return confirm('Un email sera envoy&eacute; automatiquement mais l'&eacute;tat ne sera pas chang&eacute;, ok?');">[Rejet explicite]</a><?php endif; ?>
                 </td>
             </tr>
         </tbody>

@@ -22,7 +22,7 @@ use Goteo\Library\Text;
 
 $filters = $this['filters'];
 ?>
-<a href="/admin/tasks/add" class="button">Nueva Tarea</a>
+<a href="/admin/tasks/add" class="button">Nouvelle t&acirc;che</a>
 
 <div class="widget board">
     <form id="filter-form" action="/admin/tasks" method="get">
@@ -72,7 +72,7 @@ $filters = $this['filters'];
                 <td><strong><?php echo $this['nodes'][$task->node]; ?></strong></td>
                 <td><?php echo substr($task->text, 0, 150); ?></td>
                 <td><?php echo (empty($task->done)) ? 'Pendiente' : 'Realizada ('.$task->user->name.')';?></td>
-                <td><a href="/admin/tasks/remove/<?php echo $task->id; ?>" title="Eliminar" onclick="return confirm('La tâche sera &eacute;liminer de manière irr&eacute;versible ok, ok?')">[Eliminer]</a></td>
+                <td><a href="/admin/tasks/remove/<?php echo $task->id; ?>" title="Eliminar" onclick="return confirm('La t&acirc;che sera &eacute;liminer de mani&egravere irr&eacute;versible ok, ok?')">[Eliminer]</a></td>
             </tr>
             <?php endforeach; ?>
         </tbody>

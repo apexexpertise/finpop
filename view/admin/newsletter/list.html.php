@@ -39,7 +39,7 @@ $template = Template::get($tpl);
     <p><strong>NOTE:</strong> ce système ne peut pas ajouter des variables dans le contenu, le même contenu est généré pour tous les destinataires<br/>
     Pour le contenu personnalisé, vous devez utiliser la fonctionnalité <a href="/admin/mailing" >Communications</a>.</p>
 
-    <form action="/admin/newsletter/init" method="post" onsubmit="return confirm('L'expédition sera activé automatiquement, nous continuons?');">
+    <form action="/admin/newsletter/init" method="post" onsubmit="return confirm(<?php echo utf8_encode("L'expédition sera activé automatiquement, nous continuons?") ?>);">
 
     <p>
         <label>Modèles massives: 
@@ -51,15 +51,15 @@ $template = Template::get($tpl);
         </label>
     </p>
     <p>
-        <label><input type="checkbox" name="test" value="1" checked="checked"/> C'est un test (une cible de test est envoyé)</label>
+        <label><input type="checkbox" name="test" value="1" checked="checked"/> <?php echo utf8_encode("C'est un test (une cible de test est envoyé)") ?></label>
     </p>
         
     <p>
-        <label><input type="checkbox" name="nolang" value="1" checked="checked"/>Seulement en espagnol (sans tenir compte utilisateur langue préférée)</label>
+        <label><input type="checkbox" name="nolang" value="1" checked="checked"/><?php echo utf8_encode("Seulement en espagnol (sans tenir compte utilisateur langue préférée)") ?></label>
     </p>
         
     <p>
-        <input type="submit" name="init" value="Iniciar" />
+        <input type="submit" name="init" value="Initialiser" />
     </p>
 
     </form>
@@ -87,7 +87,7 @@ $template = Template::get($tpl);
                 <td><?php echo $item->subject; ?></td>
                 <td><?php echo $item->active ? '<span style="color:green;font-weight:bold;">Activo</span>' : '<span style="color:red;font-weight:bold;">Inactivo</span>'; ?></td>
                 <td><?php echo $item->bloqued ? 'Bloqueado' : ''; ?></td>
-                <td><a href="<?php echo $item->link; ?>" target="_blank">[Si no ves]</a></td>
+                <td><a href="<?php echo $item->link; ?>" target="_blank">[Si vous ne voyez pas]</a></td>
             </tr>
             <?php endforeach; ?>
         </tbody>

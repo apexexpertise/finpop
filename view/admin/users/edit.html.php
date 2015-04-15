@@ -41,7 +41,7 @@ array_walk($roles, function (&$role) { $role = $role->name; });
         <dd><?php echo $user->email ?></dd>
     </dl>
     <dl>
-        <dt>Roles actuals :</dt>
+        <dt>Roles actuels :</dt>
         <dd><?php echo implode(', ', $roles); ?></dd>
     </dl>
     <dl>
@@ -59,7 +59,7 @@ array_walk($roles, function (&$role) { $role = $role->name; });
             <input type="text" id="user-password" name="password" value="<?php echo $data['password'] ?>" style="width:500px" maxlength="255"/>
         </p>
 
-        <input type="submit" name="edit" value="Actualizar"  onclick="return confirm('Entiendes que vas a cambiar datos críticos de la cuenta de este usuario?');"/><br />
+        <input type="submit" name="edit" value="Actualiser"  onclick="return confirm('Voulez vous modifier les details de compte utilisateur?');"/><br />
         <span style="font-style:italic;font-weight:bold;color:red;">Attention! les donn&eacute;es chang&eacute;e seront autmatiquement chang&eacute; aucune notification mail sera envoy&eacute;es.</span>
 
     </form>

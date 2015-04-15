@@ -47,11 +47,11 @@ $title = array(
         <thead>
             <tr>
                 <th><!-- Si no ves --></th>
-                <th>Fecha</th>
-                <th><a href="/admin/newsletter/detail/<?php echo $mailing->id; ?>?show=receivers" title="Ver destinatarios">Destinataires</a></th>
-                <th><a href="/admin/newsletter/detail/<?php echo $mailing->id; ?>?show=sended" title="Ver enviados">Expédié</a></th>
-                <th><a href="/admin/newsletter/detail/<?php echo $mailing->id; ?>?show=failed" title="Ver fallidos">Défaillant</a></th>
-                <th><a href="/admin/newsletter/detail/<?php echo $mailing->id; ?>?show=pending" title="Ver pendientes">Exceptionnel</a></th>
+                <th>Chercher</th>
+                <th><a href="/admin/newsletter/detail/<?php echo $mailing->id; ?>?show=receivers" title="Ver destinatarios"><?php echo utf8_encode("Destinataires") ?></a></th>
+                <th><a href="/admin/newsletter/detail/<?php echo $mailing->id; ?>?show=sended" title="Ver enviados"><?php echo utf8_encode("Expédié") ?></a></th>
+                <th><a href="/admin/newsletter/detail/<?php echo $mailing->id; ?>?show=failed" title="Ver fallidos"><?php echo utf8_encode("Défaillant") ?></a></th>
+                <th><a href="/admin/newsletter/detail/<?php echo $mailing->id; ?>?show=pending" title="Ver pendientes"><?php echo utf8_encode("Exceptionnel") ?></a></th>
             </tr>
         </thead>
         <tbody>

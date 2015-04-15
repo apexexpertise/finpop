@@ -32,10 +32,10 @@ use Goteo\Library\Text;
         </p>
 
         <p>
-            <label for="tpltext">Content:</label><br />
+            <label for="tpltext">Contenu:</label><br />
             <textarea id="tpltext" name="text" cols="100" rows="20"><?php echo $this['template']->text; ?></textarea>
         </p>
 
-        <input type="submit" name="save" value="Enregister" />
+        <input type="submit" name="save" value="Enregistrer" />
     </form>
 </div>

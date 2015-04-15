@@ -66,7 +66,7 @@ $pagedResults = new \Paginated($this['posts'], 10, isset($_GET['page']) ? $_GET[
         <div style="float:left;margin:5px;">
             <label for="blog-filter">De noeud:</label><br />
             <select id="blog-filter" name="blog" onchange="document.getElementById('filter-form').submit();">
-                <option value="">Cualquiera</option>
+                <option value="">Quelconque</option>
             <?php foreach ($this['blogs'] as $itemId=>$itemName) : ?>
                 <option value="<?php echo $itemId; ?>"<?php if ($filters['blog'] == $itemId) echo ' selected="selected"';?>><?php echo $itemName; ?></option>
             <?php endforeach; ?>

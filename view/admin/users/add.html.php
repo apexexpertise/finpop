@@ -37,11 +37,11 @@ $data = $this['data'];
             <input type="text" id="user-email" name="email" value="<?php echo $data['email'] ?>" style="width:500px" maxlength="255"/>
         </p>
         <p>
-            <label for="user-password">Contraseña:</label><span style="font-style:italic;">Au moins 6 caract&eacute;res.</span><br />
+            <label for="user-password">Mot de passe :</label><span style="font-style:italic;">Au moins 6 caract&eacute;res.</span><br />
             <input type="text" id="user-password" name="password" value="<?php echo $data['password'] ?>" style="width:500px" maxlength="255"/>
         </p>
 
-        <input type="submit" name="add" value="Crear este usuario" /><br />
+        <input type="submit" name="add" value="Ajouter l'utilisateur" /><br />
         <span style="font-style:italic;font-weight:bold;">Attention! Nous envyons un email de validation &aacute; l'utilisateur pout valider son compte !</span>
 
     </form>

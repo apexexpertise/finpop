@@ -32,8 +32,8 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
 ?>
 <div class="widget">
     <p>
-        <strong>Proyecto:</strong> <?php echo $project->name ?> (<?php echo $this['status'][$project->status] ?>)
-        <strong>Usuario: </strong><?php echo $user->name ?> [<?php echo $user->email ?>]
+        <strong>Projet:</strong> <?php echo $project->name ?> (<?php echo $this['status'][$project->status] ?>)
+        <strong>Utilisateur: </strong><?php echo $user->name ?> [<?php echo $user->email ?>]
     </p>
     <p>
         <?php if ($project->status == 3 && ($invest->status < 1 || ($invest->method == 'tpv' && $invest->status < 2) ||($invest->method == 'cash' && $invest->status < 2))) : ?>

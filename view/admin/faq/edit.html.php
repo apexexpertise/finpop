@@ -77,6 +77,6 @@ jQuery(document).ready(function ($) {
         </p>
 
 
-        <input type="submit" name="save" value="Guardar" />
+        <input type="submit" name="save" value="Enregistrer" />
     </form>
 </div>

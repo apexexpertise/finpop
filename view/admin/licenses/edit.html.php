@@ -45,7 +45,7 @@ use Goteo\Library\Text;
         <label for="license-url">Url:</label><br />
         <input type="text" name="url" id="license-url" value="<?php echo $this['license']->url; ?>" />
 <br />
-        <label for="license-icons">type:</label><br />
+        <label for="license-icons">Type:</label><br />
         <select id="license-icons" name="icons[]" multiple size="6">
             <?php foreach ($this['icons'] as $icon) : ?>
             <option value="<?php echo $icon->id; ?>"<?php if (in_array($icon->id, $this['license']->icons)) echo ' selected="selected"'; ?>><?php echo $icon->name; ?></option>

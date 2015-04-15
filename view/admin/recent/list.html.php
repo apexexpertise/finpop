@@ -21,7 +21,7 @@ $items = $this['items'];
 
         });
         </script>
-        <h3 class="title">Activit rcente</h3>
+        <h3 class="title">Activit&eacute; r&eacute;cente</h3>
         Voir RSS par:
 
         <p class="categories">
