@@ -69,8 +69,8 @@ jQuery(document).ready(function ($) {
             <label for="faq-order"><?php echo Text::_("position");?>:</label><br />
             <select name="move">
                 <option value="same" selected="selected" disabled><?php echo Text::_("Comme ce est");?></option>
-                <option value="up"><?php echo Text::_("antérieur à");?></option>
-                <option value="down"><?php echo Text::_("Aprés ");?></option>
+                <option value="up"><?php echo Text::_("ant&eacute;rieur &agrave;");?></option>
+                <option value="down"><?php echo Text::_("Apr&eacute;s ");?></option>
             </select>&nbsp;
             <input type="text" name="order" id="faq-order" value="<?php echo $this['faq']->order; ?>" size="4" />
             &nbsp;de&nbsp;<span id="faq-num"><?php echo $this['faq']->cuantos; ?></span>

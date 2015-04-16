@@ -109,7 +109,7 @@ namespace Goteo\Controller\Admin {
                                 'action' => "$url/edit/$id",
                                 'submit' => array(
                                     'name' => 'update',
-                                    'label' => 'Guardar'
+                                    'label' => 'Editer'
                                 ),
                                 'fields' => array (
                                     'id' => array(
@@ -119,12 +119,12 @@ namespace Goteo\Controller\Admin {
 
                                     ),
                                     'name' => array(
-                                        'label' => 'Categoría',
+                                        'label' => 'Categorie',
                                         'name' => 'name',
                                         'type' => 'text'
                                     ),
                                     'description' => array(
-                                        'label' => 'Descripción',
+                                        'label' => 'Description',
                                         'name' => 'description',
                                         'type' => 'textarea',
                                         'properties' => 'cols="100" rows="2"',

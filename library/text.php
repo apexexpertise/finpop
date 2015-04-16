@@ -1,6 +1,6 @@
 <?php
 /*
- *  Copyright (C) 2012 Platoniq y Fundación Fuentes Abiertas (see README for details)
+ *  Copyright (C) 2012 Platoniq y FundaciÃ³n Fuentes Abiertas (see README for details)
  *	This file is part of Goteo.
  *
  *  Goteo is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ namespace Goteo\Library {
 		Goteo\Core\Registry,
         Goteo\Core\Exception;
 	/*
-	 * Clase para sacar textos dinámicos de la tabla text
+	 * Clase para sacar textos dinÃ¡micos de la tabla text
      *  @TODO, definir donde se define y se cambia la constante LANG y utilizarla en los _::get_
 	 */
     class Text {
@@ -74,7 +74,7 @@ namespace Goteo\Library {
         static public function getAdmin ($id) {
 
 
-			// buscamos el texto en la tabla, si no está sacamos el propósito
+			// buscamos el texto en la tabla, si no estÃ¡ sacamos el propÃ³sito
             $values = array(':id'=>$id, ':lang' => LANG);
 
             $sql = "SELECT
@@ -94,7 +94,7 @@ namespace Goteo\Library {
 
             $lang = $_SESSION['translate_lang'];
 
-			// buscamos el texto en la tabla, si no está sacamos el propósito
+			// buscamos el texto en la tabla, si no estÃ¡ sacamos el propÃ³sito
             $values = array(':id'=>$id, ':lang' => $lang);
 
             $sql = "SELECT
@@ -147,7 +147,7 @@ namespace Goteo\Library {
 			// buscamos el texto en la tabla
             $values = array(':id'=>$id, ':lang' => $lang);
 
-            // Español de purpose como alternativa
+            // EspaÃ±ol de purpose como alternativa
             $sql_es = "SELECT
                         IFNULL(text.text,purpose.purpose) as `text`
                     FROM purpose
@@ -156,7 +156,7 @@ namespace Goteo\Library {
                         AND text.lang = :lang
                     WHERE purpose.text = :id
                     ";
-            // Inglés como alternativa
+            // InglÃ©s como alternativa
             $sql_en = "SELECT
                         IFNULL(text.text, eng.text) as `text`
                     FROM purpose
@@ -168,7 +168,7 @@ namespace Goteo\Library {
                         AND eng.lang = 'en'
                     WHERE purpose.text = :id
                     ";
-            // idiomas no españoles usan alternativa en inglés
+            // idiomas no espaÃ±oles usan alternativa en inglÃ©s
             $sql = (in_array($lang, array('es','ca', 'gl', 'eu', 'en'))) ? $sql_es : $sql_en;
             $query = Model::query($sql, $values);
 			if ($exist = $query->fetchObject()) {
@@ -195,7 +195,7 @@ namespace Goteo\Library {
 		}
 
 		static public function getPurpose ($id) {
-			// buscamos la explicación del texto en la tabla
+			// buscamos la explicaciÃ³n del texto en la tabla
 			$query = Model::query("SELECT purpose, html FROM purpose WHERE `text` = :id", array(':id' => $id));
 			$exist = $query->fetchObject();
 			if (!empty($exist->purpose)) {
@@ -207,13 +207,13 @@ namespace Goteo\Library {
 		}
 
         /*
-         * Si un texto esta marcado como html devuelve true, si no está marcado así, false
-         * Se marca en la tabla de propósitos ya que en la tabla texts habría que marcarlo en cada idioma
+         * Si un texto esta marcado como html devuelve true, si no estÃ¡ marcado asÃ­, false
+         * Se marca en la tabla de propÃ³sitos ya que en la tabla texts habrÃ­a que marcarlo en cada idioma
          */
 		static public function isHtml ($id) {
             try
             {
-                // lo miramos en la tabla de propósitos
+                // lo miramos en la tabla de propÃ³sitos
                 $query = Model::query("SELECT html FROM purpose WHERE text = :id", array(':id' => $id));
                 $purpose = $query->fetchObject();
                 if ($purpose->html == 1)
@@ -299,7 +299,7 @@ namespace Goteo\Library {
 		}
 
 		/*
-		 *  Esto se usa para gestión de originales
+		 *  Esto se usa para gestiÃ³n de originales
 		 */
 		public static function update($data, &$errors = array()) {
 			if (!is_array($data) ||
@@ -326,45 +326,45 @@ namespace Goteo\Library {
         static public function groups()
         {
             $groups = array(
-                'home' => static::_('Portada'),
-                'public_profile' => static::_('Pagina de perfil de usuario'),
-                'project'  => static::_('Proyecto, pública y formulario'),
-                'form'     => static::_('Generales del formulario de proyecto'),
-                'profile'  => static::_('Gestión de perfil del usuario'),
-                'personal' => static::_('Datos personales del usuario'),
-                'overview' => static::_('Descripción del proyecto'),
-                'costs'    => static::_('Costes del proyecto'),
-                'rewards'  => static::_('Retornos y recompensas del proyecto'),
-                'supports' => static::_('Colaboraciones del proyecto'),
-                'preview'  => static::_('Previsualización del proyecto'),
-                'dashboard'=> static::_('Dashboard del usuario'),
-                'register' => static::_('Registro de usuarios'),
-                'login'    => static::_('Pagina de login'),
-                'discover'  => static::_('Sección descubre proyectos'),
-                'community'  => static::_('Sección comunidad'),
-                'general'  => static::_('Propósito general'),
-                'blog'  => static::_('Blog/Actualizaciones'),
-                'faq'  => static::_('Pagina de FAQ'),
-                'contact'  => static::_('Pagina de contacto'),
-                'widget'  => static::_('Banderolos'),
-                'invest'  => static::_('Pagina de aportar a un proyecto'),
-                'types' => static::_('Tooltips para tipos de necesidades'),
-                'banners' => static::_('Banners y cabeceras'),
-                'footer' => static::_('Footer'),
-                'social' => static::_('Cuentas de redes sociales'),
-                'review' => static::_('Panel revisor'),
-                'translate' => static::_('Panel traductor'),
-                'menu' => static::_('Menu superior'),
-                'feed' => static::_('Eventos recientes'),
-                'mailer' => static::_('Emails automaticos'),
-                'bluead' => static::_('Avisos azules'),
-                'error' => static::_('Errores catastroficos'),
-                'call_public' => static::_('Convocatorias: publicos'),
-                'call_form' => static::_('Convocatorias: formulario'),
-                'call_dash' => static::_('Convocatorias: dashboard'),
-                'wof' => static::_('Wall of friends'),
-                'node_public' => static::_('Nodos'),
-                'contract' => static::_('Formulario Contrato')
+                'home' => static::_('Accueil'),
+                'public_profile' => static::_('Page de profil de l&apos;utilisateur'),
+                'project'  => static::_('Projet, public et formulaire'),
+                'form'     => static::_('Formulaire g&eacute;n&eacute;ral du projet'),
+                'profile'  => static::_('Gestion de profil de l&apos;utilisateur'),
+                'personal' => static::_('Donn&eacute;es personelles de l&apos;utilisateur'),
+                'overview' => static::_('Description du projet'),
+                'costs'    => static::_('Co&ucirc;t du projet'),
+                'rewards'  => static::_('Retours et r&eacute;compenses du projet'),
+                'supports' => static::_('Collaborations du projet'),
+                'preview'  => static::_('Previsualisation du projet'),
+                'dashboard'=> static::_('Tableau de bord de l&apos;utilisateur'),
+                'register' => static::_('Registre l&apos;utilisateur'),
+                'login'    => static::_('Page de l&apos;authentification'),
+                'discover'  => static::_('Section avis des projets'),
+                'community'  => static::_('Section de communaut&eacute;'),
+                'general'  => static::_('Proposition g&eacute;n&eacute;rale'),
+                'blog'  => static::_('Blog/Actualit&eacute;s'),
+                'faq'  => static::_('Page de FAQ'),
+                'contact'  => static::_('Page des contacts'),
+                'widget'  => static::_('Widgets'),
+                'invest'  => static::_('Page des contributions a un projet'),
+                'types' => static::_('Info-bulles pour les types de besoins'),
+                'banners' => static::_('Banni&egrave;res et en-t&ecirc;tes'),
+                'footer' => static::_('Pied de page'),
+                'social' => static::_('Comptes de r&eacute;seaux sociaux'),
+                'review' => static::_('Comit&eacute; de r&eacute;vision'),
+                'translate' => static::_('Panneau de Traducteur'),
+                'menu' => static::_('Menu superieur'),
+                'feed' => static::_('Ev&eacute;nements r&eacute;cents'),
+                'mailer' => static::_('Emails automatiques'),
+                'bluead' => static::_('Avis bleu'),
+                'error' => static::_('Erreurs catastrophiques'),
+                'call_public' => static::_('Annonces: public'),
+                'call_form' => static::_('Annonces: formulaire'),
+                'call_dash' => static::_('Annonces: tableau de bord'),
+                'wof' => static::_('Murs d&apos;amis'),
+                'node_public' => static::_('Noeuds'),
+                'contract' => static::_('Formulaire de contrat')
             );
 
             \asort($groups);
@@ -373,7 +373,7 @@ namespace Goteo\Library {
         }
 
         /*
-         * Devuelve el número de palabras del contenido recibido
+         * Devuelve el nÃºmero de palabras del contenido recibido
          */
         static public function wordCount ($section, $table, $fields = array(), &$total = 0 ) {
 
@@ -382,7 +382,7 @@ namespace Goteo\Library {
 
             switch ($section) {
                 case 'texts':
-                    // todos son de la tabla purpose, $table nos indica la agrupación
+                    // todos son de la tabla purpose, $table nos indica la agrupaciÃ³n
                     //  y hay que filtrar la columna group
                     $sqlFilter = " WHERE `group` = '{$table}'";
                     $table = 'purpose';
@@ -390,7 +390,7 @@ namespace Goteo\Library {
                     break;
                 case 'pages':
                     // table nos indica si es la de descripciones o la de contenido,
-                    //  en la de contenido hay que filtrar nodo goteo y español
+                    //  en la de contenido hay que filtrar nodo goteo y espaÃ±ol
                     if ($table == 'page_node') {
                         $sqlFilter = " WHERE node = 'goteo' AND lang = 'es'";
                     }
@@ -422,7 +422,7 @@ namespace Goteo\Library {
 
 
         /*
-         * Devuelve el código embed de un widget de proyecto
+         * Devuelve el cÃ³digo embed de un widget de proyecto
          */
         static public function widget ($url, $type = 'project', $styles = null) {
 
@@ -471,22 +471,22 @@ namespace Goteo\Library {
 		}
 
 		/*
-		 *   Método para formatear friendly un texto para ponerlo en la url
+		 *   MÃ©todo para formatear friendly un texto para ponerlo en la url
 		 */
 		static public function urliza($texto)
 		{
 			$texto = trim(strtolower($texto));
 			// Acentos
-//			$texto = strtr($texto, "ÁÀÄÂáàâäÉÈËÊéèêëÍÌÏÎíìîïÓÒÖÔóòôöÚÙÛÜúùûüÇçÑñ", "aaaaaaaaeeeeeeeeiiiiiiiioooooooouuuuuuuuccnn");
+//			$texto = strtr($texto, "Ã�Ã€Ã„Ã‚Ã¡Ã Ã¢Ã¤Ã‰ÃˆÃ‹ÃŠÃ©Ã¨ÃªÃ«Ã�ÃŒÃ�ÃŽÃ­Ã¬Ã®Ã¯Ã“Ã’Ã–Ã”Ã³Ã²Ã´Ã¶ÃšÃ™Ã›ÃœÃºÃ¹Ã»Ã¼Ã‡Ã§Ã‘Ã±", "aaaaaaaaeeeeeeeeiiiiiiiioooooooouuuuuuuuccnn");
             $table = array(
-                'Š'=>'S', 'š'=>'s', 'Đ'=>'Dj', 'đ'=>'dj', 'Ž'=>'Z', 'ž'=>'z', 'Č'=>'C', 'č'=>'c', 'Ć'=>'C', 'ć'=>'c',
-                'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E',
-                'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I', 'Ï'=>'I', 'Ñ'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O',
-                'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U', 'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss',
-                'à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a', 'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e',
-                'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i', 'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ò'=>'o', 'ó'=>'o',
-                'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u', 'ú'=>'u', 'û'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b',
-                'ÿ'=>'y', 'Ŕ'=>'R', 'ŕ'=>'r',
+                'Å '=>'S', 'Å¡'=>'s', 'Ä�'=>'Dj', 'Ä‘'=>'dj', 'Å½'=>'Z', 'Å¾'=>'z', 'ÄŒ'=>'C', 'Ä�'=>'c', 'Ä†'=>'C', 'Ä‡'=>'c',
+                'Ã€'=>'A', 'Ã�'=>'A', 'Ã‚'=>'A', 'Ãƒ'=>'A', 'Ã„'=>'A', 'Ã…'=>'A', 'Ã†'=>'A', 'Ã‡'=>'C', 'Ãˆ'=>'E', 'Ã‰'=>'E',
+                'ÃŠ'=>'E', 'Ã‹'=>'E', 'ÃŒ'=>'I', 'Ã�'=>'I', 'ÃŽ'=>'I', 'Ã�'=>'I', 'Ã‘'=>'N', 'Ã’'=>'O', 'Ã“'=>'O', 'Ã”'=>'O',
+                'Ã•'=>'O', 'Ã–'=>'O', 'Ã˜'=>'O', 'Ã™'=>'U', 'Ãš'=>'U', 'Ã›'=>'U', 'Ãœ'=>'U', 'Ã�'=>'Y', 'Ãž'=>'B', 'ÃŸ'=>'Ss',
+                'Ã '=>'a', 'Ã¡'=>'a', 'Ã¢'=>'a', 'Ã£'=>'a', 'Ã¤'=>'a', 'Ã¥'=>'a', 'Ã¦'=>'a', 'Ã§'=>'c', 'Ã¨'=>'e', 'Ã©'=>'e',
+                'Ãª'=>'e', 'Ã«'=>'e', 'Ã¬'=>'i', 'Ã­'=>'i', 'Ã®'=>'i', 'Ã¯'=>'i', 'Ã°'=>'o', 'Ã±'=>'n', 'Ã²'=>'o', 'Ã³'=>'o',
+                'Ã´'=>'o', 'Ãµ'=>'o', 'Ã¶'=>'o', 'Ã¸'=>'o', 'Ã¹'=>'u', 'Ãº'=>'u', 'Ã»'=>'u', 'Ã½'=>'y', 'Ã½'=>'y', 'Ã¾'=>'b',
+                'Ã¿'=>'y', 'Å”'=>'R', 'Å•'=>'r',
             );
 
             $texto = strtr($texto, $table);
@@ -497,7 +497,7 @@ namespace Goteo\Library {
 		}
 
 		/*
-		 *   Método para recortar un texto
+		 *   MÃ©todo para recortar un texto
 		 */
 		static public function recorta ($texto, $longitud, $puntos = '...')  {
 			// Es HTML?
@@ -510,17 +510,17 @@ namespace Goteo\Library {
 			"el", "la", "los", "las", "lo",
 			"que",
 			"o", "y", "u", "e", "a",
-			"ante", "bajo", "cabe", "con", "contra", "de", "desde", "hasta", "hacia", "para", "por", "según", "sin", "sobre", "tras", "durante", "mediante",
+			"ante", "bajo", "cabe", "con", "contra", "de", "desde", "hasta", "hacia", "para", "por", "segÃºn", "sin", "sobre", "tras", "durante", "mediante",
 			);
 
 			$texto = trim($texto);
 			if (strlen($texto) <= $longitud) return $texto;
 			$texto = substr($texto,0,$longitud);
 
-			// Buscamos el último espacio
+			// Buscamos el Ãºltimo espacio
 			$texto = substr($texto, 0, strrpos($texto, " "));
 
-			// Quitamos palabras vacías
+			// Quitamos palabras vacÃ­as
 			$ultima = self::ultima_palabra($texto,$separadores );
 			while ($texto != "" && (in_array($ultima,$palabras_vacias) || strlen($ultima)<=2) || ($html && $ultima{1} == "<" && substr($ultima,-1) == ">")) {
 				$texto = substr($texto,0,strlen($texto)-strlen($ultima));
@@ -563,7 +563,7 @@ namespace Goteo\Library {
             // Obtenemos el array de etiquetas no cerradas
 
             if (count($cerradas) == count($abiertas)) {
-                // *Suponemos* que todas las etiquetas están cerradas
+                // *Suponemos* que todas las etiquetas estÃ¡n cerradas
                 return $html;
             }
 
@@ -582,15 +582,15 @@ namespace Goteo\Library {
 
 
 		/*
-		 *   Método para aplicar saltos de linea y poner links en las url
-         *   ¿¡Como se puede ser tan guay!?
+		 *   MÃ©todo para aplicar saltos de linea y poner links en las url
+         *   Â¿Â¡Como se puede ser tan guay!?
          *   http://www.kwi.dk/projects/php/UrlLinker/
          * -------------------------------------------------------------------------------
          *  UrlLinker - facilitates turning plaintext URLs into HTML links.
          *
-         *  Author: SÃ¸ren LÃ¸vborg
+         *  Author: SÃƒÂ¸ren LÃƒÂ¸vborg
          *
-         *  To the extent possible under law, SÃ¸ren LÃ¸vborg has waived all copyright
+         *  To the extent possible under law, SÃƒÂ¸ren LÃƒÂ¸vborg has waived all copyright
          *  and related or neighboring rights to UrlLinker.
          *  http://creativecommons.org/publicdomain/zero/1.0/
          * -------------------------------------------------------------------------------
@@ -668,7 +668,7 @@ namespace Goteo\Library {
 		}
 
         /*
-         * Método para ocultar parámetros de una url
+         * MÃ©todo para ocultar parÃ¡metros de una url
          */
         public static function cutUrlParams($url) {
             return $url = preg_replace('#/.+#', '', preg_replace('#http|s?://#', '', $url));

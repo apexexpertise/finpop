@@ -198,8 +198,8 @@ namespace Goteo\Model {
 
         public static function groups () {
             return array(
-                'social' => Text::_('Retorno colectivo'),
-                'individual' => Text::_('Recompensa individual')
+                'social' => Text::_('Retour collectif'),
+                'individual' => Text::_('R&eacute;compense individuelle')
             );
         }
 

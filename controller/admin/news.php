@@ -48,7 +48,7 @@ namespace Goteo\Controller\Admin {
                                 'action' => "$url/edit/",
                                 'submit' => array(
                                     'name' => 'update',
-                                    'label' => 'Añadir'
+                                    'label' => 'Ajouter'
                                 ),
                                 'fields' => array (
                                     'id' => array(
@@ -58,25 +58,25 @@ namespace Goteo\Controller\Admin {
 
                                     ),
                                     'title' => array(
-                                        'label' => 'Noticia',
+                                        'label' => 'Notice',
                                         'name' => 'title',
                                         'type' => 'text',
                                         'properties' => 'size="100" maxlength="100"'
                                     ),
                                     'description' => array(
-                                        'label' => 'Entradilla',
+                                        'label' => 'Description',
                                         'name' => 'description',
                                         'type' => 'textarea',
                                         'properties' => 'cols="100" rows="2"'
                                     ),
                                     'url' => array(
-                                        'label' => 'Enlace',
+                                        'label' => 'Lien',
                                         'name' => 'url',
                                         'type' => 'text',
                                         'properties' => 'size=100'
                                     ),
                                     'order' => array(
-                                        'label' => 'Posición',
+                                        'label' => 'Position',
                                         'name' => 'order',
                                         'type' => 'text'
                                     )
@@ -202,7 +202,7 @@ namespace Goteo\Controller\Admin {
                     'folder' => 'base',
                     'file' => 'list',
                     'model' => 'news',
-                    'addbutton' => 'Nueva noticia',
+                    'addbutton' => 'Nouveau notice',
                     'data' => $model::getAll(),
                     'columns' => array(
                         'edit' => '',

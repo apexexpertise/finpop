@@ -36,7 +36,7 @@ namespace Goteo\Controller\Admin {
             $groups    = Text::groups();
 
             // metemos el todos
-            \array_unshift($groups, Text::_('Todas las agrupaciones'));
+            \array_unshift($groups, Text::_('Tous les groupes'));
 
  //@fixme temporal hasta pasar las agrupaciones a tabal o arreglar en el list.html.php
             // I dont know if this must serve in default lang or in current navigation lang

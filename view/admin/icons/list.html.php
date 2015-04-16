@@ -28,7 +28,7 @@ $filters = $this['filters'];
     <form id="groupfilter-form" action="/admin/icons" method="get">
         <label for="group-filter"> <?php echo Text::_("Afficher les tarifs de:"); ?></label>
         <select id="group-filter" name="group" onchange="document.getElementById('groupfilter-form').submit();">
-            <option value=""><?php echo Text::_("Todo"); ?></option>
+            <option value=""><?php echo Text::_("Tout"); ?></option>
         <?php foreach ($this['groups'] as $groupId=>$groupName) : ?>
             <option value="<?php echo $groupId; ?>"<?php if ($filters['group'] == $groupId) echo ' selected="selected"';?>><?php echo $groupName; ?></option>
         <?php endforeach; ?>

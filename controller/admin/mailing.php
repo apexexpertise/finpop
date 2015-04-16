@@ -49,14 +49,14 @@ namespace Goteo\Controller\Admin {
             $status = Model\Project::status();
             $methods = Model\Invest::methods();
             $types = array(
-                'investor' => 'Cofinanciadores',
-                'owner' => 'Autores',
-                'user' => 'Usuarios'
+                'investor' => 'Co-financeurss',
+                'owner' => 'Auteurs',
+                'user' => 'Utilisateurs'
             );
             $roles = array(
-                'admin' => 'Administrador',
-                'checker' => 'Revisor',
-                'translator' => 'Traductor'
+                'admin' => 'Administrateur',
+                'checker' => 'Reviseur',
+                'translator' => 'Traducteur'
             );
 
             // una variable de sesion para mantener los datos de todo esto

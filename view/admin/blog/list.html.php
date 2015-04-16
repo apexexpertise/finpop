@@ -35,7 +35,7 @@ foreach ($filters as $key=>$value) {
 
 $pagedResults = new \Paginated($this['posts'], 10, isset($_GET['page']) ? $_GET['page'] : 1);
 ?>
-<a href="/admin/blog/add" class="button"><?php echo Text::_("Nueva entrada"); ?></a>
+<a href="/admin/blog/add" class="button"><?php echo Text::_("Nouvelle entr&eacute;e"); ?></a>
 &nbsp;&nbsp;&nbsp;
 <a href="/admin/blog/reorder" class="button">Trier</a>
 
@@ -107,7 +107,7 @@ $pagedResults = new \Paginated($this['posts'], 10, isset($_GET['page']) ? $_GET[
                 <td><?php echo $post->user->name . ' (' . $post->owner_name . ')'; ?></td>
             </tr>
             <tr>
-                <td><a href="/blog/<?php echo $post->id; ?>?preview=<?php echo $_SESSION['user']->id ?>" target="_blank">[Ver]</a></td>
+                <td><a href="/blog/<?php echo $post->id; ?>?preview=<?php echo $_SESSION['user']->id ?>" target="_blank">[Voir]</a></td>
                 <td><?php if (($post->owner_type == 'node' && $post->owner_id == $node) || $node == \GOTEO_NODE) : ?>
                     <a href="/admin/blog/edit/<?php echo $post->id; ?>">[Editar]</a>
                 <?php endif; ?></td>

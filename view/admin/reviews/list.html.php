@@ -139,5 +139,5 @@ $filters = $this['filters'];
         </div>
     <?php endforeach; ?>
 <?php else : ?>
-<p>PAS DE R&eacute;SULTAT</p>
+<p>Pas de r&eacute;sultat</p>
 <?php endif; ?>

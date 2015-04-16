@@ -179,12 +179,12 @@ namespace Goteo\Controller\Admin {
                     // obtenemos los datos
                     $filters['node'] = $node;
                     $show = array(
-                        'all' => 'Todas las entradas existentes',
-                        'published' => 'Solamente las publicadas en el blog',
-                        'owned' => 'Solamente las del propio nodo',
-                        'home' => 'Solamente las de portada',
-                        'entries' => 'Solamente las de cierto nodo',
-                        'updates' => 'Solamente las de proyectos'
+                        'all' => 'Toutes les entr&eacute;es existantes',
+                        'published' => 'Seulement les publi&eacute;s',
+                        'owned' => 'Seulement les propres noeuds',
+                        'home' => 'Seulement l&apos;accueil',
+                        'entries' => 'Seulement certains noeuds',
+                        'updates' => 'Seulement les projets'
                     );
 
                     // filtro de blogs de proyectos/nodos
@@ -207,7 +207,7 @@ namespace Goteo\Controller\Admin {
                     $footers = Model\Post::getList('footer', $node);
 
                     if ($node == \GOTEO_NODE) {
-                        $show['footer'] = 'Solamente las del footer';
+                        $show['footer'] = 'Seulement le pied de page';
                     }
 
                     return new View(
