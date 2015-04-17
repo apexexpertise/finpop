@@ -1006,13 +1006,13 @@ namespace Goteo\Model {
          */
         public static function status ($id = null) {
             $array = array (
-                -1 => Text::_('Incompleto'),
-                0  => Text::_('Preaprobado'),
-                1  => Text::_('Cobrado'),
-                2  => Text::_('Cancelado'),
-                3  => Text::_('Pagado al proyecto'),
-                4  => Text::_('Archivado (devuelto)'),
-                5  => Text::_('Reubicado')
+                -1 => Text::_('Incomplet'),
+                0  => Text::_('Pr&eacute;-Approuv&eacute;'),
+                1  => Text::_('Encaiss&eacute;'),
+                2  => Text::_('Annul&eacute;'),
+                3  => Text::_('Pay&eacute;'),
+                4  => Text::_('Archive (Retourn&eacute;)'),
+                5  => Text::_('D&eacute;m&eacute;nag&eacute;')
             );
 
             if (isset($id)) {
@@ -1029,8 +1029,8 @@ namespace Goteo\Model {
         public static function methods () {
             return array (
                 'paypal' => Text::_('Paypal'),
-                'tpv'    => Text::_('Tarjeta'),
-                'cash'   => Text::_('Manual')
+                'tpv'    => Text::_('Carte'),
+                'cash'   => Text::_('Manuel')
             );
         }
 

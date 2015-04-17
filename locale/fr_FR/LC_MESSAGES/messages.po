@@ -32,11 +32,11 @@ msgstr "Groupe"
 
 #: /home/zilog/development/webapps/Goteo/controller/admin.php:199
 msgid "Filtrar por tipo:"
-msgstr "Filterer par:"
+msgstr "Filtrer par:"
 
 #: /home/zilog/development/webapps/Goteo/controller/admin.php:205
 msgid "Filtrar por agrupación:"
-msgstr "Filterer par groupe:"
+msgstr "Filtrer par groupe:"
 
 #: /home/zilog/development/webapps/Goteo/controller/admin.php:211
 msgid "Buscar texto:"

@@ -598,10 +598,10 @@ namespace Goteo\Controller\Admin {
             
             // filtros de revisión de proyecto
             $review = array(
-                'collect' => 'Recaudado',
+                'collect' => 'Profit',
                 'paypal'  => 'Rev. PayPal',
                 'tpv'     => 'Rev. TPV',
-                'online'  => 'Pagos Online'
+                'online'  => 'Online'
             );
 
             $issue = array(

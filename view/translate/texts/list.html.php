@@ -45,7 +45,7 @@ $groups    = Text::groups();
 
 $filters = array(
             'idfilter' => array(
-                    'label'   => 'Filtrar por tipo:',
+                    'label'   => 'Filtrer par type:',
                     'type'    => 'select',
                     'options' => $idfilters,
                     'value'   => $this['filters']['idfilter']

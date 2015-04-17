@@ -49,7 +49,7 @@ namespace Goteo\Controller\Admin {
             $status = Model\Project::status();
             $methods = Model\Invest::methods();
             $types = array(
-                'investor' => 'Co-financeurss',
+                'investor' => 'Co-financeurs',
                 'owner' => 'Auteurs',
                 'user' => 'Utilisateurs'
             );

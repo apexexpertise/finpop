@@ -245,9 +245,9 @@ namespace Goteo\Controller\Admin {
             $list = Model\Review::getList($filters, $node);
             $projects = Model\Review::getProjects($node);
             $status = array(
-                'unstarted' => Text::_('No iniciada'),
-                'open' => Text::_('Abierta'),
-                'closed' => Text::_('Cerrada')
+                'unstarted' => Text::_('Non demarr&eacute;'),
+                'open' => Text::_('Ouvert'),
+                'closed' => Text::_('Ferm&eacute;')
             );
             $checkers = Model\User::getAll(array('role'=>'checker'));
 

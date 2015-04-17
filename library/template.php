@@ -194,13 +194,13 @@ namespace Goteo\Library {
         static public function groups()
         {
             $groups = array(
-                'general' => Text::_('Propósito general'),
-                'access'  => Text::_('Registro y acceso usuario'),
-                'project' => Text::_('Actividad proyecto'),
-                'tips'    => Text::_('Auto-tips difusión'),
-                'invest'  => Text::_('Proceso aporte'),
-                'contact' => Text::_('Comunicación'),
-                'advice'  => Text::_('Avisos al autor')
+                'general' => Text::_('Proposition g&eacute;n&eacute;rale'),
+                'access'  => Text::_('Inscription et acc&eacute;s de l&apos;utlisateur'),
+                'project' => Text::_('Activit&eacute; du projet'),
+                'tips'    => Text::_('Auto-conseils'),
+                'invest'  => Text::_('Processus d&apos;entr&eacute;e'),
+                'contact' => Text::_('Communication'),
+                'advice'  => Text::_('Avis de l&apos;auteur')
             );
 
             \asort($groups);

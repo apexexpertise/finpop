@@ -33,7 +33,7 @@ msgstr "Group"
 
 #: /home/zilog/development/webapps/Goteo/controller/admin.php:199
 msgid "Filtrar por tipo:"
-msgstr "Filter by type:"
+msgstr "Filtrer by type:"
 
 #: /home/zilog/development/webapps/Goteo/controller/admin.php:205
 msgid "Filtrar por agrupación:"
