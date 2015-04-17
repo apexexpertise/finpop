@@ -255,7 +255,7 @@ namespace Goteo\Controller {
                     'filters' => array('user' => '', 'template' => '', 'node' => '', 'date_from' => '', 'date_until' => '')
                 ),
                 'sponsors' => array(
-                    'label' => Text::_('Apoyos institucionales'),
+                    'label' => Text::_('Partenaires'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'add' => array('label' => Text::_('Nuevo Patrocinador'), 'item' => false),
@@ -381,7 +381,6 @@ namespace Goteo\Controller {
             if (empty($BC)) {
                 return $menu;
             } else {
-
                 // a ver si puede estar aqui!
                 if ($BC['option'] != 'index') {
                     $puede = false;
@@ -593,7 +592,8 @@ namespace Goteo\Controller {
                                 'promote' => $options['promote'], // seleccion de proyectos destacados
                                 'blog' => $options['blog'], // entradas de blog (en la gestion de blog)
                                 'sponsors' => $options['sponsors'], // patrocinadores del nodo
-                                'recent' => $options['recent'] // feed admin
+                                'recent' => $options['recent'], // feed admin
+                               
                             )
                         )
                     );
@@ -609,9 +609,9 @@ namespace Goteo\Controller {
                                 'faq' => $options['faq'],
                                 'pages' => $options['pages'],
                                 'categories' => $options['categories'],
-                                'licenses' => $options['licenses'],
+                                /*'licenses' => $options['licenses'],*/
                                 'icons' => $options['icons'],
-                                'tags' => $options['tags'],
+                                /*'tags' => $options['tags'],*/
                                 'criteria' => $options['criteria'],
                                 'templates' => $options['templates'],
                                 'glossary' => $options['glossary'],
@@ -640,20 +640,20 @@ namespace Goteo\Controller {
                         'home' => array(
                             'label' => $labels['home'],
                             'options' => array(
-                                'news' => $options['news'],
+                                /*'news' => $options['news'],*/
                                 'banners' => $options['banners'],
                                 'blog' => $options['blog'],
                                 'promote' => $options['promote'],
                                 'footer' => $options['footer'],
                                 'recent' => $options['recent'],
-                                'home' => $options['home']
+                                'home' => $options['home'],
+                                'sponsors' => $options['sponsors'],
                             )
                         ),
                         'sponsors' => array(
                             'label' => $labels['services'],
                             'options' => array(
                                 'newsletter' => $options['newsletter'],
-                                'sponsors' => $options['sponsors'],
                                 'tasks' => $options['tasks']  // gestión de tareas
                             )
                         )

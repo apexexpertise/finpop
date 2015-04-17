@@ -35,7 +35,8 @@ namespace Goteo\Controller {
         Goteo\Library\Page; // para sacar el contenido de about
 
 use Goteo\Library\Listing;
-				
+use Goteo\Model\Sponsor;
+								
     class Index extends \Goteo\Core\Controller {
     	
         public function index () {
@@ -61,7 +62,6 @@ use Goteo\Library\Listing;
             // Proyectos destacados
             if (isset($order['promotes'])) {
                 $promotes  = Promote::getAll(true);
-
                 foreach ($promotes as $key => &$promo) {
                     try {
                         $promo->projectData = Project::getMedium($promo->project, LANG);
@@ -97,15 +97,17 @@ use Goteo\Library\Listing;
             
             //recent projects
             $projects = Project::published('recent'); 
-            
-          
+            $parteners = Sponsor::getAll();
+
             return new View('view/index.html.php',
                 array(
                     'banners'  => $banners,
                     'posts'    => $posts,
                     'feed'     => $feed,
                     'order'    => $order,
+                	'promotes' => $promotes,
                 	'projects' => $projects,
+                	 'parteners' => $parteners
                 )
             );
             

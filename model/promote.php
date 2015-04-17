@@ -95,13 +95,12 @@ namespace Goteo\Model {
                 $sqlFilter
                 ORDER BY `order` ASC, title ASC
                 ", array(':node' => $node, ':lang'=>\LANG));
-            
+         
             foreach($query->fetchAll(\PDO::FETCH_CLASS, __CLASS__) as $promo) {
                 $promo->description =Text::recorta($promo->description, 100, false);
                 $promo->status = $status[$promo->status];
                 $promos[] = $promo;
             }
-
             return $promos;
         }
 

@@ -21,7 +21,6 @@
 
 .container-slider {
 	width: 100%;
-	position: fixed;
 	overflow-y: hidden;
 	top: 0;
 }

@@ -30,6 +30,7 @@ namespace Goteo\Model {
         public
             $id,
             $name,
+            $resume,
             $url,
             $image,
             $order;
@@ -42,6 +43,7 @@ namespace Goteo\Model {
                     SELECT
                         id,
                         name,
+                		resume,
                         url,
                         image,
                         `order`
@@ -64,6 +66,7 @@ namespace Goteo\Model {
                 SELECT
                     id,
                     name,
+            		resume,
                     url,
                     image,
                     `order`
@@ -89,6 +92,7 @@ namespace Goteo\Model {
                 SELECT
                     id,
                     name,
+            		resume,
                     url,
                     image
                 FROM    sponsor
@@ -137,6 +141,7 @@ namespace Goteo\Model {
             $fields = array(
                 'id',
                 'name',
+            	'resume',
                 'url',
                 'image',
                 'order'

@@ -59,6 +59,10 @@
 	color: #000000;
 	font-size: 25px;
 }
+.photostack-img img{
+  width: 240px;
+  height: 236px;
+}
 
 .photostack-img {
 	outline: none;

@@ -67,9 +67,14 @@ namespace Goteo\Controller\Admin {
 
                                     ),
                                     'name' => array(
-                                        'label' => Text::_('Patrocinador'),
+                                        'label' => Text::_('Partenaire'),
                                         'name' => 'name',
                                         'type' => 'text'
+                                    ),
+                                    'resume' => array(
+                                    		'label' => Text::_('Description'),
+                                    		'name' => 'resume',
+                                    		'type' => 'textarea'
                                     ),
                                     'url' => array(
                                         'label' => Text::_('Enlace'),
@@ -103,6 +108,7 @@ namespace Goteo\Controller\Admin {
                         $item = new $model(array(
                             'id' => $_POST['id'],
                             'name' => $_POST['name'],
+                        	'resume' => $_POST['resume'],
                             'node' => $_POST['node'],
                             'image' => $_POST['image'],
                             'url' => $_POST['url'],
@@ -159,10 +165,15 @@ namespace Goteo\Controller\Admin {
 
                                     ),
                                     'name' => array(
-                                        'label' => Text::_('Patrocinador'),
+                                        'label' => Text::_('Partenaire'),
                                         'name' => 'name',
                                         'type' => 'text'
                                     ),
+                                	'resume' => array(
+                                				'label' => Text::_('Description'),
+                                				'name' => 'resume',
+                                				'type' => 'textarea'
+                                	),
                                     'url' => array(
                                         'label' => Text::_('Enlace'),
                                         'name' => 'url',
@@ -213,7 +224,8 @@ namespace Goteo\Controller\Admin {
                     'data' => $model::getAll($node),
                     'columns' => array(
                         'edit' => '',
-                        'name' => Text::_('Patrocinador'),
+                        'name' => Text::_('Partenaire'),
+                    	'resume' => Text::_('Description'),
                         'url' => Text::_('Enlace'),
                         'image' => Text::_('Imagen'),
                         'order' => Text::_('Posición'),

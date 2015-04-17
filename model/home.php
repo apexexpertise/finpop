@@ -40,10 +40,12 @@ namespace Goteo\Model {
 
         static public function _items() {
             return array(
-                     'posts' => Text::_('Entradas de blog'),
+                     'posts' => Text::_('Actualit&eacute;s/blog'),
                      'promotes' => Text::_('Proyectos destacados'),
 //callsys                     'drops' => Text::_('Capital Riego'),
-                     'feed' => Text::_('Actividad reciente'),
+                     //'feed' => Text::_('Actividad reciente'),
+            		 'projects' => Text::_('projet r&eacute;cents'),
+            		 'parteners' => Text::_('partenaires'),
 //vipsys                     'patrons' => Text::_('Padrinos')
                  );
         }
