@@ -213,7 +213,7 @@ namespace Goteo\Model {
         public static function groups () {
             return array(
                 'regular' => 'Normal',
-                'open' => 'Abierto'
+                'open' => 'Ouvert'
             );
         }
 

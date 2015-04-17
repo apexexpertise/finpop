@@ -37,7 +37,7 @@ $filters = $this['filters'];
 
         <label for="icon-filter"><?php echo Text::_("Afficher par type :"); ?></label>
         <select id="icon-filter" name="icon" onchange="document.getElementById('filter-form').submit();">
-            <option value=""><?php echo Text::_("Todos los tipos"); ?></option>
+            <option value=""><?php echo Text::_("Tous les types"); ?></option>
         <?php foreach ($this['icons'] as $icon) : ?>
             <option value="<?php echo $icon->id; ?>"<?php if ($filters['icon'] == $icon->id) echo ' selected="selected"';?>><?php echo $icon->name; ?></option>
         <?php endforeach; ?>
@@ -54,7 +54,7 @@ $filters = $this['filters'];
                 <th><?php echo Text::_("Nom"); ?></th> <!-- name -->
                 <th><!-- Icon --></th>
                 <th><?php echo Text::_("Infobulle"); ?></th> <!-- description -->
-                <th><?php echo Text::_("Regroupement³n"); ?></th> <!-- group -->
+                <th><?php echo Text::_("Regroupement"); ?></th> <!-- group -->
                 <th><?php echo Text::_("Position"); ?></th> <!-- order -->
                 <th><!-- Move up --></th>
                 <th><!-- Move down --></th>

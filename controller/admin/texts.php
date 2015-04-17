@@ -62,13 +62,13 @@ namespace Goteo\Controller\Admin {
                             'filters' => array(
                                 'filtered' => $filters['filtered'],
                                 'group' => array(
-                                        'label'   => Text::_('Filtrar por agrupación:'),
+                                        'label'   => Text::_('Filtrer par groupe:'),
                                         'type'    => 'select',
                                         'options' => $groups,
                                         'value'   => $filters['group']
                                     ),
                                 'text' => array(
-                                        'label'   => Text::_('Buscar texto:'),
+                                        'label'   => Text::_('Chercher texte:'),
                                         'type'    => 'input',
                                         'options' => null,
                                         'value'   => $filters['text']

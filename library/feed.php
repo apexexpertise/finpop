@@ -49,7 +49,7 @@ namespace Goteo\Library {
         static public function _admin_types() {
             return array(
                 'all' => array(
-                    'label' => Text::_('Todo'),
+                    'label' => Text::_('Tout'),
                     'color' => 'light-blue'
                 ),
                 'admin' => array(
@@ -57,7 +57,7 @@ namespace Goteo\Library {
                     'color' => 'red'
                 ),
                 'user' => array(
-                    'label' => Text::_('Usuario'),
+                    'label' => Text::_('Utilisateur'),
                     'color' => 'blue'
                 ),
                 'project' => array(
@@ -65,15 +65,15 @@ namespace Goteo\Library {
                     'color' => 'light-blue'
                 ),
                 'call' => array(
-                    'label' => Text::_('Convocatoria'),
+                    'label' => Text::_('Appel'),
                     'color' => 'light-blue'
                 ),
                 'money' => array(
-                    'label' => Text::_('Transferencias'),
+                    'label' => Text::_('Virement'),
                     'color' => 'violet'
                 ),
                 'system' => array(
-                    'label' => Text::_('Sistema'),
+                    'label' => Text::_('Syst&egrave;me'),
                     'color' => 'grey'
                 )
             );

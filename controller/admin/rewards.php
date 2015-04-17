@@ -119,8 +119,8 @@ namespace Goteo\Controller\Admin {
             $projects = Model\Invest::projects();
 
             $status = array(
-                        'nok' => 'Pendiente',
-                        'ok'  => 'Cumplida'
+                        'nok' => 'Non accompli',
+                        'ok'  => 'Accompli'
 
                     );
 

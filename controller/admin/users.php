@@ -387,11 +387,11 @@ namespace Goteo\Controller\Admin {
                         // hay demasiados de estos... 'lurkers' => 'Mirones'
                     );
                     $orders = array(
-                        'created' => Text::_('Fecha de alta'),
-                        'name' => Text::_('Alias'),
-                        'id' => Text::_('User'),
-                        'amount' => Text::_('Cantidad'),
-                        'projects' => Text::_('Proyectos')
+                        'created' => Text::_('Date de creation'),
+                        'name' => Text::_('Nom'),
+                        'id' => Text::_('Utilisateur'),
+                        'amount' => Text::_('Montant'),
+                        'projects' => Text::_('Projets')
                     );
                     // proyectos con aportes válidos
                     $projects = Model\Invest::projects(true, $node);

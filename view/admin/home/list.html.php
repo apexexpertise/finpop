@@ -149,7 +149,7 @@ $admins = Home::_admins();
     <input type="hidden" name="order" value="<?php echo $new->order ?>" />
 
     <p>
-        <label for="home-item">Nuevo elemento:</label><br />
+        <label for="home-item">Nouveau &eacute;lement:</label><br />
         <select id="home-item" name="item">
         <?php foreach ($availables as $item=>$name) : ?>
             <option value="<?php echo $item; ?>"><?php echo $name; ?></option>

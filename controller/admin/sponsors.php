@@ -209,7 +209,7 @@ namespace Goteo\Controller\Admin {
                 array(
                     'folder' => 'base',
                     'file' => 'list',
-                    'addbutton' => Text::_('Nuevo patrocinador'),
+                    'addbutton' => Text::_('Nouveau partenaire'),
                     'data' => $model::getAll($node),
                     'columns' => array(
                         'edit' => '',

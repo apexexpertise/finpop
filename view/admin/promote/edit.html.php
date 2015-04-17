@@ -39,7 +39,7 @@ $status = Model\Project::status();
 <p>
     <label for="promo-project">Projet:</label><br />
     <select id="promo-project" name="project">
-        <option value="" >S&eacute;lectionnez le projet &agrave  mettre en &eacute;vidence</option>
+        <option value="" >S&eacute;lectionnez le projet</option>
     <?php foreach ($projects as $project) : ?>
         <option value="<?php echo $project->id; ?>"<?php if ($promo->project == $project->id) echo' selected="selected"';?>><?php echo $project->name . ' ('. $status[$project->status] . ')'; ?></option>
     <?php endforeach; ?>

@@ -116,8 +116,8 @@ $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] 
     <table>
         <thead>
             <tr>
-                <th>Alias</th> <!-- view profile -->
-                <th>Utlisiateur</th>
+                <th>Nom</th> <!-- view profile -->
+                <th>Utilisateur</th>
                 <th>Email</th>
                 <th>Projet</th>
                 <th>Quantit&eacute;</th>

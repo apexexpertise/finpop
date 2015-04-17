@@ -142,7 +142,7 @@ namespace Goteo\Controller\Admin {
                     'columns' => array(
                         'edit' => '',
                         'name' => Text::_('Tag'),
-                        'used' => Text::_('Entradas'),
+                        'used' => Text::_('Tickets'),
                         'translate' => '',
                         'remove' => ''
                     ),
