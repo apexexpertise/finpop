@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.5\n"
 
 msgid "La entrada se ha actualizado correctamente"
 msgstr "L''entrée a été actualisée correctement."
@@ -2024,4 +2024,7 @@ msgstr "Ma contribution sur goteo"
 
 msgid "No tienes ningún proyecto, puedes crear uno aquí"
 msgstr "Ma contribution sur goteo"
+
+msgid "Para impulsor@s"
+msgstr "Pour promoteurs"
 

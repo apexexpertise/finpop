@@ -395,7 +395,7 @@ namespace Goteo\Controller\Dashboard {
                             // Evento Feed
                             $log = new Feed();
                             $log->setTarget($project->id);
-                            $log->populate('usuario pone una nueva colaboracion en su proyecto (dashboard)', '/admin/projects', \vsprintf('%s ha publicado una nueva %s en el proyecto %s, con el título "%s"', array(
+                            $log->populate('Utilisateur d&eacute;finit une nouvelle collaboration dans votre projet (tableau de bord)', '/admin/projects', \vsprintf('%s a publi&eacute; %s dans le projet %s, avec le titre "%s"', array(
                                         Feed::item('user', $_SESSION['user']->name, $_SESSION['user']->id),
                                         Feed::item('message', 'Colaboración'),
                                         Feed::item('project', $project->name, $project->id),
@@ -420,7 +420,7 @@ namespace Goteo\Controller\Dashboard {
 
                 $new_support = new Model\Project\Support(array(
                             'project' => $project->id,
-                            'support' => 'Nueva colaboración',
+                            'support' => 'Nouvelle collaboration',
                             'type' => 'task',
                             'description' => ''
                         ));
@@ -432,7 +432,7 @@ namespace Goteo\Controller\Dashboard {
                 } else {
                     $project->supports[] = new Model\Project\Support(array(
                                 'project' => $project->id,
-                                'support' => 'Nueva colaboración',
+                                'support' => 'Nouvelle collaboration',
                                 'type' => 'task',
                                 'description' => ''
                             ));
@@ -521,8 +521,8 @@ namespace Goteo\Controller\Dashboard {
                     // Evento Feed
                     $log = new Feed();
                     $log->setTarget($project->id);
-                    $log->populate('usuario publica una novedad en su proyecto (dashboard)', '/project/' . $project->id . '/updates/' . $post->id, 
-                            \vsprintf('%s ha publicado un nuevo post en %s sobre el proyecto %s, con el título "%s"', array(
+                    $log->populate('utilisateur publie un nouveau dans votre projet (tableau de bord)', '/project/' . $project->id . '/updates/' . $post->id, 
+                            \vsprintf('%s a publi&eacute; un nouveau poste en %s sur le projet %s, avec le titre "%s"', array(
                                 Feed::item('user', $_SESSION['user']->name, $_SESSION['user']->id),
                                 Feed::item('blog', Text::get('project-menu-updates')),
                                 Feed::item('project', $project->name, $project->id),

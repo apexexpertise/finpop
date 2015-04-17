@@ -61,7 +61,7 @@ namespace Goteo\Controller {
                     $log->setTarget($projectData->id);
                     if (empty($_POST['thread'])) {
                         // nuevo hilo
-                        $log_html = \vsprintf('%s ha creado un tema en %s del proyecto %s', array(
+                        $log_html = \vsprintf('%s a cr&eacute;&eacute; un th&egrave;me sur  %s le projet %s', array(
                             Feed::item('user', $_SESSION['user']->name, $_SESSION['user']->id),
                             Feed::item('message', Text::get('project-menu-messages'), $projectData->id.'/messages#message'.$message->id),
                             Feed::item('project', $projectData->name, $projectData->id)
@@ -70,20 +70,20 @@ namespace Goteo\Controller {
                         // respuesta
                         // si una respuesta a un mensaje de colaboraicón
                         if (!empty($support)) {
-                            $log_html = \vsprintf('Nueva colaboración de %s con %s en el proyecto %s', array(
+                            $log_html = \vsprintf('nouvelle collaboration de %s avec %s sur le projet %s', array(
                                 Feed::item('user', $_SESSION['user']->name, $_SESSION['user']->id),
                                 Feed::item('message', $support, $projectData->id.'/messages#message'.$_POST['thread']),
                                 Feed::item('project', $projectData->name, $projectData->id)
                             ));
                         } else { // es una respuesta a un hilo normal
-                            $log_html = \vsprintf('%s ha respondido en %s del proyecto %s', array(
+                            $log_html = \vsprintf('%s a r&eacute;pondu sur %s le projet %s', array(
                                 Feed::item('user', $_SESSION['user']->name, $_SESSION['user']->id),
                                 Feed::item('message', Text::get('project-menu-messages'), $projectData->id.'/messages#message'.$message->id),
                                 Feed::item('project', $projectData->name, $projectData->id)
                             ));
                         }
                     }
-                    $log->populate('usuario escribe mensaje/respuesta en Mensajes del proyecto', '/admin/projects', $log_html);
+                    $log->populate('l&apos;utilisateur &eacute;crit un message/r&eacute;pond au message de projet', '/admin/projects', $log_html);
                     $log->doAdmin('user');
 
                     // Evento público
@@ -348,23 +348,23 @@ namespace Goteo\Controller {
                     if (!empty($project)) {
                         $projectData = Model\Project::getMini($project);
                         $log->setTarget($projectData->id);
-                        $log_html = \vsprintf('%s ha escrito un %s en la entrada "%s" en las %s del proyecto %s', array(
+                        $log_html = \vsprintf('%s a &eacute;crit un %s en entr&eacute; "%s" sur %s le projet %s', array(
                             Feed::item('user', $_SESSION['user']->name, $_SESSION['user']->id),
-                            Feed::item('message', 'Comentario'),
+                            Feed::item('message', 'Commentaire'),
                             Feed::item('update-comment', $postData->title, $projectData->id.'/updates/'.$postData->id.'#comment'.$comment->id),
                             Feed::item('update-comment', 'Novedades', $projectData->id.'/updates/'),
                             Feed::item('project', $projectData->name, $projectData->id)
                         ));
                     } else {
                         $log->setTarget('goteo', 'blog');
-                        $log_html = \vsprintf('%s ha escrito un %s en la entrada "%s" del blog de %s', array(
+                        $log_html = \vsprintf('%s a &eacute;crit un %s en entr&eacute; "%s"sur le Blog de %s', array(
                             Feed::item('user', $_SESSION['user']->name, $_SESSION['user']->id),
-                            Feed::item('message', 'Comentario'),
+                            Feed::item('message', 'Commentaire'),
                             Feed::item('blog', $postData->title, $postData->id.'#comment'.$comment->id),
                             Feed::item('blog', 'Goteo', '/')
                         ));
                     }
-                    $log->populate('usuario escribe comentario en blog/novedades', '/admin/projects', $log_html);
+                    $log->populate('utilisateur ecrit un commentaire en blog/novedades', '/admin/projects', $log_html);
                     $log->doAdmin('user');
 
                     // Evento público

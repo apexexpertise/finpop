@@ -59,10 +59,10 @@ namespace Goteo\Controller\Admin {
                                 // Evento Feed
                                 $log = new Feed();
                                 $log->setTarget($projectData->id);
-                                $log->populate('nuevo proyecto destacado en portada (admin)', '/admin/promote',
-                                    \vsprintf('El admin %s ha %s el proyecto %s', array(
+                                $log->populate('nouveau projet present&eacute; sur la couverture (admin)', '/admin/promote',
+                                    \vsprintf('El admin %s a %s le projet %s', array(
                                         Feed::item('user', $_SESSION['user']->name, $_SESSION['user']->id),
-                                        Feed::item('relevant', 'Destacado en portada', '/'),
+                                        Feed::item('relevant', 'present&eacute; sur la couverture', '/'),
                                         Feed::item('project', $projectData->name, $projectData->id)
                                 )));
                                 $log->doAdmin('admin');

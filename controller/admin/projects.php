@@ -170,49 +170,49 @@ namespace Goteo\Controller\Admin {
                     // pasar un proyecto a revision
                     if ($project->ready($errors)) {
                         $redir = '/admin/reviews/add/'.$project->id;
-                        $log_text = 'El admin %s ha pasado el proyecto %s al estado <span class="red">Revision</span>';
+                        $log_text = 'El admin %s  a pass&eacute; le projet %s à l&apos;etat %s  &agrave; l&apos;etat  <span class="red">R&eacute;vision</span>';
                     } else {
-                        $log_text = 'Al admin %s le ha fallado al pasar el proyecto %s al estado <span class="red">Revision</span>';
+                        $log_text = 'Al admin %s a echou&eacute; a passer le projet %s &agrave; l&apos;etat <span class="red">R&eacute;vision</span>';
                     }
                     break;
                 case 'publish':
                     // poner un proyecto en campaï¿½a
                     if ($project->publish($errors)) {
-                        $log_text = 'El admin %s ha pasado el proyecto %s al estado <span class="red">en Campaï¿½a</span>';
+                        $log_text = 'El admin %s a pass&eacute; le projet %s à l&apos;etat <span class="red">de compagne</span>';
                     } else {
-                        $log_text = 'Al admin %s le ha fallado al pasar el proyecto %s al estado <span class="red">en Campaï¿½a</span>';
+                        $log_text = 'Al admin %s a echou&eacute; a passer le projet %s &agrave; l&apos;etat <span class="red">de Campagne</span>';
                     }
                     break;
                 case 'cancel':
                     // descartar un proyecto por malo
                     if ($project->cancel($errors)) {
-                        $log_text = 'El admin %s ha pasado el proyecto %s al estado <span class="red">Descartado</span>';
+                        $log_text = 'El admin %s h a pass&eacute; le projet %s à l&apos;etat <span class="red">Jet&eacute;</span>';
                     } else {
-                        $log_text = 'Al admin %s le ha fallado al pasar el proyecto %s al estado <span class="red">Descartado</span>';
+                        $log_text = 'Al admin %s a echou&eacute; a passer le projet %s &agrave; l&apos;etat <span class="red">Jet&eacute;</span>';
                     }
                     break;
                 case 'enable':
                     // si no esta en edicion, recuperarlo
                     if ($project->enable($errors)) {
-                        $log_text = 'El admin %s ha pasado el proyecto %s al estado <span class="red">Edicion</span>';
+                        $log_text = 'El admin %s  a pass&eacute; le projet %s à l&apos;etat <span class="red">&Eacute;dition</span>';
                     } else {
-                        $log_text = 'Al admin %s le ha fallado al pasar el proyecto %s al estado <span class="red">Edicion</span>';
+                        $log_text = 'Al admin %sa echou&eacute; a passer le projet %s &agrave; l&apos;etat <span class="red">&Eacute;dition</span>';
                     }
                     break;
                 case 'fulfill':
                     // marcar que el proyecto ha cumplido con los retornos colectivos
                     if ($project->satisfied($errors)) {
-                        $log_text = 'El admin %s ha pasado el proyecto %s al estado <span class="red">Retorno cumplido</span>';
+                        $log_text = 'El admin %s  a pass&eacute; le projet %s à l&apos;etat <span class="red">Retour termin&eacute;</span>';
                     } else {
-                        $log_text = 'Al admin %s le ha fallado al pasar el proyecto %s al estado <span class="red">Retorno cumplido</span>';
+                        $log_text = 'Al admin %s a echou&eacute; a passer le projet %s &agrave; l&apos;etat <span class="red">Retour termin&eacute;</span>';
                     }
                     break;
                 case 'unfulfill':
                     // dar un proyecto por financiado manualmente
                     if ($project->rollback($errors)) {
-                        $log_text = 'El admin %s ha pasado el proyecto %s al estado <span class="red">Financiado</span>';
+                        $log_text = 'El admin %s  a pass&eacute; le projet %s à l&apos;etat  <span class="red">Financier</span>';
                     } else {
-                        $log_text = 'Al admin %s le ha fallado al pasar el proyecto %s al estado <span class="red">Financiado</span>';
+                        $log_text = 'Al admin %s a echou&eacute; a passer le projet %s &agrave; l&apos;etat <span class="red">Financier</span>';
                     }
                     break;
             }
@@ -366,9 +366,9 @@ namespace Goteo\Controller\Admin {
                     $mailHandler->html = true;
                     $mailHandler->template = $template->id;
                     if ($mailHandler->send()) {
-                        Message::Info('Se ha enviado un email a <strong>'.$project->user->name.'</strong> a la direcciÃ³n <strong>'.$project->user->email.'</strong>');
+                        Message::Info('a envoy&eacute;un email au <strong>'.$project->user->name.'</strong> destinataire <strong>'.$project->user->email.'</strong>');
                     } else {
-                        Message::Error('Ha fallado al enviar el mail a <strong>'.$project->user->name.'</strong> a la direcciÃ³n <strong>'.$project->user->email.'</strong>');
+                        Message::Error('Eche de l&apos;envoi un email au <strong>'.$project->user->name.'</strong> destinataire <strong>'.$project->user->email.'</strong>');
                     }
                     unset($mailHandler);
                 }

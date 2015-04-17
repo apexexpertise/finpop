@@ -56,12 +56,12 @@ namespace Goteo\Controller {
             $project = Model\Project::get($id);
             $errors = array();
             if ($project->delete($errors)) {
-                Message::Info("Has borrado los datos del proyecto '<strong>{$project->name}</strong>' correctamente");
+                Message::Info("a supprim&eacute; les donn&eacute;es du projet '<strong>{$project->name}</strong>' correctement");
                 if ($_SESSION['project']->id == $id) {
                     unset($_SESSION['project']);
                 }
             } else {
-                Message::Info("No se han podido borrar los datos del proyecto '<strong>{$project->name}</strong>'. Error:" . implode(', ', $errors));
+                Message::Info("On peut pas supprimer les donn&eacute;es du projet'<strong>{$project->name}</strong>'. Error:" . implode(', ', $errors));
             }
             throw new Redirection("/dashboard/projects");
         }
@@ -197,7 +197,7 @@ namespace Goteo\Controller {
                         $mailHandler->to = \GOTEO_MAIL;
                         $mailHandler->toName = 'Revisor de proyectos';
                         $mailHandler->subject = 'Proyecto ' . $project->name . ' enviado a valoración';
-                        $mailHandler->content = '<p>Han enviado un nuevo proyecto a revisión</p><p>El nombre del proyecto es: <span class="message-highlight-blue">'.$project->name.'</span> <br />y se puede ver en <span class="message-highlight-blue"><a href="'.SITE_URL.'/project/'.$project->id.'">'.SITE_URL.'/project/'.$project->id.'</a></span></p>';
+                        $mailHandler->content = '<p> a envoy&eacute, un nouveau projet de r&eacute;vision </p><p>Le nom du projet est: <span class="message-highlight-blue">'.$project->name.'</span> <br /> et on peut le voir <span class="message-highlight-blue"><a href="'.SITE_URL.'/project/'.$project->id.'">'.SITE_URL.'/project/'.$project->id.'</a></span></p>';
                         $mailHandler->html = true;
                         $mailHandler->template = 0;
                         if ($mailHandler->send($errors)) {
@@ -242,7 +242,7 @@ namespace Goteo\Controller {
                         // Evento Feed
                         $log = new Feed();
                         $log->setTarget($project->id);
-                        $log->populate('El proyecto '.$project->name.' se ha enviado a revision', '/project/'.$project->id, \vsprintf('%s ha inscrito el proyecto %s para <span class="red">revisión</span>, el estado global de la información es del %s', array(
+                        $log->populate('Le projet '.$project->name.' est envoy&eacute;', '/project/'.$project->id, \vsprintf('%s a envoy&eacute; le projet  %s pour <span class="red"> examiner </span>, l&apos;etat global de l&apos;information  %s', array(
                             Feed::item('user', $project->user->name, $project->user->id),
                             Feed::item('project', $project->name, $project->id),
                             Feed::item('relevant', $project->progress.'%')
@@ -422,8 +422,8 @@ namespace Goteo\Controller {
                 // Evento Feed
                 $log = new Feed();
                 $log->setTarget($_SESSION['user']->id, 'user');
-                $log->populate('usuario crea nuevo proyecto', 'admin/projects',
-                    \vsprintf('%s ha creado un nuevo proyecto, %s', array(
+                $log->populate('utilisateur cr&eacute un nouveau projet', 'admin/projects',
+                    \vsprintf('%s a cr&eacute;&eacute; un nouveau projet, %s', array(
                         Feed::item('user', $_SESSION['user']->name, $_SESSION['user']->id),
                         Feed::item('project', $project->name, $project->id))
                     ));
@@ -971,7 +971,7 @@ namespace Goteo\Controller {
             if (!empty($_POST['support-add'])) {
                 $project->supports[] = new Model\Project\Support(array(
                     'project'       => $project->id,
-                    'support'       => 'Nueva colaboración',
+                    'support'       => 'Nouvelle collaboration',
                     'type'          => 'task',
                     'description'   => ''
                 ));
