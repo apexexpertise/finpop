@@ -2122,6 +2122,7 @@ INSERT INTO `text` (`id`, `lang`, `text`) VALUES
 ('faq-project-section-header', 'en', 'About the projects'),
 ('faq-project-section-header', 'eu', 'Proiektuei buruz'),
 ('faq-project-section-header', 'fr', 'A propos des projets'),
+('faq-project-section-header', 'fr', 'Pour les promoteurs'),
 ('faq-project-section-header', 'gl', 'Sobre os proxectos'),
 ('faq-project-section-header', 'it', 'About the projects'),
 ('faq-project-section-header', 'nl', 'Over de projecten'),

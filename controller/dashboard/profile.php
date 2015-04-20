@@ -109,7 +109,7 @@ namespace Goteo\Controller\Dashboard {
 
             /// este es el único save que se lanza desde un metodo process_
             if ($user->save($errors)) {
-                $log_action = 'Actualizado su perfil';
+                $log_action = 'Actualis&eacute; son profil';
 //                Message::Info(Text::get('user-profile-saved'));
                 $user = Model\User::flush();
                 return true;

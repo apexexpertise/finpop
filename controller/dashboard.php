@@ -130,7 +130,7 @@ namespace Goteo\Controller {
                     // Evento Feed
                     $log = new Feed();
                     $log->setTarget($user->id, 'user');
-                    $log->populate('usuario ' . $log_action . ' (dashboard)', '/admin/users', \vsprintf('%s ha %s desde su dashboard', array(
+                    $log->populate('usuario ' . $log_action . ' (dashboard)', '/admin/users', \vsprintf('%s a %s à partir de son tableau de bord', array(
                                 Feed::item('user', $user->name, $user->id),
                                 Feed::item('relevant', $log_action)
                             )));

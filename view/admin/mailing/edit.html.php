@@ -69,7 +69,7 @@ jQuery(document).ready(function ($) {
         <dt><?php echo Text::_("S&eacute;lectionnez un mod&eacute;le:"); ?></dt>
         <dd>
             <select id="template" name="template" >
-                <option value="0"><?php echo Text::_("Sin plantilla"); ?></option>
+                <option value="0"><?php echo Text::_("Sans mod&eacute;le"); ?></option>
             <?php foreach ($templates as $templateId=>$templateName) : ?>
                 <option value="<?php echo $templateId; ?>"><?php echo $templateName; ?></option>
             <?php endforeach; ?>
