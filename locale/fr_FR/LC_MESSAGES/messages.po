@@ -1609,7 +1609,7 @@ msgstr "TODO List"
 
 #: /home/zilog/development/webapps/Goteo/controller/admin.php:54813
 msgid "No tienes tareas pendientes"
-msgstr "Vous ne avez pas d'attente"
+msgstr "Vous n&apos;avez pas d'attente"
 
 #: /home/zilog/development/webapps/Goteo/controller/admin.php:5484
 msgid "Traducciones de proyectos"

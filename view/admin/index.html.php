@@ -38,40 +38,69 @@ include 'view/prologue.html.php';
 include 'view/header.html.php'; 
 ?>
 
-        <div id="sub-header" style="margin-bottom: 10px;">
-            <div class="breadcrumbs"><?php echo ADMIN_BCPATH; ?></div>
-        </div>
+
 
 <?php if(isset($_SESSION['messages'])) { include 'view/header/message.html.php'; } ?>
 
-        <div id="main">
+<div class="container"  style="margin-left: 0px;width:100%;">
 
-            <div class="admin-center">
+	<div class="row">
 
-            <div class="admin-menu">
-                <?php foreach ($_SESSION['admin_menu'] as $sCode=>$section) : ?>
-                <fieldset>
-                    <legend><?php echo $section['label'] ?></legend>
-                    <ul>
-                    <?php foreach ($section['options'] as $oCode=>$option) :
-                        echo '<li><a href="/admin/'.$oCode.'">'.$option['label'].'</a></li>';
-                    endforeach; ?>
-                    </ul>
-                </fieldset>
-                <?php endforeach; ?>
+		<div class="col-md-3 column" style=" width:239px;padding-left: 0px;padding-right: 0px;">
+		
+                <img  src="/view/css/admin/grey.png" height="51px" width="240px"/>
+                <div class="panel-group" id="panel-623058" style="width:240px;">
+				<div class="panel panel-default" >
+				 <?php $i =  0;  ?>
+				 <?php foreach ($_SESSION['admin_menu'] as $sCode=>$section) : ?>
+					<div class="panel-heading" style="background-color: #85909d;height:40px;" >
+					
+					  <?php $i = $i + 1;  ?>
+						 <a class="panel-title collapsed" style="font-size:16px;font-family:Myriad Pro,Regular;color:white" data-toggle="collapse" data-parent="#panel-623058" href="#panel-element-779446<?php echo $i ?>"><img  src="/view/css/admin/<?php echo $i ?>.png"/> &nbsp;&nbsp;&nbsp; <?php echo $section['label'] ?>
+						
+						 <span style="float:right;" class="fa fa-angle-right"></span>
+						 <span style="float:right;" class="fa fa-angle-down"></span>
+						  
+						
+    					</a>
+					</div>
+					<div id="panel-element-779446<?php echo $i ?>" class="panel-collapse in">
+						<div class="panel-body" style="background-color:#f6f6f6;width:240px;padding: 0px;border-right:1px solid #c8c7cc;">
+							<?php
+																
+																foreach ( $section ['options'] as $oCode => $option ) :
+																	echo '<div class="item"><center><a href="/admin/' . $oCode . '" style="font-size:16px;font-family:Myriad Pro,Regular;" >' . $option ['label'] . '</a> </center> </div>';
+																endforeach
+																;
+																?>
+						</div>
+						
+					</div>
+					<?php endforeach; ?> 
+				</div>
+				
             </div>
-
+            
+            </div>
+            
             <?php if (isset($_SESSION['user']->roles['superadmin'])) : ?>
-            <div class="widget board">
-                <ul>
-                    <li><a href="/admin/projects"><?php echo Text::_("Proyectos"); ?></a></li>
-                    <li><a href="/admin/users"><?php echo Text::_("Usuarios"); ?></a></li>
-                    <li><a href="/admin/accounts"><?php echo Text::_("Aportes"); ?></a></li>
-                    <li><a href="/admin/texts"><?php echo Text::_("Textos"); ?></a></li>
-                    <li><a href="/admin/tasks"><?php echo Text::_("Tareas"); ?></a></li>
-                    <li><a href="/admin/newsletter"><?php echo Text::_("Mailings"); ?></a></li>
-                </ul>
-            </div>
+            <div class="col-md-6 column" style="padding-left: 0px;padding-right: 0px;">
+            
+           
+          <ul class="bc">
+          <li> <img  src="/view/css/admin/home.png" height="17px" width="18px"/>  </li>
+          <?php echo ADMIN_BCPATH; ?>
+          </ul>
+            <ul class="nav nav-pills">
+				
+					<li><a href="/admin/projects"><strong><?php echo Text::_("Proyectos"); ?></strong></a></li>
+					<li><a href="/admin/users"><strong><?php echo Text::_("Usuarios"); ?></strong></a></li>
+					<li><a href="/admin/accounts"><strong><?php echo Text::_("Aportes"); ?></strong></a></li>
+					<li><a href="/admin/texts"><strong><?php echo Text::_("Textos"); ?></strong></a></li>
+					<li><a href="/admin/tasks"><strong><?php echo Text::_("Tareas"); ?></strong></a></li>
+					<li><a href="/admin/newsletter"><strong><?php echo Text::_("Mailings"); ?></strong></a></li>
+				</ul>
+			
             <?php endif; ?>
 
 
@@ -93,27 +122,31 @@ include 'view/header.html.php';
 
         // Central pendientes
     ?>
-        <div class="widget admin-home">
-            <h3 class="title"><?php echo Text::_("TODO List"); ?></h3>
+       
+				<h3 class="text-center text-primary"><?php echo Text::_("LISTE DE CHOSES &Agrave; FAIRE"); ?></h3>
             <?php if (!empty($this['tasks'])) : ?>
-            <table>
+            <table class="table table-striped table-hover ">
                 <?php foreach ($this['tasks'] as $task) : ?>
-                <tr>
-                    <td><?php if (!empty($task->url)) { echo ' <a href="'.$task->url.'">[IR]</a>';} ?></td>
-                    <td><?php echo $task->text; ?></td>
-                </tr>
+                <tr class="info">
+						<td><?php if (!empty($task->url)) { echo ' <a href="'.$task->url.'">[IR]</a>';} ?></td>
+						<td><?php echo $task->text; ?></td>
+					</tr>
                 <?php endforeach; ?>
             </table>
+            <br/>
+             <br/>
             <?php else : ?>
-            <p><?php echo Text::_("No tienes tareas pendientes"); ?></p>
-            <?php endif; ?>
-        </div>
+            
+             <p class="text-primary" style="text-align:center;"><small> <?php echo Text::_("No tienes tareas pendientes"); ?></small></p>
+           <?php endif; ?>
+       
     <?php
         // Lateral de acctividad reciente
     ?>
-            <div class="admin-side">
-                <a name="feed"></a>
-                <div class="widget feed">
+    </div>
+            <div class="col-md-3 column" >
+				<a name="feed"></a>
+				<div class="widget feed">
 					<script type="text/javascript">
                     jQuery(document).ready(function($) {
                         $('.scroll-pane').jScrollPane({showArrows: true});
@@ -129,37 +162,51 @@ include 'view/header.html.php';
 
                     });
                     </script>
-                    <h3><?php echo Text::_("actividad reciente"); ?></h3>
-                    <?php echo Text::_("Ver Feeds por:"); ?>
-
-                    <p class="categories">
+					<h3 class="text-center text-primary"><?php echo Text::_("actividad reciente"); ?></h3>
+                   <p class="text-muted"> <strong><?php echo Text::_("Voir Activit&eacute;s par:"); ?>
+					</strong></p>
+                    <p class="text-primary"><small>
                         <?php foreach (Feed::_admin_types() as $id=>$cat) : ?>
-                        <a href="/admin/recent/?feed=<?php echo $id ?>#feed" <?php echo ($feed == $id) ? 'class="'.$cat['color'].'"': 'class="hov" rel="'.$cat['color'].'"' ?>><?php echo $cat['label'] ?></a>
+                        <a
+							href="/admin/recent/?feed=<?php echo $id ?>#feed"
+							<?php echo ($feed == $id) ? 'class="'.$cat['color'].'"': 'class="hov" rel="'.$cat['color'].'"' ?>><?php echo $cat['label'] ?></a>
                         <?php endforeach; ?>
+                        </small>
                     </p>
 
-                    <div class="scroll-pane">
+					
+					<!-- fin center -->
                         <?php foreach ($items as $item) :
                             $odd = !$odd ? true : false;
                             ?>
-                        <div class="subitem<?php if ($odd) echo ' odd';?>">
-                           <span class="datepub"><?php echo Text::get('feed-timeago', $item->timeago); ?></span>
-                           <div class="content-pub"><?php echo $item->html; ?></div>
-                        </div>
+                         <blockquote>
+    <p><?php echo $item->html; ?></p>
+    <small><?php echo Text::get('feed-timeago', $item->timeago); ?> </small>
+</blockquote>
                         <?php endforeach; ?>
-                    </div>
-
-                    <a href="/admin/recent/<?php echo isset($_GET['feed']) ? '?feed='.$_GET['feed'] : ''; ?>" style="margin-top:10px;float:right;text-transform:uppercase">Voir plus</a>
+                        
                     
-                </div>
-            </div>
+
+					<a
+						href="/admin/recent/<?php echo isset($_GET['feed']) ? '?feed='.$_GET['feed'] : ''; ?>"
+						style="margin-top: 10px; float: right; text-transform: uppercase">Voir
+						plus</a>
+<!-- fin center -->
+					
+						
+				</div>
+			</div>
 
 
         <?php endif; ?>
 
-            </div> <!-- fin center -->
+            </div>
+            
+            </div>
+		<!-- fin center -->
 
-        </div> <!-- fin main -->
+	
+	<!-- fin main -->
 
 <?php
     include 'view/footer.html.php';
