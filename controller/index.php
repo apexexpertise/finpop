@@ -36,6 +36,7 @@ namespace Goteo\Controller {
 
 use Goteo\Library\Listing;
 use Goteo\Model\Sponsor;
+use Goteo\Model\News;
 								
     class Index extends \Goteo\Core\Controller {
     	
@@ -98,6 +99,7 @@ use Goteo\Model\Sponsor;
             //recent projects
             $projects = Project::published('recent'); 
             $parteners = Sponsor::getAll();
+            $news = News::getAll();
 
             return new View('view/index.html.php',
                 array(
@@ -107,7 +109,9 @@ use Goteo\Model\Sponsor;
                     'order'    => $order,
                 	'promotes' => $promotes,
                 	'projects' => $projects,
-                	 'parteners' => $parteners
+                	'parteners' => $parteners,
+                	'news'=> $news
+                		
                 )
             );
             

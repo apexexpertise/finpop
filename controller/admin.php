@@ -593,7 +593,7 @@ namespace Goteo\Controller {
                                 'blog' => $options['blog'], // entradas de blog (en la gestion de blog)
                                 'sponsors' => $options['sponsors'], // patrocinadores del nodo
                                 'recent' => $options['recent'], // feed admin
-                               
+                                
                             )
                         )
                     );
@@ -648,6 +648,7 @@ namespace Goteo\Controller {
                                 'recent' => $options['recent'],
                                 'home' => $options['home'],
                                 'sponsors' => $options['sponsors'],
+                                'news' => $options['news']
                             )
                         ),
                         'sponsors' => array(

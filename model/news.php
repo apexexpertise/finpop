@@ -29,6 +29,7 @@ namespace Goteo\Model {
         public
             $id,
             $title,
+            $logo,
             $url,
             $order;
 
@@ -42,6 +43,7 @@ namespace Goteo\Model {
                         IFNULL(news_lang.title, news.title) as title,
                         IFNULL(news_lang.description, news.description) as description,
                         news.url as url,
+                		news.logo as logo,
                         news.order as `order`
                     FROM news
                     LEFT JOIN news_lang
@@ -57,7 +59,7 @@ namespace Goteo\Model {
         /*
          * Lista de noticias
          */
-        public static function getAll ($highlights = false) {
+        public static function getAll ($highlights = false,$backend=false) {
 
             $list = array();
 
@@ -67,6 +69,7 @@ namespace Goteo\Model {
                     IFNULL(news_lang.title, news.title) as title,
                     IFNULL(news_lang.description, news.description) as description,
                     news.url as url,
+            		news.logo as logo,
                     news.order as `order`
                 FROM news
                 LEFT JOIN news_lang
@@ -79,9 +82,10 @@ namespace Goteo\Model {
                 if ($highlights) {
                     $item->title = Text::recorta($item->title, 80);
                 }
+             	if($backend)
+             		$item->logo="<img src='".SRC_URL."/image/".$item->logo."/80/80' />";
                 $list[] = $item;
             }
-
             return $list;
         }
 
@@ -101,10 +105,21 @@ namespace Goteo\Model {
         public function save (&$errors = array()) {
             if (!$this->validate($errors)) return false;
 
+            if (is_array($this->logo) && !empty($this->logo['name'])) {
+            	$image = new Image($this->logo);
+            	if ($image->save($errors)) {
+            		$this->logo = $image->id;
+            	} else {
+            		\Goteo\Library\Message::Error(Text::get('image-upload-fail') . implode(', ', $errors));
+            		$this->logo = '';
+            	}
+            }
+            
             $fields = array(
                 'id',
                 'title',
-                'description',
+                'description',	
+                'logo',
                 'url',
                 'order'
                 );

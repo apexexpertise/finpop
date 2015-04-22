@@ -69,6 +69,11 @@ namespace Goteo\Controller\Admin {
                                         'type' => 'textarea',
                                         'properties' => 'cols="100" rows="2"'
                                     ),
+                                    'logo' => array(
+                                    		'label' => Text::_('Logo'),
+                                    		'name' => 'logo',
+                                    		'type' => 'image'
+                                    ),
                                     'url' => array(
                                         'label' => 'Lien',
                                         'name' => 'url',
@@ -96,10 +101,28 @@ namespace Goteo\Controller\Admin {
                             'id'          => $_POST['id'],
                             'title'       => $_POST['title'],
                             'description' => $_POST['description'],
+                            'logo'        => $_POST['logo'],
                             'url'         => $_POST['url'],
                             'order'       => $_POST['order']
                         ));
 
+                        // tratar si quitan la imagen
+                        $current = $_POST['logo']; // la actual
+                        if (isset($_POST['logo-' . $current .  '-remove'])) {
+                        	$image = Model\Image::get($current);
+                        	$image->remove('news');
+                        	$item->logo = '';
+                        	$removed = true;
+                        }
+                      
+                        
+                        // tratar la imagen y ponerla en la propiedad image
+                        if(!empty($_FILES['logo']['name'])) {
+                        	$item->logo = $_FILES['logo'];
+                        }
+                        
+                        
+                        
                         if ($item->save($errors)) {
 
                             if (empty($_POST['id'])) {
@@ -153,6 +176,11 @@ namespace Goteo\Controller\Admin {
                                         'type' => 'textarea',
                                         'properties' => 'cols="100" rows="2"'
                                     ),
+                                    'logo' => array(
+                                	    'label' => Text::_('Logo'),
+                                		'name' => 'logo',
+                                		'type' => 'image'
+                                		),
                                     'url' => array(
                                         'label' => 'Enlace',
                                         'name' => 'url',
@@ -203,16 +231,18 @@ namespace Goteo\Controller\Admin {
                     'file' => 'list',
                     'model' => 'news',
                     'addbutton' => 'Nouveau notice',
-                    'data' => $model::getAll(),
+                    'data' => $model::getAll(false,true),
                     'columns' => array(
                         'edit' => '',
-                        'title' => 'Noticia',
+                        'title' => 'Nom',
+                    	'description' => 'Description',
+                        'logo' => 'Logo',             
 //                        'url' => 'Enlace',
-                        'order' => 'Posición',
-                        'up' => '',
-                        'down' => '',
-                        'translate' => '',
-                        'remove' => ''
+                         'order' => 'Position',
+                         'up' => '',
+                         'down' => '',
+                      //  'translate' => '',
+                          'remove' => ''
                     ),
                     'url' => "$url"
                 )
