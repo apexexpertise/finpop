@@ -175,7 +175,7 @@ namespace Goteo\Controller {
                     )
                 ),
                 'news' => array(
-                    'label' => Text::_('Micronoticias'),
+                    'label' => Text::_('Journal'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'add' => array('label' => Text::_('Nueva Micronoticia'), 'item' => false),

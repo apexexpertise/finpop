@@ -64,11 +64,11 @@
             <li class="explore"><a class="" href="/discover"><?php echo Text::get('regular-discover'); ?></a></li>
             <li class="create"><a class="" href="/project/create"><?php echo Text::get('regular-create'); ?></a></li>
             <?php if (!empty($_SESSION['user'])): ?>
-            <li class="community"><a href="/community"><span><?php echo Text::get('community-menu-main'); ?></span></a>
+            <li class="community"><a href="/community"><span><?php echo Text::get('Fonctionnement'); ?></span></a>
                 <div>
                     <ul>
-                        <li><a href="/community/activity"><span><?php echo Text::get('community-menu-activity'); ?></span></a></li>
-                        <li><a href="/community/sharemates"><span><?php echo Text::get('community-menu-sharemates'); ?></span></a></li>
+                        <li><a href="/community/activity"><span><?php echo Text::get('Comment &#231;a marche'); ?></span></a></li>
+                        <li><a href="/community/sharemates"><span><?php echo Text::get('FAQ'); ?></span></a></li>
                     </ul>
                 </div>
             </li>
