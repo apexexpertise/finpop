@@ -16,6 +16,87 @@
  *  along with Goteo.  If not, see <http://www.gnu.org/licenses/agpl.txt>.
  *
  */
+ .panel-heading:hover{
+ background-color:blue;
+ }
+ .item {
+ background-color:#f6f6f6;
+ padding: 8px;
+ border-bottom:1px solid #c8c7cc;
+ width:240px
+ }
+ 
+ .item:hover {
+ 
+ background-image: url('/view/css/admin/ItemSelected.png');
+  border-bottom:none;
+  background-color:transparent;
+ width:250px
+ }  
+ 
+ .item:hover a {
+ color: white;
+ }
+ .bc{
+ padding:8px 25px;
+ margin-bottom:20px;
+ list-style:none;
+ border-radius:4px
+ font-size:14px;
+ font-family:Myriad Pro,Regular;
+ background-image: url('/view/css/admin/layer.png');
+ color:#59a3f5;
+ height:51px;
+ width:100%;"
+ }
+ 
+ .bc>li{
+ margin-top:10px;
+ display:inline-block}
+ .bc>li+li:before{
+ content:"/\00a0";padding:5 5px;color:black
+ }
+ .bc>.active{
+ color:#59a3f5
+ }
+ 
+ 
+ blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+ .panel-title .fa-angle-down{
+    display: none;
+}
+
+.panel-title.collapsed .fa-angle-down{
+    display: inline-block;
+}
+
+.panel-title .fa-angle-right{
+    display: inline-block;
+}
+
+.panel-title.collapsed .fa-angle-right{
+    display: none;
+}
+ 
+ 
+ 
 body.admin div#main {
     margin-top: 0;
     margin-bottom: 0;
@@ -29,19 +110,7 @@ body.admin div#sub-header {
     padding-bottom: 10px;
 }
 
-body.admin div#sub-header div.breadcrumbs,
-body.admin div#sub-header div.breadcrumbs a {
-    color: #58595B;
-    font-size: 18px;
-}
 
-body.admin div#sub-header div.breadcrumbs a:hover {
-    color: #20B2B3;
-}
-
-body.admin div#sub-header div.breadcrumbs strong {
-    color: #20B2B3;
-}
 
 body.admin div#main div.admin-menu,
 body.admin div#main div.admin-home,

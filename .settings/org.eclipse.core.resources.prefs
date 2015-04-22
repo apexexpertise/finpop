@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//db/purpose.sql=UTF-8
+encoding//db/templates.sql=UTF-8
 encoding//db/texts.sql=UTF-8
 encoding//library/text.php=UTF-8
 encoding//locale/en__.po=UTF-8

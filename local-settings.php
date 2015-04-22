@@ -16,7 +16,7 @@ define("MAIL_HANDLER", "phpmailer");
 
 // Database
 define('GOTEO_DB_DRIVER', 'mysql');
-define('GOTEO_DB_HOST', 'localhost');
+define('GOTEO_DB_HOST', '192.168.100.25');
 define('GOTEO_DB_PORT', 3306);
 define('GOTEO_DB_CHARSET', 'UTF-8');
 define('GOTEO_DB_SCHEMA', 'finpop');
@@ -92,9 +92,9 @@ $config['options'] = array(
 define('GOTEO_DEFAULT_LANG', $config['locale']['default_language']);
 
 // url (this will change on Goteo v3)
-define('SITE_URL', 'http://3af00945.ngrok.io/'); // endpoint url
-define('SRC_URL', 'http://3af00945.ngrok.io/');  // host for statics
-define('SEC_URL', 'http://3af00945.ngrok.io/');  // with SSL certified
+define('SITE_URL', 'http://finpop.dev/'); // endpoint url
+define('SRC_URL', 'http://finpop.dev/');  // host for statics
+define('SEC_URL', 'http://finpop.dev/');  // with SSL certified
 
 //Sessions
 //session handler: php, dynamodb
