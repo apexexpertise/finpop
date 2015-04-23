@@ -413,9 +413,9 @@ namespace Goteo\Controller {
                     $action = $options[$BC['option']]['actions'][$BC['action']];
                     // si es de item , añadir el id (si viene)
                     if ($action['item'] && !empty($BC['id'])) {
-                        $path = " &gt; <strong>{$action['label']}</strong> {$BC['id']}";
+                        $path = " &sol; {$action['label']} {$BC['id']}";
                     } else {
-                        $path = " &gt; <strong>{$action['label']}</strong>";
+                        $path = " &sol; {$action['label']}";
                     }
                 }
 
@@ -423,17 +423,17 @@ namespace Goteo\Controller {
                 if (!empty($BC['option']) && isset($options[$BC['option']])) {
                     $option = $options[$BC['option']];
                     if ($BC['action'] == 'list') {
-                        $path = " &gt; <strong>{$option['label']}</strong>";
+                        $path = " &sol; {$option['label']}";
                     } else {
-                        $path = ' &gt; <a href="/admin/' . $BC['option'] . '">' . $option['label'] . '</a>' . $path;
+                        $path = ' &sol; <a href="/admin/' . $BC['option'] . '">' . $option['label'] . '</a>' . $path;
                     }
                 }
 
                 // si el BC tiene section, facil, enlace al admin
                 if ($BC['option'] == 'index') {
-                    $path = "<strong>{$admin_label}</strong>";
+                    $path = '&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;'.$admin_label;
                 } else {
-                    $path = '<a href="/admin">' . $admin_label . '</a>' . $path;
+                    $path = '&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<a href="/admin">' . $admin_label . '</a>' . $path;
                 }
 
                 return $path;
