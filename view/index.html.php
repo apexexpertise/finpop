@@ -288,8 +288,6 @@ include 'view/header.html.php';
 		</div>
 	</div>
 </div>
-
-<div class="panel-scroll">
  <?php
 				foreach ( $this ['order'] as $item => $itemData ) {
 					if (! empty ( $this [$item] ))
@@ -298,5 +296,4 @@ include 'view/header.html.php';
 				?>
 <?php include 'view/home/presskit.html.php'; ?>
 <?php include 'view/footer.html.php'; ?>
-</div>
 <?php include 'view/epilogue.html.php'; ?>
