@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2012 Platoniq y FundaciÃ³n Fuentes Abiertas (see README for details)
+ * Copyright (C) 2012 Platoniq y Fundación Fuentes Abiertas (see README for details)
  * This file is part of Goteo.
  *
  * Goteo is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@
 use Goteo\Core\View, Goteo\Library\Text;
 
 $bodyClass = 'user-login';
-// para que el prologue ponga el cÃ³digo js para botÃ³n facebook en el bannerside
+// para que el prologue ponga el código js para botón facebook en el bannerside
 $fbCode = Text::widget ( Text::get ( 'social-account-facebook' ), 'fb' );
 $jscrypt = true;
 include 'view/prologue.html.php';

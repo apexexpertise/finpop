@@ -56,8 +56,9 @@
 	else{
 		$("#header").css('position','relative');
 	}
-</script>
 
+
+</script>
     <div id="menu">     
         <ul>
             <li class="home"><a href="/"><?php echo Text::get('regular-home'); ?></a></li>
@@ -74,7 +75,7 @@
             </li>
             <?php else: ?>
             <li class="create">
-                <a href="/community"><span><?php echo Text::get('community-menu-main'); ?></span></a>
+                <a href="/community"><span><?php echo Text::get('Fonctionnement'); ?></span></a>
             </li>
             <?php endif ?>
 
@@ -100,9 +101,12 @@
             </li>            
             <?php else: ?>            
             <li class="connexion">
-                <a href="/user/login"><?php echo Text::get('regular-login'); ?></a>
+                <a href="#">Inscription</a>
+                <a href="/user/login"><?php echo Text::get('Connexion'); ?></a>
             </li>
             
             <?php endif ?>
-        </ul>
+        </ul>	       
     </div>
+    
+   

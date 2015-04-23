@@ -230,7 +230,7 @@ namespace Goteo\Controller\Admin {
                     'folder' => 'base',
                     'file' => 'list',
                     'model' => 'news',
-                    'addbutton' => 'Nouveau notice',
+                    'addbutton' => 'Nouveau journal',
                     'data' => $model::getAll(false,true),
                     'columns' => array(
                         'edit' => '',
