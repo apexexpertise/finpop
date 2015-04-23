@@ -18,7 +18,7 @@ $news = $this['news'];
 	<div class="sky-carousel-wrapper">
 		<ul class="sky-carousel-container">
 	<?php foreach ($news as $new) : ?>
-	<li><img src="<?php echo SRC_URL."/image/".$new->logo."/350/350"; ?>" alt="" />
+	<li><img src="<?php echo SRC_URL."/image/".$new->logo."/280/280"; ?>" alt="" />
 				<div class="sc-content">
 				<h2><?php echo $new->title?></h2>
 					<p><?php echo $new->description?></p>
