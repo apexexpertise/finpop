@@ -37,13 +37,15 @@
  background-image: url('/view/css/admin/ItemSelected.png');
   border-bottom:none;
   background-color:transparent;
-  
- width:250px
- }  
+ 	width:250px
+ }
  
+ .item a {
+ text-decoration:none
+ }
  .item:hover a {
- color: white;
- text-decoration:underline
+ text-decoration:none;
+ color: white
  }
  .bc{
  padding:8px 25px;

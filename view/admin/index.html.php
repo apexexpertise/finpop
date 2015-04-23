@@ -65,7 +65,7 @@ include 'view/header.html.php';
 					
 					  <?php $i = $i + 1;  ?>
 					  <img  src="/view/css/admin/<?php echo $i ?>.png"/> &nbsp;
-						 <a class="panel-title  collapsed" style="float:center;font-size:16px;font-family:Myriad Pro,Regular;color:white" data-toggle="collapse" data-parent="#panel-623058" href="#panel-element-779446<?php echo $i ?>"> <?php echo $section['label'] ?>
+						 <a class="panel-title  collapsed" style="text-decoration:none;float:center;font-size:18px;font-family:Myriad Pro,Regular;color:white" data-toggle="collapse" data-parent="#panel-623058" href="#panel-element-779446<?php echo $i ?>"> <?php echo $section['label'] ?>
 						<span style="float:right;" class="fa fa-angle-down"></span>
 						 <span style="float:right;" class="fa fa-angle-right"></span>
 						 
