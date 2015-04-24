@@ -18,29 +18,28 @@
  */
  @font-face {
 	font-family: 'Myriad-Pro';
-	src: url('/fonts/Myriad-Pro.eot'); /* IE */  
-	src: local('Myriad-Pro'), url('/fonts/Myriad-Pro.ttf') format('truetype'); /* non-IE */
+	src: url('/view/css/admin/MyriadPro-Regular.eot'); /* IE */  
+	src: local('Myriad-Pro'), url('/view/css/admin/myriad-web-pro.ttf') format('truetype'); /* non-IE */
 	/*src: local('Myriad-Pro'), url('/fonts/Myriad-Pro.woff') format('woff'); /* Modern Browsers */
 }
- .panel-heading:hover{
- background-color:blue;
- }
+
  .item {
  background-color:#f6f6f6;
  padding: 8px;
- border-bottom:1px solid #c8c7cc;
- width:240px
+ border-bottom:1px solid #c8c7cc
  }
  
  .item:hover {
  
  background-image: url('/view/css/admin/ItemSelected.png');
   border-bottom:none;
+  background-position:center right;
   background-color:transparent;
- 	width:250px
+  width:105%
  }
  
  .item a {
+ text-align:justify; 
  text-decoration:none
  }
  .item:hover a {
@@ -53,19 +52,19 @@
  margin-bottom:20px;
  text-align:left;
  border-radius:4px;
- font-size:16px;
+ font-size:18px;
  color:black;
  height:51px
  }
   .bc a{
   font-family:Myriad Pro,Regular;
-  font-size:16px;
+  font-size:18px;
  color:#59a3f5
   }
  .bc>li{
  margin-top:10px;
  display:inline-block;
- font-size:16px;
+ font-size:18px;
  font-family:OpenSans,Light
  }
  .bc>li+li:before{

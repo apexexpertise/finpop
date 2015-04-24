@@ -44,8 +44,8 @@ include 'view/header.html.php';
 
 <div class="container"  style="margin-left: 0px;width:100%;">
 	<div class="row">
-	<div class="col-xs-6 col-sm-6 col-md-3 text-center leftspan" id="one" style="padding:0px;height:51px;width:17%;background-image: url('/view/css/admin/layer.png');"></div>
-        <div class="col-xs-6 col-sm-6 col-md-3 leftspan" id="two" style="padding:0px;height:51px;width:83%;background-image: url('/view/css/admin/layer.png');">
+	<div class="col-xs-6 col-sm-6 col-md-3 text-center leftspan" id="one" style="padding:0px;height:51px;width:25%;background-image: url('/view/css/admin/layer.png');"></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 leftspan" id="two" style="padding:0px;height:51px;width:75%;background-image: url('/view/css/admin/layer.png');">
 		<ul class="bc">
           <li> <img  src="/view/css/admin/home.png" height="23px" width="19px" style="padding-bottom:7px;padding-top:0px;"/>  </li>
           <?php echo ADMIN_BCPATH; ?>
@@ -54,7 +54,7 @@ include 'view/header.html.php';
 	</div>
 	<div class="row">
 
-		<div class="col-md-3 column" style=" width:17%;padding-left: 0px;padding-right: 0px;">
+		<div class="col-md-3 column" style=" width:25%;padding-left: 0px;padding-right: 0px;">
 		
                
                 <div class="panel-group" id="panel-623058" style="margin-bottom:0px;">
@@ -78,7 +78,8 @@ include 'view/header.html.php';
 							<?php
 																
 																foreach ( $section ['options'] as $oCode => $option ) :
-																	echo '<div class="item"><center><a href="/admin/' . $oCode . '" style="font-size:16px;font-family:Myriad Pro,Regular;" >' . $option ['label'] . '</a> </center> </div>';
+																	echo '<div class="item"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 		<a href="/admin/' . $oCode . '" style="font-size:18px;font-family:Myriad Pro,Regular;" >' . $option ['label'] . '</a></div>';
 																endforeach
 																;
 																?>
