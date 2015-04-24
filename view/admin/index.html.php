@@ -18,45 +18,50 @@
  *
  */
 
-use Goteo\Library\Text,
-    Goteo\Core\View,
-    Goteo\Core\ACL,
-    Goteo\Library\Feed,
 
-    Goteo\Controller\Admin;
-if (!isset($_SESSION['admin_menu'])) {
-    $_SESSION['admin_menu'] = Admin::menu();
-}
-
-$bodyClass = 'admin';
-
-// funcionalidades con autocomplete
-$jsreq_autocomplete = $this['autocomplete'];
-
-
-include 'view/prologue.html.php';
-include 'view/header.html.php'; 
 ?>
 
 
 
-<?php if(isset($_SESSION['messages'])) { include 'view/header/message.html.php'; } ?>
+
 
 <div class="container"  style="margin-left: 0px;width:100%;">
 	<div class="row">
-	<div class="col-xs-6 col-sm-6 col-md-3 text-center leftspan" id="one" style="padding:0px;height:51px;width:25%;background-image: url('/view/css/admin/layer.png');"></div>
-        <div class="col-xs-6 col-sm-6 col-md-3 leftspan" id="two" style="padding:0px;height:51px;width:75%;background-image: url('/view/css/admin/layer.png');">
+	<nav class="navbar-fixed-top">
+	<?php
+	use Goteo\Library\Text,
+	Goteo\Core\View,
+	Goteo\Core\ACL,
+	Goteo\Library\Feed,
+	
+	Goteo\Controller\Admin;
+	if (!isset($_SESSION['admin_menu'])) {
+		$_SESSION['admin_menu'] = Admin::menu();
+	}
+	
+	$bodyClass = 'admin';
+	
+	// funcionalidades con autocomplete
+	$jsreq_autocomplete = $this['autocomplete'];
+	
+	
+	include 'view/prologue.html.php';
+	include 'view/header.html.php';
+	if(isset($_SESSION['messages'])) { include 'view/header/message.html.php'; } ?>
+	<div class="col-xs-6 col-sm-6 col-md-3 text-center leftspan" id="one" style="padding:0px;height:51px;width:22%;background-image: url('/view/css/admin/layer.png');"></div>
+        <div class="col-xs-6 col-sm-6 col-md-3 leftspan" id="two" style="padding:0px;height:51px;width:78%;background-image: url('/view/css/admin/layer.png');">
 		<ul class="bc">
           <li> <img  src="/view/css/admin/home.png" height="23px" width="19px" style="padding-bottom:7px;padding-top:0px;"/>  </li>
           <?php echo ADMIN_BCPATH; ?>
           </ul>
 		</div>
+		</nav>
 	</div>
 	<div class="row">
 
-		<div class="col-md-3 column" style=" width:25%;padding-left: 0px;padding-right: 0px;">
+		<div class="col-md-3 column" style="position:fixed;top:117px; width:22%;padding-left: 0px;padding-right: 0px;">
 		
-               
+            
                 <div class="panel-group" id="panel-623058" style="margin-bottom:0px;">
 				<div class="panel panel-default" >
 				 <?php $i =  0;  ?>
@@ -64,21 +69,23 @@ include 'view/header.html.php';
 					<div class="panel-heading" style="background-color: #85909d;height:40px;border-radius: 0px;" >
 					
 					  <?php $i = $i + 1;  ?>
+					 
 					  <img  src="/view/css/admin/<?php echo $i ?>.png"/> &nbsp;
-						 <a class="panel-title  collapsed" style="text-decoration:none;float:center;font-size:18px;font-family:Myriad Pro,Regular;color:white" data-toggle="collapse" data-parent="#panel-623058" href="#panel-element-779446<?php echo $i ?>"> <?php echo $section['label'] ?>
+						 <a id="<?php echo $i ?>" class="panel-title  collapsed" style="text-decoration:none;float:center;font-size:18px;font-family:Myriad Pro,Regular;color:white" data-toggle="collapse" data-parent="#panel-623058" href="#panel-element-779446<?php echo $i ?>"> <?php echo $section['label'] ?>
 						<span style="float:right;" class="fa fa-angle-down"></span>
 						 <span style="float:right;" class="fa fa-angle-right"></span>
-						 
+						
 						  
 						
     					</a>
+    					
 					</div>
 					<div id="panel-element-779446<?php echo $i ?>" class="panel-collapse collapse">
 						<div id="collapseOne" class="panel-body" style="background-color:#f6f6f6;padding: 0px;border-right:1px solid #c8c7cc;">
 							<?php
 																
 																foreach ( $section ['options'] as $oCode => $option ) :
-																	echo '<div class="item"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	echo '<div class="item">
  		<a href="/admin/' . $oCode . '" style="font-size:18px;font-family:Myriad Pro,Regular;" >' . $option ['label'] . '</a></div>';
 																endforeach
 																;
@@ -90,22 +97,16 @@ include 'view/header.html.php';
 				</div>
 				
             </div>
+           
             </div>
             
             <?php if (isset($_SESSION['user']->roles['superadmin'])) : ?>
-            <div class="col-md-6 column" style="padding-left: 0px;padding-right: 0px;">
+            <div class="col-md-9 column" style="width:100%;height:100%;overflow:scroll;top:117px; left:22%;padding-left: 0px;padding-right: 0px;">
             
-           
-         
-            <ul class="nav nav-pills">
+           <div class="row">
+				<div class="col-md-6 column">
 				
-					<li><a href="/admin/projects"><strong><?php echo Text::_("Proyectos"); ?></strong></a></li>
-					<li><a href="/admin/users"><strong><?php echo Text::_("Usuarios"); ?></strong></a></li>
-					<li><a href="/admin/accounts"><strong><?php echo Text::_("Aportes"); ?></strong></a></li>
-					<li><a href="/admin/texts"><strong><?php echo Text::_("Textos"); ?></strong></a></li>
-					<li><a href="/admin/tasks"><strong><?php echo Text::_("Tareas"); ?></strong></a></li>
-					<li><a href="/admin/newsletter"><strong><?php echo Text::_("Mailings"); ?></strong></a></li>
-				</ul>
+         
 			
             <?php endif; ?>
 
@@ -129,7 +130,8 @@ include 'view/header.html.php';
         // Central pendientes
     ?>
        
-				<h3 class="text-center text-primary"><?php echo Text::_("LISTE DE CHOSES &Agrave; FAIRE"); ?></h3>
+			<h3 style="text-align:center;color:#555555;style-family:Myriad Pro,Regular;;style-size:32px;"><?php echo Text::_("LISTE DE CHOSES &Agrave; FAIRE"); ?></h3>
+			<hr/>
             <?php if (!empty($this['tasks'])) : ?>
             <table class="table table-striped table-hover ">
                 <?php foreach ($this['tasks'] as $task) : ?>
@@ -148,7 +150,9 @@ include 'view/header.html.php';
        
    
     </div>
-            <div class="col-md-3 column" >
+    
+				<div class="col-md-6 column">
+				
     <?php
         // Lateral de acctividad reciente
     ?>
@@ -194,8 +198,9 @@ include 'view/header.html.php';
                    
                     </div>
                 </div>
-            </div>
-
+           
+</div>
+</div>
 
         <?php endif; ?>
 
@@ -204,7 +209,7 @@ include 'view/header.html.php';
 		<div class="col-md-12 column">
 		
 <?php
-    include 'view/footer.html.php';
+
 include 'view/epilogue.html.php'; 
 ?>
 		</div>

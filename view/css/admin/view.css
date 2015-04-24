@@ -26,21 +26,28 @@
  .item {
  background-color:#f6f6f6;
  padding: 8px;
- border-bottom:1px solid #c8c7cc
+ border-bottom:1px solid #c8c7cc;
  }
  
  .item:hover {
 
- background-image: url('/view/css/admin/ItemSelected.png');
+ background-image: url('/view/css/admin/item.png');
   border-bottom:none;
+  z-index: -1;
   background-position:center right;
   background-color:transparent;
   width:105%
  }
+ .panel-title.collapsed a:active { 
  
+ display: inline-block
+ }
  .item a {
  text-align:justify; 
- text-decoration:none
+ text-decoration:none;
+   width: 100%;
+  height: 100%;
+  margin-left: 45px;
  }
  .item:hover a {
  text-decoration:none;
