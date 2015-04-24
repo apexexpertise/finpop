@@ -30,7 +30,7 @@
  }
  
  .item:hover {
- 
+
  background-image: url('/view/css/admin/ItemSelected.png');
   border-bottom:none;
   background-position:center right;
