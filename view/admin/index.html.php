@@ -22,12 +22,6 @@
 ?>
 
 
-
-
-
-<div class="container"  style="margin-left: 0px;width:100%;">
-	<div class="row">
-	<nav class="navbar-fixed-top">
 	<?php
 	use Goteo\Library\Text,
 	Goteo\Core\View,
@@ -38,7 +32,7 @@
 	if (!isset($_SESSION['admin_menu'])) {
 		$_SESSION['admin_menu'] = Admin::menu();
 	}
-	
+	$path=array_pop(explode("/", $_SERVER[REQUEST_URI]));
 	$bodyClass = 'admin';
 	
 	// funcionalidades con autocomplete
@@ -46,68 +40,73 @@
 	
 	
 	include 'view/prologue.html.php';
-	include 'view/header.html.php';
-	if(isset($_SESSION['messages'])) { include 'view/header/message.html.php'; } ?>
-	<div class="col-xs-6 col-sm-6 col-md-3 text-center leftspan" id="one" style="padding:0px;height:51px;width:22%;background-image: url('/view/css/admin/layer.png');"></div>
-        <div class="col-xs-6 col-sm-6 col-md-3 leftspan" id="two" style="padding:0px;height:51px;width:78%;background-image: url('/view/css/admin/layer.png');">
-		<ul class="bc">
-          <li> <img  src="/view/css/admin/home.png" height="23px" width="19px" style="padding-bottom:7px;padding-top:0px;"/>  </li>
+	include 'view/header.html.php'; ?>
+<div class="container" style="width: 100%;">
+	<div class="row" style="position: fixed; width:100%;z-index: 100;">
+
+		<div class="col-md-2 column " style="padding:0px;height:51px;background-image: url('/view/css/admin/layer.png');"></div>
+		<div class="col-md-10 column" style="padding:0px;height:51px;background-image: url('/view/css/admin/layer.png');">
+					<ul class="bc">
+          <li> <img  src="/view/css/admin/home.png" height="23px" width="19px" style="padding-bottom:5px;padding-top:0px;"/>  </li>
           <?php echo ADMIN_BCPATH; ?>
           </ul>
 		</div>
-		</nav>
 	</div>
 	<div class="row">
 
-		<div class="col-md-3 column" style="position:fixed;top:117px; width:22%;padding-left: 0px;padding-right: 0px;">
+		<div class="col-md-2 column" style="position:fixed;top:116px;padding-left: 0px;padding-right: 0px;height:100%;  z-index: 1000;background: rgb(133, 144, 157);">
 		
             
                 <div class="panel-group" id="panel-623058" style="margin-bottom:0px;">
-				<div class="panel panel-default" >
+				<div class="panel panel-default" style=" box-shadow: none !important; border: none !important;">
 				 <?php $i =  0;  ?>
 				 <?php foreach ($_SESSION['admin_menu'] as $sCode=>$section) : ?>
-					<div class="panel-heading" style="background-color: #85909d;height:40px;border-radius: 0px;" >
+					<div class="panel-heading"  style="background-color: #85909d;height:40px;border-radius: 0px;" >
 					
-					  <?php $i = $i + 1;  ?>
+					  <?php $i = $i + 1; $panel=0; ?>
 					 
 					  <img  src="/view/css/admin/<?php echo $i ?>.png"/> &nbsp;
-						 <a id="<?php echo $i ?>" class="panel-title  collapsed" style="text-decoration:none;float:center;font-size:18px;font-family:Myriad Pro,Regular;color:white" data-toggle="collapse" data-parent="#panel-623058" href="#panel-element-779446<?php echo $i ?>"> <?php echo $section['label'] ?>
+						 <a id="<?php echo $i ?>" class="panel-title  collapsed" style="text-decoration:none;float:center;font-size:18px;font-family:Myriad Pro Regular;color:white" data-toggle="collapse" data-parent="#panel-623058" href="#panel-element-779446<?php echo $i ?>"> <?php echo $section['label'] ?>
 						<span style="float:right;" class="fa fa-angle-down"></span>
 						 <span style="float:right;" class="fa fa-angle-right"></span>
 						
 						  
 						
-    					</a>
-    					
+    					</a> 					
 					</div>
 					<div id="panel-element-779446<?php echo $i ?>" class="panel-collapse collapse">
-						<div id="collapseOne" class="panel-body" style="background-color:#f6f6f6;padding: 0px;border-right:1px solid #c8c7cc;">
+						<div id="collapseOne" class="panel-body" style="background-color:#f6f6f6;padding: 0px;">
 							<?php
 																
 																foreach ( $section ['options'] as $oCode => $option ) :
-																	echo '<div class="item">
- 		<a href="/admin/' . $oCode . '" style="font-size:18px;font-family:Myriad Pro,Regular;" >' . $option ['label'] . '</a></div>';
+																$class="item";
+																if($oCode==$path){$class="item active";$panel=$i;}
+																	echo '<div class="'.$class.'">
+ 		<a href="/admin/' . $oCode . '" style="font-size:18px;font-family:Myriad Pro Condensed">' . $option ['label'] . '</a></div>';
 																endforeach
 																;
 																?>
 						</div>
 						
 					</div>
+					<script type="text/javascript">
+								jQuery(document).ready(function($) {
+							
+									$("#<?php echo $panel;?> .fa-angle-down").trigger( "click" );
+								});
+					</script>  
 					<?php endforeach; ?> 
 				</div>
 				
             </div>
            
             </div>
-            
             <?php if (isset($_SESSION['user']->roles['superadmin'])) : ?>
-            <div class="col-md-9 column" style="width:100%;height:100%;overflow:scroll;top:117px; left:22%;padding-left: 0px;padding-right: 0px;">
-            
+            <div class="col-md-10 column" id="main-panel" style="  height: 88%;overflow: scroll;position: fixed;right: 0;top: 120px;">
+            <?php if(isset($_SESSION['messages'])) { include 'view/header/message.html.php'; } ?>
            <div class="row">
-				<div class="col-md-6 column">
+				<div class="col-md-8 column">
 				
-         
-			
             <?php endif; ?>
 
 
@@ -130,7 +129,7 @@
         // Central pendientes
     ?>
        
-			<h3 style="text-align:center;color:#555555;style-family:Myriad Pro,Regular;;style-size:32px;"><?php echo Text::_("LISTE DE CHOSES &Agrave; FAIRE"); ?></h3>
+			<h3 style="text-align:center;color:#555555;style-family:Myriad Pro Regular;;style-size:32px;"><?php echo Text::_("LISTE DE CHOSES &Agrave; FAIRE"); ?></h3>
 			<hr/>
             <?php if (!empty($this['tasks'])) : ?>
             <table class="table table-striped table-hover ">
@@ -151,7 +150,7 @@
    
     </div>
     
-				<div class="col-md-6 column">
+				<div class="col-md-4 column">
 				
     <?php
         // Lateral de acctividad reciente
@@ -201,20 +200,17 @@
            
 </div>
 </div>
+</div>
+</div>
 
         <?php endif; ?>
 
             </div>
-            <div class="row">
-		<div class="col-md-12 column">
-		
+        
 <?php
 
 include 'view/epilogue.html.php'; 
 ?>
-		</div>
-		</div>
-            
-            </div>
+
 	
 

@@ -431,9 +431,9 @@ namespace Goteo\Controller {
 
                 // si el BC tiene section, facil, enlace al admin
                 if ($BC['option'] == 'index') {
-                    $path = '&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;'.$admin_label;
+                    $path = $admin_label;
                 } else {
-                    $path = '&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<a href="/admin">' . $admin_label . '</a>' . $path;
+                    $path = '<a href="/admin">' . $admin_label . '</a>' . $path;
                 }
 
                 return $path;
