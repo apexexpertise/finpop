@@ -385,6 +385,17 @@ namespace Goteo\Controller {
                     $user->avatar->remove('user');
                     $user->avatar = '';
                 }
+                
+                // Avatar
+                if (!empty($_FILES['user_avatarp']['name'])) {
+                	$user->avatarp = $_FILES['user_avatarp'];
+                }
+                
+                // tratar si quitan la imagen
+                if (!empty($_POST['avatarp-' . $user->avatarp->id . '-remove'])) {
+                	$user->avatarp->remove('user');
+                	$user->avatarp = '';
+                }
 
                 // Perfil público
                 $user->name = $_POST['user_name'];
@@ -563,6 +574,7 @@ namespace Goteo\Controller {
                             'user' => $investor->user,
                             'name' => $investor->name,
                             'projects' => 1,
+                        	'avatarp' => $investor->avatarp,
                             'avatar' => $investor->avatar,
                             'worth' => $investor->worth,
                             'amount' => $investor->amount,

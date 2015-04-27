@@ -29,7 +29,7 @@ $option = $this['option'];
 include 'view/prologue.html.php';
 include 'view/header.html.php'; ?>
 
-        <div id="sub-header">
+        <div id="sub-header" style="background:url(<?php echo $user->avatarp->getLink(168, 168, true); ?>)">
             <div class="dashboard-header">
                 <a href="/user/<?php echo $user->id; ?>" target="_blank"><div class="img-profile"><img src="<?php echo $user->avatar->getLink(168, 168, true); ?>" /></div></a>
                 <h2><span><?php if (empty($option)) {

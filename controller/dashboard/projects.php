@@ -50,6 +50,92 @@ namespace Goteo\Controller\Dashboard {
          * @param string $action por si es 'select'
          * @return array(project, projects)
          */
+    	
+    	public static function process_profile (&$user, &$vip, &$errors, &$log_action) {
+    	
+    		$fields = array(
+    				'user_name' => 'name',
+    				'user_location' => 'location',
+    				'user_avatarp' => 'avatarp',
+    				'user_about' => 'about',
+    				'user_keywords' => 'keywords',
+    				'user_contribution' => 'contribution',
+    				'user_facebook' => 'facebook',
+    				'user_google' => 'google',
+    				'user_twitter' => 'twitter',
+    				'user_identica' => 'identica',
+    				'user_linkedin' => 'linkedin'
+    		);
+    	
+    		foreach ($fields as $fieldPost => $fieldTable) {
+    			if (isset($_POST[$fieldPost])) {
+    				$user->$fieldTable = $_POST[$fieldPost];
+    			}
+    		}
+    	
+    		// avatarp
+    		if (isset($_FILES['avatarp_upload']) && $_FILES['avatarp_upload']['error'] != UPLOAD_ERR_NO_FILE) {
+    			$user->avatarp = $_FILES['avatarp_upload'];
+    		}
+    	
+    		// tratar si quitan la imagen
+    		if (!empty($_POST['avatarp-' . $user->avatarp->id . '-remove'])) {
+    			$user->avatarp->remove();
+    			$user->avatarp = '';
+    		}
+    	
+    		// Tratamiento de la imagen vip mediante el modelo User\Vip
+    		if ($vip instanceof Model\User\Vip) {
+    			if (isset($_FILES['avatarp_upload']) && $_FILES['avatarp_upload']['error'] != UPLOAD_ERR_NO_FILE) {
+    				$vip->image = $_FILES['vip_image_upload'];
+    				$vip->save($errors);
+    			}
+    	
+    			// tratar si quitan la imagen vip
+    			if ($vip->image instanceof Image && !empty($_POST['vip_image-' . $vip->image->id . '-remove'])) {
+    				$vip->image->remove();
+    				$vip->remove();
+    			}
+    		}
+    	
+    		// ojo si es receptor de pruebas, no machacarlo
+    		if (in_array('15', $user->interests)) $_POST['user_interests'][] = '15';
+    		$user->interests = $_POST['user_interests'];
+    	
+    		//tratar webs existentes
+    		foreach ($user->webs as $i => &$web) {
+    			// luego aplicar los cambios
+    	
+    			if (isset($_POST['web-' . $web->id . '-url'])) {
+    				$web->url = $_POST['web-' . $web->id . '-url'];
+    			}
+    	
+    			//quitar las que quiten
+    			if (!empty($_POST['web-' . $web->id . '-remove'])) {
+    				unset($user->webs[$i]);
+    			}
+    		}
+    	
+    		//tratar nueva web
+    		if (!empty($_POST['web-add'])) {
+    			$user->webs[] = new Model\User\Web(array(
+    					'url' => 'http://'
+    			));
+    		}
+    	
+    		/// este es el único save que se lanza desde un metodo process_
+    		if ($user->save($errors)) {
+    			$log_action = 'Actualis&eacute; son profil';
+    			//                Message::Info(Text::get('user-profile-saved'));
+    			$user = Model\User::flush();
+    			return true;
+    		} else {
+    			$log_action = '¡ERROR! al actualizar su perfil';
+    			Message::Error(Text::get('user-save-fail'));
+    			return false;
+    		}
+    	}
+    	 
         public static function verifyProject($user, $action) {
             
             $projects = Model\Project::ofmine($user->id); // sus proyectos

@@ -40,6 +40,7 @@ namespace Goteo\Model {
             $name,
             $location,
             $avatar = false,
+            $avatarp = false,
             $about,
             $contribution,
             $keywords,
@@ -205,6 +206,15 @@ namespace Goteo\Model {
                         }
                     }
 
+                    // Avatar-Project
+                    if (is_array($this->avatarp) && !empty($this->avatarp['name'])) {
+                    	$image = new Image($this->avatarp);
+                    	if ($image->save($errors)) {
+                    		$data[':avatarp'] = $image->id;
+                    	} else {
+                    		unset($data[':avatarp']);
+                    	}
+                    }
                     // Perfil público
                     if(isset($this->name)) {
                         $data[':name'] = $this->name;
@@ -544,6 +554,7 @@ namespace Goteo\Model {
                         user.name as name,
                         user.location as location,
                         user.avatar as avatar,
+                		user.avatarp as  avatarp,
                         IFNULL(user_lang.about, user.about) as about,
                         IFNULL(user_lang.contribution, user.contribution) as contribution,
                         IFNULL(user_lang.keywords, user.keywords) as keywords,
@@ -573,8 +584,12 @@ namespace Goteo\Model {
 
                 $user->roles = $user->getRoles();
                 $user->avatar = Image::get($user->avatar);
+                $user->avatarp = Image::get($user->avatarp);
                 if (empty($user->avatar->id) || !$user->avatar instanceof Image) {
                     $user->avatar = Image::get(1);
+                }
+                if (empty($user->avatarp->id) || !$user->avatarp instanceof Image) {
+                	$user->avatarp = Image::get(1);
                 }
                 $user->interests = User\Interest::get($id);
                 $user->webs = User\Web::get($id);
@@ -599,6 +614,7 @@ namespace Goteo\Model {
                         id,
                         name,
                         avatar,
+                		avatarp,
                         email,
                         IFNULL(lang, 'es') as lang
                     FROM user
@@ -610,7 +626,10 @@ namespace Goteo\Model {
                 if (empty($user->avatar->id) || !$user->avatar instanceof Image) {
                     $user->avatar = Image::get(1);
                 }
-
+                $user->avatarp = Image::get($user->avatarp);
+                if (empty($user->avatarp->id) || !$user->avatarp instanceof Image) {
+                	$user->avatarp = Image::get(1);
+                }
                 return $user;
             } catch(\PDOException $e) {
                 return false;
