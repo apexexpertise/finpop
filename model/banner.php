@@ -1,6 +1,6 @@
 <?php
 /*
- *  Copyright (C) 2012 Platoniq y FundaciÃ³n Fuentes Abiertas (see README for details)
+ *  Copyright (C) 2012 Platoniq y Fundación Fuentes Abiertas (see README for details)
  *	This file is part of Goteo.
  *
  *  Goteo is free software: you can redistribute it and/or modify
@@ -32,7 +32,11 @@ namespace Goteo\Model {
             $node,
             $project,
             $image,
-            $order;
+            $order,
+        	$title,
+        	$description,
+        	$active,
+        	$url;
 
         /*
          *  Devuelve datos de un banner de proyecto
@@ -97,17 +101,21 @@ namespace Goteo\Model {
                     ON project.id = banner.project
                 LEFT JOIN banner_lang
                     ON  banner_lang.id = banner.id
-                    AND banner_lang.lang = :lang
-                WHERE banner.node = :node
+                   
                 $sqlFilter
                 ORDER BY `order` ASC
-                ", array(':node' => $node, ':lang' => \LANG));
+                ", array());
             
             foreach($query->fetchAll(\PDO::FETCH_CLASS, __CLASS__) as $banner) {
-                $banner->image = !empty($banner->image) ? Image::get($banner->image) : null;
+          //  	$banner->image="<img src='".SRC_URL."/image/".$banner->image."/80/80' />";
+               // $banner->image = !empty($banner->image) ? Image::get($banner->image) : null;
                 $banner->status = $status[$banner->status];
                 $banners[] = $banner;
+                
+              
             }
+            
+           
 
             return $banners;
         }
@@ -169,11 +177,11 @@ namespace Goteo\Model {
 
         // ya no validamos esto,  puede haber banners in proyecto y sin imagen
         public function validate (&$errors = array()) {
-            if (empty($this->project))
-                $errors[] = Text::_('Falta proyecto');
+            //if (empty($this->project))
+             //  $errors[] = Text::_('Falta proyecto');
 
-            if (empty($this->image))
-                $errors[] = Text::_('Falta imagen');
+          //  if (empty($this->image))
+             //   $errors[] = Text::_('Falta imagen');
 
             if (empty($errors))
                 return true;
@@ -182,7 +190,7 @@ namespace Goteo\Model {
         }
 
         public function save (&$errors = array()) {
-//            if (!$this->validate($errors)) return false;
+       if (!$this->validate($errors)) return false;
 
             // Imagen de fondo de banner
             if (is_array($this->image) && !empty($this->image['name'])) {
@@ -198,13 +206,13 @@ namespace Goteo\Model {
             $fields = array(
                 'id',
                 'node',
-                'title',
+            	//'project',
+            	'order',
+            	'image',
+            	'active',
+            	'title',
                 'description',
-                'url',
-                'project',
-                'image',
-                'order',
-                'active'
+                'url'
                 );
 
             $set = '';

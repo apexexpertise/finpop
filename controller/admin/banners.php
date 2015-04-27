@@ -1,6 +1,6 @@
 <?php
 /*
- *  Copyright (C) 2012 Platoniq y FundaciÃ³n Fuentes Abiertas (see README for details)
+ *  Copyright (C) 2012 Platoniq y Fundación Fuentes Abiertas (see README for details)
  *  This file is part of Goteo.
  *
  *  Goteo is free software: you can redistribute it and/or modify
@@ -25,7 +25,9 @@ namespace Goteo\Controller\Admin {
         Goteo\Core\Error,
 		Goteo\Library\Message,
 		Goteo\Library\Feed,
+		Goteo\Library\Text,
         Goteo\Model;
+    
 
     class Banners {
 
@@ -34,6 +36,8 @@ namespace Goteo\Controller\Admin {
             $errors = array();
 
             $node = isset($_SESSION['admin_node']) ? $_SESSION['admin_node'] : \GOTEO_NODE;
+            $model = 'Goteo\Model\banner';
+            $url = '/admin/banners';
 
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -58,11 +62,10 @@ namespace Goteo\Controller\Admin {
 
 				if ($banner->save($errors)) {
                     Message::Info('Datos guardados');
-
                     if ($_POST['action'] == 'add') {
                         $projectData = Model\Project::getMini($_POST['project']);
 
-                        // Evento Feed
+                        // Evento Feed 
                         $log = new Feed();
                         $log->setTarget($projectData->id);
                         $log->populate('nouvelle banni&egrave;re du projet pr&eacute;sent&eacute; sur la couverture (admin)', '/admin/promote',
@@ -80,29 +83,20 @@ namespace Goteo\Controller\Admin {
                     Message::Error(implode('<br />', $errors));
                     
                     switch ($_POST['action']) {
-                        case 'add':
+                      case 'add':
                             return new View(
                                 'view/admin/index.html.php',
                                 array(
                                     'folder' => 'banners',
                                     'file' => 'edit',
-                                    'action' => 'add',
                                     'banner' => $banner,
                                     'status' => $status
                                 )
                             );
                             break;
-                        case 'edit':
-                            return new View(
-                                'view/admin/index.html.php',
-                                array(
-                                    'folder' => 'banners',
-                                    'file' => 'edit',
-                                    'action' => 'edit',
-                                    'banner' => $banner
-                                )
-                            );
-                            break;
+                            
+                         
+                        	
                     }
 				}
 			}
@@ -129,6 +123,10 @@ namespace Goteo\Controller\Admin {
                     }
                     throw new Redirection('/admin/banners');
                     break;
+                    
+                    
+                    
+                    
                 case 'add':
                     // siguiente orden
                     $next = Model\Banner::next($node);
@@ -142,33 +140,163 @@ namespace Goteo\Controller\Admin {
                             'banner' => (object) array('order' => $next),
                             'status' => $status
                         )
-                    );
-                    break;
+                    );  
+                    break; 
+                    
+                    
                 case 'edit':
-                    $banner = Model\Banner::get($id);
+                    
+                	
 
+                    if (($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['update'])) {
+                    	 
+                    	// instancia
+                    	$item = new $model(array(
+                    			'id' => $_POST['id'],
+                    			
+                    			'project' => $_POST['project'],
+                    			'active' => $_POST['active'],
+                    			'node' => $_POST['node'],
+                    			'image' => $_POST['image'],
+                    			'title' => $_POST['title'],
+                    			'order' => $_POST['order'],
+                    			'description' => $_POST['description'],
+                    			'url'=> $_POST['url']
+                    			
+                    	));
+                    	
+                    	
+                    	
+                    	// tratar si quitan la imagen
+                    	$current = $_POST['image']; // la actual
+                    	if (isset($_POST['image-' . $current .  '-remove'])) {
+                    		$image = Model\Image::get($current);
+                    		$image->remove('banner');
+                    		$item->image = '';
+                    		$removed = true;
+                    	}
+                    
+                    	// tratar la imagen y ponerla en la propiedad image
+                    	if(!empty($_FILES['image']['name'])) {
+                    		$item->image = $_FILES['image'];
+                    	}
+                    
+                    	if ($item->save($errors)) {
+                    		Message::Info(Text::_('Datos grabados correctamente'));
+                    		throw new Redirection($url);
+                    	} else {
+                    		Message::Error(Text::_('No se ha grabado correctamente. ') . implode(', ', $errors));
+                    	}
+                    } else {
+                  	$item = $model::get($id,null);
+                    }
+                    
+                     
+                     
                     return new View(
-                        'view/admin/index.html.php',
-                        array(
-                            'folder' => 'banners',
-                            'file' => 'edit',
-                            'action' => 'edit',
-                            'banner' => $banner
-                        )
+                    
+                    		'view/admin/index.html.php',
+                    
+                    		array('folder' => 'base',
+                    				'file' => 'edit',
+                    				'data' => $item,
+                    				'form' => array(
+                    						'action' => "$url/edit/$id",
+                    						'submit' => array(
+                    								'name' => 'update',
+                    								'label' => Text::get('regular-save')
+                    
+                    						),
+                    						'fields' => array (
+                    								'id' => array(
+                    										'label' => '',
+                    										'name' => 'id',
+                    										'type' => 'hidden'
+                    
+                    								),
+                    								'node' => array(
+                    										'label' => '',
+                    										'name' => 'node',
+                    										'type' => 'hidden'
+                    
+                    								),
+                    								'description' => array(
+                    										'label' => Text::_('Description'),
+                    										'name' => 'description',
+                    										'type' => 'textarea'
+                    								),
+                    								'title' => array(
+                    										'label' => Text::_('Titre du projet'),
+                    										'name' => 'title',
+                    										'type' => 'text'
+                    								),
+                    								'url' => array(
+                    										'label' => Text::_('lien'),
+                    										'name' => 'url',
+                    										'type' => 'text',
+                    										'properties' => 'size=100'
+                    										
+                    										
+                    								),
+                    								
+                    								'order' => array(
+                    										'label' => Text::_('Ordre de baniiere'),
+                    										'name' => 'order',
+                    										'type' => 'text'
+                    										),
+                    								
+                    								'active' => array(
+                    										'label' => Text::_('statut de banniere'),
+                    										'name' => 'active',
+                    										'type' => 'text'
+                    								),
+                    								'image' => array(
+                    										'label' => Text::_('image banniere'),
+                    										'name' => 'image',
+                    										'type' => 'image'
+                    								),
+                    								
+                    						)
+                    
+                    				)
+                    		)
                     );
+                    
                     break;
+                   
+                   
             }
+            
+            
+            
+            
+            
+            
 
 
-            $bannered = Model\Banner::getAll(false, $node);
+       //  $bannered = Model\Banner::getAll(false, $node);
 
-            return new View(
+        return new View(
                 'view/admin/index.html.php',
-                array(
-                    'folder' => 'banners',
+                array( 
+                    'folder' => 'base',
                     'file' => 'list',
-                    'bannered' => $bannered,
-                    'node' => $node
+                    'model' => 'banner',
+                    'addbutton' => 'Nouvelle Banniere',
+                    'data' => model\banner::getAll(),
+                    'columns' => array(
+                        'edit' => '',
+                        'title' => 'titre',
+                     'active' => 'etat',
+                        'order' => 'ordre',             
+                //     'url' => 'Enlace',
+                         'image' => 'image',
+                         'up' => '',
+                         'down' => '',
+                      //  'translate' => '',
+                          'remove' => ''
+                    ),
+                 'url' => "$url"
                 )
             );
             
