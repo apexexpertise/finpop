@@ -33,6 +33,12 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'Open Sans Light';
+	src: url('fonts/OpenSans-Light.ttf') format('truetype');
+		
+	
+}
 /***************************************Basic*******************************************************/
 ::-webkit-scrollbar { /* Scrollbars */
 	width: .875em;
@@ -229,7 +235,10 @@ a:hover {
 
 /************************************************Header**************************************************/
 div#header div#menu {
-	min-height: 66px;
+	min-height: 110px;
+	opacity:0.5;
+/*	background: url('header/layer.png'); */
+    background-color: #14202d; 
 }
 
 .community {
@@ -240,11 +249,11 @@ div#header div#menu>ul>li.explore>a, div#header div#menu>ul>li.create>a,
 	div#header div#menu>ul>li.login>a {
 	max-width: 160px;
 	width: 217px;
-	padding: 11px;
-	font-family: Source sans pro;
-	font-size: 17px;
-	font-weight: 500;
-	color: #0a0a0a;
+	padding: 23px;
+	font-family: Open Sans Light;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
 	text-transform: uppercase;
 }
 
@@ -297,13 +306,13 @@ div#header div#menu>ul>li.home {
 }
 
 div#header div#menu ul li>a>*, div#header div#menu ul li>a {
-	font-family: Lato;
-	color: #0a0a0a;
+/*	font-family: Lato;*/
+	color: white;
 	text-transform: uppercase;
-	font-family: Source sans pro;
-	font-size: 17px;
-	font-weight: 500;
-	font-size: 17px;
+	font-family: Open Sans Light;
+	font-size: 14px;
+	font-weight: bold;
+	/*font-size: 17px;*/
 }
 
 div#header div#menu>ul>li.dashboard>a>img {
@@ -319,12 +328,12 @@ div#header div#menu>ul>li.login>a {
 
 div#header div#menu  ul li.explore  a:hover, div#header div#menu  ul li.login a:hover,
 	div#header div#menu  ul li.create a:hover {
-	border-bottom: 2px solid rgba(145, 145, 145, 0.6);
+	/*border-bottom: 2px solid rgba(145, 145, 145, 0.6);*/ /* Commented by Amal */
 }
 
 .connexion {
 	position: relative;
-	top: 19px;
+	top: 32px;
 }
 
 .connexion a {
@@ -355,7 +364,7 @@ div#header div#menu>ul>li.community, div#header div#menu>ul>li.dashboard
 
 div#header div#menu>ul>li.community, div#header div#menu>ul>li.dashboard
 	{
-	top: 9px;
+	top: 21px;
 }
 
 div#header div#menu>ul>li.community>div>ul, div#header div#menu>ul>li.dashboard>div>ul
@@ -365,7 +374,7 @@ div#header div#menu>ul>li.community>div>ul, div#header div#menu>ul>li.dashboard>
 
 div#header div#menu>ul>li.community:hover *, div#header div#menu>ul>li.login:hover *,
 	div#header div#menu>ul>li.dashboard:hover * {
-	color: #434343;
+	/*color: #434343;*/ /*Commented by Amal */
 }
 
 div#header div#menu>ul>li.community>div>ul, div#header div#menu>ul>li.dashboard>div>ul
@@ -628,15 +637,30 @@ div.panel-scroll {
 }
 
 div.features {
-	padding: 15px 0 0;
-	background: #e9e9e9;
-	border-top: 1px solid #d3d3d3;
-	border-bottom: 1px solid #d3d3d3;
+padding: 15px 0 0;
+  position: absolute;
+  top: 625px;
+  width: 100%;
+  z-index: 1000;
+}
+div.features-blur-box{
+  width: 100%;
+  height: 176px;
+  background: rgba(53, 53, 53, 0.5);
+  z-index: 1000;
+  position: absolute;
+  top: 625px;
+  filter: blur(5px);
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
 }
 
 h4.service {
-	font-family: PT sans;
+	font-family: Open Sans Light;
 	text-transform: capitalize;
+	color: white;
 }
 
 div#projects-phares ul {
@@ -2164,13 +2188,13 @@ div#header div#menu > ul > li.home > a {
 	text-indent: 2000px;
 	display: block;
 	line-height: 2000px;
-	width: 149px;
-	height: 45px;
+	width: 200px;
+	height: 82px;
 	position: absolute;
-	top: 36%;
-	margin-left: -45px;
-	margin-top: -18px;
-	background: url('header/main-logo.png') no-repeat left center;
+	top: 20%;
+	margin-left: -90px; /*Modified by Amal*/
+	margin-top: -6px;
+	background: url('header/logo-white.png') no-repeat left center;
 	background-size: cover;
 	left: 0px;
 }

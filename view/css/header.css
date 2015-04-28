@@ -579,27 +579,35 @@ div#header div#menu > ul > li.home {
 
 div#header div#menu > ul > li.home > a {    
     overflow: hidden;
+    
     text-indent: 2000px;
     display: block;
     line-height: 2000px;
     width: 105px;
-    height: 36px;  
+    height: 45px;  
     position: absolute;
     left: 50%;
     top: 50%;
     margin-left: -45px;
-    margin-top: -18px;
+    margin-top: -6px;
     background: url('header/main-logo.png') no-repeat left center;        
 }
 
 div#header div#menu > ul > li.home > a:hover {
-    background: url('header/main-logo.png') no-repeat right center;
+	width: 200px;
+    height: 82px;
+   /* background: url('header/logo-blue.png') no-repeat right center;*/
+    /*margin-left : 343px;*/
 }
 
 div#header div#menu > ul > li.explore,
 div#header div#menu > ul > li.create {
     float: left;
 	margin-right: 4px;
+	font-size : 14px;
+	font-weight:bold;
+	color : white;
+	
 }
 
 div#header div#menu > ul > li.explore > a,
@@ -612,11 +620,12 @@ div#header div#menu > ul > li.create > a {
     max-width: 7.5em;
     text-align: left;
 	width:80px;
-	line-height: 1em;
+	/*line-height: 1em;*/ /* Commented by Amal */
 }
 
 div#header div#menu > ul > li.explore > a {    
     margin-left: 124px;
+    
 }
 
 div#header div#menu > ul > li.search {
@@ -744,7 +753,7 @@ div#header div#menu > ul > li.dashboard:hover {
 div#header div#menu > ul > li.community:hover *,
 div#header div#menu > ul > li.login:hover *,
 div#header div#menu > ul > li.dashboard:hover * {
-    color: white;
+    color: Black;
 } 
 
 div#header div#menu > ul > li.dashboard > a > span > em {
