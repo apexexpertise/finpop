@@ -227,15 +227,16 @@ include 'view/header.html.php';
 	</div>
 </div>
 </div>
-
-
+<?php include 'view/home/projects.html.php'; ?>
 <div class="panel-scroll">
+
  <?php
 				foreach ( $this ['order'] as $item => $itemData ) {
 					if (! empty ( $this [$item] ))
 						echo new View ( "view/home/{$item}.html.php", $this );
 				}
 				?>
+
 <?php include 'view/home/presskit.html.php'; ?>
 <?php include 'view/footer.html.php'; ?>
 </div>
