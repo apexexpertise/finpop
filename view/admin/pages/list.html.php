@@ -23,9 +23,12 @@ use Goteo\Library\Text,
 
 $translator = ACL::check('/translate') ? true : false;
 ?>
+<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Pages </p>
+		<hr style="width:2000px;margin-top:25px;"/>
 <?php if (!isset($_SESSION['admin_node'])) : ?>
 <a href="/admin/pages/add" class="button">Nouvelle page</a>
 <?php endif; ?>
+
 
 <div class="widget board">
     <?php if (!empty($this['pages'])) : ?>

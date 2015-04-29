@@ -22,6 +22,8 @@ use Goteo\Library\Text;
 
 $filters = $this['filters'];
 ?>
+<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Traductions du projet </p>
+		<hr style="width:2000px;margin-top:25px;"/>
 <a href="/admin/translates/add" class="button">Nouveau projet &aacute; traduire</a>
 
 <div class="widget board">

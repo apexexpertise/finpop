@@ -48,6 +48,7 @@ $filters = $this['filters'];
         'label' =>  Text::_("Extra"),
         'first' =>  Text::_("Tous"))
 ); ?>
+
 <div class="widget board">
     <h3 class="title">Filtres</h3>
     <form id="filter-form" action="/admin/invests" method="get">

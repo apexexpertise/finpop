@@ -5,6 +5,8 @@ use Goteo\Library\Text,
 $feed = $this['feed'];
 $items = $this['items'];
 ?>
+<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Historiques </p>
+		<hr style="width:2000px;margin-top:25px;"/>
 <div class="widget feed">
     <script type="text/javascript">
         jQuery(document).ready(function($) {

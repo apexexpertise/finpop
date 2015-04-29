@@ -32,14 +32,15 @@ foreach ( $filters as $key => $value ) {
 $pagedResults = new \Paginated ( $this ['projects'], 10, isset ( $_GET ['page'] ) ? $_GET ['page'] : 1 );
 ?>
 
-
+<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Project administration </p>
+		<hr style="width:2000px;margin-top:25px;"/>
 <div class="widget board">
 	<form id="filter-form" action="/admin/projects" method="get"
 		class="form-horizontal">
 		<input type="hidden" name="filtered" value="yes" />
-
+	
 		<fieldset style="width: 500px; border: none;">
-		<legend class="text-center text-primary">RECHERCHE DU PROJET PAR </legend>
+		
 			<div class="form-group">
 				<label for="name-filter" class="col-lg-4 control-label text-info"> <small> Nom/Email 
 					d'auteur: </small></label>

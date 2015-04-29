@@ -54,7 +54,7 @@
 	</div>
 	<div class="row">
 
-		<div class="col-md-2 column" style="position:fixed;top:116px;padding-left: 0px;padding-right: 0px;height:100%;  z-index: 1000;background: rgb(133, 144, 157);">
+		<div class="col-md-2 column" style="position:fixed;top:161px;padding-left: 0px;padding-right: 0px;height:100%;  z-index: 1000;background: rgb(133, 144, 157);">
 		
             
                 <div class="panel-group" id="panel-623058" style="margin-bottom:0px;">
@@ -102,10 +102,10 @@
            
             </div>
             <?php if (isset($_SESSION['user']->roles['superadmin'])) : ?>
-            <div class="col-md-10 column" id="main-panel" style="  height: 88%;overflow: scroll;position: fixed;right: 0;top: 120px;">
+            <div class="col-md-10 column" id="main-panel" style="  height: 88%;overflow: scroll;position: fixed;right: 0;  top: 177px;">
             <?php if(isset($_SESSION['messages'])) { include 'view/header/message.html.php'; } ?>
            <div class="row">
-				<div class="col-md-8 column">
+				<div class="col-md-8 column" style="padding:0px;">
 				
             <?php endif; ?>
 
@@ -129,8 +129,9 @@
         // Central pendientes
     ?>
        
-			<h3 style="text-align:center;color:#555555;style-family:Myriad Pro Regular;;style-size:32px;"><?php echo Text::_("LISTE DE CHOSES &Agrave; FAIRE"); ?></h3>
-			<hr/>
+			<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;"><?php echo Text::_("Liste des t&acirc;ches &agrave; faire"); ?>
+			</p>
+		<hr style="width:2000px;margin-top:25px;"/>
             <?php if (!empty($this['tasks'])) : ?>
             <table class="table table-striped table-hover ">
                 <?php foreach ($this['tasks'] as $task) : ?>

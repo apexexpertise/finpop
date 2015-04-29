@@ -23,6 +23,8 @@ use Goteo\Library\Text;
 $filters = $this['filters'];
 
 ?>
+<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Reviews  </p>
+		<hr style="width:2000px;margin-top:25px;"/>
 <div class="widget board">
 <form id="filter-form" action="/admin/reviews" method="get">
    

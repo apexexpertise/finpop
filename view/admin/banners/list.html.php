@@ -20,6 +20,8 @@
 use Goteo\Library\Text;
 
 ?>
+<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Banni&egrave;res  </p>
+		<hr style="width:2000px;margin-top:25px;"/>
 <a href="/admin/banners/add" class="button red"><?php echo Text::_("Nouvelle Banni&eacute;re"); ?></a>
 
 <div class="widget board">

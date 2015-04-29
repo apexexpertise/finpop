@@ -23,6 +23,10 @@ use Goteo\Library\Text;
 $filters = $this['filters'];
 
 ?>
+
+<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Gestion des apports  </p>
+		<hr style="width:2000px;margin-top:25px;"/>
+		
 <!-- filtros -->
 <?php $the_filters = array(
     'projects' => array (

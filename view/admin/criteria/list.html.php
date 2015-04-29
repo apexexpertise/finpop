@@ -24,6 +24,8 @@ use Goteo\Library\Text,
 $translator = ACL::check('/translate') ? true : false;
 $filters = $this['filters'];
 ?>
+<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Review criteria  </p>
+		<hr style="width:2000px;margin-top:25px;"/>
 <a href="/admin/criteria/add" class="button"><?php echo Text::_('Ajouter des crit&eacute;res'); ?></a>
 
 <div class="widget board">

@@ -23,6 +23,8 @@ use Goteo\Library\Text,
 
 $translator = ACL::check('/translate') ? true : false;
 ?>
+<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Glossary </p>
+		<hr style="width:2000px;margin-top:25px;"/>
 <a href="/admin/glossary/add" class="button"><?php echo Text::_("Nouveau Terme"); ?></a>
 
 <div class="widget board">

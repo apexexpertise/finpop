@@ -34,6 +34,8 @@ $tpl = 33;
 $template = Template::get($tpl);
 
 ?>
+<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Bulletin  </p>
+		<hr style="width:2000px;margin-top:25px;"/>
 <div class="widget board">
     <p><?php echo utf8_encode("Sélectionnez le modèle. Le contenu traduit est utilisé, peut-être que vous voulez ") ?><a href="/admin/templates?group=massive" target="_blank">le revoir</a></p>
     <p><strong>NOTE:</strong> <?php echo utf8_encode("ce système ne peut pas ajouter des variables dans le contenu, le même contenu est généré pour tous les destinataires<br/>
