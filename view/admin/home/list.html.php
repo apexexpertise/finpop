@@ -107,8 +107,10 @@ $admins = Home::_admins();
 
 </div>
 <?php endif; ?>
-<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">&Eacute;lements de couverture  </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+ <div class="title-admin">
+<p>&Eacute;lements de couverture  </p>
+		<hr/>
+		</div>
 <div class="widget board" <?php if ($node != \GOTEO_NODE) : ?>style="width:350px; float:left;"<?php endif; ?>>
 
     <h4 class="title">Central</h4>

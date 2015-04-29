@@ -776,7 +776,7 @@ div#posts div.post div.read_more a:hover {
 }
 /*********************************Connexion page****************************************/
 div.bg_login {
-	background: url('images/connexion-bg.png');
+	background: rgb(137, 143, 149);
 }
 
 .box-panel {
@@ -2305,7 +2305,7 @@ body.dashboard div#invests-list div.investor div.left span.amount{
 	font-weight: 500;
 }
 body.project-edit div#sub-header{
-	background: url('images/connexion-bg.png');
+	background: rgb(137, 143, 149);
 	background-size: 100% 100%;
 	margin: 0 0 56px;
 }

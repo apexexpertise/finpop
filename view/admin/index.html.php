@@ -128,10 +128,11 @@
 
         // Central pendientes
     ?>
-       
-			<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;"><?php echo Text::_("Liste des t&acirc;ches &agrave; faire"); ?>
+       <div class="title-admin">
+			<p><?php echo Text::_("Liste des t&acirc;ches &agrave; faire"); ?>
 			</p>
-		<hr style="width:2000px;margin-top:25px;"/>
+		<hr/>
+		</div>
             <?php if (!empty($this['tasks'])) : ?>
             <table class="table table-striped table-hover ">
                 <?php foreach ($this['tasks'] as $task) : ?>

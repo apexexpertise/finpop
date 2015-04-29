@@ -21,8 +21,8 @@
 use Goteo\Library\Text;
 
 ?>
-	<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Niveaux de m&eacute;ritocratie </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+	<p style="padding-left:20px;color:#555555;font-family: Open Sans Light;font-size: 26px;">Niveaux de m&eacute;ritocratie </p>
+		<hr style="width:2000px;margin-top:29px;"/>
 <div class="widget board">
     <?php if (!empty($this['worthcracy'])) : ?>
     <table>

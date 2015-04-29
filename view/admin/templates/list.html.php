@@ -25,8 +25,10 @@ $translator = ACL::check('/translate') ? true : false;
 
 $filters = $this['filters'];
 ?>
-<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Templates </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+ <div class="title-admin">
+<p>Templates </p>
+		<hr/>
+		</div>
 <div class="widget board">
     <form id="filter-form" action="/admin/templates" method="get">
         <table>

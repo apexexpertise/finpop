@@ -23,8 +23,10 @@ use Goteo\Library\Text;
 $filters = $_SESSION['mailing']['filters'];
 
 ?>
-<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Communications  </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+ <div class="title-admin">
+<p>Communications  </p>
+		<hr/>
+		</div>
 <div class="widget board">
     <form id="filter-form" action="/admin/mailing/edit" method="post">
 

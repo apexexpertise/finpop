@@ -18,6 +18,17 @@
  */
 @import url('fonts.css');
 
+.title-admin p{
+	padding-left:20px;
+	color:#555555;
+	font-family: Open Sans Light;
+	font-size: 26px;
+	
+}
+.title-admin hr{
+	width:2000px;
+	margin-top:29px;
+}
  .item {
  background-color:#f6f6f6;
  padding: 8px;

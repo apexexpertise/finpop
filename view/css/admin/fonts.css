@@ -70,3 +70,16 @@ font-style: normal;
 font-weight: normal;
 src: local('Myriad Pro Bold'), url('MYRIADPRO-BOLD.woff') format('woff');
 }
+
+@font-face {
+	font-family: 'Open Sans Light';
+	src: url('fonts/OpenSans-Light.ttf') format('truetype');
+		
+	
+}
+@font-face {
+font-family: 'Myriad Pro Light';
+font-style: normal;
+font-weight: 100;
+src: local('Myriad Pro Bold'), url('MYRIADPRO-BOLD.woff') format('woff');
+}

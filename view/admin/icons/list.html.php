@@ -24,8 +24,10 @@ use Goteo\Library\Text,
 $translator = ACL::check('/translate') ? true : false;
 $filters = $this['filters'];
 ?>
-<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;"> Types de retour </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+ <div class="title-admin">
+<p> Types de retour </p>
+		<hr/>
+		</div>
 <div class="widget board">
     <form id="groupfilter-form" action="/admin/icons" method="get">
         <label for="group-filter"> <?php echo Text::_("Afficher les tarifs de:"); ?></label>

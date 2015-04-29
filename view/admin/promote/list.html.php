@@ -22,8 +22,10 @@ use Goteo\Library\Text,
 
 $translator = ACL::check('/translate') ? true : false;
 ?>
-<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Projets &agrave; l'apos;affiche </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+ <div class="title-admin">
+<p>Projets &agrave; l&apos;affiche </p>
+		<hr/>
+		</div>
 <a href="/admin/promote/add" class="button">Nouvelle Descriptive</a>
 
 <div class="widget board">

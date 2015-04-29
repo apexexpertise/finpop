@@ -6,8 +6,10 @@ $filters = $this['filters'];
 
 $emails = Invest::emails(true);
 ?>
-<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">R&eacute;compenses  </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+ <div class="title-admin">
+<p>R&eacute;compenses  </p>
+		<hr />
+		</div>
 <div class="widget board">
     <h3 class="title">Filtres</h3>
     <form id="filter-form" action="/admin/rewards" method="get">

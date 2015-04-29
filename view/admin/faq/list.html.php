@@ -24,8 +24,10 @@ use Goteo\Library\Text,
 $translator = ACL::check('/translate') ? true : false;
 $filters = $this['filters'];
 ?>
-<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">FAQs  </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+ <div class="title-admin">
+<p>FAQs  </p>
+		<hr/>
+		</div>
 <a href="/admin/faq/add/?filter=" class="button red"><?php echo Text::_("Ajouter une question");?></a>
 
 <div class="widget board">

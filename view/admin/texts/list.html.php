@@ -36,9 +36,10 @@ $cols = count($this['columns']);
 $per = 100 / $cols;
 
 ?>
-
-<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Interface Textes  </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+ <div class="title-admin">
+<p>Interface Textes  </p>
+		<hr/>
+		</div>
 <?php if (!empty($this['addbutton'])) : ?>
 <a href="<?php echo $this['url'] ?>/add" class="button"><?php echo $this['addbutton'] ?></a>
 <?php endif; ?>

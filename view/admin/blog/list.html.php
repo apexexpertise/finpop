@@ -35,8 +35,11 @@ foreach ($filters as $key=>$value) {
 
 $pagedResults = new \Paginated($this['posts'], 10, isset($_GET['page']) ? $_GET['page'] : 1);
 ?>
-<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Blog  </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+
+ <div class="title-admin">
+<p >Blog  </p>
+		<hr/>
+		</div>
 <a href="/admin/blog/add" class="button"><?php echo Text::_("Nouvelle entr&eacute;e"); ?></a>
 &nbsp;&nbsp;&nbsp;
 <a href="/admin/blog/reorder" class="button">Trier</a>

@@ -51,8 +51,10 @@ foreach ($filters as $key=>$value) {
 
 $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] : 1);
 ?>
-<p style="padding-left:20px;color:#555555;font-family:Myriad Pro Regular;;font-size:29px;">Gestion des utilisateurs  </p>
-		<hr style="width:2000px;margin-top:25px;"/>
+ <div class="title-admin">
+<p>Gestion des utilisateurs  </p>
+		<hr/>
+		</div>
 <a href="/admin/users/add" class="button">Cr&eacute;er un utilisateur</a>
 
 <div class="widget board">
