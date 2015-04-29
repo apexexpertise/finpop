@@ -1,6 +1,6 @@
 <?php
 /*
- *  Copyright (C) 2012 Platoniq y FundaciÃ³n Fuentes Abiertas (see README for details)
+ *  Copyright (C) 2012 Platoniq y Fundación Fuentes Abiertas (see README for details)
  *	This file is part of Goteo.
  *
  *  Goteo is free software: you can redistribute it and/or modify
@@ -30,7 +30,10 @@ $projects = Model\Banner::available($banner->project);
 $status = Model\Project::status();
 
 ?>
-<form method="post" action="/admin/banners" enctype="multipart/form-data">
+
+  
+<form class="form-horizontal" method="post" action="/admin/banners" enctype="multipart/form-data">
+<div class="control-group">
     <input type="hidden" name="action" value="<?php echo $this['action'] ?>" />
     <input type="hidden" name="order" value="<?php echo $banner->order ?>" />
     <input type="hidden" name="id" value="<?php echo $banner->id; ?>" />
@@ -40,10 +43,40 @@ $status = Model\Project::status();
     <select id="banner-project" name="project">
         <option value="" ><?php echo Text::_("Seleccionar el proyecto a mostrar en el banner"); ?></option>
     <?php foreach ($projects as $project) : ?>
-        <option value="<?php echo $project->id; ?>"<?php if ($banner->project == $project->id) echo' selected="selected"';?>><?php echo $project->name . ' ('. $status[$project->status] . ')'; ?></option>
+         <option value="<?php echo $project->id; ?>"<?php if ($banner->project == $project->id) echo' selected="selected"';?>><?php echo $project->name . ' ('. $status[$project->status] . ')'; ?></option>
     <?php endforeach; ?>
     </select>
 </p>
+
+<p>
+    <label><?php echo Text::_("Description"); ?>:</label><br />
+   <TEXTAREA name="description" rows=4 cols=40>description du banniere</TEXTAREA>
+</p>
+
+<p>
+    <label><?php echo Text::_("Titre du projet"); ?>:</label><br />
+    <input class="input-medium" type="text" placeholder="title" name="title">
+   
+</p>
+
+<p>
+    <label><?php echo Text::_("lien"); ?>:</label><br />
+    
+   <INPUT type=text name="url" />
+</p>
+
+<p>
+    <label >statut du banniere:</label><br />
+    <select name="active">
+        <option value="1" >1</option>
+    
+         <option value="2" >2</option>
+    
+    </select>
+    </label>
+</p>
+
+
 
 <p>
     <label for="banner-image"><?php echo Text::_("Image de taille: 700 x 156 (strict)"); ?></label><br />
@@ -55,5 +88,7 @@ $status = Model\Project::status();
     <?php endif; ?>
 </p>
 
-    <input type="submit" name="save" value="<?php echo Text::_("Enregister"); ?>" />
+ <input type="submit" name="save" value="<?php echo Text::_("Enregister"); ?>" />
+   
+    </div>
 </form>

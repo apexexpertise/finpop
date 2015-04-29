@@ -34,7 +34,8 @@ $ogmeta = array (
 if (! empty ( $this ['posts'] )) {
 	foreach ( $this ['posts'] as $post ) {
 		if (count ( $post->gallery ) > 1) {
-			foreach ( $post->gallery as $pbimg ) {
+			foreach ( $post->gallery as $pb
+					 ) {
 				if ($pbimg instanceof Image) {
 					$ogmeta ['image'] [] = $pbimg->getLink ( 500, 285 );
 				}
@@ -72,17 +73,14 @@ include 'view/header.html.php';
 				data-slice1-scale="2" data-slice2-scale="2">
 				<div class="sl-slide-inner">
 					<div class="bg-img"
-						style="background-image: url('view/css/images/1.jpg');"></div>
-					<h2>A bene placito.</h2>
-					<blockquote>
-						<p>You have just dined, and however scrupulously the
-							slaughterhouse is concealed in the graceful distance of miles,
-							there is complicity.</p>
-						<cite>Ralph Waldo Emerson</cite>
+						style="background-image: url('view/css/images/slide1.png');"></div>
+					<h2>C'EST L'HEURE DE FAIRE  RAYONNER VOTRE projet</h2>
+					
+					<blockquote style="border-left:none">
+						<p>Tout est en place pour bien vous servir.</p>
 					</blockquote>
 					<p class="button">
-						<a href="#" class="first">Savoir Plus</a> <a href="#"
-							class="second">Lien 2</a>
+						<a href="#" class="first">VIVEZ L'EXP&#201;RIENCE</a> 
 					</p>
 				</div>
 			</div>
@@ -92,88 +90,25 @@ include 'view/header.html.php';
 				data-slice1-scale="1.5" data-slice2-scale="1.5">
 				<div class="sl-slide-inner">
 					<div class="bg-img bg-img-2"></div>
-					<h2>Regula aurea.</h2>
-					<blockquote>
-						<p>Until he extends the circle of his compassion to all living
-							things, man will not himself find peace.</p>
-						<cite>Albert Schweitzer</cite>
+					<h2>C'EST L'HEURE DE FAIRE  RAYONNER VOTRE projet</h2>
+					<blockquote style="border-left:none">
+						<p>Tout est en place pour bien vous servir.</p>
 					</blockquote>
 					<p class="button">
-						<a href="#" class="first">Savoir Plus</a> <a href="#"
-							class="second">Lien 2</a>
+						<a href="#" class="first">VIVEZ L'EXP&#201;RIENCE</a> 
 					</p>
 				</div>
 			</div>
 
-			<div class="sl-slide" data-orientation="horizontal"
-				data-slice1-rotation="3" data-slice2-rotation="3"
-				data-slice1-scale="2" data-slice2-scale="1">
-				<div class="sl-slide-inner">
-					<div class="bg-img bg-img-3"></div>
-					<h2>Dum spiro, spero.</h2>
-					<blockquote>
-						<p>Thousands of people who say they 'love' animals sit down once
-							or twice a day to enjoy the flesh of creatures who have been
-							utterly deprived of everything that could make their lives worth
-							living and who endured the awful suffering and the terror of the
-							abattoirs.</p>
-						<cite>Dame Jane Morris Goodall</cite>
-					</blockquote>
-					<p class="button">
-						<a href="#" class="first">Savoir Plus</a> <a href="#"
-							class="second">Lien 2</a>
-					</p>
-				</div>
-			</div>
-
-			<div class="sl-slide" data-orientation="vertical"
-				data-slice1-rotation="-5" data-slice2-rotation="25"
-				data-slice1-scale="2" data-slice2-scale="1">
-				<div class="sl-slide-inner">
-					<div class="bg-img bg-img-4"></div>
-					<h2>Donna nobis pacem.</h2>
-					<blockquote>
-						<p>The human body has no more need for cows' milk than it does for
-							dogs' milk, horses' milk, or giraffes' milk.</p>
-						<cite>Michael Klaper M.D.</cite>
-					</blockquote>
-					<p class="button">
-						<a href="#" class="first">Savoir Plus</a> <a href="#"
-							class="second">Lien 2</a>
-					</p>
-				</div>
-			</div>
-
-			<div class="sl-slide" data-orientation="horizontal"
-				data-slice1-rotation="-5" data-slice2-rotation="10"
-				data-slice1-scale="2" data-slice2-scale="1">
-				<div class="sl-slide-inner">
-					<div class="bg-img bg-img-5"></div>
-					<h2>Acta Non Verba.</h2>
-					<blockquote>
-						<p>I think if you want to eat more meat you should kill it
-							yourself and eat it raw so that you are not blinded by the
-							hypocrisy of having it processed for you.</p>
-						<cite>Margi Clarke</cite>
-					</blockquote>
-					<p class="button">
-						<a href="#" class="first">Savoir Plus</a> <a href="#"
-							class="second">Lien 2</a>
-					</p>
-				</div>
-			</div>
-		</div>
+		
 		<!-- /sl-slider -->
 
 		<nav id="nav-dots" class="nav-dots">
-			<span class="nav-dot-current"></span> <span></span> <span></span> <span></span>
-			<span></span>
+			<span class="nav-dot-current"></span> <span></span> 
 		</nav>
 		<!-- arrow navigation -->
 		<div class="arrow-button">
-			<a href="#" id="nav-next-button"><i class="fa  fa-arrow-right fa-4x"
-				style="color: #FFF"></i></a> <a href="#" id="nav-prev-button"><i
-				class="fa  fa-arrow-left fa-4x" style="color: #FFF"></i></a>
+			<a href="#" id="nav-next-button"><img src="view/css/images/nav-next-button.png" onmouseover="this.src='view/css/images/large_right.png'" onmouseout="this.src='view/css/images/nav-next-button.png'"></a> <a href="#" id="nav-prev-button"><img src="view/css/images/nav-prev-button.png" onmouseover="this.src='view/css/images/large_left.png'" onmouseout="this.src='view/css/images/nav-prev-button.png'"></a>
 		</div>
 	</div>
 </div>
@@ -269,31 +204,40 @@ include 'view/header.html.php';
 			
 			});
 		</script>
-
- <div class="features">
+<div class="features-blur-box"></div>
+<div class="features">
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-4 column text-center">
-				<i class="fa fa-user fa-3x" aria-hidden="true"></i>
-				<h4 class="service">Feature 1</h4>
+			<img src="view/css/images/feature1.png">
+				<h4 class="service">Fun peoples</h4>
+				<h4 class="service">425 000</h4>
 			</div>
 			<div class="col-md-4 column text-center">
-				<i class="fa fa-trophy fa-3x" aria-hidden="true"></i>
-				<h4 class="service">Feature 2</h4>
+				<img src="view/css/images/feature2.png">
+				<h4 class="service">Fonds lev&#233;s</h4>
+				<h4 class="service">690 900 &#128;</h4>
 			</div>
 			<div class="col-md-4 column text-center">
-				<i class="fa fa-video-camera fa-3x" aria-hidden="true"></i>
-				<h4 class="service">Feature 3<?php echo $this['count']?></h4>
+				<img src="view/css/images/feature3.png">
+				<h4 class="service">A votre disposition au </h4>
+				<h4 class="service">5 31 61 62 63</h4>
 			</div>
 		</div>
 	</div>
 </div>
+</div>
+<?php include 'view/home/projects.html.php'; ?>
+<div class="panel-scroll">
+
  <?php
 				foreach ( $this ['order'] as $item => $itemData ) {
 					if (! empty ( $this [$item] ))
 						echo new View ( "view/home/{$item}.html.php", $this );
 				}
 				?>
+
 <?php include 'view/home/presskit.html.php'; ?>
 <?php include 'view/footer.html.php'; ?>
+</div>
 <?php include 'view/epilogue.html.php'; ?>
