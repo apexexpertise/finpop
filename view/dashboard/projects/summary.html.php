@@ -17,7 +17,7 @@
  * along with Goteo. If not, see <http://www.gnu.org/licenses/agpl.txt>.
  *
  */
-use Goteo\Core\View, Goteo\Library\Text, Goteo\Model\Project;
+use Goteo\Core\View, Goteo\Library\Text,  Goteo\Library\SuperForm,Goteo\Model\Project;
 
 $project = $this ['project'];
 
@@ -25,11 +25,59 @@ if (! $project instanceof Goteo\Model\Project) {
 	return;
 }
 ?>
+
+  <form id="selector-form" name="selector_form"
+		class="form-horizontal"
+		action="<?php echo '/dashboard/'.$this['section'].'/'.$this['option'].'/select'; ?>"
+		method="post" enctype="multipart/form-data">
+		
 <div class="widget user-project-title">
 	<p>
 		<strong><?php echo $project->name ?></strong>
 	</p>
 </div>
+
+
+<?php echo new SuperForm(array(
+ 
+    'elements'      => array(
+     
+        'project_avatar' => array(
+            'type'      => 'group',    
+        		'title'     => Text::get('Couverture image'),
+            'hint'      => Text::get('tooltip-user-image'),
+            'errors'    => !empty($errors['avatar']) ? array($errors['avatar']) : array(),
+            'ok'        => !empty($okeys['avatar']) ? array($okeys['avatar']) : array(),
+            'class'     => 'user_avatar',
+            'children'  => array(
+                'avatar_upload'    => array(
+                    'type'  => 'file',
+                    'label' => Text::get('form-image_upload-button'),
+                    'class' => 'inline avatar_upload',
+                    'hint'  => Text::get('tooltip-user-image'),
+                ),
+                'avatar-current' => array(
+                    'type' => 'hidden',
+                    'value' => $project->avatar->id == 1 ? '' : $project->avatar->id,
+                ),
+                'avatar-image' => array(
+                    'type'  => 'html',
+                    'class' => 'inline avatar-image',
+                    'html'  => is_object($project->avatar) &&  $project->avatar->id != 1 ?
+                               $project->avatar . '<img src="'.SRC_URL.'/image/' . $project->avatar->id . '/128/128" alt="avatar" /><button class="image-remove" type="submit" name="avatar-'.$project->avatar->id.'-remove" title="Quitar imagen" value="remove">X</button>' :
+                               ''
+                )
+
+            )
+        
+
+        
+            
+        )
+    )
+));
+
+?>
 
 <div class="status user-project-status">
 	<div class="dropdown" id="menu-user-project">
@@ -68,4 +116,5 @@ if (! $project instanceof Goteo\Model\Project) {
     <?php echo new View('view/project/meter_hor_big.html.php', $this) ?>
     
 </div>
+</form>
 

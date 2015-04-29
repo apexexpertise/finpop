@@ -37,7 +37,7 @@ namespace Goteo\Model {
             $status,
             $progress, // puntuation %
             $amount, // Current donated amount
-
+            $avatar = false,
             $user, // owner's user information
 
             // Register contract data
@@ -242,11 +242,13 @@ namespace Goteo\Model {
 				// metemos los datos del proyecto en la instancia
 				$query = self::query("SELECT * FROM project WHERE id = ?", array($id));
 				$project = $query->fetchObject(__CLASS__);
-
+				$project->avatar = Image::get($project->avatar);
                 if (!$project instanceof \Goteo\Model\Project) {
                     throw new \Goteo\Core\Error('404', Text::html('fatal-error-project'));
                 }
-
+                if (empty($project->avatar->id) || !$project->avatar instanceof Image) {
+                	$project->avatar = Image::get(1);
+                }
                 // si recibimos lang y no es el idioma original del proyecto, ponemos la traducciÃ³n y mantenemos para el resto de contenido
                 if ($lang == $project->lang) {
                     $lang = null;
@@ -363,9 +365,14 @@ namespace Goteo\Model {
 
             try {
 				// metemos los datos del proyecto en la instancia
-				$query = self::query("SELECT id, name, owner, comment, lang, status FROM project WHERE id = ?", array($id));
+				$query = self::query("SELECT id, name, owner, comment, lang, avatar, status FROM project WHERE id = ?", array($id));
 				$project = $query->fetchObject(); // stdClass para qno grabar accidentalmente y machacar todo
-
+				
+				//avatar
+				$project->avatar = Image::get($project->avatar);
+				if (empty($project->avatar->id) || !$project->avatar instanceof Image) {
+					$project->avatar = Image::get(1);
+				}
                 // owner
                 $project->user = User::getMini($project->owner);
 
@@ -576,13 +583,23 @@ namespace Goteo\Model {
             if(!$this->validate($errors)) { return false; }
 
   			try {
+  				
+  				// Avatar
+  				if (is_array($this->avatar) && !empty($this->avatar['name'])) {
+  					$image = new Image($this->avatar);
+  					if ($image->save($errors)) {
+  						 $this->avatar = $image->id;
+  					} else {
+  						unset( $this->avatar);
+  					}
+  				}
                 // fail para pasar por todo antes de devolver false
                 $fail = false;
 
                 // los nif sin guiones, espacios ni puntos
                 $this->contract_nif = str_replace(array('_', '.', ' ', '-', ',', ')', '('), '', $this->contract_nif);
                 $this->entity_cif = str_replace(array('_', '.', ' ', '-', ',', ')', '('), '', $this->entity_cif);
-
+			
                 // Image
                 if (is_array($this->image) && !empty($this->image['name'])) {
                     $image = new Image($this->image);
@@ -621,6 +638,7 @@ namespace Goteo\Model {
                     'name',
                     'subtitle',
                     'image',
+                	'avatar',
                     'description',
                     'motivation',
                     'video',

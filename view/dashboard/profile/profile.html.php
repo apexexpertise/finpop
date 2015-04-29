@@ -151,6 +151,7 @@ $sfid = 'sf-project-profile';
             'ok'        => !empty($okeys['location']) ? array($okeys['location']) : array(),
             'value'     => $user->location
         ),
+    		
         'user_avatar' => array(
             'type'      => 'group',
             'required'  => true,
@@ -180,6 +181,36 @@ $sfid = 'sf-project-profile';
 
             )
         ),
+    		
+    		'user_cover_img' => array(
+    				'type'      => 'group',
+    				'required'  => true,
+    				'title'     => Text::get('cover-image'),
+    				'hint'      => Text::get('tooltip-user-image'),
+    				'errors'    => !empty($errors['user_cover_img']) ? array($errors['user_cover_img']) : array(),
+    				'ok'        => !empty($okeys['user_cover_img']) ? array($okeys['user_cover_img']) : array(),
+    				'class'     => 'user_avatar',
+    				'children'  => array(
+    						'avatarp_upload'    => array(
+    								'type'  => 'file',
+    								'label' => Text::get('form-image_upload-button'),
+    								'class' => 'inline avatar_upload',
+    								'hint'  => Text::get('tooltip-user-image'),
+    						),
+    						'avatarp-current' => array(
+    								'type' => 'hidden',
+    								'value' => $user->avatarp->id == 1 ? '' : $user->avatarp->id,
+    						),
+    						'avatarp-image' => array(
+    								'type'  => 'html',
+    								'class' => 'inline avatar-image',
+    								'html'  => is_object($user->avatarp) &&  $user->avatarp->id != 1 ?
+    								$user->avatarp . '<img src="'.SRC_URL.'/image/' . $user->avatarp->id . '/128/128" alt="Avatar" /><button class="image-remove" type="submit" name="avatarp-'.$user->avatarp->id.'-remove" title="Quitar imagen" value="remove">X</button>' :
+    								''
+    						)
+    		
+    				)
+    		),
 
         'user_about' => array(
             'type'      => 'textarea',

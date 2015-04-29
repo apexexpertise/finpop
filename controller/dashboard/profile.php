@@ -40,6 +40,7 @@ namespace Goteo\Controller\Dashboard {
             $fields = array(
                 'user_name' => 'name',
                 'user_location' => 'location',
+            	'user_avatarp' => 'avatarp',
                 'user_avatar' => 'avatar',
                 'user_about' => 'about',
                 'user_keywords' => 'keywords',
@@ -81,7 +82,30 @@ namespace Goteo\Controller\Dashboard {
                     $vip->remove();
                 }
             }
-
+            // avatarp
+            if (isset($_FILES['avatarp_upload']) && $_FILES['avatarp_upload']['error'] != UPLOAD_ERR_NO_FILE) {
+            	$user->avatarp = $_FILES['avatarp_upload'];
+            }
+             
+            // tratar si quitan la imagen
+            if (!empty($_POST['avatarp-' . $user->avatarp->id . '-remove'])) {
+            	$user->avatarp->remove();
+            	$user->avatarp = '';
+            }
+             
+            // Tratamiento de la imagen vip mediante el modelo User\Vip
+            if ($vip instanceof Model\User\Vip) {
+            	if (isset($_FILES['avatarp_upload']) && $_FILES['avatarp_upload']['error'] != UPLOAD_ERR_NO_FILE) {
+            		$vip->image = $_FILES['vip_image_upload'];
+            		$vip->save($errors);
+            	}
+            	 
+            	// tratar si quitan la imagen vip
+            	if ($vip->image instanceof Image && !empty($_POST['vip_image-' . $vip->image->id . '-remove'])) {
+            		$vip->image->remove();
+            		$vip->remove();
+            	}
+            }
             // ojo si es receptor de pruebas, no machacarlo
             if (in_array('15', $user->interests)) $_POST['user_interests'][] = '15';
             $user->interests = $_POST['user_interests'];

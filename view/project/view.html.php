@@ -51,7 +51,7 @@ include 'view/prologue.html.php'?>
 
 <?php include 'view/header.html.php'?>
 
-<div id="sub-header">
+<div id="sub-header" style="background:url(<?php echo $project->avatar->getLink(1920, 300, true); ?>);background-size: 100% 100%;">
 	<div class="project-header container">
 		<a href="/user/<?php echo $project->owner; ?>"><img
 			src="<?php echo $project->user->avatar->getLink(56,56, true) ?>" class="img-circle"/></a>

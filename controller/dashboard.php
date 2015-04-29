@@ -237,7 +237,7 @@ namespace Goteo\Controller {
                 	case 'summary':
               		$log_action = null;
                 		$errors = array();
-                		Dashboard\Projects::process_profile($user, $vip, $errors, $log_action);
+                		Project::process_profile($user, $project, $vip, $errors, $log_action);
                 		break;
                     // gestionar retornos (o mensaje a los mensajeros)
                     case 'messegers':

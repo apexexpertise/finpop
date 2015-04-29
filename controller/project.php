@@ -33,6 +33,82 @@ namespace Goteo\Controller {
         Goteo\Model;
 
     class Project extends \Goteo\Core\Controller {
+    	
+    	public static function process_profile (&$user,&$project, &$vip, &$errors, &$log_action) {
+    		 
+    		$fields = array(
+    				'project_name' => 'name',
+    				'project_avatar' => 'avatar'
+    		);
+    		 
+    		foreach ($fields as $fieldPost => $fieldTable) {
+    			if (isset($_POST[$fieldPost])) {
+    				$project->$fieldTable = $_POST[$fieldPost];
+    			}
+    		}
+    		 
+    		// avatarp
+    		if (isset($_FILES['avatar_upload']) && $_FILES['avatar_upload']['error'] != UPLOAD_ERR_NO_FILE) {
+    			$project->avatar = $_FILES['avatar_upload'];
+    		}
+    		 
+    		// tratar si quitan la imagen
+    		if (!empty($_POST['avatar-' . $project->avatar->id . '-remove'])) {
+    			$project->avatar->remove();
+    			$project->avatar = '';
+    		}
+    		 
+    		// Tratamiento de la imagen vip mediante el modelo User\Vip
+    		if ($vip instanceof Model\Project\Vip) {
+    			if (isset($_FILES['avatar_upload']) && $_FILES['avatar_upload']['error'] != UPLOAD_ERR_NO_FILE) {
+    				$vip->image = $_FILES['vip_image_upload'];
+    				$vip->save($errors);
+    			}
+    			 
+    			// tratar si quitan la imagen vip
+    			if ($vip->image instanceof Image && !empty($_POST['vip_image-' . $vip->image->id . '-remove'])) {
+    				$vip->image->remove();
+    				$vip->remove();
+    			}
+    		}
+    		 
+    		// ojo si es receptor de pruebas, no machacarlo
+    		if (in_array('15', $project->interests)) $_POST['project_interests'][] = '15';
+    		$user->interests = $_POST['project_interests'];
+    		 
+    		//tratar webs existentes
+    		foreach ($project->webs as $i => &$web) {
+    			// luego aplicar los cambios
+    			 
+    			if (isset($_POST['web-' . $web->id . '-url'])) {
+    				$web->url = $_POST['web-' . $web->id . '-url'];
+    			}
+    			 
+    			//quitar las que quiten
+    			if (!empty($_POST['web-' . $web->id . '-remove'])) {
+    				unset($project->webs[$i]);
+    			}
+    		}
+    		 
+    		//tratar nueva web
+    		if (!empty($_POST['web-add'])) {
+    			$user->webs[] = new Model\Project\Web(array(
+    					'url' => 'http://'
+    			));
+    		}
+    		 
+    		/// este es el único save que se lanza desde un metodo process_
+    		if ($project->save($errors)) {
+    			$log_action = 'Actualis&eacute; son profil';
+    			//                Message::Info(Text::get('user-profile-saved'));
+    			//$project = Model\Project::flush();
+    			return true;
+    		} else {
+    			$log_action = '¡ERROR! al actualizar su perfil';
+    			Message::Error(Text::get('user-save-fail'));
+    			return false;
+    		}
+    	}
 
         public function index($id = null, $show = 'home', $post = null) {
             if ($id !== null) {
@@ -69,7 +145,18 @@ namespace Goteo\Controller {
         //Aunque no esté en estado edición un admin siempre podrá editar un proyecto
         public function edit ($id, $step = 'userProfile') {
             $project = Model\Project::get($id, null);
-
+            // Avatar
+            if (!empty($_FILES['project_avatar']['name'])) {
+            	$project->avatar = $_FILES['project_avatar'];
+            }
+            
+            // tratar si quitan la imagen
+            if (!empty($_POST['avatar-' . $project->avatar->id . '-remove'])) {
+            	$project->avatar->remove('project');
+            	$project->avatar = '';
+            }
+            
+            
             // para que tenga todas las imágenes
             $project->gallery = Model\Image::getAll($id, 'project');
             
