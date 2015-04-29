@@ -21,7 +21,7 @@
 use Goteo\Library\Text,
     Goteo\Model,
     Goteo\Core\Redirection,
-    Goteo\Library\NormalForm;
+    Goteo\Library\SuperForm;
 
 $post = $this['post'];
 
@@ -68,13 +68,13 @@ $(document).ready(function(){
 
 <form method="post" action="/admin/glossary/<?php echo $this['action']; ?>/<?php echo $post->id; ?>" enctype="multipart/form-data">
 
-    <?php echo new NormalForm(array(
+    <?php echo new SuperForm(array(
 
         'action'        => '',
         'level'         => 3,
         'method'        => 'post',
         'title'         => '',
-        'hint'          => Text::_("Termino de glosario, descripción, imágenes y media (vimeo, youtube, presi, slideshare)"),
+        'hint'          => Text::_("Terme de glossaire, description, images et media (vimeo, youtube, presi, slideshare)"),
         'class'         => 'aqua',
         'footer'        => array(
             'view-step-preview' => array(
@@ -127,7 +127,7 @@ $(document).ready(function(){
 
             'media' => array(
                 'type'      => 'textbox',
-                'title'     => Text::_("Vid&eacute;o"),
+                'title'     => Text::_("Video"),
                 'class'     => 'media',
                 'hint'      => Text::get('tooltip-updates-media'),
                 'errors'    => !empty($errors['media']) ? array($errors['media']) : array(),

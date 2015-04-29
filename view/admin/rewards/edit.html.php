@@ -1,7 +1,7 @@
 <?php
 
 use Goteo\Library\Text,
-    Goteo\Library\NormalForm;
+    Goteo\Library\SuperForm;
 
 $invest = $this['invest'];
 $project = $this['project'];
@@ -52,7 +52,7 @@ foreach ($invest->rewards as $key => $data) {
 
 
 <?php
-echo new NormalForm(array(
+echo new SuperForm(array(
 
     'level'         => 3,
     'method'        => 'post',

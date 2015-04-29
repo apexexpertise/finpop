@@ -28,8 +28,20 @@ $user = $_SESSION['user'];
 $option = $this['option'];
 include 'view/prologue.html.php';
 include 'view/header.html.php'; ?>
+<?php if($user->avatarp->id==1) {
 
-        <div id="sub-header" style="background:url(<?php echo $user->avatarp->getLink(1920, 400, true); ?>);background-size: 100% 100%;">
+$bc="background:rgb(137, 143, 149);background-size: 100% 100%;"; 
+} 
+
+
+else {
+$url=$user->avatarp->getLink(1920, 400, true);
+$bc="background:url(".$url.");background-size: 100% 100%;";
+
+}
+
+?>
+        <div id="sub-header" style="<?php echo $bc; ?>">
             <div class="dashboard-header">
                 <a href="/user/<?php echo $user->id; ?>" target="_blank"><div class="img-profile"><img src="<?php echo $user->avatar->getLink(168, 168, true); ?>" /></div></a>
                 <h2><span><?php if (empty($option)) {
