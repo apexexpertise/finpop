@@ -68,10 +68,7 @@
 					  <img  src="/view/css/admin/<?php echo $i ?>.png"/> &nbsp;
 						 <a id="<?php echo $i ?>" class="panel-title  collapsed" style="text-decoration:none;float:center;font-size:18px;font-family:Myriad Pro Regular;color:white" data-toggle="collapse" data-parent="#panel-623058" href="#panel-element-779446<?php echo $i ?>"> <?php echo $section['label'] ?>
 						<span style="float:right;" class="fa fa-angle-down"></span>
-						 <span style="float:right;" class="fa fa-angle-right"></span>
-						
-						  
-						
+						 <span style="float:right;" class="fa fa-angle-right"></span>						
     					</a> 					
 					</div>
 					<div id="panel-element-779446<?php echo $i ?>" class="panel-collapse collapse">
@@ -102,7 +99,7 @@
            
             </div>
             <?php if (isset($_SESSION['user']->roles['superadmin'])) : ?>
-            <div class="col-md-10 column" id="main-panel" style="  height: 88%;overflow: scroll;position: fixed;right: 0;  top: 177px;">
+            <div class="col-md-10 column" id="main-panel" style="padding-bottom: 100px;height: 80%;overflow: scroll;position: fixed;right: 0;  top: 177px;">
             <?php if(isset($_SESSION['messages'])) { include 'view/header/message.html.php'; } ?>
            <div class="row">
 				<div class="col-md-8 column" style="padding:0px;">
