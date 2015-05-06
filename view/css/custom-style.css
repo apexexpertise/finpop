@@ -1,12 +1,18 @@
 @CHARSET "ISO-8859-1";
 
-@import	url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+@import
+	url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic)
+	;
 
-@import	url(http://fonts.googleapis.com/css?family=Raleway:500,600,400,300);
+@import
+	url(http://fonts.googleapis.com/css?family=Raleway:500,600,400,300);
 
-@import	url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
+@import
+	url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
 
-@import	url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,200italic,300italic,400italic,600italic);
+@import
+	url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,200italic,300italic,400italic,600italic)
+	;
 
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 
@@ -17,7 +23,8 @@
 		format('embedded-opentype'),
 		url('fonts/odin_rounded_-_regular-webfont.woff') format('woff'),
 		url('/odin_rounded_-_regular-webfont.ttf') format('truetype'),
-		url(fonts/ odin_rounded_-_regular-webfont.svg #odin_roundedregular') format(' svg ');
+		url(fonts/ odin_rounded_-_regular-webfont.svg #odin_roundedregular
+		') format(' svg ');
 	font-weight: bold;
 	font-style: normal;
 }
@@ -29,15 +36,15 @@
 		format('embedded-opentype'),
 		url('fonts/odin_rounded_-_light-webfont.woff') format('woff'),
 		url('fonts/odin_rounded_-_light-webfont.ttf') format('truetype'),
-		url('fonts/odin_rounded_-_light-webfont.svg#odin_roundedlight')	format('svg');
+		url('fonts/odin_rounded_-_light-webfont.svg#odin_roundedlight')
+		format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
+
 @font-face {
 	font-family: 'Open Sans Light';
 	src: url('fonts/OpenSans-Light.ttf') format('truetype');
-		
-	
 }
 /***************************************Basic*******************************************************/
 ::-webkit-scrollbar { /* Scrollbars */
@@ -181,12 +188,15 @@ input[type="text"], input[type="password"], textarea, fieldset {
 	border: 1px solid #CACACA;
 	background: none;
 }
-body,html,b, strong{
+
+body, html, b, strong {
 	font-family: Lato;
 }
-.lato{
+
+.lato {
 	font-family: Lato;
 }
+
 .fa-1x {
 	font-size: 15px;
 }
@@ -209,7 +219,7 @@ body,html,b, strong{
 	float: right;
 }
 
-.left{
+.left {
 	float: left;
 }
 
@@ -223,6 +233,7 @@ body,html,b, strong{
 
 .text-center {
 	text-align: center;
+	padding-top: 70px;
 }
 
 .odin {
@@ -230,15 +241,25 @@ body,html,b, strong{
 }
 
 a:hover {
-	color: #337ab7;
+	color: #0387f3;
 }
 
 /************************************************Header**************************************************/
+/*menu des pages */
+div#header div#menu-no-home{
+	min-height: 50px;
+	/*height:50px;*/
+	overflow:hidden;
+	height: 110px;
+	
+	background-color: white;
+}
+/*tu redefinie ici les regles pour le nouveau menu ok ? */
 div#header div#menu {
 	min-height: 110px;
-	opacity:0.5;
-/*	background: url('header/layer.png'); */
-    background-color: #14202d; 
+	opacity: 0.5;
+	/*	background: url('header/layer.png'); */
+	background-color: #14202d;
 }
 
 .community {
@@ -281,10 +302,11 @@ div#header div#menu>ul {
 	max-width: 1024px;
 }
 
-div#sub-header {
+div#sub-header { /* modified by rayen */  
 	margin-bottom: 0;
 	padding: 14px 0 21px;
 	background: rgba(236, 245, 250, 0.6);
+	background-image:url(images/slider.png);
 }
 
 div#sub-header>div.clearfix>div {
@@ -306,7 +328,7 @@ div#header div#menu>ul>li.home {
 }
 
 div#header div#menu ul li>a>*, div#header div#menu ul li>a {
-/*	font-family: Lato;*/
+	/*	font-family: Lato;*/
 	color: white;
 	text-transform: uppercase;
 	font-family: Open Sans Light;
@@ -328,7 +350,9 @@ div#header div#menu>ul>li.login>a {
 
 div#header div#menu  ul li.explore  a:hover, div#header div#menu  ul li.login a:hover,
 	div#header div#menu  ul li.create a:hover {
-	/*border-bottom: 2px solid rgba(145, 145, 145, 0.6);*/ /* Commented by Amal */
+	/*border-bottom: 2px solid rgba(145, 145, 145, 0.6);*/
+	/* Commented by Amal */
+	
 }
 
 .connexion {
@@ -375,6 +399,7 @@ div#header div#menu>ul>li.community>div>ul, div#header div#menu>ul>li.dashboard>
 div#header div#menu>ul>li.community:hover *, div#header div#menu>ul>li.login:hover *,
 	div#header div#menu>ul>li.dashboard:hover * {
 	/*color: #434343;*/ /*Commented by Amal */
+	
 }
 
 div#header div#menu>ul>li.community>div>ul, div#header div#menu>ul>li.dashboard>div>ul
@@ -514,11 +539,11 @@ div#projects-phares {
 	margin-bottom: 30px;
 }
 
-div#projects-phares div.widget.project .expand {
+div#projects-phares div ..project .expand {
 	display: none;
 }
 
-div.widget.project {
+div ..project {
 	border: 1px solid rgba(194, 194, 194, 0.34);
 	border-radius: 4px;
 	height: 495px;
@@ -526,105 +551,107 @@ div.widget.project {
 	margin: 19px 0;
 }
 
-div.widget.project:hover {
+div ..project:hover {
 	border: 1px solid rgba(194, 194, 194, 0.8);
 	border-radius: 4px;
 }
 
-div.widget.project div.image {
+div ..project div.image {
 	background-color: #FFF;
 	height: 180px;
 }
 
-div.widget.project div.image a img {
+div ..project div.image a img {
 	width: 100%;
 	height: 100%;
 	border-radius: 3px;
 }
 
-div.widget.project div.image div.categories {
+div ..project div.image div.categories {
 	background-color: rgba(51, 122, 183, 0.6);
 	font-family: PT sans;
 	font-size: 14px;
 }
 
-div.widget.project>.title a {
+div ..project>.title a {
 	font-family: Lato;
 }
 
-div.widget.project.active>.title a {
+div ..project.active>.title a {
 	color: #337ab7;
 }
 
-div.widget.project>.author, div.widget.project>.author a {
+div ..project>.author, div ..project>.author a {
 	margin-bottom: 10px;
 	font-family: Lato;
 }
 
-div.widget.project div.description {
+div ..project div.description {
 	font-family: Lato;
 }
 
-div.widget.project div.meter h2, div.widget.project div.meter h3, div.widget.project div.meter h4,
-	div.widget.project div.meter h5, div.widget.project div.meter h6, div.widget.project div.meter h7,
-	div.widget.project div.meter h8 {
+div ..project div.meter h2, div ..project div.meter h3, div ..project div.meter h4,
+	div ..project div.meter h5, div ..project div.meter h6, div ..project div.meter h7,
+	div ..project div.meter h8 {
 	font-family: Lato;
 	padding-bottom: 5px;
 }
 
-div.widget.project div.rewards {
+div ..project div.rewards {
 	margin: 40px 12px 8px !important;
 	padding: 9px 0 0 !important;
 	height: 34px;
 }
 
-div.widget.project div.meter {
+div ..project div.meter {
 	padding: 5px 0 113px !important
 }
 
-div.widget.project div.meter div.graph, div.widget.project div.meter div.graph .minimum
+div ..project div.meter div.graph, div ..project div.meter div.graph .minimum
 	{
 	background-color: rgb(87, 188, 250);
 	border-color: rgb(203, 237, 252);
 	border-radius: 7px;
 }
 
-div.widget.project div.meter>h3.ronda {
+div ..project div.meter>h3.ronda {
 	color: #000;
 }
 
-div.widget.project div.meter div.obtained strong {
+div ..project div.meter div.obtained strong {
 	color: #000;
 	font-family: raleway;
 }
-div.widget.project div.meter div.obtained span.percent{
-	font-family: raleway;	
+
+div ..project div.meter div.obtained span.percent {
+	font-family: raleway;
 }
-div.widget.project div.meter dl * {
+
+div ..project div.meter dl * {
 	font-family: Lato;
 	color: #337ab7;
 }
 
-div.widget.project div.meter dl dd.days>*, div.widget.project div.meter dl dd.days,
-	div.widget.project div.meter dl dt.days>span {
+div ..project div.meter dl dd.days>*, div ..project div.meter dl dd.days,
+	div ..project div.meter dl dt.days>span {
 	color: #000;
 }
 
-div.widget.project div.rewards h4 {
+div ..project div.rewards h4 {
 	font-family: Lato;
 }
 
-div.widget.project div.meter div.graph .optimum {
+div ..project div.meter div.graph .optimum {
 	border-right: 2px solid #0080EC;
 	border-radius: 2px
 }
 
-div.widget.project div.meter div.graph .minimum .left {
+div ..project div.meter div.graph .minimum .left {
 	border-right: 2px solid #0080EC;
 	border-radius: 2px
 }
 
-div.widget.project div.meter dl dt.optimum {
+div ..project div.meter dl dt.optimum {
 	color: #337ab7;
 }
 
@@ -637,24 +664,25 @@ div.panel-scroll {
 }
 
 div.features {
-padding: 15px 0 0;
-  position: absolute;
-  top: 625px;
-  width: 100%;
-  z-index: 1000;
+	padding: 15px 0 0;
+	position: absolute;
+	top: 625px;
+	width: 100%;
+	z-index: 1000;
 }
-div.features-blur-box{
-  width: 100%;
-  height: 176px;
-  background: rgba(53, 53, 53, 0.5);
-  z-index: 1000;
-  position: absolute;
-  top: 625px;
-  filter: blur(5px);
-  -webkit-filter: blur(4px);
-  -moz-filter: blur(4px);
-  -o-filter: blur(4px);
-  -ms-filter: blur(4px);
+
+div.features-blur-box {
+	width: 100%;
+	height: 176px;
+	background: rgba(53, 53, 53, 0.5);
+	z-index: 1000;
+	position: absolute;
+	top: 625px;
+	filter: blur(5px);
+	-webkit-filter: blur(4px);
+	-moz-filter: blur(4px);
+	-o-filter: blur(4px);
+	-ms-filter: blur(4px);
 }
 
 h4.service {
@@ -750,7 +778,7 @@ div#posts div.post div.read_more a {
 	font-size: 13px;
 }
 
-div.widget.project div.meter div.graph .minimum .done {
+div ..project div.meter div.graph .minimum .done {
 	background: rgb(53, 128, 213);
 	content: "";
 	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255,
@@ -776,7 +804,7 @@ div#posts div.post div.read_more a:hover {
 }
 /*********************************Connexion page****************************************/
 div.bg_login {
-	background: rgb(137, 143, 149);
+	background: url('images/connexion-bg.png');
 }
 
 .box-panel {
@@ -910,11 +938,11 @@ div.login-form div.external-login ul li.linkedin {
 		Direction=134, Strength=10);
 }
 /*******************************************Projets****************************/
-div.widget.projects {
-	padding:0;
+div ..projects {
+	padding: 0;
 }
 
-div.widget.project div.rewards ul {
+div ..project div.rewards ul {
 	left: 17px;
 }
 
@@ -938,7 +966,7 @@ div.searcher #text-query {
 	border-radius: 3px;
 }
 
-body.project-show div#main>div.side>div.widget {
+body.project-show div#main>div.side>div . {
 	width: 308px;
 }
 
@@ -978,13 +1006,13 @@ div.searcher {
 	width: 80%;
 }
 
-div.widget.projects div.project {
+div ..projects div.project {
 	background-color: #FFF;
 	margin: 0 30px 30px 0;
 	width: 350px;
 }
 
-div.widget.projects>.title, .header-title {
+div ..projects>.title, .header-title {
 	margin-bottom: 20px;
 	font-family: odin;
 	background: none;
@@ -997,13 +1025,13 @@ div.widget.projects>.title, .header-title {
 	padding-bottom: 2px;
 }
 
-div.widget.projects>.title .seeall {
+div ..projects>.title .seeall {
 	float: right;
 	padding-right: 5px;
 	padding-top: 11px;
 }
 
-div.widget.projects>.title .seeall>a {
+div ..projects>.title .seeall>a {
 	text-transform: capitalize;
 	text-decoration: none;
 	font-size: 13px;
@@ -1227,7 +1255,7 @@ div.buttons-share {
 	padding: 10px 0 0;
 }
 
-div.widget.project-share {
+div ..project-share {
 	height: 140px;
 	border-bottom: 1px solid rgb(234, 234, 234);
 	width: 94%;
@@ -1235,35 +1263,35 @@ div.widget.project-share {
 	padding-left: 0;
 }
 
-div.widget.project-share h4 {
+div ..project-share h4 {
 	font-family: raleway;
 	font-size: 21px;
 	margin: 10px 0;
 }
 
-div.widget.project-share li {
+div ..project-share li {
 	padding: 0;
 	margin: 0;
 }
 
-div.widget.project-share li#url-project {
+div ..project-share li#url-project {
 	padding: 1px 11px;
 	border: 1px solid rgb(224, 224, 224);
 	border-radius: 2px;
 	background: rgba(205, 205, 205, 0.32);
 }
 
-div.widget.project-share li#url-project input {
+div ..project-share li#url-project input {
 	border: none;
 }
 
-div.widget.project-summary h4, div.widget.project-summary h5, div.widget.project-summary h6
+div ..project-summary h4, div ..project-summary h5, div ..project-summary h6
 	{
 	font-family: Lato;
 	font-size: 20px;
 }
 
-div.widget.project-summary h1, div.widget.project-summary h2, div.widget.project-summary h3
+div ..project-summary h1, div ..project-summary h2, div ..project-summary h3
 	{
 	font-family: Lato;
 	font-weight: 400;
@@ -1271,7 +1299,7 @@ div.widget.project-summary h1, div.widget.project-summary h2, div.widget.project
 	padding: 0px 0 13px;
 }
 
-div.widget.project-summary>div {
+div ..project-summary>div {
 	font-family: Source sans pro;
 	font-size: 15px;
 	background: #fff;
@@ -1286,7 +1314,7 @@ div.widget.project-summary>div {
 	background-clip: padding-box;
 }
 
-div.widget.project-summary .gallery-image {
+div ..project-summary .gallery-image {
 	text-align: center;
 	background: none;
 	border: none;
@@ -1295,23 +1323,25 @@ div.widget.project-summary .gallery-image {
 	box-shadow: none;
 }
 
-div.widget.project-summary .gallery-image img {
+div ..project-summary .gallery-image img {
 	width: 100%;
 	height: 100%;
 	border-radius: 4px;
 }
 
-.widget-area {
+.-area {
 	padding-top: 20px;
 }
-a.collab{
+
+a.collab {
 	font-family: Lato;
 	font-size: 14px;
 	color: #FFF;
-	
 }
-div.widget.project-support, div.widget.project-rewards, div.widget.user,div.widget.project-collaborations,
-	div.widget.project-investors,div.widget.project-score,div.widget.project-status,div#payment-panel,.project-updates .post{
+
+div ..project-support, div ..project-rewards, div ..user, div ..project-collaborations,
+	div ..project-investors, div ..project-score, div ..project-status, div#payment-panel,
+	.project-updates .post {
 	font-family: Lato;
 	font-size: 15px;
 	background: #fff;
@@ -1328,17 +1358,17 @@ div.widget.project-support, div.widget.project-rewards, div.widget.user,div.widg
 }
 
 }
-div.widget.project-support h4.supertitle {
+div ..project-support h4.supertitle {
 	font-family: Lato;
 	border-bottom: 1px solid #70B1FA !important;
 }
 
-div.widget .title {
+div . .title {
 	background: none;
 	font-family: Lato;
 }
 
-div.widget.project-support div.graph {
+div ..project-support div.graph {
 	background: rgba(87, 188, 250, 0.32);
 	width: 9px;
 	border-top-left-radius: 5px;
@@ -1346,45 +1376,57 @@ div.widget.project-support div.graph {
 	margin-left: 55px;
 }
 
-div.widget.project-support div.graph>div.minimum {
+div ..project-support div.graph>div.minimum {
 	background: rgb(87, 188, 250);
 	width: 9px;
 	margin-right: 4px;
 	border-top: 2px solid rgb(107, 107, 107);
 }
 
-div.widget.project-support div.graph>div.optimum {
+div ..project-support div.graph>div.optimum {
 	background: rgba(87, 188, 250, 0.54);
 	width: 9px;
 	border-top: 2px solid rgb(107, 107, 107);
 }
 
-div.widget.project-support div.graph>div.minimum>div.done strong {
+div ..project-support div.graph>div.minimum>div.done strong {
 	width: 40px;
 	margin-left: -40px;
 }
 
-@-webkit-keyframes move {
-	0% {
+@
+-webkit-keyframes move { 0% {
 	background-position: 50px 50px;
-	}
-
-	100%
-	{
-	background-position:0 0;
-	}
 }
-@-webkit-keyframes move-inverse {
-	0% {
+
+100%
+{
+background-position
+:
+0
+ 
+0;
+}
+}
+@
+-webkit-keyframes move-inverse { 0% {
 	background-position: 0 0;
-	}
-
-	100%
-	{
-	background-position:50px 50px;
-	}
 }
-div.widget.project-support div.graph>div.minimum>div.done {
+
+100%
+{
+background-position
+:
+50px
+ 
+50
+px
+;
+
+	
+}
+}
+div ..project-support div.graph>div.minimum>div.done {
 	background: rgb(53, 128, 213);
 	content: "";
 	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255,
@@ -1405,37 +1447,39 @@ div.widget.project-support div.graph>div.minimum>div.done {
 	border-top-right-radius: 5px;
 }
 
-div.widget.project-support div.buttons {
+div ..project-support div.buttons {
 	position: static;
 	padding: 5px 0 4px;
 	margin: 0 auto;
 	width: 95%;
 }
 
-div.widget.project-support a.more {
+div ..project-support a.more {
 	position: absolute;
 	top: 12px;
 	right: 16px;
 	font-family: Lato;
 	font-size: 13px;
 }
-.button-cof{
-    display: inline-block;
-    margin: 10px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow:    0 6px 0 #00608B, 0 5px 10px rgba(0, 0, 0, .35);
-    -moz-box-shadow: 0 6px 0 #00608B, 0 5px 10px rgba(0, 0, 0, .35);
-    box-shadow: 0 6px 0 #00608B, 0 5px 10px rgba(0, 0, 0, .35);
-    -webkit-transition: -webkit-box-shadow .1s ease-in-out;
-    -moz-transition: -moz-box-shadow .1s ease-in-out;
-    -o-transition: -o-box-shadow .1s ease-in-out;
-    transition: box-shadow .1s ease-in-out;
-    font-size: 50px;
-    color: #fff;
+
+.button-cof {
+	display: inline-block;
+	margin: 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 6px 0 #00608B, 0 5px 10px rgba(0, 0, 0, .35);
+	-moz-box-shadow: 0 6px 0 #00608B, 0 5px 10px rgba(0, 0, 0, .35);
+	box-shadow: 0 6px 0 #00608B, 0 5px 10px rgba(0, 0, 0, .35);
+	-webkit-transition: -webkit-box-shadow .1s ease-in-out;
+	-moz-transition: -moz-box-shadow .1s ease-in-out;
+	-o-transition: -o-box-shadow .1s ease-in-out;
+	transition: box-shadow .1s ease-in-out;
+	font-size: 50px;
+	color: #fff;
 }
-.button-cof span p{
+
+.button-cof span p {
 	font-family: 'raleway', Arial, sans-serif;
 	line-height: 1;
 	text-shadow: 0 -1px 1px rgba(74, 169, 228, 0.7);
@@ -1444,80 +1488,90 @@ div.widget.project-support a.more {
 	font-size: 18px;
 	margin-bottom: 0;
 }
+
 .button-cof span {
-    display: inline-block;
-    padding: 20px 30px;
-    background-color: #009fe6;
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));
-    background-image: -webkit-linear-gradient(hsla(194, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
-    background-image: -moz-linear-gradient(hsla(194, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
-    background-image: -o-linear-gradient(hsla(194, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
-    -moz-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
-    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
-    font-family: 'raleway', Arial, sans-serif;
-    line-height: 1;
-    text-shadow: 0 -1px 1px rgba(74, 169, 228, 0.7);
-    -webkit-transition: background-color .2s ease-in-out, -webkit-transform .1s ease-in-out;
-    -moz-transition: background-color .2s ease-in-out, -moz-transform .1s ease-in-out;
-    -o-transition: background-color .2s ease-in-out, -o-transform .1s ease-in-out;
-    transition: background-color .2s ease-in-out, transform .1s ease-in-out;
-    color: #FFF;
+	display: inline-block;
+	padding: 20px 30px;
+	background-color: #009fe6;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)),
+		to(hsla(338, 90%, 70%, .2)));
+	background-image: -webkit-linear-gradient(hsla(194, 90%, 80%, .8),
+		hsla(338, 90%, 70%, .2));
+	background-image: -moz-linear-gradient(hsla(194, 90%, 80%, .8),
+		hsla(338, 90%, 70%, .2));
+	background-image: -o-linear-gradient(hsla(194, 90%, 80%, .8),
+		hsla(338, 90%, 70%, .2));
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+	-moz-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+	box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+	font-family: 'raleway', Arial, sans-serif;
+	line-height: 1;
+	text-shadow: 0 -1px 1px rgba(74, 169, 228, 0.7);
+	-webkit-transition: background-color .2s ease-in-out, -webkit-transform
+		.1s ease-in-out;
+	-moz-transition: background-color .2s ease-in-out, -moz-transform .1s
+		ease-in-out;
+	-o-transition: background-color .2s ease-in-out, -o-transform .1s
+		ease-in-out;
+	transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+	color: #FFF;
 	font-size: 26px;
 }
 
 .button-cof:hover span {
-    background-color: rgba(0, 166, 240, 0.94);
-    text-shadow: 0 -1px 1px rgba(0, 48, 95, 1), 0 0 5px rgba(255, 255, 255, .8);
+	background-color: rgba(0, 166, 240, 0.94);
+	text-shadow: 0 -1px 1px rgba(0, 48, 95, 1), 0 0 5px
+		rgba(255, 255, 255, .8);
 }
 
 .button-cof:active, .button:focus {
-    -webkit-box-shadow:    0 68px 0 #00608B, 0 0px 0px rgba(0, 0, 0, .3);
-    -moz-box-shadow: 0 6px 0 #00608B, 0 0px 0px rgba(0, 0, 0, .3);
-    box-shadow:    0 6px 0 #00608B, 0 0px 0px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 68px 0 #00608B, 0 0px 0px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 6px 0 #00608B, 0 0px 0px rgba(0, 0, 0, .3);
+	box-shadow: 0 6px 0 #00608B, 0 0px 0px rgba(0, 0, 0, .3);
 }
 
 .button-cof:active span {
-    -webkit-transform: translate(0, 4px);
-    -moz-transform: translate(0, 4px);
-    -o-transform: translate(0, 4px);
-    transform: translate(0, 4px);
+	-webkit-transform: translate(0, 4px);
+	-moz-transform: translate(0, 4px);
+	-o-transform: translate(0, 4px);
+	transform: translate(0, 4px);
 }
-div.widget.project-support dl dt.optimum, div.widget.project-support dl dt.minimum,
-	div.widget.project-support dl dd.minimum, div.widget.project-support dl dd.optimum strong,
-	div.widget.project-support dl dd.minimum strong, div.widget.project-support dl dt.minimum,
-	div.widget.project-support dl dd.minimum, div.widget.project-support dl dd.reached
+
+div ..project-support dl dt.optimum, div ..project-support dl dt.minimum,
+	div ..project-support dl dd.minimum, div ..project-support dl dd.optimum strong,
+	div ..project-support dl dd.minimum strong, div ..project-support dl dt.minimum,
+	div ..project-support dl dd.minimum, div ..project-support dl dd.reached
 	{
 	color: rgb(67, 123, 210);
 	font-family: raleway;
 }
 
-div.widget.project-support dl dt.reached>*, div.widget.project-support dl dt>*,
-	div.widget.project-support dl dd>*, div.widget.project-support dl dt.supporters>*,
-	div.widget.project-support dl dd.supporters>* {
+div ..project-support dl dt.reached>*, div ..project-support dl dt>*,
+	div ..project-support dl dd>*, div ..project-support dl dt.supporters>*,
+	div ..project-support dl dd.supporters>* {
 	font-family: raleway;
 }
 
-div.widget.project-support div.buttons .cofinancer {
+div ..project-support div.buttons .cofinancer {
 	font-family: Lato;
 	font-size: 15px;
 	color: white;
 }
 
-div.widget.project-rewards h4.supertitle {
+div ..project-rewards h4.supertitle {
 	border-bottom: 1px solid #70B1FA !important;
 }
 
-div.widget.project-media {
+div ..project-media {
 	width: 100% !important;
 	max-width: none !important;
 	height: 415px;
 }
 
-div.widget.project-media>iframe, div.widget.project-media>object, div.widget.project-media>embed
+div ..project-media>iframe, div ..project-media>object, div ..project-media>embed
 	{
 	width: 100% !important;
 	max-width: none !important;
@@ -1525,59 +1579,59 @@ div.widget.project-media>iframe, div.widget.project-media>object, div.widget.pro
 	height: 415px !important;
 }
 
-div.widget.project-summary div.project-motivation-video {
+div ..project-summary div.project-motivation-video {
 	margin: 0 auto;
 	width: 100% !important;
 	height: 460px;
 }
 
-div.widget.project-invest div.social h4.title, div.widget.project-rewards div.social h4.title,
+div ..project-invest div.social h4.title, div ..project-rewards div.social h4.title,
 	#rewards-summary div.social h4.title {
 	color: rgb(55, 141, 255) !important
 }
 
-div.widget.project-support h4.supertitle {
+div ..project-support h4.supertitle {
 	border-bottom: 1px solid #70B1FA !important;
 }
 
-div.widget.project-invest div.individual h4.title, div.widget.project-rewards div.individual h4.title,
+div ..project-invest div.individual h4.title, div ..project-rewards div.individual h4.title,
 	#rewards-summary div.individual h4.title {
 	color: rgb(55, 141, 255) !important;
 }
 
-div.widget.project-invest>div.social ul li, div.widget.project-rewards>div.social ul li,
-	#rewards-summary>div.social ul li, div.widget.project-invest>div.individual ul li,
-	div.widget.project-rewards>div.individual ul li, #rewards-summary>div.individual ul li
+div ..project-invest>div.social ul li, div ..project-rewards>div.social ul li,
+	#rewards-summary>div.social ul li, div ..project-invest>div.individual ul li,
+	div ..project-rewards>div.individual ul li, #rewards-summary>div.individual ul li
 	{
 	background-color: #FFF;
 	font-family: Source sans pro;
 }
 
-div.widget.project-invest>div.social ul li.active, div.widget.project-rewards>div.social ul li.active,
-	#rewards-summary>div.social ul li.active, div.widget.project-invest>div.individual ul li.active,
-	div.widget.project-rewards>div.individual ul li.active,
-	#rewards-summary>div.individual ul li.active {
+div ..project-invest>div.social ul li.active, div ..project-rewards>div.social ul li.active,
+	#rewards-summary>div.social ul li.active, div ..project-invest>div.individual ul li.active,
+	div ..project-rewards>div.individual ul li.active, #rewards-summary>div.individual ul li.active
+	{
 	background-color: rgb(247, 247, 247);
 }
 
-div.widget.project-rewards>div.individual ul li div.amount,
-	#rewards-summary>div.individual ul li div.amount {
+div ..project-rewards>div.individual ul li div.amount, #rewards-summary>div.individual ul li div.amount
+	{
 	color: black;
 	border-bottom: 1px solid rgb(210, 210, 210);
 }
 
-div.widget.project-rewards>div.individual ul li span.taken,
-	#rewards-summary>div.individual ul li span.taken {
+div ..project-rewards>div.individual ul li span.taken, #rewards-summary>div.individual ul li span.taken
+	{
 	font-family: Lato;
 	border-radius: 12px;
 }
 
-div.widget.project-rewards>div.individual ul li div.investors,
+div ..project-rewards>div.individual ul li div.investors,
 	#rewards-summary>div.individual ul li div.investors {
 	font-family: Source sans pro;
 }
 
-div.widget.user div.image .username {
+div ..user div.image .username {
 	position: relative;
 	left: 88px;
 	font-family: Lato;
@@ -1585,18 +1639,18 @@ div.widget.user div.image .username {
 	top: -55px;
 }
 
-div.widget.user blockquote.about {
+div ..user blockquote.about {
 	border: none;
 	font-family: Lato;
 	font-size: 14px;
 }
 
-div.widget.user dl dd.message a {
+div ..user dl dd.message a {
 	color: rgb(121, 164, 255);
 	font-family: Lato;
 }
 
-div.widget.project-rewards>a.more, div.widget.user a.button, div.widget.project-investors a.more
+div ..project-rewards>a.more, div ..user a.button, div ..project-investors a.more
 	{
 	text-decoration: none;
 	font-family: Lato;
@@ -1604,42 +1658,41 @@ div.widget.project-rewards>a.more, div.widget.user a.button, div.widget.project-
 	color: #434343;
 }
 
-div.widget.user dl dd.message {
+div ..user dl dd.message {
 	padding-left: 0;
 	text-indent: 0;
 	background: none;
 }
 /******************budget**************************/
-div.widget.project-needs table tbody tr.req {
+div ..project-needs table tbody tr.req {
 	
 }
 
-div.widget.project-needs table th.summary div.click blockquote {
+div ..project-needs table th.summary div.click blockquote {
 	font-family: Source sans pro;
 	font-size: 15px;
 	border: none;
 	padding: 6px 10px 16px;
 }
 
-div.widget.project-needs table *.min {
+div ..project-needs table *.min {
 	font-family: raleway;
 	font-size: 14px;
 }
 
-div.widget.project-needs table *.min, div.widget.project-needs table *.max
-	{
+div ..project-needs table *.min, div ..project-needs table *.max {
 	font-family: raleway;
 	font-size: 16px;
 	padding: 13px;
 }
 
-div.widget.project-needs div#legend div.min, div.widget.project-needs div#legend div.max,
-	div.widget.project-needs table thead.task th.summary, div.widget.project-needs table tfoot th.total,
-	div.widget.project-needs table th.summary div.click span {
+div ..project-needs div#legend div.min, div ..project-needs div#legend div.max,
+	div ..project-needs table thead.task th.summary, div ..project-needs table tfoot th.total,
+	div ..project-needs table th.summary div.click span {
 	font-family: raleway;
 }
 
-div.widget.project-needs table tbody {
+div ..project-needs table tbody {
 	background: #fff;
 	border: 1px solid;
 	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
@@ -1652,7 +1705,7 @@ div.widget.project-needs table tbody {
 	background-clip: padding-box;
 }
 
-div.widget.project-needs, div.widget.project-schedule {
+div ..project-needs, div ..project-schedule {
 	background: #fff;
 	border: 1px solid;
 	border-color: #e5e6e9 #dfe0e4 #d0d1d5;
@@ -1665,16 +1718,16 @@ div.widget.project-needs, div.widget.project-schedule {
 	background-clip: padding-box;
 }
 
-div.widget.project-needs table {
+div ..project-needs table {
 	margin-bottom: 20px;
 }
 
-div.widget.project-needs table tfoot tr th {
+div ..project-needs table tfoot tr th {
 	font-size: 17px;
 	font-weight: 500;
 }
 
-div.widget.project-needs table th.summary div.click span strong {
+div ..project-needs table th.summary div.click span strong {
 	font-family: Lato;
 	font-size: 15px;
 	padding: 0px 8px;
@@ -1690,7 +1743,7 @@ div.project-message {
 	width: 100%;
 }
 
-div.widget.project-message textarea {
+div ..project-message textarea {
 	background-color: #FFF;
 	border: 1px solid rgba(192, 192, 192, 0.66);
 	width: 100%;
@@ -1751,18 +1804,21 @@ div.project-messages div.message .date>*, div.project-messages div.child .date>*
 	font-family: Lato;
 }
 /*************Finpopeurs********************************/
-div.widget.project-supporters dl.summary dt.reached, div.widget.project-supporters dl.summary dd.reached
+div ..project-supporters dl.summary dt.reached, div ..project-supporters dl.summary dd.reached
 	{
 	color: #000000;
 	font-family: raleway;
 }
-div.widget.project-supporters dl.summary dd.supporters {
+
+div ..project-supporters dl.summary dd.supporters {
 	font-family: raleway;
 }
-div.widget.project-supporters .supporters>ul>li dl dd.amount > *{
+
+div ..project-supporters .supporters>ul>li dl dd.amount>* {
 	font-family: raleway;
 }
-div.widget.project-supporters .supporters>ul>li {
+
+div ..project-supporters .supporters>ul>li {
 	height: 110px !important;
 	width: 295px;
 	font-family: Lato;
@@ -1781,101 +1837,117 @@ div.widget.project-supporters .supporters>ul>li {
 	margin-bottom: 0;
 }
 
-div.widget.project-investors .investors ul li dl dt.amount,div.widget.project-investors .investors ul li dl dd.amount
-{
+div ..project-investors .investors ul li dl dt.amount, div ..project-investors .investors ul li dl dd.amount
+	{
 	color: #000;
 }
 
-div.widget.project-supporters .supporters>ul>li .avatar {
+div ..project-supporters .supporters>ul>li .avatar {
 	padding: 12px;
 }
 
-div.widget.project-supporters .supporters ul li h4 {
+div ..project-supporters .supporters ul li h4 {
 	font-family: Lato;
 	font-size: 14px;
 	height: 18px;
 	color: #000;
 }
 
-div.widget.project-supporters .supporters ul li dl, div.widget.project-supporters .supporters ul li dl dt,
-	div.widget.project-supporters .supporters ul li dl dd {
+div ..project-supporters .supporters ul li dl, div ..project-supporters .supporters ul li dl dt,
+	div ..project-supporters .supporters ul li dl dd {
 	
 }
 
-div.widget.project-supporters .supporters>ul>li dl dd.amount {
+div ..project-supporters .supporters>ul>li dl dd.amount {
 	top: 3px;
 	color: #000;
 }
 
-div.widget.project-supporters .supporters>ul>li dl dt.amount {
+div ..project-supporters .supporters>ul>li dl dt.amount {
 	top: 30px;
 	color: #000;
 }
 
-div.widget.project-supporters .supporters ul li dl dd.date {
+div ..project-supporters .supporters ul li dl dd.date {
 	top: 75px !important;
 	font-family: Lato;
 	color: rgb(144, 144, 144);
 }
-div.widget.project-supporters .supporters ul li dl dd.worthcracy {
+
+div ..project-supporters .supporters ul li dl dd.worthcracy {
 	margin-top: 14px;
 }
-div.widget.project-supporters {
+
+div ..project-supporters {
 	margin: 0 auto;
 	padding-bottom: 28px !important;
 	border-bottom: 1px solid rgb(223, 223, 223);
 }
 /*************profile**************************/
-div.widget.user-worthcracy ul li > strong{
+div ..user-worthcracy ul li>strong {
 	font-family: Lato;
 	padding: 18px 0 0;
 	color: rgb(31, 31, 31);
 }
-div.widget.worthcracy ul li > em, div.widget.worthcracy ul li > strong,div.widget.worthcracy ul li > span.threshold,div.widget.worthcracy ul li > span.threshold > *,
-div.widget.user-about p{
+
+div ..worthcracy ul li>em, div ..worthcracy ul li>strong, div ..worthcracy ul li>span.threshold,
+	div ..worthcracy ul li>span.threshold>*, div ..user-about p {
 	font-family: Lato;
 }
-div.widget.user-about h4,div.widget.worthcracy .title{
+
+div ..user-about h4, div ..worthcracy .title {
 	font-family: Lato;
 	font-size: 18px;
 }
-div.widget.user-about > div.message p a{
+
+div ..user-about>div.message p a {
 	color: #333;
 	font-family: Lato;
 }
-div.widget.user-about > div.message p{
+
+div ..user-about>div.message p {
 	padding: 0;
 	background: none;
 }
-div.widget.project div.image div.investor div.invest{
+
+div ..project div.image div.investor div.invest {
 	padding: 5px 8px 0;
 	font-family: Lato;
 }
-div.widget.project div.image div.investor div.invest span.amount{
+
+div ..project div.image div.investor div.invest span.amount {
 	font-family: Lato;
 	position: relative;
 	top: 2px;
 }
-div.navi-bar ul.navi li{
+
+div.navi-bar ul.navi li {
 	border-radius: 50%;
 	border: 2px solid rgb(115, 159, 255);
 }
-div.navi-bar ul.navi li > a:hover{
+
+div.navi-bar ul.navi li>a:hover {
 	background-color: #2F83F2;
-	
 }
-div.navi-bar{
+
+div.navi-bar {
 	display: none;
 }
-div.discover-arrow-right a.discover-arrow:hover{
+
+div.discover-arrow-right a.discover-arrow:hover {
 	background: url('arrowslider-sprt.png') scroll no-repeat 0 -24px;
 	text-decoration: none;
 }
-div.discover-arrow-left a.discover-arrow:hover{
+
+div.discover-arrow-left a.discover-arrow:hover {
 	background: url('arrowslider-sprt.png') scroll no-repeat 0 0;
 	text-decoration: none;
 }
-div.widget.user-supporters,div.widget.user-mates,div.widget.worthcracy.user-worthcracy,div.widget.user-about,div.widget.projects,body.dashboard div#project-selector,div.user-project-title,div.user-project-status,body.dashboard div#meter-big,div.gestrew,div.widget.project-posts,div.widget.user-message{
+
+div ..user-supporters, div ..user-mates, div ..worthcracy.user-worthcracy,
+	div ..user-about, div ..projects, body.dashboard div#project-selector,
+	div.user-project-title, div.user-project-status, body.dashboard div#meter-big,
+	div.gestrew, div ..project-posts, div ..user-message {
 	font-family: Lato;
 	font-size: 15px;
 	background: #fff;
@@ -1890,75 +1962,92 @@ div.widget.user-supporters,div.widget.user-mates,div.widget.worthcracy.user-wort
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
 }
-div.dashbord-menu ul{
+
+div.dashbord-menu ul {
 	padding: 0;
 	margin: 0;
 }
-div.dashbord-menu ul li{
+
+div.dashbord-menu ul li {
 	list-style: none;
 }
-div.dashbord-menu ul li a{
+
+div.dashbord-menu ul li a {
 	font-family: Source sans pro;
 	font-size: 14px;
 	text-decoration: none;
 }
+
 div.dashbord-menu ul li a.current {
 	color: #337ab7;
 }
-div.widget.projects div.project div.balloon{
+
+div ..projects div.project div.balloon {
 	background: rgba(240, 240, 240, 0.7);
 	height: 106px;
 }
-div.widget.projects div.project div.balloon > h4 {
+
+div ..projects div.project div.balloon>h4 {
 	font-family: Lato;
 }
-div.widget.projects div.project div.balloon > blockquote{
+
+div ..projects div.project div.balloon>blockquote {
 	border: none;
 	font-family: source sans pro;
 	font-size: 12px;
 }
-div.widget.projects #widget-code {
+
+div ..projects #-code {
 	display: inline-table;
 }
-div.widget.projects #widget-code .wc-embed{
+
+div ..projects #-code .wc-embed {
 	padding-bottom: 7px;
 	font-family: Lato;
 }
-div.widget.projects #widget-code textarea{
+
+div ..projects #-code textarea {
 	background: none;
 	border: 1px solid rgb(208, 208, 208);
 	border-radius: 3px;
-	
 }
-div.widget.user-worthcracy div.worth-amount{
+
+div ..user-worthcracy div.worth-amount {
 	color: #000;
 	font-family: Lato;
 	border: none;
 }
-div.widget.projects div.widget.project.activable.balloon{
+
+div ..projects div ..project.activable.balloon {
 	height: 600px;
 }
-body.js div.superform > div.hint blockquote{
+
+body.js div.superform>div.hint blockquote {
 	margin-right: 0;
 	font-family: Lato;
 	border: none;
 	font-size: 13px;
 	color: #333;
 }
-body.js div.superform > div.elements > ol > li.element{
+
+body.js div.superform>div.elements>ol>li.element {
 	margin-right: 0;
 	border-right: none;
 }
-div.superform div.elements > ol > li.required > .title{
+
+div.superform div.elements>ol>li.required>.title {
 	font-family: Lato;
 	text-transform: capitalize;
 }
-body.js div.superform > div.elements > ol > li.element{
-	border:none;
+
+body.js div.superform>div.elements>ol>li.element {
+	border: none;
 	padding: 17px 0;
 }
-div.superform > div.elements,body.js div.superform > div.hint,body.project-edit div#main #project-steps{
-	border:none;
+
+div.superform>div.elements, body.js div.superform>div.hint, body.project-edit div#main #project-steps
+	{
+	border: none;
 	font-size: 15px;
 	background: #fff;
 	border: 1px solid;
@@ -1972,83 +2061,105 @@ div.superform > div.elements,body.js div.superform > div.hint,body.project-edit 
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
 }
-div.superform input[type='text'], div.superform input[type='password'], div.superform textarea,div.superform li.element.textbox > div.contents > input[type="text"], div.superform li.element.textbox > div.contents > input[type="password"], div.superform li.element.textarea > div.contents > textarea{
+
+div.superform input[type='text'], div.superform input[type='password'],
+	div.superform textarea, div.superform li.element.textbox>div.contents>input[type="text"],
+	div.superform li.element.textbox>div.contents>input[type="password"],
+	div.superform li.element.textarea>div.contents>textarea {
 	background: none;
 	border: 1px solid rgb(184, 184, 184);
 	border-radius: 3px;
 }
 
-form div.footer{
+form div.footer {
 	background: none;
 	float: right;
 }
-div.superform input[type="submit"]{
+
+div.superform input[type="submit"] {
 	padding: 9px 32px !important;
 	font-family: Lato;
-	font-size: 13px!important;
+	font-size: 13px !important;
 	font-weight: 400;
 	background: none;
 	border: 1px solid rgb(182, 182, 182);
 	border-radius: 5px;
 	color: #333;
 }
-div.superform input[type="submit"]{
+
+div.superform input[type="submit"] {
 	color: #000;
 	border-radius: 0px;
 	border-color: #788FA3;
 	padding: 7px 17px !important;
 }
 
-div.superform input[type="submit"]:hover{
+div.superform input[type="submit"]:hover {
 	color: #fff;
 	background-color: #4C92FF;
 	border-color: #3F8AFF;
 }
-div.preferences,div.profile,div.access,div.personal{
+
+div.preferences, div.profile, div.access, div.personal {
 	margin: 0 0 30px;
 }
-body.js div.superform > div.elements > ol > li.element li.element{
+
+body.js div.superform>div.elements>ol>li.element li.element {
 	border: none;
 }
-div.superform div.elements > ol > li.element.checkboxes.cols_3 > div.contents > ul > li, div.superform div.elements > ol > li.element.radios.cols_3 > div.contents > ul > li, div.superform div.elements > ol > li.element.slider.cols_3 > div.contents > ul > li
-{
+
+div.superform div.elements>ol>li.element.checkboxes.cols_3>div.contents>ul>li,
+	div.superform div.elements>ol>li.element.radios.cols_3>div.contents>ul>li,
+	div.superform div.elements>ol>li.element.slider.cols_3>div.contents>ul>li
+	{
 	border: 1px solid rgb(218, 218, 218);
 	border-right: none;
 }
-div.superform div.elements > ol > li.element.checkboxes > div.contents > ul, div.superform div.elements > ol > li.element.radios > div.contents > ul, div.superform div.elements > ol > li.element.slider > div.contents > ul
-{
+
+div.superform div.elements>ol>li.element.checkboxes>div.contents>ul, div.superform div.elements>ol>li.element.radios>div.contents>ul,
+	div.superform div.elements>ol>li.element.slider>div.contents>ul {
 	padding: 1px;
 	border: none;
 }
-body.js div.superform > div.elements > ol > li.element li.element.avatar_upload
-{
-	width: 306px;	
+
+body.js div.superform>div.elements>ol>li.element li.element.avatar_upload
+	{
+	width: 306px;
 	display: inline-block;
-	
 }
-div.widget .supertitle{
+
+div . .supertitle {
 	border-bottom: 1px solid rgb(50, 60, 150);
 }
-body.js div.superform > div.elements > ol > li.element li.element.avatar_upload input[type="submit"]{
+
+body.js div.superform>div.elements>ol>li.element li.element.avatar_upload input[type="submit"]
+	{
 	margin: 20px 0;
 }
-body.js div.superform > div.elements > ol > li.element li.element.avatar-image
-{
+
+body.js div.superform>div.elements>ol>li.element li.element.avatar-image
+	{
 	width: 172px;
 	display: inline-block;
-	
 }
-body.js div.superform > div.elements > ol > li.element li.element .web .title{
+
+body.js div.superform>div.elements>ol>li.element li.element .web .title
+	{
 	padding: 0px 0px 17px;
 }
-body.js div.superform > div.elements > ol > li.element li.element .web .title > *{
+
+body.js div.superform>div.elements>ol>li.element li.element .web .title>*
+	{
 	font-family: Lato;
 }
-div.superform div.elements > ol > li.element.checkboxes > div.contents > ul > li, div.superform div.elements > ol > li.element.radios > div.contents > ul > li, div.superform div.elements > ol > li.element.slider > div.contents > ul > li
-{
+
+div.superform div.elements>ol>li.element.checkboxes>div.contents>ul>li,
+	div.superform div.elements>ol>li.element.radios>div.contents>ul>li, div.superform div.elements>ol>li.element.slider>div.contents>ul>li
+	{
 	border: 1px dotted rgb(208, 208, 208);
 }
-div.superform button.image-remove{
+
+div.superform button.image-remove {
 	background: none !important;
 	padding: 0px 0px 11px !important;
 	height: 24px;
@@ -2058,21 +2169,26 @@ div.superform button.image-remove{
 	border-radius: 50%;
 	right: -31px;
 }
-div.superform li.element > div.feedback > div blockquote,div.superform.aqua li.element > div.feedback > div.error + div.hint > blockquote{
+
+div.superform li.element>div.feedback>div blockquote, div.superform.aqua li.element>div.feedback>div.error+div.hint>blockquote
+	{
 	border: none;
 	font-family: Source sans pro;
 	color: #FFF;
 }
-body.js div.superform div.children > div.elements > ol > li.element > div.feedback{
+
+body.js div.superform div.children>div.elements>ol>li.element>div.feedback
+	{
 	top: 40px;
 }
-body.dashboard div#project-selector select
-{
+
+body.dashboard div#project-selector select {
 	width: auto;
 	text-transform: capitalize;
 	font-family: Source sans pro;
 }
-body.dashboard div#project-selector label{
+
+body.dashboard div#project-selector label {
 	text-transform: capitalize;
 	margin: 0;
 	padding: 7px;
@@ -2081,55 +2197,67 @@ body.dashboard div#project-selector label{
 	text-align: right;
 	font-family: Lato;
 }
-body.dashboard #project-status{
+
+body.dashboard #project-status {
 	padding: 0 !important;
 	width: 80%;
 }
-body.dashboard #project-status > h3{
+
+body.dashboard #project-status>h3 {
 	margin: 0;
 	font-family: Source sans pro;
 }
-body.dashboard #project-status  ul{
+
+body.dashboard #project-status  ul {
 	margin: 14px 0 4px;
 }
-body.dashboard #project-status ul > li{
+
+body.dashboard #project-status ul>li {
 	margin: 11px 0;
 	list-style: none;
 	font-family: Source sans pro;
 }
-body.dashboard #project-status ul > li strong{
+
+body.dashboard #project-status ul>li strong {
 	font-size: 23px;
 	font-family: raleway;
 	color: rgb(52, 163, 221);
 }
-body.dashboard div#meter-big div.graph{
+
+body.dashboard div#meter-big div.graph {
 	background-color: rgba(87, 188, 250, 0.6);
 	border-right: 40px solid rgba(87, 188, 250, 0.32);
 	margin-top: 62px;
 	border-radius: 2px;
 }
-body.dashboard div#meter-big div.graph .minimum{
 
+body.dashboard div#meter-big div.graph .minimum {
+	
 }
-body.dashboard div#meter-big div.graph .optimum{
+
+body.dashboard div#meter-big div.graph .optimum {
 	border-right: 4px solid #5797FA;
 	border-radius: 2px;
 }
-body.dashboard div#meter-big div.graph .minimum .left{
+
+body.dashboard div#meter-big div.graph .minimum .left {
 	border-right: 2px solid #5797FA;
-border-radius: 2px;
+	border-radius: 2px;
 }
-div.user-project-title > a{
+
+div.user-project-title>a {
 	
 }
-div.user-project-title p strong{
+
+div.user-project-title p strong {
 	font-family: Lato;
 	font-size: 21px;
 	font-weight: 500;
 	color: rgb(52, 163, 223);
 }
-body.dashboard div#meter-big div.graph .minimum .done{
-		background: rgb(53, 128, 213);
+
+body.dashboard div#meter-big div.graph .minimum .done {
+	background: rgb(53, 128, 213);
 	content: "";
 	background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255,
 		255, .2)), color-stop(.25, transparent), color-stop(.5, transparent),
@@ -2148,42 +2276,56 @@ body.dashboard div#meter-big div.graph .minimum .done{
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
-body.dashboard div#meter-big div.graph .minimum{
-	background-color:rgb(87, 188, 250);
+
+body.dashboard div#meter-big div.graph .minimum {
+	background-color: rgb(87, 188, 250);
 	border-radius: 4px;
 }
-body.dashboard div#meter-big dl dt.optimum, body.dashboard div#meter-big dl dt.minimum,body.dashboard div#meter-big dl dt.reached,body.dashboard div#meter-big dl dt.days,body.dashboard div#meter-big dl dt.supporters,body.dashboard div#meter-big dl dd.days{
+
+body.dashboard div#meter-big dl dt.optimum, body.dashboard div#meter-big dl dt.minimum,
+	body.dashboard div#meter-big dl dt.reached, body.dashboard div#meter-big dl dt.days,
+	body.dashboard div#meter-big dl dt.supporters, body.dashboard div#meter-big dl dd.days
+	{
 	font-family: Source sans pro;
-	color: #000;
-}
-body.dashboard div#meter-big dl dd.minimum > *,body.dashboard div#meter-big dl dd.optimum, body.dashboard div#meter-big dl dd.minimum{
-	font-family: raleway;
-	font-size: 21px;
-}
-body.dashboard div#meter-big dl * {
-	font-family: raleway;
-}
-body.dashboard div#meter-big h3.title.ronda{
 	color: #000;
 }
 
-body.dashboard div.superform{
+body.dashboard div#meter-big dl dd.minimum>*, body.dashboard div#meter-big dl dd.optimum,
+	body.dashboard div#meter-big dl dd.minimum {
+	font-family: raleway;
+	font-size: 21px;
+}
+
+body.dashboard div#meter-big dl * {
+	font-family: raleway;
+}
+
+body.dashboard div#meter-big h3.title.ronda {
+	color: #000;
+}
+
+body.dashboard div.superform {
 	padding-left: 0px !important;
 }
-div.supports{
+
+div.supports {
 	padding-bottom: 40px;
 }
-div#menu-user-project{
+
+div#menu-user-project {
 	float: right;
 }
-div.gestrew .message{
+
+div.gestrew .message {
 	font-family: Source sans pro;
 	font-size: 16px;
 }
-div.rewards.reward{
+
+div.rewards.reward {
 	
 }
-div#header div#menu > ul > li.home > a {
+
+div#header div#menu>ul>li.home>a {
 	overflow: hidden;
 	text-indent: 2000px;
 	display: block;
@@ -2198,133 +2340,164 @@ div#header div#menu > ul > li.home > a {
 	background-size: cover;
 	left: 0px;
 }
-div.widget.project-posts div.post > *{
+
+div ..project-posts div.post>* {
 	font-family: Lato;
 }
-div.widget.project-posts div.post{
+
+div ..project-posts div.post {
 	padding: 25px 0 3px;
 	font-family: Lato;
 	border-bottom: 1px solid rgb(208, 208, 208);
 }
-div.widget.project-posts div.post span.date{
+
+div ..project-posts div.post span.date {
 	font-family: Lato;
 	font-size: 11px;
 }
-li.media div.contents iframe{
+
+li.media div.contents iframe {
 	height: 488px;
 }
-p.info{
+
+p.info {
 	padding: 13px 8px 0;
 	font-family: Source sans pro;
 	font-size: 16px;
 }
-div.center div.widget.user-message label{
+
+div.center div ..user-message label {
 	display: block;
 	font-family: Lato;
 	font-weight: 400;
 	padding: 9px 0 3px;
 }
-div.center div.widget.user-message input{
+
+div.center div ..user-message input {
 	background-color: #FFF;
 	border: 1px solid rgba(192, 192, 192, 0.66);
 	border-radius: 2px;
 	width: 100%;
 }
-div.center div.widget.user-message textarea{
+
+div.center div ..user-message textarea {
 	margin: 0;
 	background-color: #FFF;
 	border: 1px solid rgba(192, 192, 192, 0.66);
 	border-radius: 2px;
 	width: 100%;
 }
-div.gestrew div.rewards div.reward{
+
+div.gestrew div.rewards div.reward {
 	padding: 9px 0;
 }
-div.gestrew div.rewards div.reward div.tiporec{
+
+div.gestrew div.rewards div.reward div.tiporec {
 	border-left: 2px solid rgb(213, 209, 209);
 	margin-left: 25px;
 }
-div.gestrew div.rewards div.reward div.tiporec ul{
+
+div.gestrew div.rewards div.reward div.tiporec ul {
 	padding: 10px 12px;
 	margin: 0;
 }
-div.gestrew div.rewards{
+
+div.gestrew div.rewards {
 	border-left: 2px solid rgb(224, 224, 224);
 	margin: 16px 3px;
 	padding-left: 12px;
 }
-div.gestrew div.rewards div.reward div.tiporec ul li{
+
+div.gestrew div.rewards div.reward div.tiporec ul li {
 	list-style: none;
 	font-family: Lato;
 }
-div.gestrew div.rewards div.reward div.contenedorrecompensa{
+
+div.gestrew div.rewards div.reward div.contenedorrecompensa {
 	padding-left: 22px;
 	padding-bottom: 18px;
 }
-div.gestrew div.rewards div.reward div.contenedorrecompensa > span{
+
+div.gestrew div.rewards div.reward div.contenedorrecompensa>span {
 	font-family: Lato;
 }
-div.gestrew div.rewards div.reward div.contenedorrecompensa > span strong{
+
+div.gestrew div.rewards div.reward div.contenedorrecompensa>span strong
+	{
 	font-family: Lato;
 	color: rgb(0, 129, 255) !important;
 	font-weight: 500;
 }
-div.gestrew div.rewards div.reward a,div.gestrew div.rewards div.reward a:hover{
+
+div.gestrew div.rewards div.reward a, div.gestrew div.rewards div.reward a:hover
+	{
 	font-family: Source sans pro;
 	font-size: 14px;
 }
-body.dashboard div#colective-messages textarea{
+
+body.dashboard div#colective-messages textarea {
 	background-color: #FFF;
 	border: 1px solid rgba(192, 192, 192, 0.66);
 	width: 100%;
 	margin: 0;
 }
-body.dashboard div#colective-messages button{
+
+body.dashboard div#colective-messages button {
 	font-weight: 500;
 	font-family: Lato;
 }
-body.dashboard div#colective-messages input + label{
+
+body.dashboard div#colective-messages input+label {
 	font-weight: 500;
 	font-family: Source sans pro;
 	font-size: 14px;
 }
-body.dashboard div.widget.gestrew div.filters{
+
+body.dashboard div ..gestrew div.filters {
 	padding: 17px 0 8px;
 }
-body.dashboard div.widget.gestrew div.filters label{
+
+body.dashboard div ..gestrew div.filters label {
 	font-family: Source sans pro;
 	font-weight: 500;
 	padding: 0 8px;
 	font-size: 16px;
 }
-body.dashboard div#invests-list div.investor div.left span.amount{
+
+body.dashboard div#invests-list div.investor div.left span.amount {
 	font-family: raleway;
 	color: rgb(44, 39, 39);
 	font-size: 16px;
 	padding-right: 22px;
 	font-weight: 500;
 }
-body.project-edit div#sub-header{
-	background: rgb(137, 143, 149);
+
+body.project-edit div#sub-header {
+	background: url('images/connexion-bg.png');
 	background-size: 100% 100%;
 	margin: 0 0 56px;
 }
-body.dashboard div#sub-header div.dashboard-header{
+
+body.dashboard div#sub-header div.dashboard-header {
 	height: 300px;
 	position: relative;
 	top: 115px;
 }
-body.dashboard div#sub-header div.dashboard-header h2{
+
+body.dashboard div#sub-header div.dashboard-header h2 {
 	position: absolute;
 	bottom: 120px;
 	left: 195px;
 }
-body.dashboard div#sub-header div.dashboard-header h2 span{
+
+body.dashboard div#sub-header div.dashboard-header h2 span {
 	font-family: Odin;
 	font-size: 20px;
 	color: #fff;
 }
-body.user-profile div#sub-header .img-profile,body.project-edit div#sub-header .img-profile{
+
+body.user-profile div#sub-header .img-profile, body.project-edit div#sub-header .img-profile
+	{
 	position: relative;
 	top: 33px;
 	border: 1px solid rgb(221, 221, 221);
@@ -2334,12 +2507,14 @@ body.user-profile div#sub-header .img-profile,body.project-edit div#sub-header .
 	background: #FFF;
 	border-radius: 2px;
 }
-body.user-profile div#sub-header h2 img{
+
+body.user-profile div#sub-header h2 img {
 	width: auto;
-height: auto;
-position: relative;
+	height: auto;
+	position: relative;
 }
-div#public-profile div#sub-header{
+
+div#public-profile div#sub-header {
 	background: url('images/couverture.jpg');
 	height: 300px;
 	background-size: cover;
@@ -2348,19 +2523,23 @@ div#public-profile div#sub-header{
 	padding: 0;
 	margin: 0 0 73px;
 }
-div#public-profile div#sub-header .header-box{
+
+div#public-profile div#sub-header .header-box {
 	position: relative;
 	top: 88px;
 }
-body.user-profile div#sub-header h2{
+
+body.user-profile div#sub-header h2 {
 	padding-left: 199px;
 	color: #FFF;
 	font-size: 24px;
 }
-body.user-profile div#sub-header .img-profile{
+
+body.user-profile div#sub-header .img-profile {
 	top: 50px;
 }
-div#public-profile div#sub-header,body.project-show div#sub-header{
+
+div#public-profile div#sub-header, body.project-show div#sub-header {
 	background: url('images/couverture.jpg');
 	height: 300px;
 	background-size: cover;
@@ -2368,47 +2547,55 @@ div#public-profile div#sub-header,body.project-show div#sub-header{
 	background-position: center center;
 	padding: 0;
 }
-div#public-profile div#sub-header, body.project-show div#sub-header > *
-{
-	color:#FFF;
+
+div#public-profile div#sub-header, body.project-show div#sub-header>* {
+	color: #FFF;
 }
+
 body.project-show div.project-menu {
 	position: absolute;
 	top: 313px;
 }
+
 body.project-show div.project-menu ul li {
 	background: rgba(200, 200, 200, 0.54);
 }
-body.project-edit div#main .status h3{
+
+body.project-edit div#main .status h3 {
 	font-family: Source sans pro;
 	display: block;
 	color: #434343;
 	font-weight: 400;
 }
-body.project-edit div#main .status ul li{
+
+body.project-edit div#main .status ul li {
 	font-family: Source sans pro;
 	display: block;
 }
-body.project-edit div#main .status #project-status ul li strong{
+
+body.project-edit div#main .status #project-status ul li strong {
 	font-family: Raleway;
 	background: none;
 	color: #434343;
 	font-size: 16px;
 }
-body.project-edit div#main .status #project-score p{
+
+body.project-edit div#main .status #project-score p {
 	font-family: source sans pro;
 }
 /******************************************steps**********************************/
-body.project-edit div#main #project-steps div.steps ul{
+body.project-edit div#main #project-steps div.steps ul {
 	margin: 0;
 	padding: 0;
 }
-body.project-edit div#main #project-steps div.steps ul li{
+
+body.project-edit div#main #project-steps div.steps ul li {
 	list-style: none;
 	float: left;
 	min-width: 90px;
 }
-body.project-edit div#main #project-steps div.steps ul li button{
+
+body.project-edit div#main #project-steps div.steps ul li button {
 	padding: 15px;
 	min-width: 90px;
 	font-family: Source sans pro;
@@ -2417,20 +2604,29 @@ body.project-edit div#main #project-steps div.steps ul li button{
 	background: none;
 	padding: 8px;
 }
-body.project-edit div#main #project-steps div.steps ul li.active button strong,body.project-edit div#main #project-steps div.steps ul li.current button strong{
+
+body.project-edit div#main #project-steps div.steps ul li.active button strong,
+	body.project-edit div#main #project-steps div.steps ul li.current button strong
+	{
 	background: rgb(76, 146, 255);
 	color: #FFF;
 }
-body.project-edit div#main #project-steps div.steps ul li.current button{
+
+body.project-edit div#main #project-steps div.steps ul li.current button
+	{
 	color: rgb(76, 146, 255);
 	font-weight: 700;
 }
+
 body.project-edit div#main #project-steps div.steps ul li.current button:active,
-body.project-edit div#main #project-steps div.steps ul li.current button:focus,
-body.project-edit div#main #project-steps div.steps ul li.current button:visited{
-	border:none;
+	body.project-edit div#main #project-steps div.steps ul li.current button:focus,
+	body.project-edit div#main #project-steps div.steps ul li.current button:visited
+	{
+	border: none;
 }
-body.project-edit div#main #project-steps div.steps ul li button strong{
+
+body.project-edit div#main #project-steps div.steps ul li button strong
+	{
 	display: block;
 	width: 63px;
 	height: 59px;
@@ -2446,27 +2642,30 @@ body.project-edit div#main #project-steps div.steps ul li button strong{
 	z-index: 100;
 	background: white
 }
-body.project-edit div#main #project-steps div.steps ul li button div{
+
+body.project-edit div#main #project-steps div.steps ul li button div {
 	position: relative;
 	top: 31px;
 	left: 60px;
 	z-index: 0;
 	border: 1px solid rgb(205, 205, 205);
-	height:3px;
+	height: 3px;
 	-moz-box-shadow: inset 10px 10px 120px 0px #3AA5FF;
 	-webkit-box-shadow: inset 10px 10px 120px 0px #3AA5FF;
 	-o-box-shadow: inset 10px 10px 120px 0px #3AA5FF;
 	box-shadow: inset 10px 10px 120px 0px #3AA5FF;
-	filter:progid:DXImageTransform.Microsoft.Shadow(color=#3AA5FF, Direction=134, Strength=120);
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#3AA5FF,
+		Direction=134, Strength=120);
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
+}
 
-	}
-body.project-edit div#main .status #project-score{
+body.project-edit div#main .status #project-score {
 	padding-left: 0;
 }
-body.project-edit div#main .status #project-score{
+
+body.project-edit div#main .status #project-score {
 	display: block;
 	width: 100%;
 	padding: 0;
@@ -2474,20 +2673,25 @@ body.project-edit div#main .status #project-score{
 	border: 1px solid;
 	border-color: #e5e6e9 #dfe0e4;
 }
+
 body.project-edit div.superform {
 	border: none;
 }
-body.project-edit div#main div.status{
+
+body.project-edit div#main div.status {
 	border: none;
 	padding: 0;
 }
-div.superform h3{
-	display:none;
+
+div.superform h3 {
+	display: none;
 }
-body.project-edit div#main .status #project-status{
+
+body.project-edit div#main .status #project-status {
 	padding: 15px;
 }
-body.project-edit div#main div.status #circle strong{
+
+body.project-edit div#main div.status #circle strong {
 	position: relative;
 	right: 69px;
 	bottom: 43px;
@@ -2495,14 +2699,19 @@ body.project-edit div#main div.status #circle strong{
 	font-family: raleway;
 	color: #434343;
 }
-body.js div.superform li.element > div.feedback,body.js div.superform div.children > div.elements > ol > li.element > div.feedback{
+
+body.js div.superform li.element>div.feedback, body.js div.superform div.children>div.elements>ol>li.element>div.feedback
+	{
 	left: -278px;
 	top: -9px;
 }
-body.js div.superform.aqua li.element > div.feedback{
+
+body.js div.superform.aqua li.element>div.feedback {
 	background: none;
 }
-div.superform.aqua li.element > div.feedback > div,div.superform li.element > div.feedback > div{
+
+div.superform.aqua li.element>div.feedback>div, div.superform li.element>div.feedback>div
+	{
 	position: absolute;
 	color: #FFFFFF;
 	background: #5A95C7;
@@ -2510,56 +2719,70 @@ div.superform.aqua li.element > div.feedback > div,div.superform li.element > di
 	border-radius: 6px;
 	box-shadow: 0px 2px 5px #808080;
 }
-div.superform.aqua li.element > div.feedback > div.error{
+
+div.superform.aqua li.element>div.feedback>div.error {
 	position: relative;
 	padding: 14px 17px 9px;
 }
-div.superform.aqua li.element > div.feedback > div.error:after{
-	border:none;
+
+div.superform.aqua li.element>div.feedback>div.error:after {
+	border: none;
 }
-div.superform li.element > div.feedback > div:after{
- content: '';
-  position: absolute;
-  top: 20%;
-  left: 100%;
-  margin-top: -8px;
-  width: 0; height: 0;
-  border-left: 8px solid #5A95C7;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
+
+div.superform li.element>div.feedback>div:after {
+	content: '';
+	position: absolute;
+	top: 20%;
+	left: 100%;
+	margin-top: -8px;
+	width: 0;
+	height: 0;
+	border-left: 8px solid #5A95C7;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
 }
-body.js div.superform > div.elements > ol > li.element#user_avatar,body.js div.superform > div.elements > ol > li.element#user_cover_img{
+
+body.js div.superform>div.elements>ol>li.element#user_avatar {
 	padding: 16px 132px;
-	border: 1px solid rgb(199, 199, 199);	
+	border: 1px solid rgb(199, 199, 199);
 }
-body.js div.superform > div.elements > ol > li.element#user_avatar h4,body.js div.superform > div.elements > ol > li.element#user_cover_img h4{
+
+body.js div.superform>div.elements>ol>li.element#user_avatar h4 {
 	font-size: 14px;
 	margin: 14px 0;
 	padding: 7px 0;
 	border-bottom: 1px solid rgb(194, 194, 194);
 }
-body.js div.superform > div.elements > ol > li.element li.element.avatar_upload input[type="submit"]{
+
+body.js div.superform>div.elements>ol>li.element li.element.avatar_upload input[type="submit"]
+	{
 	padding: 8px !important;
 	border-radius: 0;
 	background: none;
 	color: #000;
 }
-body.js div.superform > div.elements > ol > li.element li.element.avatar_upload input[type="file"]{
+
+body.js div.superform>div.elements>ol>li.element li.element.avatar_upload input[type="file"]
+	{
 	font-family: Lato;
 	border: 1px solid rgb(234, 234, 234);
 	padding: 6px 5px;
 }
-body.js div.superform > div.elements > ol > li.element#user_avatar img{
+
+body.js div.superform>div.elements>ol>li.element#user_avatar img {
 	padding: 7px;
 	border: 1px solid rgb(205, 205, 205);
 }
-body.js div.superform  div.elements  ol > li.element#avatar-image img{
+
+body.js div.superform  div.elements  ol>li.element#avatar-image img {
 	float: right;
 }
-div.superform button.image-remove:hover{
-	background: #c0c0c0!important;
+
+div.superform button.image-remove:hover {
+	background: #c0c0c0 !important;
 }
-body.project-edit div.superform li.element#footer{
+
+body.project-edit div.superform li.element#footer {
 	padding: 20px;
 	margin: 20px 0;
 	border: 1px solid #eee;
@@ -2568,64 +2791,89 @@ body.project-edit div.superform li.element#footer{
 	border-left-color: #eea236;
 	background: rgb(253, 253, 253);
 }
-body.project-edit div.superform li.element#footer h5{
+
+body.project-edit div.superform li.element#footer h5 {
 	color: #EEA236;
 	font-family: raleway;
 }
-body.project-edit div.superform li.element#footer li#buttons input, body.project-edit div.superform li.element#footer li#buttons button{
-	
+
+body.project-edit div.superform li.element#footer li#buttons input, body.project-edit div.superform li.element#footer li#buttons button
+	{
 	box-shadow: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	margin: 2px;
 }
-div.superform li.element > h4, div.superform li.element > h5, div.superform li.element > h6, div.superform li.element > h7, div.superform li.element > h8{
+
+div.superform li.element>h4, div.superform li.element>h5, div.superform li.element>h6,
+	div.superform li.element>h7, div.superform li.element>h8 {
 	text-transform: capitalize;
 	font-family: Lato;
 }
-body.js div.superform > div.elements > ol > li.element li.element#image_upload{
+
+body.js div.superform>div.elements>ol>li.element li.element#image_upload
+	{
 	border: 1px solid rgb(223, 223, 223);
 	padding: 15px;
 	margin: 24px auto 0;
 }
-body.js div.superform > div.elements > ol > li.element li.element#image_upload input[type="file"]{
+
+body.js div.superform>div.elements>ol>li.element li.element#image_upload input[type="file"]
+	{
 	width: 40%;
 	display: inline;
 }
-body.js div.superform > div.elements > ol > li.element#gallery .elements{
+
+body.js div.superform>div.elements>ol>li.element#gallery .elements {
 	border: 1px solid rgb(221, 221, 221);
 	padding: 15px;
 }
-body.js div.superform > div.elements > ol > li.element#gallery .elements img{
+
+body.js div.superform>div.elements>ol>li.element#gallery .elements img {
 	padding: 7px;
 	border: 1px solid rgb(199, 199, 199);
 }
-body.js div.superform > div.elements > ol > li.element#gallery .elements > ol {
-padding-left: 0;
-margin: 0 auto;
-width: 88%;
+
+body.js div.superform>div.elements>ol>li.element#gallery .elements>ol {
+	padding-left: 0;
+	margin: 0 auto;
+	width: 88%;
 }
-div.superform li#gallery div.elements li.gallery-image{
+
+div.superform li#gallery div.elements li.gallery-image {
 	margin: 8px !important;
 }
-input.weak[type="submit"]:hover, input.weak[type="reset"]:hover, button.weak:hover, a.button.weak:hover{
+
+input.weak[type="submit"]:hover, input.weak[type="reset"]:hover, button.weak:hover,
+	a.button.weak:hover {
 	background: #b5161e;
 }
-body.js div.superform div.elements ol li.element li.element.required_cost-yes,body.js div.superform div.elements ol li.element li.element.required_cost-no{
+
+body.js div.superform div.elements ol li.element li.element.required_cost-yes,
+	body.js div.superform div.elements ol li.element li.element.required_cost-no
+	{
 	padding: 15px 10px 15px 15px;
 }
-body.project-edit div#main.costs div.superform li.element.cost div.title {
-width: 75%;
+
+body.project-edit div#main.costs div.superform li.element.cost div.title
+	{
+	width: 75%;
 }
-body.project-edit div#main.costs div.superform li.element.cost div.title > *{
+
+body.project-edit div#main.costs div.superform li.element.cost div.title>*
+	{
 	font-family: lato;
 }
-body.project-edit div#main.costs div.superform li.element.cost div.description{
+
+body.project-edit div#main.costs div.superform li.element.cost div.description
+	{
 	font-family: Lato;
 	font-size: 13px;
 }
-body.project-edit div#main.costs div.superform li.element.editcost div.children li.element.cost-amount > div.contents > input,
-body.project-edit div#main.rewards div.superform li.element.editindividual_reward div.children li.element.reward-amount > div.contents > input{
+
+body.project-edit div#main.costs div.superform li.element.editcost div.children li.element.cost-amount>div.contents>input,
+	body.project-edit div#main.rewards div.superform li.element.editindividual_reward div.children li.element.reward-amount>div.contents>input
+	{
 	width: 6em;
 	max-width: 6em;
 	min-width: 6em;
@@ -2635,57 +2883,82 @@ body.project-edit div#main.rewards div.superform li.element.editindividual_rewar
 	background-position: 4.7em center;
 	font-weight: 400;
 }
-div.superform > div.elements div.elements > ol{
+
+div.superform>div.elements div.elements>ol {
 	padding: 0;
 }
-body.js div.superform > div.elements > ol > li.element li.element > *
-{
+
+body.js div.superform>div.elements>ol>li.element li.element>* {
 	font-family: lato;
 }
-body.project-edit div#main.costs div.superform li.element.cost-meter dl{
+
+body.project-edit div#main.costs div.superform li.element.cost-meter dl
+	{
 	padding: 80px 70px 55px 31px;
 }
-body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.minimum{
+
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.minimum
+	{
 	border-bottom: 10px solid #4A95F8;
 }
-body.project-edit div#main.costs div.superform li.element.cost-meter dl dt.optimum {
+
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dt.optimum
+	{
 	border-top: 10px solid rgba(74, 149, 248, 0.44);
 }
-body.project-edit div#main.costs div.superform li.element.cost-meter dl dt.minimum > span{
+
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dt.minimum>span
+	{
 	color: rgb(74, 149, 248);
 	font-family: raleway;
 }
-body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.minimum > span > span.euro{
+
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.minimum>span>span.euro
+	{
 	border-left: 5px solid #4A95F8;
 	border-right: 5px solid #4A95F8;
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 }
-body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.minimum > span > strong{
+
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.minimum>span>strong
+	{
 	color: rgb(74, 149, 248);
 	font-family: raleway;
 }
-body.project-edit div#main.costs div.superform li.element.cost-meter dl dt.optimum > span{
+
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dt.optimum>span
+	{
 	color: rgb(174, 207, 251);
 	font-family: raleway;
 }
-body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.optimum > strong{
+
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.optimum>strong
+	{
 	color: rgb(174, 207, 251);
 	font-family: raleway;
 }
-body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.optimum > span.euro{
-		border-left: 5px solid rgb(174, 207, 251);
+
+body.project-edit div#main.costs div.superform li.element.cost-meter dl dd.optimum>span.euro
+	{
+	border-left: 5px solid rgb(174, 207, 251);
 	border-right: 5px solid rgb(174, 207, 251);
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 }
-div.superform li#scope, div.superform li#supports, div.superform li#social_rewards, div.superform li#individual_rewards{
+
+div.superform li#scope, div.superform li#supports, div.superform li#social_rewards,
+	div.superform li#individual_rewards {
 	padding: 15px;
 }
-div.superform li#social_rewards h4.title, div.superform li#individual_rewards h4.title, div.superform li#supports h4.title, div.superform li#costs h4.title{
+
+div.superform li#social_rewards h4.title, div.superform li#individual_rewards h4.title,
+	div.superform li#supports h4.title, div.superform li#costs h4.title {
 	padding: 0;
 }
-div.superform li#scope, div.superform li#supports, div.superform li#social_rewards, div.superform li#individual_rewards {
+
+div.superform li#scope, div.superform li#supports, div.superform li#social_rewards,
+	div.superform li#individual_rewards {
 	background-color: #FDFDFD !important;
 	border: 1px solid rgb(237, 237, 237);
 	border-top: none;
@@ -2693,13 +2966,19 @@ div.superform li#scope, div.superform li#supports, div.superform li#social_rewar
 	margin: 4px 0;
 	border-radius: 4px;
 }
-body.project-edit div#main.rewards div.superform li.element.reward div.title {
+
+body.project-edit div#main.rewards div.superform li.element.reward div.title
+	{
 	width: 76%;
 }
-body.project-edit div#main.rewards div.superform li.element.reward div.title > *,body.project-edit div#main.rewards div.superform li.element.reward div.description{
-	font-family:Lato;
+
+body.project-edit div#main.rewards div.superform li.element.reward div.title>*,
+	body.project-edit div#main.rewards div.superform li.element.reward div.description
+	{
+	font-family: Lato;
 }
-div.widget.project-summary div#prjct-gallery{
+
+div ..project-summary div#prjct-gallery {
 	float: none;
 	padding: 0;
 	background: none;
@@ -2708,30 +2987,37 @@ div.widget.project-summary div#prjct-gallery{
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-div.widget.project-summary div.prjct-gallery-container{
+
+div ..project-summary div.prjct-gallery-container {
 	width: 100%;
 	height: 410px;
 	margin-bottom: 10px;
 }
-div.widget.project-summary div.prjct-gallery-container div.gallery-image {
+
+div ..project-summary div.prjct-gallery-container div.gallery-image {
 	width: 707px;
 	height: 400px;
 }
-body.project-edit div.superform li.element#footer li#buttons input.disabled, body.project-edit div.superform li.element#footer li#buttons button.disabled{
+
+body.project-edit div.superform li.element#footer li#buttons input.disabled,
+	body.project-edit div.superform li.element#footer li#buttons button.disabled
+	{
 	background: rgba(232, 232, 232, 1);
 	border: 1px inset white;
 	cursor: default;
 }
-body.js div.superform div.elements ol li.element#preview div.widget.project-summary>div,
-body.js div.superform div.elements ol li.element#preview div.widget.project-needs, 
-body.js div.superform div.elements ol li.element#preview div.widget.project-schedule,
-body.js div.superform div.elements ol li.element#preview div.widget.project-support, 
-body.js div.superform div.elements ol li.element#preview div.widget.project-rewards, 
-body.js div.superform div.elements ol li.element#preview div.widget.user,
-body.js div.superform div.elements ol li.element#preview div.widget.project-collaborations,
-body.js div.superform div.elements ol li.element#preview div.widget.project-investors, 
-body.js div.superform div.elements ol li.element#preview div.widget.project-score, 
-body.js div.superform div.elements ol li.element#preview div.widget.project-status{
+
+body.js div.superform div.elements ol li.element#preview div ..project-summary>div,
+	body.js div.superform div.elements ol li.element#preview div ..project-needs,
+	body.js div.superform div.elements ol li.element#preview div ..project-schedule,
+	body.js div.superform div.elements ol li.element#preview div ..project-support,
+	body.js div.superform div.elements ol li.element#preview div ..project-rewards,
+	body.js div.superform div.elements ol li.element#preview div ..user,
+	body.js div.superform div.elements ol li.element#preview div ..project-collaborations,
+	body.js div.superform div.elements ol li.element#preview div ..project-investors,
+	body.js div.superform div.elements ol li.element#preview div ..project-score,
+	body.js div.superform div.elements ol li.element#preview div ..project-status
+	{
 	background: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -2740,14 +3026,17 @@ body.js div.superform div.elements ol li.element#preview div.widget.project-stat
 	border: none;
 	padding: 15px 0;
 }
-div.widget.project-rewards > div.individual ul li span.left, #rewards-summary > div.individual ul li span.left{
+
+div ..project-rewards>div.individual ul li span.left, #rewards-summary>div.individual ul li span.left
+	{
 	color: #388DFF;
 	font-family: raleway;
 	font-size: 20px;
 	font-weight: 400;
 	float: none;
 }
-div.widget.project-summary div#prjct-gallery ul.slderpag li a{
+
+div ..project-summary div#prjct-gallery ul.slderpag li a {
 	width: 20px;
 	height: 20px;
 	text-align: center;
@@ -2758,24 +3047,30 @@ div.widget.project-summary div#prjct-gallery ul.slderpag li a{
 	background: none;
 	border: 1px solid rgb(51, 122, 183);
 }
-div.widget.project-summary div#prjct-gallery ul.slderpag li.current a{
+
+div ..project-summary div#prjct-gallery ul.slderpag li.current a {
 	background-color: #337AB7 !important;
 	color: #FFFFFF !important;
 	text-decoration: none;
 }
-div.widget.project-summary div#prjct-gallery ul.slderpag li a:hover{
+
+div ..project-summary div#prjct-gallery ul.slderpag li a:hover {
 	background-color: #337AB7;
 	color: #FFFFFF;
 	text-decoration: none;
 }
-div.widget.project-summary div#prjct-gallery a.next, div.widget.project-summary div#prjct-gallery a.prev{
+
+div ..project-summary div#prjct-gallery a.next, div ..project-summary div#prjct-gallery a.prev
+	{
 	margin-top: 12px;
 }
-div.invest-message{
+
+div.invest-message {
 	background: none;
 	background-color: rgba(231, 231, 231, 0.5) !important;
 }
-div.widget.project-invest h3.beak{
+
+div ..project-invest h3.beak {
 	background: none;
 	background-color: rgba(231, 231, 231, 0.5) !important;
 	font-family: lato;
@@ -2786,7 +3081,8 @@ div.widget.project-invest h3.beak{
 	padding-bottom: 20px;
 	margin-bottom: 21px;
 }
-div.widget.project-invest h3.beak:after{
+
+div ..project-invest h3.beak:after {
 	content: '';
 	position: relative;
 	top: 49px;
@@ -2798,17 +3094,20 @@ div.widget.project-invest h3.beak:after{
 	border-top: 14px solid #ECECEC;
 	border-right: 14px solid transparent;
 }
-div.invest-message h2 span{
+
+div.invest-message h2 span {
 	font-family: Lato;
 	font-size: 20px;
 }
-div.invest-message span.message{
+
+div.invest-message span.message {
 	font-family: Lato;
 	font-size: 16px !important;
 	position: relative;
 	top: 8px;
 }
-div.widget.project-invest #amount{
+
+div ..project-invest #amount {
 	background-color: #FFF;
 	height: 34px;
 	width: 100px;
@@ -2820,39 +3119,49 @@ div.widget.project-invest #amount{
 	background-position: 92% center;
 	margin-right: 10px;
 }
-div.widget.project-invest label{
+
+div ..project-invest label {
 	font-family: lato;
 	font-weight: 400;
 }
-div.widget.project-invest div.individual ul li label.resign,div.widget.project-invest div.individual ul li label.amount{
+
+div ..project-invest div.individual ul li label.resign, div ..project-invest div.individual ul li label.amount
+	{
 	padding: 15px 45px;
 	border: 1px solid rgb(229, 229, 229);
 	border-radius: 3px;
 	color: #000000;
 }
-div.widget.project-invest div.individual ul li label.amount h5{
+
+div ..project-invest div.individual ul li label.amount h5 {
 	padding-top: 10px;
 }
-div.widget.project-invest div.individual ul li label span.amount{
+
+div ..project-invest div.individual ul li label span.amount {
 	font-family: raleway;
 }
-div.widget.project-invest div.individual ul li label input[type="radio"]{
+
+div ..project-invest div.individual ul li label input[type="radio"] {
 	margin-right: 5px;
 	margin-left: 5px;
 }
-div.widget.project-invest div.individual ul li label span.left{
+
+div ..project-invest div.individual ul li label span.left {
 	float: none;
 	font-family: raleway;
 	font-size: 18px;
 	color: rgb(8, 115, 255);
 }
-div.widget.project-invest div.individual ul li label > *{
+
+div ..project-invest div.individual ul li label>* {
 	color: #000;
 }
-div.widget.project-invest > div{
+
+div ..project-invest>div {
 	margin-bottom: 0;
 }
-div.widget.project-invest.address table{
+
+div ..project-invest.address table {
 	width: 95%;
 	margin: 25px auto 23px;
 	border: 1px solid rgb(229, 229, 229);
@@ -2860,127 +3169,164 @@ div.widget.project-invest.address table{
 	border-spacing: 23px;
 	border-radius: 2px;
 }
-div.widget.project-invest p label{
+
+div ..project-invest p label {
 	padding: 0 17px;
 	font-size: 12px;
 }
-div.widget.project-invest p label input[type="checkbox"] + span.chkbox{
+
+div ..project-invest p label input[type="checkbox"]+span.chkbox {
 	margin-top: -14px;
 	margin-left: -3px;
 }
-div.widget.project-invest.address table tr td label{
+
+div ..project-invest.address table tr td label {
 	padding: 0;
 	font-size: 14px;
 }
-div.widget.project-invest #fullname, div.widget.project-invest #address,div.widget.project-invest #location,div.widget.project-invest #nif, div.widget.project-invest #zipcode,div.widget.project-invest #country{
+
+div ..project-invest #fullname, div ..project-invest #address, div ..project-invest #location,
+	div ..project-invest #nif, div ..project-invest #zipcode, div ..project-invest #country
+	{
 	height: 36px;
 	font-size: 14px;
 	font-family: PT sans;
 	padding: 5px;
 	border-radius: 2px;
 }
-div.widget.project-invest.method p{
+
+div ..project-invest.method p {
 	padding: 24px 5px 20px;
 	border: 1px solid rgb(229, 229, 229);
 	margin: 19px auto;
 }
-div.widget.project-invest.method p button{
+
+div ..project-invest.method p button {
 	margin: 6px 9px;
 	font-family: Lato;
 }
-div#woth-invest div.widget.worthcracy.user-worthcracy{
+
+div#woth-invest div ..worthcracy.user-worthcracy {
 	border: none;
 	padding: 20px;
 	background: none;
 	box-shadow: none;
 }
-div.widget.user-supporters .supporters > ul > li dl dd.amount strong{
+
+div ..user-supporters .supporters>ul>li dl dd.amount strong {
 	color: #000;
-	font-family: raleway;	
+	font-family: raleway;
 }
+
 div.project-messages div.message h3.user a:hover, div.project-messages div.child h3.user a:hover,
-div.widget.user-supporters .supporters ul li.active h3,
-div.widget.user-supporters .supporters ul li.active h4,
-div.widget.user-supporters .supporters ul li.active h5,
-div.widget.user-supporters .supporters ul li.active h6 {    
+	div ..user-supporters .supporters ul li.active h3, div ..user-supporters .supporters ul li.active h4,
+	div ..user-supporters .supporters ul li.active h5, div ..user-supporters .supporters ul li.active h6
+	{
 	color: rgb(46, 125, 252);
 }
-div.widget.user-mates .users ul > li{
+
+div ..user-mates .users ul>li {
 	width: 200px;
 	border: 1px solid rgb(240, 240, 240);
 	height: 80px;
 }
-div.widget.user-mates .users ul li div.user h4 a,div.widget.user-mates .users ul > li .user > a,div.widget.user-mates .users ul > li span.projects{
+
+div ..user-mates .users ul li div.user h4 a, div ..user-mates .users ul>li .user>a,
+	div ..user-mates .users ul>li span.projects {
 	font-family: Lato;
 }
-div.widget.user-mates .users ul > li .user {
+
+div ..user-mates .users ul>li .user {
 	padding: 0px 6px 3px 77px;
 }
-div.widget.user-mates .users ul > li:hover > div.user > h4 > a{color: rgb(37, 157, 244);}
-div.widget.user-mates .users ul > li span.projects,div.widget.user-mates .users ul > li span.invests{
+
+div ..user-mates .users ul>li:hover>div.user>h4>a {
+	color: rgb(37, 157, 244);
+}
+
+div ..user-mates .users ul>li span.projects, div ..user-mates .users ul>li span.invests
+	{
 	color: #0077FF;
 }
-div.widget.user-mates .users ul > li p{
+
+div ..user-mates .users ul>li p {
 	margin: 0;
 }
-div.widget.user-mates .users ul > li p i{
+
+div ..user-mates .users ul>li p i {
 	font-size: 10px
 }
-div.widget.user-mates .users ul > li p a{
+
+div ..user-mates .users ul>li p a {
 	font-family: Lato;
-	font-size: 10px!important;
+	font-size: 10px !important;
 }
-div.widget.user-mates .users ul > li .avatar {
+
+div ..user-mates .users ul>li .avatar {
 	left: 3px;
 	top: 1px;
 	width: 70px;
 	height: 70px;
 }
-.project-updates{
-		width: 100%;
+
+.project-updates {
+	width: 100%;
 }
-#blog-content{
+
+#blog-content {
 	width: 100%;
 	border-right: 1px solid rgb(218, 218, 218);
 }
-#blog-content .post{
+
+#blog-content .post {
 	padding: 15px 25px 0 0;
 }
-.project-updates .widget.post .gallery-image img{
+
+.project-updates ..post .gallery-image img {
 	padding: 0;
 	margin: 0;
 	height: 400px;
 }
-div.gallery-image img{
+
+div.gallery-image img {
 	width: 100%;
 	height: 100%;
 }
- div.widget.blog-content-module blockquote,.project-updates .post blockquote,#blog-content .post blockquote{
- border: none;
- padding: 20px 0;
- border-bottom: 1px solid rgb(228, 228, 228);
- border-top: 1px solid rgb(228, 228, 228);
- margin: 0;
- }
- div.widget.blog-content-module .embed-legend,.project-updates .post .embed-legend, #blog-content .post .embed-legend{
- 	 margin: 0;
+
+div ..blog-content-module blockquote, .project-updates .post blockquote,
+	#blog-content .post blockquote {
+	border: none;
+	padding: 20px 0;
+	border-bottom: 1px solid rgb(228, 228, 228);
+	border-top: 1px solid rgb(228, 228, 228);
+	margin: 0;
+}
+
+div ..blog-content-module .embed-legend, .project-updates .post .embed-legend,
+	#blog-content .post .embed-legend {
+	margin: 0;
 	padding: 10px 8px;
 	font-family: PT sans;
 	font-style: normal;
 	color: rgb(60, 60, 60);
 }
-.project-updates .post h4 a, #blog-content .post h4 a{
- 	font-family: lato;
+
+.project-updates .post h4 a, #blog-content .post h4 a {
+	font-family: lato;
 	text-transform: uppercase;
- }
- div.widget.blog-content-module h4 a:hover, #blog-content .post h4 a:hover{
- 	color: #2388EC;
- }
-.project-updates .post .date{
+}
+
+div ..blog-content-module h4 a:hover, #blog-content .post h4 a:hover {
+	color: #2388EC;
+}
+
+.project-updates .post .date {
 	float: right;
 	font-family: lato;
 }
-div.widget.blog-content-module .date, #blog-content .post .date,#blog-content .post .date{
+
+div ..blog-content-module .date, #blog-content .post .date,
+	#blog-content .post .date {
 	font-family: PT sans;
 	position: absolute;
 	color: #FFF;
@@ -2989,7 +3335,8 @@ div.widget.blog-content-module .date, #blog-content .post .date,#blog-content .p
 	font-size: 11px;
 	top: 48px;
 }
-div#finblog{
+
+div#finblog {
 	height: 450px;
 	background-color: rgb(247, 247, 247);
 	background-image: url(images/finblog.png);
@@ -2997,13 +3344,16 @@ div#finblog{
 	background-position: top center;
 	background-size: 100% 450px;
 }
+
 div.gallery-image img {
 	margin: 15px 18px 8px 0;
 }
-div.widget.blog-sidebar-module{
+
+div ..blog-sidebar-module {
 	padding: 30px 0 0;
 }
-div.widget.blog-sidebar-module .supertitle{
+
+div ..blog-sidebar-module .supertitle {
 	padding: 7px 5px;
 	background: rgb(237, 237, 237);
 	border: none;
@@ -3011,51 +3361,64 @@ div.widget.blog-sidebar-module .supertitle{
 	color: #EC1B7A;
 	font-size: 13px;
 }
-.project-updates h3,#blog-content h3{
+
+.project-updates h3, #blog-content h3 {
 	margin: 0;
 	font-size: 13px;
 	color: #3189FF;
 	text-transform: capitalize;
 }
-.project-updates div.widget.blog-comment textarea,#blog-content div.widget.blog-comment textarea{
+
+.project-updates div ..blog-comment textarea, #blog-content div ..blog-comment textarea
+	{
 	background: none;
 	border: 1px solid rgb(213, 213, 213);
 	float: left;
 }
-.project-updates div.widget.blog-comment,#blog-content div.widget.blog-comment{
+
+.project-updates div ..blog-comment, #blog-content div ..blog-comment {
 	margin: 0;
 	padding: 22px 2px 44px;
 }
-div.widget.blog-comment button,#blog-content div.widget.blog-comment button{
+
+div ..blog-comment button, #blog-content div ..blog-comment button {
 	margin: 0;
 	float: none;
 	margin-left: 17px;
 	font-weight: 300;
 	font-family: PT sans;
 }
-div.widget.blog-comment button{
+
+div ..blog-comment button {
 	margin-top: 10px;
 }
-.project-updates .post .embed{
+
+.project-updates .post .embed {
 	width: 100%;
 	height: 400px;
 	margin: 14px 0 6px;
 }
-div.widget.blog-content-module .comments-num, #blog-content .post .comments-num,.project-updates .post .comments-num{
+
+div ..blog-content-module .comments-num, #blog-content .post .comments-num,
+	.project-updates .post .comments-num {
 	padding: 7px 0;
 	background: none;
 }
-div.widget.blog-content-module .comments-num a, #blog-content .post .comments-num a,.project-updates .post .comments-num a{
+
+div ..blog-content-module .comments-num a, #blog-content .post .comments-num a,
+	.project-updates .post .comments-num a {
 	color: #2493FF;
 	font-size: 11px;
 	font-family: PT sans;
 }
-div.read_more a:hover,div.read_more a{
+
+div.read_more a:hover, div.read_more a {
 	color: #2493FF;
 	font-family: PT sans;
 	text-transform: capitalize;
 }
-div.post-comments div.message blockquote{
+
+div.post-comments div.message blockquote {
 	border: none;
 	font-weight: 400;
 	font-family: lato;
@@ -3064,51 +3427,68 @@ div.post-comments div.message blockquote{
 	border-top: 1px solid rgb(187, 187, 187);
 	margin-top: 21px;
 }
-div.post-comments div.message h3.user a:hover{
-color: rgba(7, 95, 255,0.6);
+
+div.post-comments div.message h3.user a:hover {
+	color: rgba(7, 95, 255, 0.6);
 }
-div.post-comments div.message h3.user a{
+
+div.post-comments div.message h3.user a {
 	font-family: PT sans;
 	font-size: 15px;
 	font-weight: 300;
 	color: rgb(7, 95, 255);
 }
-div.post-comments div.message{
+
+div.post-comments div.message {
 	background-color: #F2F2F2 !important;
 	border-radius: 5px;
 }
-div.post-comments div.message .date > *{
+
+div.post-comments div.message .date>* {
 	font-size: 10px;
 	font-family: PT sans;
 	padding: 1px;
 }
-div.widget.blog-sidebar-module ul#blog-side-comments li .date{
+
+div ..blog-sidebar-module ul#blog-side-comments li .date {
 	float: right;
 	font-size: 11px;
 	font-family: PT sans;
 	color: rgb(97, 97, 97);
 }
-div.widget.blog-sidebar-module ul#blog-side-posts li{
+
+div ..blog-sidebar-module ul#blog-side-posts li {
 	list-style: none;
 }
-div.widget.blog-sidebar-module ul#blog-side-comments li div div.high-comment > *,div.widget.blog-sidebar-module ul#blog-side-posts li > a{
+
+div ..blog-sidebar-module ul#blog-side-comments li div div.high-comment>*,
+	div ..blog-sidebar-module ul#blog-side-posts li>a {
 	font-family: PT sans
 }
-div.widget.blog-sidebar-module ul#blog-side-comments li div div.high-comment{
+
+div ..blog-sidebar-module ul#blog-side-comments li div div.high-comment
+	{
 	padding: 4px 12px;
 }
-div.widget.user-mates div.users h3.supertitle{
+
+div ..user-mates div.users h3.supertitle {
 	border: none;
 	border-top: 1px solid rgb(221, 221, 221);
 	color: #000;
 	font-family: raleway;
 	padding: 9px 0 0;
 }
-div.widget.user-supporters a.more:hover,div.widget.user-mates a:hover.more,div.widget.user-mates div.categories ul li a:hover{
-	color:#32A2FF;
+
+div ..user-supporters a.more:hover, div ..user-mates a:hover.more, div ..user-mates div.categories ul li a:hover
+	{
+	color: #32A2FF;
 }
-div.widget.user-supporters a.more,div.widget.user-mates a.more{
+
+div ..user-supporters a.more, div ..user-mates a.more {
 	font-family: Lato;
 	text-transform: capitalize;
 	font-size: 11px !important;
+	
+	
+	
 }
