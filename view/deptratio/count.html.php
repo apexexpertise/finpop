@@ -106,17 +106,28 @@ include 'view/header.html.php';
 				document.getElementById("step1").style.display = "block";					
 				document.getElementById("step2").style.display = "none";
 				document.getElementById("result").style.display = "none";
+				document.getElementById("step1-li").className = "active";
+				document.getElementById("step2-li").className = "";
+				document.getElementById("step3-li").className = "";
+				
 				 }
 				function showStep2() {
 					document.getElementById("step1").style.display = "none";					
 				document.getElementById("step2").style.display = "block";
 				document.getElementById("result").style.display = "none";
+				document.getElementById("step1-li").className = "";
+				document.getElementById("step2-li").className = "active";
+				document.getElementById("step3-li").className = "";
+			
 				 }
 				function showResult() {
 					countDeptratio();
 					document.getElementById("step1").style.display = "none";					
 				document.getElementById("step2").style.display = "none";
 				document.getElementById("result").style.display = "block";
+				document.getElementById("step1-li").className = "";
+				document.getElementById("step2-li").className = "";
+				document.getElementById("step3-li").className = "active";
 				 }
 				function countDeptratio() {				
 					var ib=0;
@@ -197,7 +208,7 @@ include 'view/header.html.php';
 					
 					var val_deptratio= (total_expenses / total_income)* 100;
 					var deptratio= Math.round(val_deptratio);
-					alert(val_deptratio);
+				
 					document.getElementById('msg_result').innerHTML="Votre taux d'endettement est :"+deptratio+"%";
 					document.getElementById("progressbar-deptratio").style.width = deptratio+"%";
 					document.getElementById('progressbar-deptratio').innerHTML=deptratio+" %";
