@@ -24,15 +24,36 @@ $bodyClass = 'about';
 <link href="/view/css/custom.css" rel="stylesheet" type="text/css">
 
 
+
+<script type="text/javascript">
+$(document).ready(function(){
+    // Condition d'affichage du bouton
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100){
+            $('.go_top').fadeIn();
+        }
+        else{
+            $('.go_top').fadeOut();
+        }
+    });
+    // Evenement au clic
+    $('.go_top').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        return false;
+    });
+});
+
+</script>
+
 <script type="text/javascript">
 jQuery(document).ready(function($) {
-    $("#create_accept").click(function (event) {
+    $("#accept").click(function (event) {
         if (this.checked) {
-            $("#create_continue").removeClass('disabled').addClass('weak');
-            $("#create_continue").removeAttr('disabled');
+            $("#submit").removeClass('disabled').addClass('weak');
+            $("#submit").removeAttr('disabled');
         } else {
-            $("#create_continue").removeClass('weak').addClass('disabled');
-            $("#create_continue").attr('disabled', 'disabled');
+            $("#submit").removeClass('weak').addClass('disabled');
+            $("#submit").attr('disabled', 'disabled');
         }
     });
 });
@@ -50,16 +71,16 @@ jQuery(document).ready(function($) {
 		</div>
 	</div>
 </div>
-
+<html><body>
 <div id="who">
 	<div class="container homepage">
-
+<a href="#" class="go_top">Remonter</a>
 		<h2>
 			INSTRUCTIONS POUR <br>LES PORTEURS DE PROJETS
 		</h2>
 		<hr>
 		<p>
-			<a href="#" target="_blank">FINPOP</a> est une plateforme de soutien
+			<span class="finp">FINPOP</span> est une plateforme de soutien
 			de projets port&eacute;s par des entrepreneurs, innovateurs sociaux et
 			cr&eacute;atifs qui dans leurs objectifs, dans leur format, et dans leurs
 			r&eacute;sultats int&egrave;grent des retomb&eacute;es collectives publi&eacute;es sous licence
@@ -67,14 +88,14 @@ jQuery(document).ready(function($) {
 		</p>
 
 		<p>
-			<a href="#" target="_blank">FINPOP</a> encourage des projets ouverts
+			<span class="finp">FINPOP</span> encourage des projets ouverts
 			qui partagent information, connaissance, contenus num&eacute;riques et/ou
 			autres ressources en lien avec l&acute;activit&eacute; pour laquelle le
 			financement est recherch&eacute;.
 		</p>
 
 		<p>
-			<a href="#" target="_blank">FINPOP</a> a &eacute;tabli un guide &aacute;
+			<span class="finp">FINPOP</span> a &eacute;tabli un guide &aacute;
 			l&acute;intention des porteurs de projet qui veulent obtenir un soutien de
 			la communaut&eacute; de Goteo.
 		</p>
@@ -144,10 +165,14 @@ jQuery(document).ready(function($) {
 
 
 		<div class="col-lg-12 text-center">
-			<h2 class="section-cond">CONDITION</h2>
+			<h2 class="section-cond">CONDITIONS</h2>
 			<hr>
+</div>
+
+
 
 			<div class="col-md-12">
+			
 				<p class="section-majeur">Je suis majeur(e)</p>
 			</div>
 
@@ -155,6 +180,7 @@ jQuery(document).ready(function($) {
 				<p class="section-compte">Je dispose d'un compte bancaire</p>
 
 			</div>
+			
 			<div class="col-md-12">
 				<p class="section-condition">
 					<input id="accept" type="checkbox"> J&acute;ai lu, compris et
@@ -165,6 +191,8 @@ jQuery(document).ready(function($) {
 
 				<p>
 					<input id="submit" type="submit" name="CONTINUER" value="CONTINUER">
+					
+					
 				</p>
 			</div>
 
@@ -174,8 +202,14 @@ jQuery(document).ready(function($) {
 
 		</div>
 		<!-- /container -->
+		
 	</div>
  
 
 
 <?php if(isset($_SESSION['messages'])) { include 'view/header/message.html.php'; } ?>
+
+
+
+
+</body></html>

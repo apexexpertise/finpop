@@ -1,33 +1,58 @@
+
+.go_top{
+    background: url('/view/css/images/haut.png') no-repeat;
+    display: none;
+    position: fixed;
+    width: 128px;            
+    height: 128px;            
+    bottom: 0;                
+    right: 0;                
+    text-indent: -9999px;
+}
+.pied-page{
+	
+	
+}
+
+span.finp {
+	font-family: 'Open Sans Semibold', sans-serif;
+	font-size: 18px;
+	color: #0387f3;
+	
+}
+
 #who {
 	padding-bottom: 70px;
-	background-position: center; 
+	background-position: center;
 	background-repeat: no-repeat;
 	background-image: url('/view/css/images/backg-noeud.jpg');
-  background-color: #f4f4f4;
+	background-color: #f4f4f4;
 }
 
 .row {
-
 	margin-top: -125px;
 }
 
 #tit-slid2 {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
-	text-transform: uppercase;
-	font-size: 72px;
+	font-family: 'Open Sans Semibold', sans-serif;
+  text-transform: uppercase;
+  font-size: 72px;
+  margin-left: 18px;
 }
 
 #tit-slid {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-	text-transform: uppercase;
-	font-size: 72px;
+	font-family: 'Open Sans Light', sans-serif;
+  text-transform: uppercase;
+  font-size: 72px;
+
 }
 
+
+
+
 #content-slide {
-	font-family: 'Rufina', serif;
-	font-size: 30px;
+	font-family: 'Rufina Regular', serif;
+  font-size: 30px;
 }
 
 div.jumbotron div.container div.content-center {
@@ -45,12 +70,13 @@ div.jumbotron div.container div.content-center {
 }
 
 ul.nav, .jumbotron h1 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans Extrabold', sans-serif;
 	font-weight: 800;
 }
 
 ul.nav {
 	font-size: 14px;
+	
 }
 
 footer {
@@ -136,21 +162,15 @@ p.section-condition {
 	font-size: 18px;
 }
 
-
 .jumbotron {
-	
-	
-	background-position: center; 
+	background-position: center;
 	background-repeat: no-repeat;
 	margin-bottom: 0px;
 	text-align: center;
 	background-image: url('/view/css/images/hero_image.jpg');
 	color: white;
-	background-attachment:fixed;
+	background-attachment: fixed;
 }
-	
-	
-
 
 .jumbotron h1 {
 	margin-top: 30px;
@@ -168,7 +188,6 @@ p.section-condition {
 }
 
 .homepage {
-	
 	text-align: center;
 	padding-bottom: 30px;
 	padding-top: 25px;
@@ -177,12 +196,16 @@ p.section-condition {
 .homepage h2, .homepage h3 {
 	color: #333333;
 	font-family: 'Open Sans', sans-serif;
-	  font-weight: 600;
+	font-weight: 600;
 	text-transform: uppercase;
 }
 
 .homepage h2 {
 	font-size: 36px;
+	color: #333333;
+  font-family: 'Open Sans Semibold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0px;
 }
 
 .homepage h3 {
@@ -190,9 +213,9 @@ p.section-condition {
 }
 
 .homepage p {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
-	font-weight: 300;
+	font-family: 'Open Sans Light', sans-serif;
+  font-size: 18px;
+  color: #333333;
 }
 
 .homepage a {
@@ -204,27 +227,26 @@ p.section-condition {
 	text-decoration: none;
 	opacity: .8;
 }
+
 p {
-  margin: 0 50px 10px;
+	margin: 0 50px 10px;
 }
-#submit{
+
+#submit {
 	padding: 10px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	font-weight: 600;
-  border: 2px solid #0387f3;
-  margin-top: 50px;
-  background-color: transparent;
-  color: #0387f3;
-  width: 250px;
+	border: 2px solid #0387f3;
+	margin-top: 50px;
+	background-color: transparent;
+	color: #0387f3;
+	width: 250px;
 }
 
-#submit:hover{
-
- 
-  background-color:#0387f3;
-  color: #fff;
- 
+#submit:hover {
+	background-color: #0387f3;
+	color: #fff;
 }
 
 .homepage hr {
@@ -235,22 +257,28 @@ p {
 }
 
 .headline:before {
-		position: absolute;
-		bottom: 0;
-		border-bottom: 1px solid #c4c4c4;
-		width: 30px;
-		content: "";
-	}
-.headline:after {
-		position: absolute;
-		bottom: 0;
-		border-bottom: 1px solid #c4c4c4;
-		width: 30px;
-		content: "";
-	}
-	.headline:before { left: 0; }
-	.headline:after { right: 0; }
+	position: absolute;
+	bottom: 0;
+	border-bottom: 1px solid #c4c4c4;
+	width: 30px;
+	content: "";
+}
 
+.headline:after {
+	position: absolute;
+	bottom: 0;
+	border-bottom: 1px solid #c4c4c4;
+	width: 30px;
+	content: "";
+}
+
+.headline:before {
+	left: 0;
+}
+
+.headline:after {
+	right: 0;
+}
 
 /* Responsive Styling */
 @media ( max-width : 1199px) {
@@ -290,13 +318,13 @@ p {
 	footer img {
 		width: 80%;
 	}
-	
-	}
-	#tit-instruction {
-		font-family: 'Open Sans', sans-serif;
-		font-weight: 300;
-		text-transform: uppercase;
-		font-size: 36px;
-		border-bottom: medium;
-	}
+}
+
+#tit-instruction {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 36px;
+	border-bottom: medium;
+}
 }

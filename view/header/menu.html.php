@@ -132,15 +132,22 @@
           <ul class="nav navbar-nav navbar-right">
            <li><a class="" href="/discover">VOIR LES PROJETS</a></li>
             <li><a class="" href="/project/create">CREER UN PROJET</a></li>
-             <li><a href="/community">FONCTIONNEMENT</a></li>
+             <li><a href="/community">FONCTIONNEMENT</a>
+           
+             
+             </li>
 
             <li><a href="#" style="margin-left:120px">INSCRIPTION</a></li>
-            <li><a href="#">CONNEXION</a></li>
+            <li><a href="/user/login">CONNEXION</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
  </div>
+ 
+  
+ 
+ 
  
  <?php endif?>
    

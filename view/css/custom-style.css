@@ -233,7 +233,8 @@ body, html, b, strong {
 
 .text-center {
 	text-align: center;
-	padding-top: 70px;
+	padding-top: 35px;
+	  margin-bottom: -70px;
 }
 
 .odin {
@@ -246,15 +247,56 @@ a:hover {
 
 /************************************************Header**************************************************/
 /*menu des pages */
-div#header div#menu-no-home{
+div#header div#menu-no-home {
 	min-height: 50px;
 	/*height:50px;*/
 	overflow:hidden;
 	height: 110px;
-	
 	background-color: white;
 }
 /*tu redefinie ici les regles pour le nouveau menu ok ? */
+
+
+div#header div#menu-no-home>ul>li.explore>a
+	 {
+	max-width: 100%;
+	width: 100%;
+	padding: 23px;
+	font-family: Open Sans Light;
+	font-size: 14px;
+	font-weight: bold;
+	color: black;
+	text-transform: uppercase;
+}
+
+div#header div#menu-no-home>ul>li.login>a {
+	max-width: 100%;
+	width: 100%;
+	padding: 23px;
+	font-family: Open Sans Light;
+	font-size: 14px;
+	font-weight: bold;
+	color: black;
+	text-transform: uppercase;
+}
+
+
+div#header div#menu-no-home>ul>li.create>a{
+
+
+max-width: 100%;
+	width: 100%;
+	padding-left: 335px;
+	padding-top: 50px;
+	font-family: Open Sans Light;
+	font-size: 14px;
+	font-weight: bold;
+	color: black;
+	text-transform: uppercase;
+
+}
+
+
 div#header div#menu {
 	min-height: 110px;
 	opacity: 0.5;
@@ -295,6 +337,11 @@ div#header {
 	transition: all 0.3s ease;
 	z-index: 500;
 }
+div#header div#menu-no-home>ul {
+	padding: 0px;
+	height: 66px;
+	max-width: 1024px;
+}
 
 div#header div#menu>ul {
 	padding: 0px;
@@ -322,7 +369,9 @@ div#sub-header>*, div#sub-header>div>h2 {
 	text-transform: capitalize;
 	font-size: 20px;
 }
-
+div#header div#menu-no-home>ul>li.home {
+	height: 100%;
+}
 div#header div#menu>ul>li.home {
 	height: 100%;
 }
@@ -335,6 +384,10 @@ div#header div#menu ul li>a>*, div#header div#menu ul li>a {
 	font-size: 14px;
 	font-weight: bold;
 	/*font-size: 17px;*/
+}
+
+div#header div#menu-no-home>ul>li.dashboard>a>img {
+	top: -3px;
 }
 
 div#header div#menu>ul>li.dashboard>a>img {
@@ -2323,6 +2376,21 @@ div.gestrew .message {
 
 div.rewards.reward {
 	
+}
+div#header div#menu-no-home>ul>li.home>a {
+	overflow: hidden;
+	text-indent: 2000px;
+	display: block;
+	line-height: 2000px;
+	width: 215px;
+	height: 82px;
+	position: absolute;
+	top: 20%;
+	margin-left: 30px; /*Modified by Amal*/
+	margin-top: -6px;
+	background: url('/view/css/images/top_logo.png') no-repeat left center;
+	background-size: cover;
+	left: 0px;
 }
 
 div#header div#menu>ul>li.home>a {
