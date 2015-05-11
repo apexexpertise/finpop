@@ -1,0 +1,48 @@
+
+.photostack{
+	background: url('../img/background.png');
+	height: 550px;
+}
+
+.texte{
+font-family: Open Sans Light;
+font-size: 24px;
+width: 780px;
+color: white;
+text-align: center;
+margin-left: 23%;
+}
+.owl-item{
+max-width: 300px;
+}
+.itemimg {
+	 
+ margin:0px auto;
+ width: 180px;
+ height: 180px;
+ border-radius:50%;
+/* border:10px solid #b4bcc2;*/
+ box-shadow: 0 0 100px #f0f0f3 inset;
+/*background: radial-gradient(#FFF 8%, #f8f8f9)e8e8ed ;*/
+ margin-left: 50px;
+   position: absolute;
+  margin-top: 20px;
+ 
+
+ }
+.pastille{
+
+ margin-left: 10px;
+ background-repeat: no-repeat; 
+ background-position: center center;
+ height:220px;
+ 	
+}
+.owl-wrapper{
+	max-height:500px;
+}
+ /*.circle{
+ 
+ background-image: url('../img/cercle.png');
+ }*/
+

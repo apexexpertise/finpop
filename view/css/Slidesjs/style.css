@@ -1,0 +1,90 @@
+@font-face {
+	font-family: 'Rufina';
+	src: url('fonts/Rufina-Bold.ttf') format('truetype');			
+}
+
+
+.sl-slide { 
+   position: relative; 
+   width: 100%;
+}
+.sl-slide hr {
+position: absolute;
+top: 346px;	
+  height: 3px;
+  width: 270px;
+  color: white;
+  background-color: white;
+  margin-left: 565px;
+}
+.sl-slide h2 { 
+  position: absolute;
+  top: 160px;
+  left: 350px;
+  width: 50%;
+  font-family: Open Sans Bold;
+  font-size: 48px;
+  color: white;
+  text-align: center; 
+}
+.sl-slide p{ 
+  position: absolute;
+  top: 410px;
+  text-align: center;
+  width: 100%;
+  font-family: Rufina;
+  color: white;
+  font-size: 24px; 
+}
+.sl-slide .button {
+	padding: 90px 30px 10px 30px;
+	width: 80%;
+	max-width: 1920px;
+	color: #fff;
+	margin: 0 auto;
+	position: relative;
+	z-index: 100;
+	text-align: center;
+}
+.sl-slide .button .first
+	{
+	padding: 20px 60px;
+	margin: 0 35px 0px 0px;
+/*	border: 2px solid white;*/
+	font-family: Open Sans Semibold;
+	font-size: 20px;
+	color: #0387f3;
+	border-radius: 3px;
+	text-decoration: none;
+	background-image: url(../images/button-slider.png);
+	
+}
+.sl-slide p.button a.first:hover{
+	background: rgba(255, 255, 255, 0.25);
+}
+.image{
+  width: 100%;
+  position: absolute;
+  height: 960px; 	
+}
+.arrow-button{
+	position: absolute; 
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+}
+.arrow-button .nav-next-button{
+	float: right;
+	position: relative; 
+	top: 150%;
+	z-index: 10000;
+	margin-right: 60px;
+	
+}
+.arrow-button .nav-prev-button{
+	float: left;
+	position: relative; 
+	top: 150%;
+	z-index: 10000;
+	margin-left: 60px;
+}
