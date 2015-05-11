@@ -46,6 +46,22 @@
 	font-family: 'Open Sans Light';
 	src: url('fonts/OpenSans-Light.ttf') format('truetype');
 }
+@font-face {
+	font-family: 'Open Sans Regular';
+	src: url('fonts/OpenSans-Regular.ttf') format('truetype');			
+}
+@font-face {
+	font-family: 'Open Sans Bold';
+	src: url('fonts/OpenSans-Bold.ttf') format('truetype');			
+}
+@font-face {
+	font-family: 'Open Sans Semibold';
+	src: url('fonts/OpenSans-Semibold.ttf') format('truetype');			
+}
+@font-face {
+	font-family: 'Open Sans ExtraBold';
+	src: url('fonts/OpenSans-ExtraBold.ttf') format('truetype');			
+}
 /***************************************Basic*******************************************************/
 ::-webkit-scrollbar { /* Scrollbars */
 	width: .875em;
