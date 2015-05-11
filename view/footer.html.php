@@ -32,52 +32,58 @@ $sponsors = Sponsor::getList ();
 		<div class="row clearfix">
 			<div class="col-md-12 column ">
 				<div class="row clearfix footer-nav">
-					<div class="col-md-6 column newsletter">
+				<div class="col-md-4 column block-text">
+						<div style="width:360px;padding-top: 3px;">
+						<p style="font-family:Open Sans Regular;font-size:16px;color:white;">DES QUESTIONS? </p>
+						<p style="font-family:Open Sans Regular;font-size:14px;color:#0387f3;">CONTACTEZ-NOUS. NOUS SERONS HEUREUX DE  
+						POUVOIR VOUS AIDER. </p>
+						<p style="font-size:20px; color:white;"><img src="/view/css/icon/tel.png"> 5 31 61 62 63</img></p>
+					    </div>
+					</div>
+					<div class="col-md-4 column block-social">
+						<div class="icons">
+						<p style="color:white;font-family:Open Sans Semibold;font-size:20px;margin-left: 15px;">SUIVEZ NOUS</p>
+							<ul>
+								<li class="twitter"><a
+									href="<?php echo Text::get('social-account-facebook') ?>"
+									target="_blank"><img src="/view/css/social/icon-facebook.png"></img></a></li>
+								<li class="facebook"><a
+									href="<?php echo Text::get('social-account-twitter') ?>"
+									target="_blank"><img src="/view/css/social/icon-twitter.png"></img></a></li>
+								<li class="identica"><a
+									href="<?php echo Text::get('social-account-identica') ?>"
+									target="_blank"><img src="/view/css/social/icon-instagram.png"></img></a></li>
+								<li class="gplus"><a
+									href="<?php echo Text::get('social-account-google') ?>"
+									target="_blank"><img src="/view/css/social/icon-googleplus.png"></img></a></li>
+								<li class="rss"><a rel="alternate" type="application/rss+xml"
+									title="RSS" href="/rss<?php echo $lang ?>" target="_blank"><img src="/view/css/social/icon-rss.png"></img></a></li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-4 column newsletter">
 						<form class="form-horizontal" role="form">
 							<div class="form-group">
 								<label for="exampleInputEmail1" class="news-label">&nbsp;</label>
 								<div class="row">
 									<div class="col-xs-6">
-										<input type="text" class="form-control"
-											placeholder="<?php echo utf8_encode("Abonnez vous à la newsletter") ?>">
+			                        <div class="left-inner-addon">
+			                        <img src="/view/home/img/msg.png" />
+			                            <!--    <i class="fa fa-envelope"></i>  -->
+										<input type="text" class="form-control" placeholder="<?php echo utf8_encode("INSCRIVEZ-VOUS À LA NEWSLETTER") ?>">	
 									</div>
-									<button type="submit" class="btn btn-primary btn-news">Ok</button>
+									</div>
+								<!-- <button type="submit" class="btn btn-primary btn-news">Ok</button>-->
 								</div>
 							</div>
 						</form>
-					</div>
-					<div class="col-md-6 column block-social">
-						<div class="icons">
-							<ul>
-								<li class="twitter"><a
-									href="<?php echo Text::get('social-account-twitter') ?>"
-									target="_blank"><span class="fa fa-twitter fa-4x white"
-										aria-hidden="true"></span></a></li>
-								<li class="facebook"><a
-									href="<?php echo Text::get('social-account-facebook') ?>"
-									target="_blank"><span class="fa fa-facebook fa-4x white"
-										aria-hidden="true"></span></a></li>
-								<li class="identica"><a
-									href="<?php echo Text::get('social-account-identica') ?>"
-									target="_blank"><span class="fa fa-instagram fa-4x white"
-										aria-hidden="true"></span></a></li>
-								<li class="gplus"><a
-									href="<?php echo Text::get('social-account-google') ?>"
-									target="_blank"><span class="fa fa-google-plus fa-4x white"
-										aria-hidden="true"></span></a></li>
-								<li class="rss"><a rel="alternate" type="application/rss+xml"
-									title="RSS" href="/rss<?php echo $lang ?>" target="_blank"><span
-										class="fa fa-rss fa-4x white" aria-hidden="true"></span></a></li>
-
-							</ul>
-						</div>
-
 					</div>
 
 				</div>
 				<div class="row clearfix shortcuts ">
 					<div class="col-md-3 column">
-						<div class="block categories">
+						<div class="block categories" style="  margin-left: -51px;">
 							<h8 class="title"><?php echo Text::get('footer-header-categories') ?></h8>
 							<ul class="scroll-pane">
 	                <?php foreach ($categories as $id=>$name) : ?>
@@ -88,6 +94,7 @@ $sponsors = Sponsor::getList ();
 						</div>
 					</div>
 					<div class="col-md-3 column">
+					<div class="block projects" style="margin-left: 55px;">
 						<h8 class="title"><?php echo Text::get('footer-header-projects') ?></h8>
 						<ul class="scroll-pane">
 							<li><a href="/"><?php echo Text::get('home-promotes-header') ?></a></li>
@@ -98,8 +105,9 @@ $sponsors = Sponsor::getList ();
 							<li><a href="/discover/view/archive"><?php echo Text::get('discover-group-archive-header') ?></a></li>
 							<li><a href="/project/create"><?php echo Text::get('regular-create') ?></a></li>
 						</ul>
-					</div>
+					</div></div>
 					<div class="col-md-3 column">
+					<div class="block ressources" style="margin-left: 130px;">
 						<h8 class="title"><?php echo Text::get('footer-header-resources') ?></h8>
 						<ul class="scroll-pane">
 							<li><a href="/faq"><?php echo Text::get('regular-header-faq') ?></a></li>
@@ -111,8 +119,9 @@ $sponsors = Sponsor::getList ();
                     <li><a href="https://github.com/Goteo/Goteo"
 								target="_blank"><?php echo Text::get('footer-resources-source_code') ?></a></li>
 						</ul>
-					</div>
+					</div></div>
 					<div class="col-md-3 column">
+					<div class="block services" style="  margin-left: 212px;">
 						<h8 class="title"><?php echo Text::get('footer-header-services') ?></h8>
 						<ul>
 							<li><a href="/blog"><?php echo Text::get('regular-header-blog'); ?></a></li>
@@ -127,7 +136,7 @@ $sponsors = Sponsor::getList ();
 					<div class="col-md-12 column">
 						<div class="w940">
 
-							<ul>
+							<ul style="margin-left: -39px;">
 								<li><a href="/legal/terms"><?php echo Text::get('regular-footer-terms'); ?></a></li>
 								<li><a href="/legal/privacy"><?php echo Text::get('regular-footer-privacy'); ?></a></li>
 							</ul>

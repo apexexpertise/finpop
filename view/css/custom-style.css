@@ -299,9 +299,8 @@ max-width: 100%;
 
 div#header div#menu {
 	min-height: 110px;
-	opacity: 0.5;
-	/*	background: url('header/layer.png'); */
-	background-color: #14202d;
+	opacity:0.59;
+    background-color: #14202d; 
 }
 
 .community {
@@ -310,13 +309,13 @@ div#header div#menu {
 
 div#header div#menu>ul>li.explore>a, div#header div#menu>ul>li.create>a,
 	div#header div#menu>ul>li.login>a {
-	max-width: 160px;
+	max-width: 171px;
 	width: 217px;
 	padding: 23px;
-	font-family: Open Sans Light;
+	font-family: Open Sans ExtraBold;
 	font-size: 14px;
 	font-weight: bold;
-	color: #ffffff;
+	color: #ececec;
 	text-transform: uppercase;
 }
 
@@ -377,15 +376,19 @@ div#header div#menu>ul>li.home {
 }
 
 div#header div#menu ul li>a>*, div#header div#menu ul li>a {
-	/*	font-family: Lato;*/
-	color: white;
+/*	font-family: Lato;*/
+	color: #ececec;
 	text-transform: uppercase;
-	font-family: Open Sans Light;
+	font-family: Open Sans ExtraBold;
 	font-size: 14px;
 	font-weight: bold;
 	/*font-size: 17px;*/
 }
+div#header div#menu ul li>a:hover>*, div#header div#menu ul li>a:hover {
 
+	color: #fffefe;
+	
+}
 div#header div#menu-no-home>ul>li.dashboard>a>img {
 	top: -3px;
 }
@@ -481,7 +484,7 @@ div#header div#menu>ul>li.community>div>ul>li, div#header div#menu>ul>li.dashboa
 /************************************************footer**************************************************/
 div.footer {
 	padding-top: 1px;
-	background: url("bg.jpg");
+	background: #000000;
 }
 
 div.footer>* {
@@ -499,12 +502,13 @@ div.footer div.footer-nav {
 div.footer div.shortcuts {
 	padding: 18px 50px;
 	border-top: 1px dotted rgba(163, 163, 163, 0.38);
-	border-bottom: 1px dotted rgba(163, 163, 163, 0.38);
+	/*border-bottom: 1px dotted rgba(163, 163, 163, 0.38);*/
 }
 
 div.footer div.shortcuts h8 {
-	font-family: raleway;
-	font-size: 16px;
+  font-family: Open Sans Semibold;
+  font-size: 20px;
+  color: #0387f3;
 }
 
 div.footer div.shortcuts ul {
@@ -519,14 +523,23 @@ div.footer div.shortcuts ul li {
 div.footer div.shortcuts ul li a {
 	text-decoration: none;
 	text-transform: capitalize;
-	font-family: PT sans;
-	font-size: 14px;
-	color: rgb(210, 210, 210);
+	font-family: Open Sans Light;
+    font-size: 16px;
+    color: white;
+}
 }
 
 div.footer div.newsletter {
-	padding: 0 30px;
+	/*padding: 0 30px;*/
+	  padding: 42px;
 }
+div.footer div.newsletter input {
+	font-family:Open Sans Regular;
+	font-size:16px;
+	width: 370px;
+    height: 60px;
+    padding-left: 65px;
+}  
 
 div.footer div.newsletter .btn-news {
 	position: relative;
@@ -546,6 +559,7 @@ div.footer div.block-social {
 div.footer div.block-social div.icons {
 	float: right;
 	padding-top: 3px;
+	width: 430px;
 }
 
 div.footer div.block-social div.icons ul {
@@ -556,7 +570,7 @@ div.footer div.block-social div.icons ul li {
 	list-style: none;
 	list-style: none;
 	float: left;
-	padding: 8px 18px;
+	padding: 8px 10px;
 }
 
 div.footer div.block-social div.icons ul li .fa:hover {
@@ -582,132 +596,190 @@ div.footer div.copyright div.w940 ul li {
 
 div.footer div.copyright div.w940 ul li a {
 	text-decoration: none;
-	text-transform: capitalize;
-	font-family: PT sans;
-	font-size: 12px;
-	color: #FFF;
+	text-transform: uppercase;
+    font-family: Open Sans Regular;
+    font-size: 14px;
+    color: #FFF;
+     margin-left: 3px;
 }
 /***********************************************************Projets***********************************************************************/
+
 div#projects-phares {
 	margin-bottom: 30px;
 }
 
-div#projects-phares div ..project .expand {
+div#projects-phares div.widget.project .expand {
 	display: none;
 }
 
-div ..project {
-	border: 1px solid rgba(194, 194, 194, 0.34);
+div.widget.project {
+    border: 1px solid rgba(194, 194, 194, 0.34);
 	border-radius: 4px;
 	height: 495px;
 	padding: 0;
 	margin: 19px 0;
 }
 
-div ..project:hover {
+/*div.widget.project:hover {
 	border: 1px solid rgba(194, 194, 194, 0.8);
 	border-radius: 4px;
-}
+}*/
 
-div ..project div.image {
+div.widget.project div.image {
 	background-color: #FFF;
 	height: 180px;
 }
 
-div ..project div.image a img {
+/*div.widget.project div.image:hover {
+filter:url(#blur-2);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  transition:1s
+  
+}*/
+div.widget.project div.image a img {
 	width: 100%;
 	height: 100%;
 	border-radius: 3px;
 }
 
-div ..project div.image div.categories {
-	background-color: rgba(51, 122, 183, 0.6);
-	font-family: PT sans;
-	font-size: 14px;
-}
+div.widget.project div.image div.categories {
+   background-size: cover;
+ -webkit-filter: blur(15px) ;
+  filter: blur(15px) ;
+  opacity: 1 ;
+  transition:0.5s;
+  width:100%;
 
-div ..project>.title a {
+    top: 113px;
+
+  overflow: hidden;
+}
+div.widget.project div.image p.text{
+  
+	font-family: Open Sans Bold;
+	font-size: 20px;
+	/*Added by Amal */
+	top: 113px;
+    text-align: center;
+    color :white;
+    position: absolute;
+    width: 100%;
+    
+}
+div.widget.project div.image:hover div.obtained{
+    margin-left: -50px;
+     display: inline-flex;
+	top: 100px;
+    color :white;
+    position: absolute;
+    width: 100%;
+    
+}
+div.widget.project div.image:hover div.obtained div.percent{
+  	height:auto;
+    width: 50px;
+    
+}
+div.widget.project div.image:hover div.obtained div.euro{
+ 	height:auto;
+    width: 50px;
+  
+}
+div.widget.project div.image:hover div.categories {
+
+  top: -5px;
+
+}
+div.widget.project div.image:hover p.text{
+
+  top: 50px;
+  transition:0.5s;
+  
+
+}
+div.widget.project>.title a {
 	font-family: Lato;
 }
 
-div ..project.active>.title a {
+div.widget.project.active>.title a {
 	color: #337ab7;
 }
 
-div ..project>.author, div ..project>.author a {
+div.widget.project>.author, div.widget.project>.author a {
 	margin-bottom: 10px;
 	font-family: Lato;
 }
 
-div ..project div.description {
-	font-family: Lato;
+div.widget.project div.description {
+	font-family: Open Sans Light;
 }
 
-div ..project div.meter h2, div ..project div.meter h3, div ..project div.meter h4,
-	div ..project div.meter h5, div ..project div.meter h6, div ..project div.meter h7,
-	div ..project div.meter h8 {
-	font-family: Lato;
+div.widget.project div.meter h2, div.widget.project div.meter h3, div.widget.project div.meter h4,
+	div.widget.project div.meter h5, div.widget.project div.meter h6, div.widget.project div.meter h7,
+	div.widget.project div.meter h8 {
+	font-family: Open Sans Light;
 	padding-bottom: 5px;
 }
 
-div ..project div.rewards {
-	margin: 40px 12px 8px !important;
+div.widget.project div.rewards {
+	margin: 40px 12px 8px !important; 
 	padding: 9px 0 0 !important;
 	height: 34px;
 }
 
-div ..project div.meter {
+div.widget.project div.meter {
 	padding: 5px 0 113px !important
 }
 
-div ..project div.meter div.graph, div ..project div.meter div.graph .minimum
+div.widget.project div.meter div.graph, div.widget.project div.meter div.graph .minimum
 	{
-	background-color: rgb(87, 188, 250);
-	border-color: rgb(203, 237, 252);
+	background-color: #90cbfc;
+	border-color: #e7e7e7;
 	border-radius: 7px;
 }
 
-div ..project div.meter>h3.ronda {
+div.widget.project div.meter>h3.ronda {
 	color: #000;
 }
 
-div ..project div.meter div.obtained strong {
+div.widget.project div.meter div.obtained strong {
 	color: #000;
 	font-family: raleway;
 }
-
-div ..project div.meter div.obtained span.percent {
-	font-family: raleway;
+div.widget.project div.meter div.obtained span.percent{
+	font-family: raleway;	
 }
-
-div ..project div.meter dl * {
-	font-family: Lato;
+div.widget.project div.meter dl * {
+	font-family: Open Sans Light;
 	color: #337ab7;
 }
 
-div ..project div.meter dl dd.days>*, div ..project div.meter dl dd.days,
-	div ..project div.meter dl dt.days>span {
+div.widget.project div.meter dl dd.days>*, div.widget.project div.meter dl dd.days,
+	div.widget.project div.meter dl dt.days>span {
 	color: #000;
 }
 
-div ..project div.rewards h4 {
+div.widget.project div.rewards h4 {
 	font-family: Lato;
 }
 
-div ..project div.meter div.graph .optimum {
+div.widget.project div.meter div.graph .optimum {
+	border-right: 2px solid #90cbfc;
+	border-radius: 2px
+}
+
+div.widget.project div.meter div.graph .minimum .left {
 	border-right: 2px solid #0080EC;
 	border-radius: 2px
 }
 
-div ..project div.meter div.graph .minimum .left {
-	border-right: 2px solid #0080EC;
-	border-radius: 2px
-}
-
-div ..project div.meter dl dt.optimum {
+div.widget.project div.meter dl dt.optimum {
 	color: #337ab7;
 }
-
 /*************************************************************home page*******************************************************************/
 div.panel-scroll {
 	background: #FFF;
@@ -717,25 +789,24 @@ div.panel-scroll {
 }
 
 div.features {
-	padding: 15px 0 0;
-	position: absolute;
-	top: 625px;
-	width: 100%;
-	z-index: 1000;
+padding: 15px 0 0;
+  position: absolute;
+  top: 605px; /*625*/
+  width: 100%;
+  z-index: 1000;
 }
-
-div.features-blur-box {
-	width: 100%;
-	height: 176px;
-	background: rgba(53, 53, 53, 0.5);
-	z-index: 1000;
-	position: absolute;
-	top: 625px;
-	filter: blur(5px);
-	-webkit-filter: blur(4px);
-	-moz-filter: blur(4px);
-	-o-filter: blur(4px);
-	-ms-filter: blur(4px);
+div.features-blur-box{
+  width: 100%;
+  height: 176px;
+  background: rgba(53, 53, 53, 0.5);
+  z-index: 1000;
+  position: absolute;
+  top: 616px; /* 625*/
+  filter: blur(5px);
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
 }
 
 h4.service {
@@ -746,12 +817,15 @@ h4.service {
 
 div#projects-phares ul {
 	padding: 0;
+	/*padding-top: 65px; */ /*Added by Amal */
+	text-align: center; /*Added by Amal */
 }
 
 .photostack>div {
 	background: url('../parteners/css/img/partenaires-bg.jpg');
 	background-size: 100% 100%;
 }
+
 
 /*posts*/
 div#posts div.post {
@@ -3557,6 +3631,47 @@ div ..user-supporters a.more, div ..user-mates a.more {
 	text-transform: capitalize;
 	font-size: 11px !important;
 	
+}
+.content-press{
+	background: url('images/backg-press.png');
+	background-size: cover;
+}
+.left-inner-addon {
+  padding: 30px;
+}
+.left-inner-addon img{
+  position: absolute;
+  left: 0px;
+  padding: 19px 0px;
+  padding-left: 60px;
+}
+/******************************Header Scroll**********************************/
+#header.scrolling #menu.scrolling{
+background-color: white;
+min-height: 110px;
+opacity: 1;	
 	
-	
+}
+#header.scrolling #menu.scrolling > ul > li.home > a{
+background: url('header/logo-blue.png') no-repeat;	
+}
+#header.scrolling #menu.scrolling>ul>li.explore>a, #header.scrolling #menu.scrolling>ul>li.create>a, #header.scrolling #menu.scrolling>ul>li.login>a {
+max-width: 171px;
+  width: 217px;
+  padding: 23px;
+  font-family: Open Sans ExtraBold;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+	}
+#header.scrolling #menu.scrolling ul li>a>*, #header.scrolling #menu.scrolling ul li>a {
+  color: #000;
+  text-transform: uppercase;
+  font-family: Open Sans ExtraBold;
+  font-size: 14px;
+  font-weight: bold;
+}
+#header.scrolling #menu.scrolling ul li>a:hover>*, #header.scrolling #menu.scrolling ul li>a:hover {
+color: #0387f3;	
 }

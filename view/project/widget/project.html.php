@@ -27,6 +27,21 @@ use Goteo\Core\View,
 $project = $this['project'];
 $level = $this['level'] ?: 3;
 
+$minimum    = $project->mincost;
+$reached    = $project->invested;
+
+// PHP la pifia (y mucho) con los cálculos en coma flotante
+if ($reached >= $minimum) {
+	$minimum_done_per = round(($reached / $minimum) * 100);
+} else {
+	$minimum_done_per = round(($reached / $minimum) * 100);
+}
+
+
+
+
+
+
 if ($this['global'] === true) {
     $blank = ' target="_blank"';
 } else {
@@ -79,25 +94,29 @@ if (isset($this['investor']) && is_object($this['investor'])) {
         <a href="<?php echo SITE_URL ?>/project/<?php echo $project->id ?>"<?php echo $blank; ?>><img alt="<?php echo $project->name ?>" src="<?php echo $project->image->getLink(255, 130, true) ?>" /></a>
         <?php endif ?>
         <?php if (!empty($categories)): ?>
-        <div class="categories">
-        <?php $sep = ''; foreach ($categories as $key=>$value) :
+        
+        <div class="categories" style="background-image:url('<?php echo $project->image->getLink(255, 130, true) ?>');background-repeat: no-repeat; ">
+    </div>
+      
+       
+       <p class="text"> <?php $sep = ''; foreach ($categories as $key=>$value) :
             echo $sep.htmlspecialchars($value);
         $sep = ', '; endforeach; ?>
+        <div class="obtained">
+        <div class="percent"> <img src="view/css/project/icon.png">
+        <?php echo number_format($minimum_done_per) ?>%</div>
+         <div class="euro"><img src="view/css/project/icon2.png">
+         <?php echo \amount_format($reached) ?> <span class="euro">&euro;</span></div>
+       
         </div>
-        <?php endif ?>
+       </p> <?php endif ?>
     </div>
-
-    <h<?php echo $level ?> class="title"><a href="<?php echo SITE_URL ?>/project/<?php echo $project->id ?>"<?php echo $blank; ?>><?php echo htmlspecialchars(Text::recorta($project->name,50)) ?></a></h<?php echo $level ?>>
-
-    <h<?php echo $level + 1 ?> class="author"><?php echo Text::get('regular-by')?> <a href="<?php echo SITE_URL ?>/user/profile/<?php echo htmlspecialchars($project->user->id) ?>"<?php echo $blank; ?>><?php echo htmlspecialchars(Text::recorta($project->user->name,40)) ?></a></h<?php echo $level + 1?>>
 
     <div class="description"><?php echo Text::recorta($project->description, 100); ?></div>
 
     <?php echo new View('view/project/meter_hor.html.php', array('project' => $project)) ?>
 
     <div class="rewards">
-        <h<?php echo $level + 1 ?>><?php echo Text::get('project-rewards-header'); ?></h<?php echo $level + 1?>>
-
         <ul>
            <?php $q = 1; foreach ($project->social_rewards as $social): ?>
             <li class="<?php echo $social->icon ?> activable">

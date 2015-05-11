@@ -79,9 +79,8 @@ $minimum_ratio =  min(100, round(($minimum / $optimum) * 100));
 ?>        
     <div class="meter <?php echo $horizontal ? 'hor' : 'ver'; echo $big ? ' big' : ''; echo $activable ? ' activable' : ''; ?>">
         
-        <h<?php echo $level ?> class="title investment"><?php echo Text::get('project-view-metter-investment'); ?></h<?php echo $level ?>>
-        <?php if (!empty($project->round)) : ?><h<?php echo $level ?> class="title ronda"><?php echo $project->round . Text::get('regular-round'); ?></h<?php echo $level ?>><?php endif; ?>
-        <?php if ($activable) : ?><h<?php echo $level ?> class="title obtained"><?php echo Text::get('project-view-metter-got'); ?></h<?php echo $level ?>><?php endif; ?>
+
+        <?php /* if ($activable) : ?><h<?php echo $level ?> class="title obtained"><?php echo Text::get('project-view-metter-got'); ?></h<?php echo $level ?>><?php endif;*/ ?>
         <div class="graph">
             <div class="optimum">
                  <div class="left" style="<?php echo $horizontal ? 'width' : 'height' ?>: <?php echo number_format($optimum_left) ?>%"></div>
@@ -92,7 +91,7 @@ $minimum_ratio =  min(100, round(($minimum / $optimum) * 100));
                 <div class="done" style="<?php echo $horizontal ? 'width' : 'height' ?>: <?php echo number_format($minimum_done) ?>%"><strong><?php echo number_format($minimum_done_per) ?>%</strong></div>
             </div>
         </div>
-
+       
         <dl>
             <dt class="optimum"><?php echo Text::get('project-view-metter-optimum'); ?></dt>
             <dd class="optimum"><strong><?php echo \amount_format($optimum) ?></strong> <span class="euro">&euro;</span></dd>
@@ -103,7 +102,7 @@ $minimum_ratio =  min(100, round(($minimum / $optimum) * 100));
             <dt class="reached"><span><?php echo Text::get('project-view-metter-got'); ?></span></dt>
             <dd class="reached"><strong><?php echo \amount_format($reached) ?> <span class="euro">&euro;</span></strong></dd>
 
-            <dt class="days"><span><?php echo Text::get('project-view-metter-days'); ?></span></dt>
+            <dt class="days"><img src="/view/css/icon/icon-day.png"><span><?php echo Text::get('project-view-metter-days'); ?></span></dt>
             <dd class="days"><strong><?php echo number_format($days) ?></strong> <?php echo Text::get('regular-days'); ?></dd>
 
             <dt class="supporters"><span><?php echo Text::get('project-view-metter-investors'); ?></span></dt>
@@ -111,12 +110,13 @@ $minimum_ratio =  min(100, round(($minimum / $optimum) * 100));
 
         </dl>
 
-        <?php if ($activable) : ?>
-        <div class="obtained">
-            <strong><?php echo \amount_format($reached) ?> <span class="euro">&euro;</span></strong>
+        <?php /* if ($activable) : */?>
+    <!-- <div class="obtained">
             <span class="percent"><?php echo number_format($minimum_done_per) ?>%</span>
-        </div>
-        <?php endif; ?>
+            <strong><?php echo \amount_format($reached) ?> <span class="euro">&euro;</span></strong>
+          
+        </div> --> 
+        <?php/* endif; */?>
 
     <?php /*
     // si en estado 3 ha alcanzado el optimo o segunda ronda, "aun puedes seguir aportando" junto al quedan tantos días

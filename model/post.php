@@ -134,7 +134,7 @@ namespace Goteo\Model {
                     ON  post_lang.id = post.id
                     AND post_lang.lang = :lang
                 $sqlFilter
-                ORDER BY `order` ASC, title ASC
+                ORDER BY `id` DESC limit 3
                 ";
             
             $query = static::query($sql, $values);

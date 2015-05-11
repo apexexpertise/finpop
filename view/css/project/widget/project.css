@@ -16,10 +16,10 @@
  *  along with Goteo.  If not, see <http://www.gnu.org/licenses/agpl.txt>.
  *
  */
-div.widget.project.active {
+/*div.widget.project.active {
     background-color: #f8f8f8 !important;
 }
-
+*/
 div.widget.project.active div.image {
     opacity: 0.85;
     filter: alpha(opacity=85);
@@ -43,9 +43,9 @@ div.widget.project div.image {
     height: 130px;
     text-align: center;
     background-color: #deddde;
-    margin: 12px 12px 10px;
+    margin: 0px 0px 10px;
     padding: 0 !important;
-overflow: hidden;
+    overflow: hidden;
     position: relative;
 }
 
@@ -229,13 +229,13 @@ div.widget.project > .title a:hover{
 
 
 div.widget.project div.description {
-    padding: 2px 12px;
+    padding: 18px 12px; /*Modified by Amal de 2 à 18*/
     min-height: 42px;
-    font-size: 11px;
+    font-size: 14px;/*Modified by Amal de 11 à 14 */
 }
 
 div.widget.project div.meter {
-    border-top: 1px solid #d1d3d4;    
+  /*  border-top: 1px solid #d1d3d4; */ /* Commented by Amal */   
     padding: 4px 0 78px !important;
     position: relative;
     margin: 0 12px !important;
@@ -268,9 +268,9 @@ div.widget.project div.meter div.graph {
 div.widget.project div.meter.activable {
     z-index: 999
 }
-div.widget.project div.meter.activable.active {
+/*div.widget.project div.meter.activable.active {
     background-color: #EBEAEB;
-}
+}*/
 div.widget.project div.meter div.obtained {
     display: none;
     position: relative;
@@ -282,19 +282,21 @@ div.widget.project div.meter h3.title.obtained {
 }
 div.widget.project div.meter div.obtained strong {
     font-size: 26px;
-    font-weight: bold;
-    color: #96238F;
+   /* font-weight: bold;*/ /*Commented by Amal */
+    color: #96238F; 
     padding-right: 20px;
     border-right: 1px solid #a7a9ac;
 }
 div.widget.project div.meter div.obtained span.euro {
-    width: 19px;
-    height: 19px;
-    line-height: 2000px;
-    overflow: hidden;
-    display: inline-block;
-    background:  url('/view/css/euro/violet/m.png') no-repeat center;
-    margin-bottom: -1px;
+	/* Commented by Amal */
+ /*  width: 19px;
+   height: 19px;
+   line-height: 2000px;
+   overflow: hidden;
+   display: inline-block;
+   background: url('/view/css/euro/violet/m.png') no-repeat center;*/
+   margin-bottom: -1px;
+  color:#389ef1; 
 }
 div.widget.project div.meter div.obtained span.percent {
     font-size: 26px;
@@ -360,9 +362,9 @@ div.widget.project div.meter.hor div.graph .minimum .done {
 }
 
 div.widget.project div.meter div.graph .minimum .done strong {
-    background: url("project/marker.png") no-repeat;
+    background: url("project/custom-marker.png") no-repeat;  
     display: block;
-    height: 16px;
+  /*  height: 16px;*/ /* Commented by Amal */
     line-height: 2000px;
     margin-right: -10px;
     margin-top: -4px;
@@ -471,22 +473,25 @@ div.widget.project div.meter dl .supporters {
 }
 
 div.widget.project div.meter dl span.euro {
-    width: 16px;
+/* Commented by Amal */
+  /*  width: 16px;
     height: 16px;
     line-height: 2000px;
     overflow: hidden;
     display: inline-block;
     background:  url('/view/css/euro/light-violet/s.png') no-repeat center;
-    margin-bottom: -1px;
+    margin-bottom: -1px;*/
+    color:#337ab7;   
 }
 
 div.widget.project div.meter dl .minimum span.euro {
-    background-image: url('/view/css/euro/violet/s.png');
+	/* Commented by Amal */
+   /* background-image: url('/view/css/euro/violet/s.png');*/
 }
 
 div.widget.project div.meter dl .days {
     position: absolute;
-    border-top: 1px solid #d1d3d4;
+  /*  border-top: 1px solid #d1d3d4;*/ /*Commented by Amal */
     top: 55px;
     padding: .8em 0;    
     font-size: 12px;
@@ -498,6 +503,10 @@ div.widget.project div.meter dl dt.days {
     width: 70px;
     text-transform: uppercase;
 }
+/* Added by Amal */
+ div.widget.project div.meter dl dt.days img{
+	margin:2px;
+}
 
 div.widget.project div.meter dl dd.days {
     left: 70px;
@@ -507,7 +516,7 @@ div.widget.project div.meter dl dd.days {
 }
 
 div.widget.project div.rewards {
-    border-top: 1px solid #d1d3d4;    
+   /* border-top: 1px solid #d1d3d4; */ /*Commented by Amal */   
     padding: 4px 0 0 !important;
     position: relative;    
     margin: 10px 12px 8px !important;
@@ -530,7 +539,7 @@ div.widget.project div.rewards h8 {
 }
 
 div.widget.project div.rewards ul {
-    margin: 0;
+    margin: 1px;
     padding: 0;
     list-style: none;
     position: relative;
@@ -540,8 +549,8 @@ div.widget.project div.rewards ul {
 div.widget.project div.rewards ul li {
     display: inline-block;
     margin-right: 3px;
-    width: 22px;
-    height: 22px;
+    width: 16px; /*Modified by AMal 22*/
+    height: 16px;/*Modified by AMal 22*/
     line-height: 2000px;
     text-indent: 2000px;
     overflow: hidden;
@@ -566,7 +575,7 @@ div.widget.project div.rewards ul li a {
 }
 
 div.widget.project div.rewards ul li.file  {
-    background-image: url('/view/css/icon/s/file.png');
+    background-image: url('/view/css/icon/s/reward1.png');
 }
 
 div.widget.project div.rewards ul li.money {
@@ -578,7 +587,7 @@ div.widget.project div.rewards ul li.code {
 }
 
 div.widget.project div.rewards ul li.service {
-    background-image: url('/view/css/icon/s/service.png');
+    background-image: url('/view/css/icon/s/reward3.png');
 }
 
 div.widget.project div.rewards ul li.manual  {
@@ -586,7 +595,7 @@ div.widget.project div.rewards ul li.manual  {
 }
 
 div.widget.project div.rewards ul li.product {
-    background-image: url('/view/css/icon/s/product.png');
+    background-image: url('/view/css/icon/s/reward2.png');
 }
 
 div.widget.project div.rewards ul li.design {
