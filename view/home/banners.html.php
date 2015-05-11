@@ -94,17 +94,17 @@ $(function(){
 			<div class="col-md-4 column text-center">
 			<img src="view/css/images/feature1.png">
 				<h4 class="service">Fun peoples</h4>
-				<h4 class="service">425 000</h4>
+				<h4 class="service-number">425 000</h4>
 			</div>
 			<div class="col-md-4 column text-center">
 				<img src="view/css/images/feature2.png">
 				<h4 class="service">Fonds lev&#233;s</h4>
-				<h4 class="service">690 900 &#128;</h4>
+				<h4 class="service-number">690 900 &#128;</h4>
 			</div>
 			<div class="col-md-4 column text-center">
 				<img src="view/css/images/feature3.png">
 				<h4 class="service">A votre disposition au </h4>
-				<h4 class="service">5 31 61 62 63</h4>
+				<h4 class="service-number">5 31 61 62 63</h4>
 			</div>
 		</div>
 	</div>

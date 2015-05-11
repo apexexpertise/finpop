@@ -248,9 +248,7 @@ body, html, b, strong {
 }
 
 .text-center {
-	text-align: center;
-	padding-top: 35px;
-	  margin-bottom: -70px;
+		padding-top:15px;
 }
 
 .odin {
@@ -631,7 +629,7 @@ div#projects-phares div.widget.project .expand {
 div.widget.project {
     border: 1px solid rgba(194, 194, 194, 0.34);
 	border-radius: 4px;
-	height: 495px;
+	height: 440px;
 	padding: 0;
 	margin: 19px 0;
 }
@@ -731,7 +729,11 @@ div.widget.project>.author, div.widget.project>.author a {
 }
 
 div.widget.project div.description {
-	font-family: Open Sans Light;
+	  font-family: Open Sans Regular;
+  font-size: 14px;
+  text-align: center;
+  color: 8c8c8c;
+  color: #8c8c8c;
 }
 
 div.widget.project div.meter h2, div.widget.project div.meter h3, div.widget.project div.meter h4,
@@ -745,6 +747,8 @@ div.widget.project div.rewards {
 	margin: 40px 12px 8px !important; 
 	padding: 9px 0 0 !important;
 	height: 34px;
+	top: -40px;
+    float: right;
 }
 
 div.widget.project div.meter {
@@ -753,11 +757,16 @@ div.widget.project div.meter {
 
 div.widget.project div.meter div.graph, div.widget.project div.meter div.graph .minimum
 	{
+	background-color: #389ef1;
+	border-color: #e7e7e7;
+	border-radius: 7px;
+}
+div.widget.project div.meter div.graph, div.widget.project div.meter div.graph .optimum
+	{
 	background-color: #90cbfc;
 	border-color: #e7e7e7;
 	border-radius: 7px;
 }
-
 div.widget.project div.meter>h3.ronda {
 	color: #000;
 }
@@ -770,10 +779,18 @@ div.widget.project div.meter div.obtained span.percent{
 	font-family: raleway;	
 }
 div.widget.project div.meter dl * {
-	font-family: Open Sans Light;
-	color: #337ab7;
+  color: #62c0df;
+  font-family: Open Sans Semibold;
+  font-size: 12px;
 }
-
+	
+}
+div.widget.project div.meter dl span {
+  font-family: Open Sans Semibold;
+  font-size: 12px;
+  color: #389ef1;
+}
+}
 div.widget.project div.meter dl dd.days>*, div.widget.project div.meter dl dd.days,
 	div.widget.project div.meter dl dt.days>span {
 	color: #000;
@@ -783,18 +800,29 @@ div.widget.project div.rewards h4 {
 	font-family: Lato;
 }
 
-div.widget.project div.meter div.graph .optimum {
-	border-right: 2px solid #90cbfc;
-	border-radius: 2px
+div.widget.project div.meter div.graph .optimum .left{
+  border: 0px solid #90cbfc;
+  padding: 0.25em;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  
 }
 
 div.widget.project div.meter div.graph .minimum .left {
-	border-right: 2px solid #0080EC;
-	border-radius: 2px
+  border: 0px solid #389ef1;
+  padding: 0.25em;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
 }
 
 div.widget.project div.meter dl dt.optimum {
-	color: #337ab7;
+	color: #62c0df;
+  font-family: Open Sans Semibold;
+  font-size: 12px;
 }
 /*************************************************************home page*******************************************************************/
 div.panel-scroll {
@@ -807,17 +835,17 @@ div.panel-scroll {
 div.features {
 padding: 15px 0 0;
   position: absolute;
-  top: 605px; /*625*/
+  top: 570px; /*625*/
   width: 100%;
   z-index: 1000;
 }
 div.features-blur-box{
   width: 100%;
-  height: 176px;
+  height: 206px;
   background: rgba(53, 53, 53, 0.5);
   z-index: 1000;
   position: absolute;
-  top: 616px; /* 625*/
+  top: 585px; /* 625*/
   filter: blur(5px);
   -webkit-filter: blur(4px);
   -moz-filter: blur(4px);
@@ -826,11 +854,17 @@ div.features-blur-box{
 }
 
 h4.service {
-	font-family: Open Sans Light;
+	font-family: Open Sans Regular;
 	text-transform: capitalize;
 	color: white;
+	font-size: 18px;
 }
-
+h4.service-number {
+	font-family: Open Sans Semibold;
+    color: white;
+	font-size: 30px;
+	margin-top: -10px;
+}
 div#projects-phares ul {
 	padding: 0;
 	/*padding-top: 65px; */ /*Added by Amal */
@@ -3690,4 +3724,24 @@ max-width: 171px;
 }
 #header.scrolling #menu.scrolling ul li>a:hover>*, #header.scrolling #menu.scrolling ul li>a:hover {
 color: #0387f3;	
+}
+div.widget.project div.meter dl .cus-days{
+	font-family:Open Sans Semibold;
+	font-size:14px;
+	color:#000;
+	margin-top: 78px;
+  display: inline-block;
+}
+div.widget.project div.meter dl .cus-days span{
+	font-family:Open Sans Semibold;
+	font-size:14px;
+	color:#000;
+      margin-left: 10px;
+    
+}
+div.widget.project div.meter dl .cus-days strong{
+	font-family:Open Sans Semibold;
+	font-size:14px;
+	color:#000;
+ 
 }

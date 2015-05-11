@@ -1,5 +1,5 @@
 .tipsy { padding: 4px 0px; font-size: 11px; background-repeat: no-repeat;  background-image: url('/view/css/tipsy/tipsy.gif'); }
-  .tipsy-inner { padding: 5px 8px 4px 8px; background-color: #dff3f5; color: #58595B; max-width: 200px; text-align: center; }
+  .tipsy-inner { padding: 5px 8px 4px 8px; background-color: #333333; color: white; max-width: 200px; text-align: center;font-family:Open Sans Regular;font-size:11px; }
   .tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
   .tipsy-north { background-position: top center; }
   .tipsy-south { background-position: bottom center; }

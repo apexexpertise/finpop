@@ -304,28 +304,28 @@ div.widget.project div.meter div.obtained span.percent {
     color: #a7a9ac;
     padding-left: 15px;
 }
-div.widget.project div.meter h3.title.obtained,
+/*div.widget.project div.meter h3.title.obtained,
 div.widget.project div.meter.active dl > dd,
 div.widget.project div.meter.active dl > dt {
     display:none;
-}
-div.widget.project div.meter.active h3.title.investment,
+}*/
+/*div.widget.project div.meter.active h3.title.investment,
 div.widget.project div.meter.active h3.title.ronda,
 div.widget.project div.meter.active div.graph > div {
     display:none;
 }
-div.widget.project div.meter.active div.graph {
+/*div.widget.project div.meter.active div.graph {
     background: none !important;
     border: none !important;
-}
+}*/
 div.widget.project div.meter.active h3.title.obtained, 
 div.widget.project div.meter.active div.obtained {
     display: block !important;
 }
-div.widget.project div.meter.active dl .days {
+/*div.widget.project div.meter.active dl .days {
     display: block !important;
     background-color: #f8f8f8 !important;
-}
+}*/
 /* Hasta aqu� la movida de lo obtenido */
 
 div.widget.project div.meter div.graph  * strong,
@@ -350,7 +350,7 @@ div.widget.project div.meter div.graph .minimum {
 }
 
 div.widget.project div.meter div.graph .minimum .done {
-    background-color: #20B3B2;
+    background-color: #0275d2;
     height: 10px;
     position: absolute;
     left: 0;
@@ -377,19 +377,17 @@ div.widget.project div.meter div.graph .minimum .done strong {
 
 div.widget.project div.meter div.graph .minimum .left {
     float: right;
-    height: 19px;
-    border-right: 4px solid #96238F;
+    height: 12px;
     margin-right: -2px;
-    margin-top: -6px;
+    margin-top: -2px;
 }
 
-div.widget.project div.meter div.graph .optimum {
-    border-right: 4px solid #BB70B6;
-    height: 19px;
+div.widget.project div.meter div.graph .optimum .left{
+    height: 12px;
     margin-right: -2px;
     position: absolute;
     right: 0;
-    margin-top: -6px;
+    margin-top: -2px;
 }
 
 div.widget.project div.meter dl {
@@ -473,15 +471,8 @@ div.widget.project div.meter dl .supporters {
 }
 
 div.widget.project div.meter dl span.euro {
-/* Commented by Amal */
-  /*  width: 16px;
-    height: 16px;
-    line-height: 2000px;
-    overflow: hidden;
-    display: inline-block;
-    background:  url('/view/css/euro/light-violet/s.png') no-repeat center;
-    margin-bottom: -1px;*/
-    color:#337ab7;   
+
+    color:#62c0df;   
 }
 
 div.widget.project div.meter dl .minimum span.euro {
@@ -511,8 +502,9 @@ div.widget.project div.meter dl dt.days {
 div.widget.project div.meter dl dd.days {
     left: 70px;
     right: -40px;
-    color: #ee4843;
-    font-weight: bold;
+    color: #000;
+    font-family: Open Sans Semibold;
+    font-size: 14px;
 }
 
 div.widget.project div.rewards {
@@ -554,8 +546,8 @@ div.widget.project div.rewards ul li {
     line-height: 2000px;
     text-indent: 2000px;
     overflow: hidden;
-    background-image: url('/view/css/icon/s/blank.png');
-    opacity:0.60;
+   /* background-image: url('/view/css/icon/s/blank.png');*/
+
     filter:alpha(opacity=60);
 }
 
@@ -578,9 +570,9 @@ div.widget.project div.rewards ul li.file  {
     background-image: url('/view/css/icon/s/reward1.png');
 }
 
-div.widget.project div.rewards ul li.money {
+/*div.widget.project div.rewards ul li.money {
     background-image: url('/view/css/icon/s/money.png');
-}
+}*/
 
 div.widget.project div.rewards ul li.code {
     background-image: url('/view/css/icon/s/code.png');
@@ -624,4 +616,8 @@ div.widget.project div.buttons .button + .button {
 
 h4.author:hover a{
 	color:#20b3b2;
+}
+.content-project{
+	  background-color: #f2f2f2;
+	  height: 100%;
 }

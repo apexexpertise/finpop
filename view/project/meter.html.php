@@ -102,8 +102,8 @@ $minimum_ratio =  min(100, round(($minimum / $optimum) * 100));
             <dt class="reached"><span><?php echo Text::get('project-view-metter-got'); ?></span></dt>
             <dd class="reached"><strong><?php echo \amount_format($reached) ?> <span class="euro">&euro;</span></strong></dd>
 
-            <dt class="days"><img src="/view/css/icon/icon-day.png"><span><?php echo Text::get('project-view-metter-days'); ?></span></dt>
-            <dd class="days"><strong><?php echo number_format($days) ?></strong> <?php echo Text::get('regular-days'); ?></dd>
+            <dt class="cus-days"><img src="/view/css/icon/icon-day.png"><span><?php echo Text::get('project-view-metter-days'); ?></span></dt>
+            <dd class="cus-days"><strong><?php echo number_format($days) ?></strong> <?php echo Text::get('regular-days'); ?></dd>
 
             <dt class="supporters"><span><?php echo Text::get('project-view-metter-investors'); ?></span></dt>
             <dd class="supporters"><strong><?php echo number_format($supporters) ?></strong></dd>                

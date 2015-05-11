@@ -51,7 +51,7 @@ use Goteo\Core\View;
 	});   
 
 	</script>
-	
+<div class="content-project">	
 <div class="container" id="projects-phares">
 <div class="row clearfix">
 <h2 style=" font-family:Open Sans Semibold;text-align:center;">Projets R&eacute;cents</h2><hr style="height: 3px; width: 88px; color: #0387f3; background-color: #0387f3;"></hr>
@@ -80,7 +80,7 @@ use Goteo\Core\View;
         </div>
     </div> 
     
-
+</div>
 		
 		
 	</div>
