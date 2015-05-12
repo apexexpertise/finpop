@@ -93,11 +93,11 @@
 }
 
 .past{
-	
+height:300px;
+width:300px;	
 background-repeat: no-repeat; 
  background-position: center center;
- height:208px;
- width:208px;
+
 }
 .sky-carousel .sky-carousel-container li img {
 	display: block;
@@ -106,12 +106,12 @@ background-repeat: no-repeat;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 	border: 0;
-	width:175px;
-	height:175px;
+	width:260px;
+	height:260px;
 	background-repeat: no-repeat;
     background-position: center center;
-    margin-left:17px;
-    margin-top:16px;
+    margin-left:7%;
+    margin-top:7%;
 }
 
 .sky-carousel .sky-carousel-container li a img {
@@ -128,18 +128,27 @@ background-repeat: no-repeat;
 *
 **********************************************/
 .sky-carousel .sc-content-wrapper {
-	position: absolute;
+ /*position: absolute;
 	text-align: center;
 	top: 9%;
 	left: 50%;
-	z-index: 4999;
+	z-index: 4999;*/
+  position: static;
+  text-align: center;
+  top: 37%;
+  z-index: 4999;
+  width: 200px;
 }
 
 .sky-carousel .sc-content-container {
-	position: relative;
-	left: -59%;
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	padding: 0;
+  /*position: relative;
+  left: -59%;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  padding: 0;*/
+  position: relative;
+  left: 275%;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  padding: 0;
 }
 
 .sky-carousel .sc-content-wrapper .sc-content-container .sc-content {

@@ -72,11 +72,12 @@ $(window).scroll(function() {
     if (scroll >= 500) {
         $("#header").addClass("scrolling");
         $("#menu").addClass("scrolling");
-        $('.sc-content-container').hide();
+       
+      
     } else {
         $("#header").removeClass("scrolling");
         $("#menu").removeClass("scrolling");
-        
+       
     }
 });
 </script>
