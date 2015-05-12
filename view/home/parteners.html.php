@@ -15,7 +15,7 @@ $(document).ready(function() {
 		  
 	      autoPlay: 3000, //Set AutoPlay to 3 seconds
 	      loop:true,
-	      responsiveClass:true,
+	   	  responsiveClass:true,
 	      responsive:{
 	          0:{
 	              items:1,

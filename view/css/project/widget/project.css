@@ -295,7 +295,7 @@ div.widget.project div.meter div.obtained span.euro {
    overflow: hidden;
    display: inline-block;
    background: url('/view/css/euro/violet/m.png') no-repeat center;*/
-   margin-bottom: -1px;
+  margin-bottom: -1px;
   color:#389ef1; 
 }
 div.widget.project div.meter div.obtained span.percent {
@@ -568,18 +568,26 @@ div.widget.project div.rewards ul li a {
 
 div.widget.project div.rewards ul li.file  {
     background-image: url('/view/css/icon/s/reward1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 }
 
-/*div.widget.project div.rewards ul li.money {
-    background-image: url('/view/css/icon/s/money.png');
-}*/
+div.widget.project div.rewards ul li.money {
+    background-image: url('/view/css/euro/m.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 div.widget.project div.rewards ul li.code {
     background-image: url('/view/css/icon/s/code.png');
 }
 
 div.widget.project div.rewards ul li.service {
-    background-image: url('/view/css/icon/s/reward3.png');
+  background-image: url('/view/css/icon/s/reward3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 }
 
 div.widget.project div.rewards ul li.manual  {
