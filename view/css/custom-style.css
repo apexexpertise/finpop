@@ -323,7 +323,7 @@ div#header div#menu {
 
 div#header div#menu>ul>li.explore>a, div#header div#menu>ul>li.create>a,
 	div#header div#menu>ul>li.login>a {
-	max-width: 171px;
+	max-width: 80%;
 	width: 217px;
 	padding: 23px;
 	font-family: Open Sans ExtraBold;
@@ -840,7 +840,7 @@ div.features {
 }
 div.features-blur-box{
   width: 100%;
-  height: 206px;
+  height: 5%;
   background: rgba(53, 53, 53, 0.5);
   z-index: 1000;
   position: absolute;
@@ -869,12 +869,6 @@ div#projects-phares ul {
 	/*padding-top: 65px; */ /*Added by Amal */
 	text-align: center; /*Added by Amal */
 }
-
-.photostack>div {
-	background: url('../parteners/css/img/partenaires-bg.jpg');
-	background-size: 100% 100%;
-}
-
 
 /*posts*/
 div#posts div.post {
@@ -3705,7 +3699,7 @@ opacity: 1;
 background: url('header/logo-blue.png') no-repeat;	
 }
 #header.scrolling #menu.scrolling>ul>li.explore>a, #header.scrolling #menu.scrolling>ul>li.create>a, #header.scrolling #menu.scrolling>ul>li.login>a {
-max-width: 171px;
+max-width: 80%;
   width: 217px;
   padding: 23px;
   font-family: Open Sans ExtraBold;
