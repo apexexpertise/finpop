@@ -12,7 +12,7 @@
 position: absolute;
 top: 346px;	
   height: 3px;
-  width: 270px;
+  width: 21%;
   color: white;
   background-color: white;
   margin-left: 565px;
@@ -20,7 +20,7 @@ top: 346px;
 .sl-slide h2 { 
   position: absolute;
   top: 160px;
-  left: 350px;
+  left: 24%;
   width: 50%;
   font-family: Open Sans Bold;
   font-size: 48px;
