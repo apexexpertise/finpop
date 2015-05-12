@@ -86,11 +86,11 @@ $(window).load(function() {
 <ul class="slides">
 <?php $i = 1; foreach ($post->gallery as $image) : ?>
 <li>	
-<div class="row clearfix">
+
                 <div class="image" <?php if(($i-1)==1) echo "style='height: auto;'"; ?>>
 				<img src="<?php echo $image->getLink(500, 285); ?>" alt="Imagen" />
-</div></div>
-<div class="row clearfix">
+</div>
+
 <div class="blocimage">
 <?php if (!empty($post->author)) : ?>
 <div class="author">
@@ -116,7 +116,7 @@ $(window).load(function() {
 					<div class="read_more">
 						<a
 							href="<?php echo ($post->owner_type == 'project') ? '/project/'.$post->owner_id.'/updates/'.$post->id : '/blog/'.$post->id; ?>"><?php echo Text::get('regular-read_more') ?></a>
-					</div>	</div>	  </div>  
+					</div>	</div>	  
 </li>
 <?php $i++; endforeach; ?>
 </ul>
@@ -127,11 +127,11 @@ $(window).load(function() {
 <?php $i = 1; foreach ($posts as $post) : ?>
 <?php if (!empty($post->media->url)) : ?>
 <div class="col-md-4 column">
-<div class="row clearfix">
+
  <div class="embed" style="display: block; width:350px;height:220px;padding-top:3px;">
 <?php echo $post->media->getEmbedCode(); ?>
-</div></div>
-<div class="row clearfix">
+</div>
+
 <div class="blocvideo">
  <?php if (!empty($post->author)) : ?>
                     <div class="author">
@@ -158,7 +158,7 @@ $(window).load(function() {
 						<a
 							href="<?php echo ($post->owner_type == 'project') ? '/project/'.$post->owner_id.'/updates/'.$post->id : '/blog/'.$post->id; ?>"><?php echo Text::get('regular-read_more') ?></a>
 			        </div>
-			        </div></div>
+			        </div>
 </div>
 <?php endif; ?>
 <?php $i++; endforeach; ?>

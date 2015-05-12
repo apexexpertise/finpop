@@ -64,7 +64,7 @@ if (isset($this['investor']) && is_object($this['investor'])) {
     <?php endif ?>
 
     <div class="image">
-        <?php switch ($project->tagmark) {
+        <?php /*switch ($project->tagmark) {
             case 'onrun': // "en marcha"
                 echo '<div class="tagmark green">' . Text::get('regular-onrun_mark') . '</div>';
                 break;
@@ -84,7 +84,7 @@ if (isset($this['investor']) && is_object($this['investor'])) {
             case 'fail': // "caducado"
                 echo '<div class="tagmark grey">' . Text::get('regular-fail_mark') . '</div>';
                 break;
-        } ?>
+        } */?>
 
         <?php if (isset($this['investor'])) : ?>
             <div class="investor"><img src="<?php echo $investor->avatar->getLink(43, 43, 1) ?>" alt="<?php echo $investor->name ?>" /><div class="invest">Ma contribution<br /><span class="amount"><?php echo $invest->total ?></span></div></div>

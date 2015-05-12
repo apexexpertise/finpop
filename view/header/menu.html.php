@@ -64,6 +64,7 @@
 	}
 
 </script>-->
+
 <script text="javascript">
 $(window).scroll(function() {    
     var scroll = $(window).scrollTop();
@@ -71,9 +72,11 @@ $(window).scroll(function() {
     if (scroll >= 500) {
         $("#header").addClass("scrolling");
         $("#menu").addClass("scrolling");
+        $('.sc-content-container').hide();
     } else {
         $("#header").removeClass("scrolling");
         $("#menu").removeClass("scrolling");
+        
     }
 });
 </script>

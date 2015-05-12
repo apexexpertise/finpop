@@ -19,7 +19,7 @@ $news = $this['news'];
 		<ul class="sky-carousel-container">
 	<?php foreach ($news as $new) : ?>
 	
-	<li style=" background-image:url('view/css/owlcarrousel/img/cercle.png');" class="past">
+	<li style=" background-image:url('view/css/owlcarrousel/img/ellipse.png');" class="past">
 	
 	<img src="<?php echo SRC_URL."/image/".$new->logo."/250/250"; ?>" alt="" />
 				<div class="sc-content">
@@ -39,6 +39,6 @@ $news = $this['news'];
 		selectByClick:true,
 		enableMouseWheel:false,
 		topMargin:120
-	});
+			});
 	
 	</script>
