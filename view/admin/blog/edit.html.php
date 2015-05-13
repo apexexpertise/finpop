@@ -68,6 +68,9 @@ if (!$post instanceof Model\Blog\Post) {
     }
 
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
 <script type="text/javascript" src="/view/js/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -244,3 +247,6 @@ $(document).ready(function(){
     ?>
 
 </form>
+</div>
+</section>
+</div>
