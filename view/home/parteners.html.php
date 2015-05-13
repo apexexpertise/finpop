@@ -37,7 +37,7 @@ $(document).ready(function() {
 	});
 </script>
 
-<div class="row clearfix" style="background: url('/view/css/owlcarrousel/img/background.png');background-size: cover;height: 550px;">
+<div class="row clearfix" style="background: url('/view/css/owlcarrousel/img/background.png');background-repeat: no-repeat;background-size: cover;height: 550px;">
 <h2 style=" font-family:Open Sans Semibold; color:white;text-align:center;">Nos Partenaires</h2><hr style="height: 3px; width: 88px; color: white; background-color: white;"></hr>
 <div class="texte">Finpop favorise ses relations avec ses partenaires ! Nous collaborons dans nos projets dans le but de r&eacute;pondre au plus vite et de la mani&egrave;re la plus adapt&eacute;e &agrave; tous vos besoins !</div>
 <div id="owl-demo">

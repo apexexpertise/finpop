@@ -323,7 +323,7 @@ div#header div#menu {
 
 div#header div#menu>ul>li.explore>a, div#header div#menu>ul>li.create>a,
 	div#header div#menu>ul>li.login>a {
-	max-width: 80%;
+	max-width: 171px;
 	width: 217px;
 	padding: 23px;
 	font-family: Open Sans ExtraBold;
@@ -2521,7 +2521,7 @@ div#header div#menu>ul>li.home>a {
 	top: 20%;
 	margin-left: -90px; /*Modified by Amal*/
 	margin-top: -6px;
-	background: url('header/logo-white.png') no-repeat left center;
+	background: url('header/logo-white.png') no-repeat;
 	background-size: cover;
 	left: 0px;
 }
@@ -3699,7 +3699,7 @@ opacity: 1;
 background: url('header/logo-blue.png') no-repeat;	
 }
 #header.scrolling #menu.scrolling>ul>li.explore>a, #header.scrolling #menu.scrolling>ul>li.create>a, #header.scrolling #menu.scrolling>ul>li.login>a {
-max-width: 80%;
+  max-width: 171px;
   width: 217px;
   padding: 23px;
   font-family: Open Sans ExtraBold;

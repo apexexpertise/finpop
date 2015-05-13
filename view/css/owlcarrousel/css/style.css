@@ -13,21 +13,19 @@ color: white;
 text-align: center;
 margin-left: 23%;
 }
+.owl-item{
+max-width: 100%;
 
+}
 
 .itemimg {
-	 
- margin:0px auto;
- width: 180px;
- height: 180px;
+ max-width: 100%;	 
+ width: 62%;
+ height: 82%;
  border-radius:50%;
-/* border:10px solid #b4bcc2;*/
  box-shadow: 0 0 100px #f0f0f3 inset;
- margin-left: 19%;
  position: absolute;
- margin-top: 7%;
- 
-
+ margin: 7% 19%;
  }
 .pastille{
  background-repeat: no-repeat; 
