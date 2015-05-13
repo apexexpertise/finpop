@@ -22,17 +22,20 @@ use Goteo\Library\Text,
 
 $translator = ACL::check('/translate') ? true : false;
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p>Projets &agrave; l&apos;affiche </p>
 		<hr/>
 		</div>
-<a href="/admin/promote/add" class="button">Nouvelle Descriptive</a>
+<a href="/admin/promote/add" class="btn btn-default" style="color:white">Nouvelle Descriptive</a>
 
 <div class="widget board">
     <?php if (!empty($this['promoted'])) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th></th> <!-- preview -->
                 <th>Projet</th> <!-- title -->
                 <th>Etat</th> <!-- status -->
@@ -71,6 +74,9 @@ $translator = ACL::check('/translate') ? true : false;
 
     </table>
     <?php else : ?>
-    <p>PAS DE R&eacute;SULTAT</p>
+    <p class="text-primary">PAS DE R&eacute;SULTAT</p>
     <?php endif; ?>
+</div>
+</div>
+</section>
 </div>

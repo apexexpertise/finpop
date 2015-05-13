@@ -46,17 +46,23 @@ $(document).ready(function(){
 	});
 });
 </script>
-
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
 <div class="widget board">
     <form method="post" action="/admin/pages/edit/<?php echo $this['page']->id; ?>">
-
+<div class="form-group col-lg-4">
         <label for="page-name">Titre:</label><br />
-        <input type="text" name="name" id="page-name" value="<?php echo $this['page']->name; ?>" />
+        <input type="text" name="name" id="page-name" value="<?php echo $this['page']->name; ?>" class="form-control"/>
 <br />
         <label for="page-description">Description courte:</label><br />
-        <textarea name="description" id="page-description" cols="60" rows="4"><?php echo $this['page']->description; ?></textarea>
+        <textarea name="description" id="page-description" cols="60" rows="4" class="form-control"><?php echo $this['page']->description; ?></textarea>
 <br />
-        <textarea id="richtext_content" name="content" cols="100" rows="20"><?php echo $this['page']->content; ?></textarea>
-        <input type="submit" name="save" value="Enregistrer" />
+        <textarea id="richtext_content" name="content" cols="100" rows="20" class="form-control"><?php echo $this['page']->content; ?></textarea>
+        <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right;" />
+        </div>
     </form>
+</div>
+</div>
+</section>
 </div>

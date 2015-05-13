@@ -33,16 +33,25 @@ foreach ($filters as $key => $value) {
 
 $pagedResults = new \Paginated($this['sended'], 20, isset($_GET['page']) ? $_GET['page'] : 1);
 ?>
+
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
+		<div class="title-admin">
+<p>Historiques </p>
+		<hr/>
+		</div>
 <div class="widget board">
     <form id="filter-form" action="/admin/sended" method="get">
+    <div class="form-group col-lg-8">
         <div style="float:left;margin:5px;">
             <label for="user-filter">ID, nom ou email destinataire</label><br />
-            <input id="user-filter" name="user" value="<?php echo $filters['user']; ?>" style="width:300px;"/>
+            <input id="user-filter" name="user" value="<?php echo $filters['user']; ?>" class="form-control"/>
         </div>
 
         <div style="float:left;margin:5px;">
             <label for="template-filter">Mod&eacute;le</label><br />
-            <select id="template-filter" name="template" onchange="document.getElementById('filter-form').submit();" >
+            <select id="template-filter" name="template" onchange="document.getElementById('filter-form').submit();" class="form-control" >
                 <option value="">Tous les mod&eacute;les</option>
                 <?php foreach ($templates as $templateId => $templateName) : ?>
                     <option value="<?php echo $templateId; ?>"<?php if ($filters['template'] == $templateId)
@@ -50,22 +59,23 @@ $pagedResults = new \Paginated($this['sended'], 20, isset($_GET['page']) ? $_GET
                 <?php endforeach; ?>
             </select>
         </div>
-
+		
         <br clear="both" />
 
 
         <div style="float:left;margin:5px;" id="date-filter-from">
-            <label for="date-filter-from">Dat&eacute; de</label><br />
-<?php echo new View('library/superform/view/element/datebox.html.php', array('value' => $filters['date_from'], 'id' => 'date-filter-from', 'name' => 'date_from')); ?>
+            <label for="date-filter-from">De </label><br />
+<?php echo new View('library/superform/view/element/datebox.html.php', array('value' => $filters['date_from'], 'id' => 'date-filter-from', 'name' => 'date_from','class' =>'form-control')); ?>
         </div>
         <div style="float:left;margin:5px;" id="date-filter-until">
-            <label for="date-filter-until">Date</label><br />
-<?php echo new View('library/superform/view/element/datebox.html.php', array('value' => $filters['date_until'], 'id' => 'date-filter-until', 'name' => 'date_until')); ?>
+            <label for="date-filter-until">&Aacute;</label><br />
+<?php echo new View('library/superform/view/element/datebox.html.php', array('value' => $filters['date_until'], 'id' => 'date-filter-until', 'name' => 'date_until','class' =>'form-control')); ?>
         </div>
+        <br clear="both"/>
         <div style="float:left;margin:5px;">
-            <input type="submit" name="filter" value="Filtrer">
+            <input type="submit" name="filter" value="Filtrer" class="btn btn-primary" style="float:right">
         </div>
-
+</div>
     </form>
 </div>
 
@@ -73,9 +83,9 @@ $pagedResults = new \Paginated($this['sended'], 20, isset($_GET['page']) ? $_GET
     <?php if ($filters['filtered'] != 'yes') : ?>
         <p>Vous avez besoin de mettre des filtres, trop de dossiers!</p>
 <?php elseif (!empty($this['sended'])) : ?>
-        <table>
+        <table class="table table-hover">
             <thead>
-                <tr>
+                <tr class="active">
                     <th width="5%"><!-- Si no ves --></th>
                     <th width="45%">Destinataire</th>
                     <th width="35%">Mod&eacute;le</th>
@@ -104,5 +114,8 @@ $pagedResults = new \Paginated($this['sended'], 20, isset($_GET['page']) ? $_GET
     echo $pagedResults->fetchPagedNavigation(str_replace('?', '&', $the_filters)); ?>
     </ul>
 <?php else : ?>
-    <p>PAS DE R&eacute;SULTAT</p>
+<p class="text-primary">Pas de r&eacute;sultat</p>
 <?php endif; ?>
+</div>
+</section>
+</div>

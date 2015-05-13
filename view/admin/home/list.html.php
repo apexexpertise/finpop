@@ -48,13 +48,15 @@ $admins = Home::_admins();
  *
  */ ?>
 <?php if ($node != \GOTEO_NODE) : ?>
-
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
 <div class="widget board" style="width:350px; float:left; margin-right: 5px;">
     <h4 class="title">Laterales</h4>
     <?php if (!empty($side_items)) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th>position</th> <!-- order -->
                 <th>&eacute;l&eacute;ment</th> <!-- item -->
                 <th><!-- Subir --></th>
@@ -87,21 +89,22 @@ $admins = Home::_admins();
 
     <?php if (!empty($side_availables)) : ?>
     <form method="post" action="/admin/home" >
+    <div class="form-group col-lg-4">
     <input type="hidden" name="action" value="add" />
     <input type="hidden" name="type" value="<?php echo $side_new->type ?>" />
     <input type="hidden" name="order" value="<?php echo $side_new->order ?>" />
 
     <p>
         <label for="home-item">Nouveau element:</label><br />
-        <select id="home-item" name="item">
+        <select id="home-item" name="item" class="form-control">
         <?php foreach ($side_availables as $item=>$name) : ?>
             <option value="<?php echo $item; ?>"><?php echo $name; ?></option>
         <?php endforeach; ?>
         </select>
         <br />
-        <input type="submit" name="save" value="Enregistrer" />
+        <input type="submit" name="save" value="Enregistrer"  class="btn btn-primary" style="float:right"/>
     </p>
-
+</div>
     </form>
     <?php endif; ?>
 
@@ -113,11 +116,31 @@ $admins = Home::_admins();
 		</div>
 <div class="widget board" <?php if ($node != \GOTEO_NODE) : ?>style="width:350px; float:left;"<?php endif; ?>>
 
-    <h4 class="title">Central</h4>
+    <h3 class="dark-grey" style="margin-top: 0px;margin-bottom: 26px;">Central</h3>
+     <?php if (!empty($availables)) : ?>
+    <form method="post" action="/admin/home" >
+     <div class="form-group col-lg-4">
+    <input type="hidden" name="action" value="add" />
+    <input type="hidden" name="type" value="<?php echo $new->type ?>" />
+    <input type="hidden" name="order" value="<?php echo $new->order ?>" />
+
+    <p>
+        <label for="home-item">Nouveau &eacute;lement:</label><br />
+        <select id="home-item" name="item" class="form-control">
+        <?php foreach ($availables as $item=>$name) : ?>
+            <option value="<?php echo $item; ?>"><?php echo $name; ?></option>
+        <?php endforeach; ?>
+        </select>
+        <br />
+        <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right"/>
+    </p>
+</div>
+    </form>
+    <?php endif; ?>
     <?php if (!empty($items)) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th>position</th> <!-- order -->
                 <th>Element</th> <!-- item -->
                 <th><!-- Subir --></th>
@@ -148,25 +171,10 @@ $admins = Home::_admins();
     <p>Pas de couvercle de l'&eacute;l&eacute;ment</p>
     <?php endif; ?>
 
-    <?php if (!empty($availables)) : ?>
-    <form method="post" action="/admin/home" >
-    <input type="hidden" name="action" value="add" />
-    <input type="hidden" name="type" value="<?php echo $new->type ?>" />
-    <input type="hidden" name="order" value="<?php echo $new->order ?>" />
-
-    <p>
-        <label for="home-item">Nouveau &eacute;lement:</label><br />
-        <select id="home-item" name="item">
-        <?php foreach ($availables as $item=>$name) : ?>
-            <option value="<?php echo $item; ?>"><?php echo $name; ?></option>
-        <?php endforeach; ?>
-        </select>
-        <br />
-        <input type="submit" name="save" value="Enregistrer" />
-    </p>
-
-    </form>
-    <?php endif; ?>
+   
     
+</div>
+</div>
+</section>
 </div>
 

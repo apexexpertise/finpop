@@ -24,18 +24,26 @@ use Goteo\Library\Text,
 $worth = $this['worth'];
 
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
 <form method="post" action="/admin/worth/edit" >
+<div class="form-group col-lg-4">
     <input type="hidden" name="id" value="<?php echo $worth->id; ?>" />
 
 <p>
     <label for="worth-name">Nom de niveau:</label><br />
-    <input id="worth-name" name="name" value="<?php echo $worth->name ?>" />
+    <input id="worth-name" name="name" value="<?php echo $worth->name ?>" class="form-control" />
 </p>
 
 <p>
     <label for="worth-amount">Montant:</label><br />
-    <input id="worth-amount" name="amount" value="<?php echo $worth->amount ?>" />
+    <input id="worth-amount" name="amount" value="<?php echo $worth->amount ?>" class="form-control" />
 </p>
 
-    <input type="submit" name="save" value="Enregistrer" />
+    <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right"/>
+    </div>
 </form>
+</div>
+</section>
+</div>

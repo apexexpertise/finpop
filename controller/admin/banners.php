@@ -204,6 +204,8 @@ namespace Goteo\Controller\Admin {
                     						'action' => "$url/edit/$id",
                     						'submit' => array(
                     								'name' => 'update',
+                    								'class'=> 'btn btn-primary',
+                    								'style'=> 'float:right',
                     								'label' => Text::get('regular-save')
                     
                     						),
@@ -223,17 +225,21 @@ namespace Goteo\Controller\Admin {
                     								'description' => array(
                     										'label' => Text::_('Description'),
                     										'name' => 'description',
+                    										'class'=> 'form-control',
                     										'type' => 'textarea'
+                    								
                     								),
                     								'title' => array(
                     										'label' => Text::_('Titre du projet'),
                     										'name' => 'title',
+                    										'class'=> 'form-control',
                     										'type' => 'text'
                     								),
                     								'url' => array(
                     										'label' => Text::_('lien'),
                     										'name' => 'url',
                     										'type' => 'text',
+                    										'class'=> 'form-control',
                     										'properties' => 'size=100'
                     										
                     										
@@ -242,17 +248,20 @@ namespace Goteo\Controller\Admin {
                     								'order' => array(
                     										'label' => Text::_('Ordre de baniiere'),
                     										'name' => 'order',
+                    										'class'=> 'form-control',
                     										'type' => 'text'
                     										),
                     								
                     								'active' => array(
                     										'label' => Text::_('statut de banniere'),
                     										'name' => 'active',
+                    										'class'=> 'form-control',
                     										'type' => 'text'
                     								),
                     								'image' => array(
                     										'label' => Text::_('image banniere'),
                     										'name' => 'image',
+                    										'class'=> 'form-control',
                     										'type' => 'image'
                     								),
                     								
@@ -279,10 +288,13 @@ namespace Goteo\Controller\Admin {
         return new View(
                 'view/admin/index.html.php',
                 array( 
+                	'name'=>'Banni&egrave;res',
                     'folder' => 'base',
                     'file' => 'list',
                     'model' => 'banner',
                     'addbutton' => 'Nouvelle Banniere',
+                	'class'	 => 'btn btn-default',
+                	'style'	=> 'color:white',
                     'data' => model\banner::getAll(),
                     'columns' => array(
                         'edit' => '',

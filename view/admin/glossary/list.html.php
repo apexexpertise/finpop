@@ -23,15 +23,21 @@ use Goteo\Library\Text,
 
 $translator = ACL::check('/translate') ? true : false;
 ?>
-<p style="padding-left:20px;color:#555555;font-family: Open Sans Light;font-size: 26px;">Glossary </p>
-		<hr style="width:2000px;margin-top:29px;"/>
-<a href="/admin/glossary/add" class="button"><?php echo Text::_("Nouveau Terme"); ?></a>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
+		 <div class="title-admin">
+<p>Glossary </p>
+		<hr/>
+		</div>
+<a href="/admin/glossary/add" class="btn btn-default" style="color:white"><?php echo Text::_("Nouveau Terme"); ?></a>
 
 <div class="widget board">
+
     <?php if (!empty($this['posts'])) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <td><!-- <?php echo Text::_("Editer"); ?> --></td>
                 <th><?php echo Text::_("Titre"); ?></th> <!-- title -->
                 <th><!-- <?php echo Text::_("Traduire"); ?>--></th>
@@ -54,6 +60,9 @@ $translator = ACL::check('/translate') ? true : false;
 
     </table>
     <?php else : ?>
-    <p><?php echo Text::_("Aucun r&eacute;sultat trouv&eacute;"); ?></p>
+   <p class="text-primary"><?php echo Text::_("Aucun r&eacute;sultat trouv&eacute;"); ?></p>
     <?php endif; ?>
+</div>
+</div>
+</section>
 </div>

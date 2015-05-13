@@ -38,20 +38,28 @@ $cols = count($this['columns']);
 $per = 100 / $cols;
 
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
+		<div class="title-admin">
+<p><?php echo $this['name']  ?> </p>
+		<hr/>
+		</div>
 <?php if (!empty($this['addbutton'])) : ?>
-<a href="<?php echo $this['url'] ?>/add" class="button"><?php echo $this['addbutton'] ?></a>
+<a href="<?php echo $this['url'] ?>/add" class="btn btn-default" style="color:white"><?php echo $this['addbutton'] ?></a>
 <?php endif; ?>
 <?php if (!empty($this['otherbutton'])) : ?>
 <?php echo $this['otherbutton'] ?>
 <?php endif; ?>
 <!-- Filtro -->
 <?php if (!empty($filters)) : ?>
+
 <div class="widget board">
     <form id="filter-form" action="<?php echo $this['url']; ?>" method="get">
         <?php foreach ($filters as $id=>$fil) : ?>
         <?php if ($fil['type'] == 'select') : ?>
             <label for="filter-<?php echo $id; ?>"><?php echo $fil['label']; ?></label>
-            <select id="filter-<?php echo $id; ?>" name="<?php echo $id; ?>" onchange="document.getElementById('filter-form').submit();">
+            <select id="filter-<?php echo $id; ?>" name="<?php echo $id; ?>" onchange="document.getElementById('filter-form').submit();" class="form-control">
             <?php foreach ($fil['options'] as $val=>$opt) : ?>
                 <option value="<?php echo $val; ?>"<?php if ($fil['value'] == $val) echo ' selected="selected"';?>><?php echo $opt; ?></option>
             <?php endforeach; ?>
@@ -61,7 +69,7 @@ $per = 100 / $cols;
             <br />
             <label for="filter-<?php echo $id; ?>"><?php echo $fil['label']; ?></label>
             <input name="<?php echo $id; ?>" value="<?php echo (string) $fil['value']; ?>" />
-            <input type="submit" name="filter" value="Filtrer">
+            <input type="submit" name="filter" value="Filtrer" class="btn btn-primary" style="float:right;" >
         <?php endif; ?>
         <?php endforeach; ?>
     </form>
@@ -71,9 +79,9 @@ $per = 100 / $cols;
 <!-- lista -->
 <div class="widget board">
     <?php if (!empty($this['data'])) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <?php foreach ($this['columns'] as $key=>$label) : ?>
                     <th><?php echo $label; ?></th>
                 <?php endforeach; ?>
@@ -105,6 +113,9 @@ $per = 100 / $cols;
         </tbody>
     </table>
     <?php else : ?>
-    <p>PAS DE R&eacute;SULTAT</p>
+    <p class="text-primary">Pas de r&eacute;sultat</p>
     <?php endif; ?>
+</div>
+</div>
+</section>
 </div>

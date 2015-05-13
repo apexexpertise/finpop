@@ -22,16 +22,20 @@ use Goteo\Library\Text;
 
 $filters = $this['filters'];
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p>Traductions du projet </p>
 		<hr/>
 		</div>
-<a href="/admin/translates/add" class="button">Nouveau projet &aacute; traduire</a>
+<a href="/admin/translates/add" class="btn btn-default" style="color:white">Nouveau projet &aacute; traduire</a>
 
 <div class="widget board">
 <form id="filter-form" action="/admin/translates" method="get">
+  	<div class="form-group col-lg-4">
     <label for="owner-filter">Projets d'utilisateur:</label>
-    <select id="owner-filter" name="owner" onchange="document.getElementById('filter-form').submit();">
+    <select id="owner-filter" name="owner" onchange="document.getElementById('filter-form').submit();" class="form-control">
         <option value="">Tous les producteurs</option>
     <?php foreach ($this['owners'] as $ownerId=>$ownerName) : ?>
         <option value="<?php echo $ownerId; ?>"<?php if ($filters['owner'] == $ownerId) echo ' selected="selected"';?>><?php echo $ownerName; ?></option>
@@ -39,21 +43,22 @@ $filters = $this['filters'];
     </select>
 
     <label for="translator-filter">Assign&eacute; &aacute; Traducteur:</label>
-    <select id="translator-filter" name="translator" onchange="document.getElementById('filter-form').submit();">
+    <select id="translator-filter" name="translator" onchange="document.getElementById('filter-form').submit();" class="form-control">
         <option value="">Tous les traducteurs</option>
     <?php foreach ($this['translators'] as $translator) : ?>
         <option value="<?php echo $translator->id; ?>"<?php if ($filters['translator'] == $translator->id) echo ' selected="selected"';?>><?php echo $translator->name; ?></option>
     <?php endforeach; ?>
     </select>
+    </div>
 </form>
 </div>
 
 <!-- proyectos con la traducción activa -->
 <?php if (!empty($this['projects'])) : ?>
         <div class="widget board">
-            <table>
+            <table class="table table-hover">
                 <thead>
-                    <tr>
+                    <tr class="active">
                         <th width="5%"><!-- Editar y asignar --></th>
                         <th width="55%">Projet</th> <!-- edit -->
                         <th width="30%">Cr&eacute;ateur</th>
@@ -76,5 +81,8 @@ $filters = $this['filters'];
             
         </div>
 <?php else : ?>
-<p>PAS DE R&eacute;SULTAT</p>
+<p class="text-primary">Pas de r&eacute;sultat</p>
 <?php endif; ?>
+</div>
+</section>
+</div>

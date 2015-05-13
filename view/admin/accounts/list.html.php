@@ -23,6 +23,9 @@ use Goteo\Library\Text;
 $filters = $this['filters'];
 
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p>Gestion des apports  </p>
 		<hr/>
@@ -49,16 +52,16 @@ $filters = $this['filters'];
         'label' => Text::_("Pour r&eacute;vision"),
         'first' => Text::_("Tous")),
 ); ?>
-<a href="/admin/accounts/viewer" class="button"><?php echo Text::_("Logs"); ?></a>&nbsp;&nbsp;&nbsp;
+<a href="/admin/accounts/viewer" class="btn btn-default" style="color:white"><?php echo Text::_("Logs"); ?></a>&nbsp;&nbsp;&nbsp;
 <div class="widget board">
     <h3 class="title"><?php echo Text::_("Filtres"); ?></h3>
     <form id="filter-form" action="/admin/accounts" method="get">
-        <input type="hidden" name="filtered" value="yes" />
-        <input type="hidden" name="status" value="all" />
+        <input type="hidden" name="filtered" value="yes" class="form-control"/>
+        <input type="hidden" name="status" value="all" class="form-control" />
         <?php foreach ($the_filters as $filter=>$data) : ?>
         <div style="float:left;margin:5px;">
             <label for="<?php echo $filter ?>-filter"><?php echo $data['label'] ?></label><br />
-            <select id="<?php echo $filter ?>-filter" name="<?php echo $filter ?>" onchange="document.getElementById('filter-form').submit();">
+            <select id="<?php echo $filter ?>-filter" name="<?php echo $filter ?>" onchange="document.getElementById('filter-form').submit();" class="form-control">
                 <option value="<?php if ($filter == 'investStatus' || $filter == 'status') echo 'all' ?>"<?php if (($filter == 'investStatus' || $filter == 'status') && $filters[$filter] == 'all') echo ' selected="selected"'?>><?php echo $data['first'] ?></option>
             <?php foreach ($this[$filter] as $itemId=>$itemName) : ?>
                 <option value="<?php echo $itemId; ?>"<?php if ($filters[$filter] === (string) $itemId) echo ' selected="selected"';?>><?php echo $itemName; ?></option>
@@ -68,16 +71,17 @@ $filters = $this['filters'];
         <?php endforeach; ?>
         <div style="float:left;margin:5px;">
             <label for="date-filter-from">du</label><br />
-            <input type="text" id ="date-filter-from" name="date_from" value ="" />
+            <input type="text" id ="date-filter-from" name="date_from" value ="" class="form-control"/>
         </div>
         <div style="float:left;margin:5px;">
             <label for="date-filter-until">jusqu'au</label><br />
-            <input type="text" id ="date-filter-until" name="date_until" value ="<?php echo date('Y-m-d') ?>" />
+            <input type="text" id ="date-filter-until" name="date_until" value ="<?php echo date('Y-m-d') ?>" class="form-control"/>
         </div>
-        <div style="float:left;margin:5px;">
-            <input type="submit" value="Filtrer" />
-        </div>
-    </form>
+       
+         <br clear="both" />
+            <input type="submit" value="Filtrer" class="btn btn-primary" style="float:right;" />
+      </form>
+    
     <br clear="both" />
     <a href="/admin/accounts">Supprimer les filtres</a>
 </div>
@@ -89,11 +93,11 @@ $filters = $this['filters'];
 <?php $Total = 0; foreach ($this['list'] as $invest) { $Total += $invest->amount; } ?>
     <p><strong><?php echo Text::_("TOTAL"); ?>:</strong>  <?php echo number_format($Total, 0, '', '.') ?> &euro;</p>
     
-    <table width="100%">
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th></th>
-                <th><?php echo Text::_("Cntribution ID"); ?></th>
+                <th><?php echo Text::_("Contribution ID"); ?></th>
                 <th><?php echo Text::_("Date"); ?></th>
                 <th><?php echo Text::_("Cofinanceur"); ?></th>
                 <th><?php echo Text::_("Projet"); ?></th>
@@ -108,7 +112,7 @@ $filters = $this['filters'];
         <tbody>
             <?php foreach ($this['list'] as $invest) : ?>
             <tr>
-                <td><a href="/admin/accounts/details/<?php echo $invest->id ?>">[<?php echo Text::_("Détails"); ?>]</a></td>
+                <td><a href="/admin/accounts/details/<?php echo $invest->id ?>">[<?php echo Text::_("D&eacute;tails"); ?>]</a></td>
                 <td><?php echo $invest->id ?></td>
                 <td><?php echo $invest->invested ?></td>
                 <td><?php echo $this['users'][$invest->user] ?></td>
@@ -130,6 +134,9 @@ $filters = $this['filters'];
 
     </table>
 <?php else : ?>
-    <p>Aucune transaction qui r&eacute;pond au filtre..</p>
+   <p class="text-primary">Aucune transaction qui r&eacute;pond au filtre..</p>
 <?php endif;?>
+</div>
+</div>
+</section>
 </div>

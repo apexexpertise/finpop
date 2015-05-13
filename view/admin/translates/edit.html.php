@@ -37,6 +37,9 @@ function assign() {
     }
 }
 </script>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
 <div class="widget">
 <?php if ($this['action'] == 'edit') : ?>
     <h3 class="title">Traducteurs pour le projet <?php echo $project->name ?></h3>
@@ -75,32 +78,31 @@ function assign() {
 <?php endif; ?>
 
     <form method="post" action="/admin/translates/<?php echo $this['action']; ?>/<?php echo $project->id; ?>">
-
-        <table>
-            <tr>
-                <td><?php if ($this['action'] == 'add') : ?>
+     	<div class="form-group col-lg-4">
+				<?php if ($this['action'] == 'add') : ?>
                     <label for="add-proj">Projet nous permettons</label><br />
-                    <select id="add-proj" name="project">
+                    <select id="add-proj" name="project" class="form-control">
                         <option value="">S&eacute;lectionnez le projet</option>
                         <?php foreach ($this['availables'] as $proj) : ?>
                             <option value="<?php echo $proj->id; ?>"<?php if ($_GET['project'] == $proj->id) echo ' selected="selected"';?>><?php echo $proj->name; ?></option>
                         <?php endforeach; ?>
                     </select>
                 <?php else : ?>
-                    <input type="hidden" name="project" value="<?php echo $project->id; ?>" />
-                <?php endif; ?></td>
-                <td><!-- Idioma original -->
+                    <input type="hidden" name="project" value="<?php echo $project->id; ?>" class="form-control" />
+                <?php endif; ?>
+               
                     <label for="orig-lang">Projet de la langue d'origine</label><br />
-                    <select id="orig-lang" name="lang">
+                    <select id="orig-lang" name="lang" class="form-control">
                         <?php foreach ($langs as $item) : ?>
                             <option value="<?php echo $item->id; ?>"<?php if ($project->lang == $item->id || (empty($project->lang) && $item->id == 'es' )) echo ' selected="selected"';?>><?php echo $item->name; ?></option>
                         <?php endforeach; ?>
                     </select>
-                </td>
-            </tr>
-        </table>
-
-
-       <input type="submit" name="save" value="Enregistrer" />
+               
+<br/>
+       <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right;" />
+       </div>
     </form>
+</div>
+</div>
+</section>
 </div>

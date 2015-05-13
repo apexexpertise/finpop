@@ -25,19 +25,26 @@ use Goteo\Library\Text,
 $home = $this['home'];
 $availables = $this['availables'];
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
 <form method="post" action="/admin/home" >
+	<div class="form-group col-lg-4">
     <input type="hidden" name="action" value="<?php echo $this['action'] ?>" />
     <input type="hidden" name="type" value="<?php echo $home->type ?>" />
     <input type="hidden" name="order" value="<?php echo $home->order ?>" />
 
 <p>
     <label for="home-item">Element:</label><br />
-    <select id="home-item" name="item">
+    <select id="home-item" name="item" class="form-control">
     <?php foreach ($availables as $item=>$name) : ?>
         <option value="<?php echo $item; ?>"><?php echo $name; ?></option>
     <?php endforeach; ?>
     </select>
 </p>
 
-    <input type="submit" name="save" value="Enregistrer" />
+    <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right"/>
+    </div>
 </form>
+</div></section>
+</div>

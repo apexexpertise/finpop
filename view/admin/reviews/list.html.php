@@ -23,14 +23,19 @@ use Goteo\Library\Text;
 $filters = $this['filters'];
 
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
+
  <div class="title-admin">
 <p >Reviews  </p>
 		<hr/>
+		</div>
 <div class="widget board">
 <form id="filter-form" action="/admin/reviews" method="get">
-   
+     <div class="form-group col-lg-4">
     <label for="project-filter">Projet:</label>
-    <select id="project-filter" name="project" onchange="document.getElementById('filter-form').submit();">
+    <select id="project-filter" name="project" onchange="document.getElementById('filter-form').submit();" class="form-control">
         <option value="">--</option>
         <?php foreach ($this['projects'] as $projId=>$projName) : ?>
             <option value="<?php echo $projId; ?>"<?php if ($filters['project'] == $projId) echo ' selected="selected"';?>><?php echo substr($projName, 0, 100); ?></option>
@@ -40,7 +45,7 @@ $filters = $this['filters'];
     <br />
 
     <label for="status-filter">Afficher par l'&eacute;tat:</label>
-    <select id="status-filter" name="status" onchange="document.getElementById('filter-form').submit();">
+    <select id="status-filter" name="status" onchange="document.getElementById('filter-form').submit();" class="form-control">
         <option value="">Tout</option>
     <?php foreach ($this['status'] as $statusId=>$statusName) : ?>
         <option value="<?php echo $statusId; ?>"<?php if ($filters['status'] == $statusId) echo ' selected="selected"';?>><?php echo $statusName; ?></option>
@@ -48,21 +53,22 @@ $filters = $this['filters'];
     </select>
 
     <label for="checker-filter">Assign&eacute; &aacute;:</label>
-    <select id="checker-filter" name="checker" onchange="document.getElementById('filter-form').submit();">
+    <select id="checker-filter" name="checker" onchange="document.getElementById('filter-form').submit();" class="form-control">
         <option value="">Tous</option>
     <?php foreach ($this['checkers'] as $checker) : ?>
         <option value="<?php echo $checker->id; ?>"<?php if ($filters['checker'] == $checker->id) echo ' selected="selected"';?>><?php echo $checker->name; ?></option>
     <?php endforeach; ?>
     </select>
+    </div>
 </form>
 </div>
 
 <?php if (!empty($this['list'])) : ?>
     <?php foreach ($this['list'] as $project) : ?>
         <div class="widget board">
-            <table>
+            <table class="table table-hover">
                 <thead>
-                    <tr>
+                    <tr class="active">
                         <th width="30%">Projet</th> <!-- edit -->
                         <th width="20%">Cr&eacute;ateur</th> <!-- mailto -->
                         <th width="5%">%</th> <!-- segun estado -->
@@ -104,8 +110,8 @@ $filters = $this['filters'];
             </table>
 
             <?php if (!empty($project->review)) : ?>
-            <table>
-                <tr>
+            <table class="table table-hover">
+                <tr class="active">
                     <th>R&eacute;viseur</th>
                     <th>Points</th>
                     <th>Pret</th>
@@ -142,5 +148,8 @@ $filters = $this['filters'];
         </div>
     <?php endforeach; ?>
 <?php else : ?>
-<p>Pas de r&eacute;sultat</p>
+<p class="text-primary">Pas de r&eacute;sultat</p>
 <?php endif; ?>
+</div>
+</section>
+</div>

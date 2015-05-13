@@ -37,16 +37,17 @@ $per = 100 / $cols;
 
 ?>
 <?php if (!empty($this['addbutton'])) : ?>
-<a href="<?php echo $this['url'] ?>/add" class="button"><?php echo $this['addbutton'] ?></a>
+<a href="<?php echo $this['url'] ?>/add" class="btn btn-default" style="color:white"><?php echo $this['addbutton'] ?></a>
 <?php endif; ?>
 <!-- Filtro -->
 <?php if (!empty($filters)) : ?>
 <div class="widget board">
     <form id="filter-form" action="<?php echo $this['url']; ?>" method="get">
+    	<div class="form-group col-lg-4">
         <?php foreach ($filters as $id=>$fil) : ?>
         <?php if ($fil['type'] == 'select') : ?>
             <label for="filter-<?php echo $id; ?>"><?php echo $fil['label']; ?></label>
-            <select id="filter-<?php echo $id; ?>" name="<?php echo $id; ?>" onchange="document.getElementById('filter-form').submit();">
+            <select id="filter-<?php echo $id; ?>" name="<?php echo $id; ?>" onchange="document.getElementById('filter-form').submit();" class="form-control">
             <?php foreach ($fil['options'] as $val=>$opt) : ?>
                 <option value="<?php echo $val; ?>"<?php if ($fil['value'] == $val) echo ' selected="selected"';?>><?php echo $opt; ?></option>
             <?php endforeach; ?>
@@ -55,10 +56,11 @@ $per = 100 / $cols;
         <?php if ($fil['type'] == 'input') : ?>
             <br />
             <label for="filter-<?php echo $id; ?>"><?php echo $fil['label']; ?></label>
-            <input name="<?php echo $id; ?>" value="<?php echo (string) $fil['value']; ?>" />
-            <input type="submit" name="filter" value="Chercher">
+            <input name="<?php echo $id; ?>" value="<?php echo (string) $fil['value']; ?>" class="form-control"/>
+            <input type="submit" name="filter" value="Chercher" class="btn btn-primary" style="float:right;">
         <?php endif; ?>
         <?php endforeach; ?>
+        </div>
     </form>
 </div>
 <?php endif; ?>
@@ -68,9 +70,9 @@ $per = 100 / $cols;
 <?php if ($filters['filtered'] != 'yes') : ?>
     <p>Vous avez besoin de mettre des filtres, trop de dossiers!</p>
 <?php elseif (!empty($this['data'])) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th><!-- Editar --></th>
                 <th>Texte</th>
                 <th>Positon</th>
@@ -91,6 +93,6 @@ $per = 100 / $cols;
         </tbody>
     </table>
     <?php else : ?>
-    <p>Aucun résultat</p>
+   <p class="text-primary">Pas de r&eacute;sultat</p>
     <?php endif; ?>
 </div>

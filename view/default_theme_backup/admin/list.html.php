@@ -39,7 +39,7 @@ $per = 100 / $cols;
 
 ?>
 <?php if (!empty($this['addbutton'])) : ?>
-<a href="<?php echo $this['url'] ?>/add" class="button"><?php echo $this['addbutton'] ?></a>
+<a href="<?php echo $this['url'] ?>/add" class="btn btn-default"><?php echo $this['addbutton'] ?></a>
 <?php endif; ?>
 <?php if (!empty($this['otherbutton'])) : ?>
 <?php echo $this['otherbutton'] ?>
@@ -51,7 +51,7 @@ $per = 100 / $cols;
         <?php foreach ($filters as $id=>$fil) : ?>
         <?php if ($fil['type'] == 'select') : ?>
             <label for="filter-<?php echo $id; ?>"><?php echo $fil['label']; ?></label>
-            <select id="filter-<?php echo $id; ?>" name="<?php echo $id; ?>" onchange="document.getElementById('filter-form').submit();">
+            <select id="filter-<?php echo $id; ?>" name="<?php echo $id; ?>" onchange="document.getElementById('filter-form').submit();" class="form-control">
             <?php foreach ($fil['options'] as $val=>$opt) : ?>
                 <option value="<?php echo $val; ?>"<?php if ($fil['value'] == $val) echo ' selected="selected"';?>><?php echo $opt; ?></option>
             <?php endforeach; ?>
@@ -60,8 +60,8 @@ $per = 100 / $cols;
         <?php if ($fil['type'] == 'input') : ?>
             <br />
             <label for="filter-<?php echo $id; ?>"><?php echo $fil['label']; ?></label>
-            <input name="<?php echo $id; ?>" value="<?php echo (string) $fil['value']; ?>" />
-            <input type="submit" name="filter" value="Buscar">
+            <input class="form-control"name="<?php echo $id; ?>" value="<?php echo (string) $fil['value']; ?>" />
+            <input type="submit" name="filter" value="filtrer" class="btn btn-primary" style="float:right;">
         <?php endif; ?>
         <?php endforeach; ?>
     </form>
@@ -71,9 +71,9 @@ $per = 100 / $cols;
 <!-- lista -->
 <div class="widget board">
     <?php if (!empty($this['data'])) : ?>
-    <table>
+    <table  class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <?php foreach ($this['columns'] as $key=>$label) : ?>
                     <th><?php echo $label; ?></th>
                 <?php endforeach; ?>

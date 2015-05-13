@@ -21,36 +21,44 @@
 use Goteo\Library\Text;
 
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
 <div class="widget board">
     <!-- superform -->
     <form action="<?php echo $this['form']['action']; ?>" method="post" enctype="multipart/form-data">
+    	<div class="form-group col-lg-4">
         <dl>
             <?php foreach ($this['form']['fields'] as $Id=>$field) : ?>
                 <dt><label for="<?php echo $Id; ?>"><?php echo $field['label']; ?></label></dt>
                 <dd><?php switch ($field['type']) {
                     case 'text': ?>
-                        <input type="text" id="<?php echo $Id; ?>" name="<?php echo $field['name']; ?>" <?php echo $field['properties']; ?> value="<?php $name = $field['name']; echo $this['data']->$name; ?>" />
+                        <input type="text" class="form-control" id="<?php echo $Id; ?>" name="<?php echo $field['name']; ?>" <?php echo $field['properties']; ?> value="<?php $name = $field['name']; echo $this['data']->$name; ?>" />
                     <?php break;
                     case 'hidden': ?>
-                        <input type="hidden" name="<?php echo $field['name']; ?>" <?php echo $field['properties']; ?> value="<?php $name = $field['name']; echo $this['data']->$name; ?>" />
+                        <input type="hidden" class="form-control" name="<?php echo $field['name']; ?>" <?php echo $field['properties']; ?> value="<?php $name = $field['name']; echo $this['data']->$name; ?>" />
                     <?php break;
                     case 'textarea': ?>
-                        <textarea id="<?php echo $Id; ?>" name="<?php echo $field['name']; ?>" <?php echo $field['properties']; ?>><?php $name = $field['name']; echo $this['data']->$name; ?></textarea>
+                        <textarea id="<?php echo $Id; ?>" class="form-control" name="<?php echo $field['name']; ?>" <?php echo $field['properties']; ?>><?php $name = $field['name']; echo $this['data']->$name; ?></textarea>
                     <?php break;
                     case 'image':
                          $name = $field['name'];
                         ?>
-                        <input type="file" id="<?php echo $Id; ?>" name="<?php echo $field['name']; ?>" <?php echo $field['properties']; ?> value="<?php $name = $field['name']; echo $this['data']->$name; ?>" /> <br />
+                        <input class="form-control" type="file" id="<?php echo $Id; ?>" name="<?php echo $field['name']; ?>" <?php echo $field['properties']; ?> value="<?php $name = $field['name']; echo $this['data']->$name; ?>" /> <br />
                         <?php if (!empty($this['data']->$name)) : ?>
-                            <img src="<?php echo SRC_URL ?>/image/<?php echo $this['data']->$name; ?>/110/110" alt="<?php echo $field['name']; ?>" /><br />
+                            <img class="form-control" src="<?php echo SRC_URL ?>/image/<?php echo $this['data']->$name; ?>/110/110" alt="<?php echo $field['name']; ?>" /><br />
                             <input type="hidden" name="<?php echo $field['name']; ?>" value="<?php echo $this['data']->$name; ?>" />
-                            <input type="submit" name="image-<?php echo $this['data']->$name; ?>-remove" value="Supprimer" />
+                            <input type="submit" class="btn btn-default" style="color:white" name="image-<?php echo $this['data']->$name; ?>-remove" value="Supprimer" />
                         <?php endif; ?>
                     <?php break;
                 } ?></dd>
 
             <?php endforeach; ?>
         </dl>
-        <input type="submit" name="<?php echo $this['form']['submit']['name']; ?>" value="<?php echo $this['form']['submit']['label']; ?>" />
+        <input type="submit" class="btn btn-primary" style="float:right;" name="<?php echo $this['form']['submit']['name']; ?>" value="<?php echo $this['form']['submit']['label']; ?>" />
+   </div>
     </form>
+</div>
+</div>
+</section>
 </div>

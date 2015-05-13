@@ -49,8 +49,11 @@ namespace Goteo\Controller\Admin {
                             'data' => (object) array('order' => $model::next($node), 'node' => $node ),
                             'form' => array(
                                 'action' => "$url/edit/",
+                                
                                 'submit' => array(
                                     'name' => 'update',
+                                    'class'=> 'btn btn-primary',
+                                    'style'=> 'float:right',
                                     'label' => Text::_('Añadir')
                                 ),
                                 'fields' => array (
@@ -69,27 +72,32 @@ namespace Goteo\Controller\Admin {
                                     'name' => array(
                                         'label' => Text::_('Partenaire'),
                                         'name' => 'name',
+                                        'class'=> 'form-control',
                                         'type' => 'text'
                                     ),
                                     'resume' => array(
                                     		'label' => Text::_('Description'),
                                     		'name' => 'resume',
+                                    		'class'=> 'form-control',
                                     		'type' => 'textarea'
                                     ),
                                     'url' => array(
                                         'label' => Text::_('Enlace'),
                                         'name' => 'url',
                                         'type' => 'text',
+                                        'class'=> 'form-control',
                                         'properties' => 'size=100'
                                     ),
                                     'image' => array(
                                         'label' => Text::_('Logo'),
                                         'name' => 'image',
+                                        'class'=> 'form-control',
                                         'type' => 'image'
                                     ),
                                     'order' => array(
                                         'label' => Text::_('Posición'),
                                         'name' => 'order',
+                                        'class'=> 'form-control',
                                         'type' => 'text'
                                     )
                                 )
@@ -149,45 +157,54 @@ namespace Goteo\Controller\Admin {
                                 'action' => "$url/edit/$id",
                                 'submit' => array(
                                     'name' => 'update',
+                                		'class'=> 'btn btn-primary',
+                                		'style'=> 'float:right',
                                     'label' => Text::get('regular-save')
                                 ),
                                 'fields' => array (
                                     'id' => array(
                                         'label' => '',
                                         'name' => 'id',
+                                    		'class'=> 'form-control',
                                         'type' => 'hidden'
 
                                     ),
                                     'node' => array(
                                         'label' => '',
                                         'name' => 'node',
+                                    		'class'=> 'form-control',
                                         'type' => 'hidden'
 
                                     ),
                                     'name' => array(
                                         'label' => Text::_('Partenaire'),
                                         'name' => 'name',
+                                    		'class'=> 'form-control',
                                         'type' => 'text'
                                     ),
                                 	'resume' => array(
                                 				'label' => Text::_('Description'),
                                 				'name' => 'resume',
+                                			'class'=> 'form-control',
                                 				'type' => 'textarea'
                                 	),
                                     'url' => array(
                                         'label' => Text::_('Enlace'),
                                         'name' => 'url',
                                         'type' => 'text',
+                                    		'class'=> 'form-control',
                                         'properties' => 'size=100'
                                     ),
                                     'image' => array(
                                         'label' => Text::_('Logo'),
                                         'name' => 'image',
+                                    		'class'=> 'form-control',
                                         'type' => 'image'
                                     ),
                                     'order' => array(
                                         'label' => Text::_('Posición'),
                                         'name' => 'order',
+                                    		'class'=> 'form-control',
                                         'type' => 'text'
                                     )
                                 )
@@ -218,6 +235,7 @@ namespace Goteo\Controller\Admin {
             return new View(
                 'view/admin/index.html.php',
                 array(
+                	'name'=>'Partenaires',
                     'folder' => 'base',
                     'file' => 'list',
                     'addbutton' => Text::_('Nouveau partenaire'),

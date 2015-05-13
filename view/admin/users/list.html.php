@@ -51,62 +51,59 @@ foreach ($filters as $key=>$value) {
 
 $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] : 1);
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p>Gestion des utilisateurs  </p>
 		<hr/>
 		</div>
-<a href="/admin/users/add" class="button">Cr&eacute;er un utilisateur</a>
+<a href="/admin/users/add" class="btn btn-default" style="color:white">Cr&eacute;er un utilisateur</a>
 
 <div class="widget board">
     <form id="filter-form" action="/admin/users" method="get">
-        <table>
-            <tr>
-                <td>
+         <div style="float:left;margin:5px;">
                     <label for="role-filter">avec le r&oacute;le:</label><br />
-                    <select id="role-filter" name="role" onchange="document.getElementById('filter-form').submit();">
+                    <select id="role-filter" name="role" onchange="document.getElementById('filter-form').submit();" class="form-control">
                         <option value="">Tout r&oacute;le</option>
                     <?php foreach ($this['roles'] as $roleId=>$roleName) : ?>
                         <option value="<?php echo $roleId; ?>"<?php if ($filters['role'] == $roleId) echo ' selected="selected"';?>><?php echo $roleName; ?></option>
                     <?php endforeach; ?>
                     </select>
-                </td>
-                <td>
+              </div>
+                <div style="float:left;margin:5px;">
                     <label for="interest-filter">Voir les utilisateurs int&eacute;ress&eacute;s par:</label><br />
-                    <select id="interest-filter" name="interest" onchange="document.getElementById('filter-form').submit();">
+                    <select id="interest-filter" name="interest" onchange="document.getElementById('filter-form').submit();" class="form-control">
                         <option value="">Tout int&eacute;ret</option>
                     <?php foreach ($this['interests'] as $interestId=>$interestName) : ?>
                         <option value="<?php echo $interestId; ?>"<?php if ($filters['interest'] == $interestId) echo ' selected="selected"';?>><?php echo $interestName; ?></option>
                     <?php endforeach; ?>
                     </select>
-                </td>
-                <td>
+              </div>
+                <div style="float:left;margin:5px;">
                     <label for="role-filter">Afficher les utilisateurs avec le r&oacute;le:</label><br />
-                    <select id="role-filter" name="role" onchange="document.getElementById('filter-form').submit();">
+                    <select id="role-filter" name="role" onchange="document.getElementById('filter-form').submit();" class="form-control">
                         <option value="">Tout r&oacute;le</option>
                     <?php foreach ($this['roles'] as $roleId=>$roleName) : ?>
                         <option value="<?php echo $roleId; ?>"<?php if ($filters['role'] == $roleId) echo ' selected="selected"';?>><?php echo $roleName; ?></option>
                     <?php endforeach; ?>
                     </select>
-                </td>
-                <td colspan="2">
+               </div>
+                 <div style="float:left;margin:5px;">
                     <label for="name-filter">Par nom ou par e-mail:</label><br />
-                    <input id="name-filter" name="name" value="<?php echo $filters['name']; ?>" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" name="filter" value="Chercher">
-                </td>
-                <td>
+                    <input id="name-filter" name="name" value="<?php echo $filters['name']; ?>" class="form-control"/>
+              </div>
+                <div style="float:left;margin:5px;">
                     <label for="order-filter">Vue par:</label><br />
-                    <select id="order-filter" name="order" onchange="document.getElementById('filter-form').submit();">
+                    <select id="order-filter" name="order" onchange="document.getElementById('filter-form').submit();" class="form-control">
                     <?php foreach ($this['orders'] as $orderId=>$orderName) : ?>
                         <option value="<?php echo $orderId; ?>"<?php if ($filters['order'] == $orderId) echo ' selected="selected"';?>><?php echo $orderName; ?></option>
                     <?php endforeach; ?>
-                    </select>
-                </td>
-            </tr>
-        </table>
+             </select>
+             </div>
+               <br clear="both" />
+                    <input type="submit" name="filter" value="Chercher" class="btn btn-primary" style="float:right;">
+              
 
     </form>
     <br clear="both" />
@@ -117,9 +114,9 @@ $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] 
 <?php if ($filters['filtered'] != 'yes') : ?>
     <p>Vous avez besoin de mettre des filtres, trop de dossiers!</p>
 <?php elseif (!empty($users)) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th>Nom</th> <!-- view profile -->
                 <th>Utilisateur</th>
                 <th>Email</th>
@@ -176,3 +173,7 @@ $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] 
 <?php else : ?>
 <p>PAS DE R&eacute;SULTAT</p>
 <?php endif; ?>
+</div>
+</section>
+</div>
+

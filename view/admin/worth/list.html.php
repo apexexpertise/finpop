@@ -21,13 +21,18 @@
 use Goteo\Library\Text;
 
 ?>
-	<p style="padding-left:20px;color:#555555;font-family: Open Sans Light;font-size: 26px;">Niveaux de m&eacute;ritocratie </p>
-		<hr style="width:2000px;margin-top:29px;"/>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
+		<div class="title-admin">
+	<p>Niveaux de m&eacute;ritocratie </p>
+		<hr/>
+		</div>
 <div class="widget board">
     <?php if (!empty($this['worthcracy'])) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th><!-- Editar--></th>
                 <th>Niveau</th>
                 <th>Montant</th>
@@ -39,8 +44,8 @@ use Goteo\Library\Text;
             <?php foreach ($this['worthcracy'] as $worth) : ?>
             <tr>
                 <td width="5%"><a href="/admin/worth/edit/<?php echo $worth->id; ?>">[Editer]</a></td>
-                <td width="15%"><?php echo $worth->name; ?></td>
-                <td width="15%"><?php echo $worth->amount; ?> &euro;</td>
+                <td width="15%"> <p class="text-info"><?php echo $worth->name; ?></p></td>
+                <td width="15%"><p class="text-info"><?php echo $worth->amount; ?> &euro;</p></td>
                 <td></td>
             </tr>
             <?php endforeach; ?>
@@ -48,6 +53,9 @@ use Goteo\Library\Text;
 
     </table>
     <?php else : ?>
-    <p>IMPOSIBLE!!!Aucun Enregistrement Trouv&eacute;</p>
+     <p class="text-primary">IMPOSIBLE!!!Aucun Enregistrement Trouv&eacute;</p>
     <?php endif; ?>
+</div>
+</div>
+</section>
 </div>

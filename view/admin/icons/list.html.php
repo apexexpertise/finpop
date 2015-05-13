@@ -24,27 +24,32 @@ use Goteo\Library\Text,
 $translator = ACL::check('/translate') ? true : false;
 $filters = $this['filters'];
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p> Types de retour </p>
 		<hr/>
 		</div>
 <div class="widget board">
     <form id="groupfilter-form" action="/admin/icons" method="get">
+    <div class="form-group col-lg-4">
         <label for="group-filter"> <?php echo Text::_("Afficher les tarifs de:"); ?></label>
-        <select id="group-filter" name="group" onchange="document.getElementById('groupfilter-form').submit();">
+        <select id="group-filter" name="group" onchange="document.getElementById('groupfilter-form').submit();" class="form-control">
             <option value=""><?php echo Text::_("Tout"); ?></option>
         <?php foreach ($this['groups'] as $groupId=>$groupName) : ?>
             <option value="<?php echo $groupId; ?>"<?php if ($filters['group'] == $groupId) echo ' selected="selected"';?>><?php echo $groupName; ?></option>
         <?php endforeach; ?>
         </select>
+        </div>
     </form>
 </div>
 
 <div class="widget board">
     <?php if (!empty($this['icons'])) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th><!-- Editar --></th>
                 <th> <?php echo Text::_("Nom"); ?></th> <!-- name -->
                 <th>Tooltip</th> <!-- descripcion -->
@@ -72,4 +77,7 @@ $filters = $this['filters'];
     <?php else : ?>
     <p><?php echo Text::_("Aucun résultat"); ?></p>
     <?php endif; ?>
+</div>
+</div>
+</section>
 </div>

@@ -24,25 +24,25 @@ $data = $this['data'];
 ?>
 <div class="widget">
     <form action="/admin/users/add" method="post">
-        <p>
-            <label for="user-user">Login:</label><span style="font-style:italic;">Seuls les lettres, chiffres et trait d'union '-'.</span><br />
-            <input type="text" id="user-user" name="userid" value="<?php echo $data['user'] ?>" style="width:250px" maxlength="50"/>
-        </p>
-        <p>
+    <div class="form-group col-lg-5">
+      
+            <label for="user-user">Login: (<span style="font-style:italic;">Seuls les lettres, chiffres et trait d'union '-'.</span> ) </label>
+            <input type="text" id="user-user" name="userid" value="<?php echo $data['user'] ?>"  maxlength=50 class="form-control" />
+       
             <label for="user-name">Nom publi&eacute;:</label><br />
-            <input type="text" id="user-name" name="name" value=<?php echo $data['name'] ?>"" style="width:500px" maxlength="255"/>
-        </p>
-        <p>
-            <label for="user-email">Email:</label><span style="font-style:italic;">Valide.</span><br />
-            <input type="text" id="user-email" name="email" value="<?php echo $data['email'] ?>" style="width:500px" maxlength="255"/>
-        </p>
-        <p>
-            <label for="user-password">Mot de passe :</label><span style="font-style:italic;">Au moins 6 caract&eacute;res.</span><br />
-            <input type="text" id="user-password" name="password" value="<?php echo $data['password'] ?>" style="width:500px" maxlength="255"/>
-        </p>
-
-        <input type="submit" name="add" value="Ajouter l'utilisateur" /><br />
-        <span style="font-style:italic;font-weight:bold;">Attention! Nous envyons un email de validation &aacute; l'utilisateur pout valider son compte !</span>
-
-    </form>
+            <input type="text" id="user-name" name="name" value="<?php echo $data['name'] ?>" maxlength="255" class="form-control"/>
+      
+            <label for="user-email">Email:<span style="font-style:italic;">Valide.</span> </label><br />
+            <input type="text" id="user-email" name="email" value="<?php echo $data['email'] ?>" maxlength=255 class="form-control"/>
+       
+            <label for="user-password">Mot de passe :<span style="font-style:italic;">Au moins 6 caract&eacute;res.</span></label><br />
+            <input type="text" id="user-password" name="password" value="<?php echo $data['password'] ?>" class="form-control" maxlength="255"/>
+       
+        <input type="submit" name="add" value="Ajouter l'utilisateur" class="btn btn-primary" style="margin-top:10px;float:right" />
+        <br clear="both"/>
+        <span style="font-style:italic;font-weight:bold;">Attention! Nous envoyons un email de validation &aacute; l'utilisateur pour valider son compte !</span>
+ 
+</div>
+   </form>
+   
 </div>

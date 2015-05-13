@@ -24,28 +24,33 @@ use Goteo\Library\Text,
 $translator = ACL::check('/translate') ? true : false;
 $filters = $this['filters'];
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p >Review criteria  </p>
 		<hr/>
 		</div>
-<a href="/admin/criteria/add" class="button"><?php echo Text::_('Ajouter des crit&eacute;res'); ?></a>
+<a href="/admin/criteria/add" class="btn btn-default" style="color:white"><?php echo Text::_('Ajouter des crit&eacute;res'); ?></a>
 
 <div class="widget board">
     <form id="sectionfilter-form" action="/admin/criteria" method="get">
+    	<div class="form-group col-lg-4">
         <label for="section-filter"><?php echo Text::_('Voir les crit&eacute;res de l\'article:'); ?></label>
-        <select id="section-filter" name="section" onchange="document.getElementById('sectionfilter-form').submit();">
+        <select id="section-filter" name="section" onchange="document.getElementById('sectionfilter-form').submit();" class="form-control">
         <?php foreach ($this['sections'] as $sectionId=>$sectionName) : ?>
             <option value="<?php echo $sectionId; ?>"<?php if ($filters['section'] == $sectionId) echo ' selected="selected"';?>><?php echo $sectionName; ?></option>
         <?php endforeach; ?>
         </select>
+        </div>
     </form>
 </div>
 
 <div class="widget board">
     <?php if (!empty($this['criterias'])) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <td><!-- Edit --></td>
                 <th><?php echo Text::_('Titre'); ?></th> <!-- title -->
                 <th><?php echo Text::_('Position'); ?></th> <!-- order -->
@@ -76,4 +81,7 @@ $filters = $this['filters'];
     <?php else : ?>
     <p><?php echo Text::_('Aucun r&eacute;sultat trouv&eacute;'); ?></p>
     <?php endif; ?>
+</div>
+</div>
+</section>
 </div>

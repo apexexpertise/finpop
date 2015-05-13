@@ -23,6 +23,9 @@ use Goteo\Library\Text;
 $filters = $_SESSION['mailing']['filters'];
 
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p>Communications  </p>
 		<hr/>
@@ -30,72 +33,61 @@ $filters = $_SESSION['mailing']['filters'];
 <div class="widget board">
     <form id="filter-form" action="/admin/mailing/edit" method="post">
 
-        <table>
-            <tr>
-                <td>
-                    <label for="type-filter"><?php echo Text::_("&aacute;"); ?></label><br />
-                    <select id="type-filter" name="type">
+        <div style="float:left;margin:5px;">
+                    <label for="type-filter"><?php echo Text::_("&Aacute;"); ?></label><br />
+                    <select id="type-filter" name="type" class="form-control">
                     <?php foreach ($this['types'] as $typeId=>$typeName) : ?>
                         <option value="<?php echo $typeId; ?>"<?php if ($filters['type'] == $typeId) echo ' selected="selected"';?>><?php echo $typeName; ?></option>
                     <?php endforeach; ?>
                     </select>
-                </td>
-                <td>
+               
                     <label for="project-filter"><?php echo Text::_("Projets dont le nom contient"); ?></label><br />
-                    <input id="project-filter" name="project" value="<?php echo $filters['project']?>" style="width:300px;" />
-                </td>
-                <td>
-                    <label for="status-filter"><?php echo Text::_("dans l'&eacute;tat"); ?></label><br />
-                    <select id="status-filter" name="status">
+                    <input id="project-filter" name="project" value="<?php echo $filters['project']?>" class="form-control"/>
+              </div>
+           <div style="float:left;margin:5px;">
+                    <label for="status-filter"><?php echo Text::_("Dans l'&eacute;tat"); ?></label><br />
+                    <select id="status-filter" name="status" class="form-control">
                         <option value="-1"<?php if ($filters['status'] == -1) echo ' selected="selected"';?>> <?php echo utf8_encode("Etat quelconque") ?></option>
                     <?php foreach ($this['status'] as $statusId=>$statusName) : ?>
                         <option value="<?php echo $statusId; ?>"<?php if ($filters['status'] == $statusId) echo ' selected="selected"';?>><?php echo $statusName; ?></option>
                     <?php endforeach; ?>
                     </select>
-                </td>
-                <td>
+               
                     <label for="method-filter"><?php echo Text::_("Propos&eacute; par"); ?></label><br />
-                    <select id="method-filter" name="method">
+                    <select id="method-filter" name="method" class="form-control">
                         <option value=""><?php echo Text::_("toute m&eacute;thode"); ?></option>
                     <?php foreach ($this['methods'] as $methodId=>$methodName) : ?>
                         <option value="<?php echo $methodId; ?>"<?php if ($filters['methods'] == $methodId) echo ' selected="selected"';?>><?php echo $methodName; ?></option>
                     <?php endforeach; ?>
                     </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
+          </div>
+           <div style="float:left;margin:5px;">
                     <label for="interest-filter"><?php echo Text::_("Int&eacute;ress&eacute; pour"); ?></label><br />
-                    <select id="interest-filter" name="interest">
+                    <select id="interest-filter" name="interest" class="form-control">
                         <option value=""><?php echo Text::_("tout"); ?></option>
                     <?php foreach ($this['interests'] as $interestId=>$interestName) : ?>
                         <option value="<?php echo $interestId; ?>"<?php if ($filters['interest'] == $interestId) echo ' selected="selected"';?>><?php echo $interestName; ?></option>
                     <?php endforeach; ?>
                     </select>
-                </td>
-                <td>
+              
                     <label for="name-filter"><?php echo Text::_("Le nom ou email contient"); ?></label><br />
-                    <input id="name-filter" name="name" value="<?php echo $filters['name']?>" style="width:300px;" />
-                </td>
-                <td>
+                    <input id="name-filter" name="name" value="<?php echo $filters['name']?>" class="form-control" />
+               </div>
+           <div style="float:left;margin:5px;">
                     <label for="role-filter"><?php echo Text::_("Ce sont"); ?></label><br />
-                    <select id="role-filter" name="role">
+                    <select id="role-filter" name="role" class="form-control">
                         <option value=""><?php echo Text::_("Tout"); ?></option>
                     <?php foreach ($this['roles'] as $roleId=>$roleName) : ?>
                         <option value="<?php echo $roleId; ?>"<?php if ($filters['role'] == $roleId) echo ' selected="selected"';?>><?php echo $roleName; ?></option>
                     <?php endforeach; ?>
                     </select>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3"><input type="submit" name="select" value="<?php echo Text::_("Recherche b&eacute;n&eacute;ficiaires"); ?>"></td>
-            </tr>
-        </table>
-
-
-
-
-        
-
+                    </div>
+                    <br clear="both"/>
+                     <div style="margin:5px;">
+              <input type="submit" name="select" value="<?php echo Text::_("Recherche b&eacute;n&eacute;ficiaires"); ?>" class="btn btn-primary" style="float:right">
+            </div>
     </form>
+</div>
+</div>
+</section>
 </div>

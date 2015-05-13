@@ -6,6 +6,9 @@ $filters = $this['filters'];
 
 $emails = Invest::emails(true);
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p>R&eacute;compenses  </p>
 		<hr />
@@ -13,35 +16,28 @@ $emails = Invest::emails(true);
 <div class="widget board">
     <h3 class="title">Filtres</h3>
     <form id="filter-form" action="/admin/rewards" method="get">
-        <div style="float:left;margin:5px;">
+        <div class="form-group col-lg-4">
             <label for="projects-filter">Projet</label><br />
-            <select id="projects-filter" name="project" onchange="document.getElementById('filter-form').submit();">
+            <select id="projects-filter" name="project" onchange="document.getElementById('filter-form').submit();" class="form-control">
                 <option value="">Tous les projets</option>
             <?php foreach ($this['projects'] as $itemId=>$itemName) : ?>
                 <option value="<?php echo $itemId; ?>"<?php if ($filters['project'] === (string) $itemId) echo ' selected="selected"';?>><?php echo $itemName; ?></option>
             <?php endforeach; ?>
             </select>
-        </div>
-        
-        <div style="float:left;margin:5px;">
+      
+       
             <label for="name-filter">Alias/Email d'utilisateur:</label><br />
-            <input type="text" id ="name-filter" name="name" value ="<?php echo $filters['name']?>" />
-        </div>
+            <input type="text" id ="name-filter" name="name" value ="<?php echo $filters['name']?>" class="form-control" />
 
-        <div style="float:left;margin:5px;">
             <label for="status-filter">Affichage par la r&eacute;compense d'&eacute;tat:</label><br />
-            <select id="status-filter" name="status" >
+            <select id="status-filter" name="status"class="form-control">
                 <option value="">Tous</option>
             <?php foreach ($this['status'] as $statusId=>$statusName) : ?>
                 <option value="<?php echo $statusId; ?>"<?php if ($filters['status'] == $statusId) echo ' selected="selected"';?>><?php echo $statusName; ?></option>
             <?php endforeach; ?>
             </select>
-        </div>
-
-        <br clear="both" />
-
-        <div style="float:left;margin:5px;">
-            <input type="submit" value="Filtrer" />
+       
+            <input type="submit" value="Filtrer" class="btn btn-primary" style="margin-top:10px;float:right;"/>
         </div>
     </form>
     <br clear="both" />
@@ -52,9 +48,9 @@ $emails = Invest::emails(true);
 <?php if ($filters['filtered'] != 'yes') : ?>
     <p>Vous avez besoin de mettre des filtres, trop de dossiers!</p>
 <?php elseif (!empty($this['list'])) : ?>
-    <table width="100%">
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th></th>
                 <th>Coofinanceur</th>
                 <th>Projet</th>
@@ -86,4 +82,7 @@ $emails = Invest::emails(true);
 <?php else : ?>
     <p>Aucune contribution qui r&eacute;pondent le filtre.</p>
 <?php endif;?>
+</div>
+</div>
+</section>
 </div>

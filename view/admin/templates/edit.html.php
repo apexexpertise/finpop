@@ -21,21 +21,29 @@
 use Goteo\Library\Text;
 
 ?>
-<p><strong><?php echo $this['template']->name; ?></strong>: <?php echo $this['template']->purpose; ?></p>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
+<p class="text-info"><strong><?php echo $this['template']->name; ?></strong>: <?php echo $this['template']->purpose; ?></p>
 
 <div class="widget board">
     <form method="post" action="/admin/templates/edit/<?php echo $this['template']->id; ?>">
+    <div class="form-group col-lg-4">
         <input type="hidden" name="group" value="<?php echo $this['template']->group; ?>" />
         <p>
             <label for="tpltitle">Titre:</label><br />
-            <input id="tpltitle" type="text" name="title" size="120" value="<?php echo $this['template']->title; ?>" />
+            <input id="tpltitle" type="text" name="title" size="120" value="<?php echo $this['template']->title; ?>" class="form-control" />
         </p>
 
         <p>
             <label for="tpltext">Contenu:</label><br />
-            <textarea id="tpltext" name="text" cols="100" rows="20"><?php echo $this['template']->text; ?></textarea>
+            <textarea id="tpltext" name="text" cols="100" rows="20" class="form-control"><?php echo $this['template']->text; ?></textarea>
         </p>
 
-        <input type="submit" name="save" value="Enregistrer" />
+        <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right"/>
+        </div>
     </form>
+</div>
+</div>
+</section>
 </div>

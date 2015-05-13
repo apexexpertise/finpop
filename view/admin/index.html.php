@@ -42,7 +42,7 @@
 	include 'view/prologue.html.php';
 	include 'view/header.html.php'; ?>
 <div class="container" style="width: 100%;">
-	<div class="row" style="position: fixed; width:100%;z-index: 100;">
+	<div class="row" style="position: fixed; width:100%;z-index: 100;margin-top: 7.66%;">
 
 		<div class="col-md-2 column " style="padding:0px;height:51px;background-image: url('/view/css/admin/layer.png');"></div>
 		<div class="col-md-10 column" style="padding:0px;height:51px;background-image: url('/view/css/admin/layer.png');">
@@ -102,7 +102,7 @@
             <div class="col-md-10 column" id="main-panel" style="padding-bottom: 100px;height: 80%;overflow: scroll;position: fixed;right: 0;  top: 177px;">
             <?php if(isset($_SESSION['messages'])) { include 'view/header/message.html.php'; } ?>
            <div class="row">
-				<div class="col-md-8 column" style="padding:0px;">
+				<div class="col-md-12 column" style="padding:0px;">
 				
             <?php endif; ?>
 
@@ -130,6 +130,10 @@
 			</p>
 		<hr/>
 		</div>
+		 </div>
+    </div>
+    <div class="row">
+    <div class="col-md-8 column">
             <?php if (!empty($this['tasks'])) : ?>
             <table class="table table-striped table-hover ">
                 <?php foreach ($this['tasks'] as $task) : ?>
@@ -143,12 +147,12 @@
              <br/>
             <?php else : ?>
             
-             <p class="text-primary" style="text-align:center;"><small> <?php echo Text::_("No tienes tareas pendientes"); ?></small></p>
+             <p class="text-info" style="text-align:center;margin-top:15px;"><strong> <?php echo Text::_("No tienes tareas pendientes"); ?></strong></p>
            <?php endif; ?>
        
    
+   
     </div>
-    
 				<div class="col-md-4 column">
 				
     <?php
@@ -172,27 +176,29 @@
 
                     });
                     </script>
-                    <h3><?php echo Text::_("actividad reciente"); ?></h3>
-                    <?php echo Text::_("Ver Feeds por:"); ?>
-
-                    <p class="categories">
+                    	<h3 class="dark-grey" style="margin-top:0px;"><?php echo Text::_("actividad reciente"); ?></h3>
+                  <p class="text-info" style="margin-top:40px;">  Voir RSS par: 
                         <?php foreach (Feed::_admin_types() as $id=>$cat) : ?>
                         <a href="/admin/recent/?feed=<?php echo $id ?>#feed" <?php echo ($feed == $id) ? 'class="'.$cat['color'].'"': 'class="hov" rel="'.$cat['color'].'"' ?>><?php echo $cat['label'] ?></a>
                         <?php endforeach; ?>
                     </p>
 
-                    <div class="scroll-pane">
-                        <?php foreach ($items as $item) :
-                            $odd = !$odd ? true : false;
-                            ?>
-                        <div class="subitem<?php if ($odd) echo ' odd';?>">
-                           <span class="datepub"><?php echo Text::get('feed-timeago', $item->timeago); ?></span>
-                           <div class="content-pub"><?php echo $item->html; ?></div>
-                        </div>
+                   <div class="scroll-pane">
+            <?php foreach ($items as $item) :
+                $odd = !$odd ? true : false;
+                ?>
+                <div class="well">  
+                <blockquote>
+                  <div class="content-pub" style="  width: 300px;"><?php echo $item->html; ?></div>    
+ <span class="datepub"><small><?php echo Text::get('feed-timeago', $item->timeago); ?></small></span>
+             
+</blockquote>        
+                    
+            </div>
                         <?php endforeach; ?>
                     </div>
 
-                    <a href="/admin/recent/<?php echo isset($_GET['feed']) ? '?feed='.$_GET['feed'] : ''; ?>" style="margin-top:10px;float:right;text-transform:uppercase">Ver más</a>
+                    <a href="/admin/recent/<?php echo isset($_GET['feed']) ? '?feed='.$_GET['feed'] : ''; ?>" style="margin-top:10px;float:right;text-transform:uppercase">Voir plus</a>
                    
                     </div>
                 </div>

@@ -20,11 +20,14 @@
 use Goteo\Library\Text;
 
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p>Banni&egrave;res  </p>
 		<hr />
 		</div>
-<a href="/admin/banners/add" class="button red"><?php echo Text::_("Nouvelle Banni&eacute;re"); ?></a>
+<a href="/admin/banners/add" ><?php echo Text::_("Nouvelle Banni&eacute;re"); ?></a>
 
 <div class="widget board">
     <?php
@@ -78,4 +81,7 @@ use Goteo\Library\Text;
     <?php else : ?>
     <p>PAS DE R&eacute;SULTAT</p>
     <?php endif; ?>
+</div>
+</div>
+</section>
 </div>

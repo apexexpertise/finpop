@@ -26,8 +26,9 @@
 	
 }
 .title-admin hr{
-	width:100%;
+	width:110%;
 	margin-top:29px;
+	margin-left: -31px; 
 }
  .item {
  background-color:#f6f6f6;

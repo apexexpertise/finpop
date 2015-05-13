@@ -31,39 +31,37 @@ foreach ( $filters as $key => $value ) {
 
 $pagedResults = new \Paginated ( $this ['projects'], 10, isset ( $_GET ['page'] ) ? $_GET ['page'] : 1 );
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p>Project administration </p>
 		<hr/>
 		</div>
+		<a href="/admin/translates" class="btn btn-default" style="color:white">Attribuer traducteurs</a>
 <div class="widget board">
-	<form id="filter-form" action="/admin/projects" method="get"
-		class="form-horizontal">
+	<form id="filter-form" action="/admin/projects" method="get">
 		<input type="hidden" name="filtered" value="yes" />
 	
-		<fieldset style="width: 500px; border: none;">
+		<div class="form-group col-lg-5">
 		
 			<div class="form-group">
-				<label for="name-filter" class="col-lg-4 control-label text-info"> <small> Nom/Email 
-					d'auteur: </small></label>
-				<div class="col-lg-7">
+				<label for="name-filter">  Nom/Email 
+					d'auteur: </label>
+			
 					<input type="text" id="name-filter" name="name"
 						class="form-control" value="<?php echo $filters['name']?>" />
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="proj_name-filter" class="col-lg-4 control-label text-info"> <small>Nom du
-					projet: </small></label>
-				<div class="col-lg-7">
+				
+				<label for="proj_name-filter"> Nom du
+					projet: </label>
+			
 					<input id="proj_name-filter"  class="form-control"
 						name="proj_name" value="<?php echo $filters['proj_name']; ?>"
 						/>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="category-filter" class="col-lg-4 control-label text-info"> <small> Dans la
-					cat&eacute;gorie: </small></label>
-				<div class="col-lg-7">
+			
+				<label for="category-filter">  Dans la
+					cat&eacute;gorie:</label>
+				
 					<select id="category-filter" class="form-control" name="category"
 						onchange="document.getElementById('filter-form').submit();">
 
@@ -73,12 +71,10 @@ $pagedResults = new \Paginated ( $this ['projects'], 10, isset ( $_GET ['page'] 
 							<?php if ($filters['category'] == $categoryId) echo ' selected="selected"';?>><?php echo $categoryName; ?></option>
                     <?php endforeach; ?>
                     </select>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="status-filter" class="col-lg-4 control-label text-info"><small> Afficher
-					par l'Etat: </small></label>
-				<div class="col-lg-7">
+				
+				<label for="status-filter"> Afficher
+					par l'Etat: </label>
+				
 					<select id="status-filter" class="form-control" name="status"
 						onchange="document.getElementById('filter-form').submit();">
 						<option value="-1"
@@ -92,12 +88,10 @@ $pagedResults = new \Paginated ( $this ['projects'], 10, isset ( $_GET ['page'] 
 							<?php if ($filters['status'] == $statusId) echo ' selected="selected"';?>><?php echo $statusName; ?></option>
                     <?php endforeach; ?>
                     </select>
-				</div>
-			</div>
+				
 			
-			<div class="form-group">
-			<label for="order-filter" class="col-lg-4 control-label text-info"><small>Trier par:</small></label>
-			<div class="col-lg-7">
+			<label for="order-filter">Trier par:</label>
+			
 				<select id="order-filter" class="form-control" name="order"
 					onchange="document.getElementById('filter-form').submit();">
                     <?php foreach ($this['orders'] as $orderId=>$orderName) : ?>
@@ -105,19 +99,17 @@ $pagedResults = new \Paginated ( $this ['projects'], 10, isset ( $_GET ['page'] 
 						<?php if ($filters['order'] == $orderId) echo ' selected="selected"';?>><?php echo $orderName; ?></option>
                     <?php endforeach; ?>
                     </select>
-			</div>
-			</div>
-			<div class="form-group">
-				<div class="col-lg-7 col-lg-offset-2">
+			
 					
-					<a href="/admin/translates" class="btn btn-default btn-raised">Attribuer traducteurs</a>
+					
+					<br/>
 					<input type="submit" name="filter" value="Chercher"
-						class="btn btn-info btn-raised"/>
+						class="btn btn-primary" style="float:right;"/>
 						
 						
-				</div>
+				
 			</div>
-		</fieldset>
+		</div>
 	</form>
 	<br/>
 	<br/>
@@ -143,9 +135,9 @@ if (! empty ( $this ['projects'] )) :
 	while ( $project = $pagedResults->fetchPagedRow () ) :
 		?>
 <div class="widget board">
-	<table class="table table-striped table-hover ">
+	<table class="table table-hover ">
 		<thead>
-			<tr class="info">
+			<tr class="active">
 				<th style="width: 250px;">Projet</th>
 				<!-- edit -->
 				<th style="min-width: 150px;">Cr&eacute;ateur</th>
@@ -161,14 +153,14 @@ if (! empty ( $this ['projects'] )) :
 
 		<tbody>
 			<tr>
-				<td><a href="/project/<?php echo $project->id; ?>" target="_blank"
-					title="Preview"><?php echo $project->name; ?></a></td>
-				<td><a href="mailto:<?php echo $project->user->email; ?>"><?php echo substr($project->user->email, 0, 100); ?></a></td>
-				<td><?php echo date('d-m-Y', strtotime($project->updated)); ?></td>
+				<td><p class="text-info"><a href="/project/<?php echo $project->id; ?>" target="_blank"
+					title="Preview"><?php echo $project->name; ?></a></p></td>
+				<td><p class="text-info"><a href="mailto:<?php echo $project->user->email; ?>"><?php echo substr($project->user->email, 0, 100); ?></a></p></td>
+				<td><p class="text-info"><?php echo date('d-m-Y', strtotime($project->updated)); ?></p></td>
 				<td><?php echo ($project->status == 1 && !$project->draft) ? '<span style="color: green;">En n&eacute;gociation</span>' : $this['status'][$project->status]; ?></td>
-				<td style="text-align: center;"><?php echo $project->node; ?></td>
-				<td style="text-align: right;"><?php echo \amount_format($project->mincost).'€'; ?></td>
-				<td style="text-align: right;"><?php echo \amount_format($project->maxcost).'€'; ?></td>
+				<td style="text-align: center;"><p class="text-info"><?php echo $project->node; ?></p></td>
+				<td style="text-align: right;"><p class="text-info"><?php echo \amount_format($project->mincost).'€'; ?></p></td>
+				<td style="text-align: right;"><p class="text-info"><?php echo \amount_format($project->maxcost).'€'; ?></p></td>
 			</tr>
 			<tr>
 				<td colspan="7"><?php
@@ -271,3 +263,6 @@ $pagedResults->setLayout ( new DoubleBarLayout () );
 	?>
 </ul>
 <?php endif; ?>
+</div>
+</section>
+</div>

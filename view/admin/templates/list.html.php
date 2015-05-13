@@ -25,42 +25,39 @@ $translator = ACL::check('/translate') ? true : false;
 
 $filters = $this['filters'];
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p>Templates </p>
 		<hr/>
 		</div>
 <div class="widget board">
     <form id="filter-form" action="/admin/templates" method="get">
-        <table>
-            <tr>
-                <td>
+    <div class="form-group col-lg-4">
+       
                     <label for="group-filter">Filtre groupement:</label><br />
-                    <select id="group-filter" name="group">
+                    <select id="group-filter" name="group" class="form-control">
                         <option value="">Tous les groupes</option>
                     <?php foreach ($this['groups'] as $groupId=>$groupName) : ?>
                         <option value="<?php echo $groupId; ?>"<?php if ($filters['group'] == $groupId) echo ' selected="selected"';?>><?php echo $groupName; ?></option>
                     <?php endforeach; ?>
                     </select>
-                </td>
-                <td>
+               
                     <label for="name-filter">Filtrer par nom ou par sujet:</label><br />
-                    <input type="text" id ="name-filter" name="name" value ="<?php echo $filters['name']?>" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" name="filter" value="Filtrer">
-                </td>
-            </tr>
-        </table>
+                    <input type="text" id ="name-filter" name="name" value ="<?php echo $filters['name']?>" class="form-control"/>
+              <br/>
+                    <input type="submit" name="filter" value="Filtrer" class="btn btn-primary" style="float:right">
+               
+        </div>
     </form>
 </div>
 
 <div class="widget board">
     <?php if (!empty($this['templates'])) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th><!-- Editar --></th>
                 <th>Mod&eacute;le</th>
                 <th>Description</th>
@@ -81,6 +78,9 @@ $filters = $this['filters'];
         </tbody>
     </table>
     <?php else : ?>
-    <p>PAS DE R&eacute;SULTAT</p>
+ <p class="text-primary">Pas de r&eacute;sultat</p>
     <?php endif; ?>
+</div>
+</div>
+</section>
 </div>

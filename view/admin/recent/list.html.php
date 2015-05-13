@@ -5,8 +5,11 @@ use Goteo\Library\Text,
 $feed = $this['feed'];
 $items = $this['items'];
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
-<p >Historiques </p>
+<p >Activit&eacute;s Recentes </p>
 		<hr/>
 		</div>
 <div class="widget feed">
@@ -25,25 +28,33 @@ $items = $this['items'];
 
         });
         </script>
-        <h3 class="title">Activit&eacute; r&eacute;cente</h3>
-        Voir RSS par:
+      	
+     <p class="text-info">  Voir RSS par:</p>
 
-        <p class="categories">
+        <p class="categories" style="margin-left:50%">
+      
             <?php 
                 foreach (Feed::_admin_types() as $id=>$cat) : ?>
             <a href="/admin/recent/?feed=<?php echo $id ?>" <?php echo ($feed == $id) ? 'class="'.$cat['color'].'"': 'class="hov" rel="'.$cat['color'].'"' ?>><?php echo $cat['label'] ?></a>
             <?php endforeach; ?>
+          
         </p>
 
         <div class="scroll-pane">
             <?php foreach ($items as $item) :
                 $odd = !$odd ? true : false;
                 ?>
-            <div class="subitem<?php if ($odd) echo ' odd';?>">
-               <span class="datepub"><?php echo Text::get('feed-timeago', $item->timeago); ?></span>
-               <div class="content-pub"><?php echo $item->html; ?></div>
+                <div class="well">  
+                <blockquote>
+                  <div class="content-pub"><strong><?php echo $item->html; ?></strong></div>    
+ <span class="datepub"><small><?php echo Text::get('feed-timeago', $item->timeago); ?></small></span>
+             
+</blockquote>        
+                    
             </div>
             <?php endforeach; ?>
         </div>
-
+</div>
+</div>
+</section>
 </div>

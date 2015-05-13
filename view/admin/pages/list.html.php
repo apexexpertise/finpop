@@ -23,20 +23,23 @@ use Goteo\Library\Text,
 
 $translator = ACL::check('/translate') ? true : false;
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p>Pages </p>
 		<hr/>
 		</div>
 <?php if (!isset($_SESSION['admin_node'])) : ?>
-<a href="/admin/pages/add" class="button">Nouvelle page</a>
+<a href="/admin/pages/add" class="btn btn-default" style="color:white">Nouvelle page</a>
 <?php endif; ?>
 
 
 <div class="widget board">
     <?php if (!empty($this['pages'])) : ?>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th><!-- Editar --></th>
                 <th>Page</th>
                 <th>Description</th>
@@ -48,8 +51,8 @@ $translator = ACL::check('/translate') ? true : false;
             <?php foreach ($this['pages'] as $page) : ?>
             <tr>
                 <td><a href="/admin/pages/edit/<?php echo $page->id; ?>">[Editer]</a></td>
-                <td><?php echo $page->name; ?></td>
-                <td><?php echo $page->description; ?></td>
+                <td><p class="text-info"><?php echo $page->name; ?></p></td>
+                <td><p class="text-info"><?php echo $page->description; ?></p></td>
                 <td><a href="<?php echo $page->url; ?>" target="_blank">[Voir]</a></td>
                 <td>
                 <?php if ($translator && $node == \GOTEO_NODE) : ?>
@@ -61,6 +64,10 @@ $translator = ACL::check('/translate') ? true : false;
         </tbody>
     </table>
     <?php else : ?>
-    <p>PAS DE RÉSULTAT</p>
+    <p class="text-primary">PAS DE RÉSULTAT</p>
     <?php endif; ?>
+</div>
+
+</div>
+</section>
 </div>

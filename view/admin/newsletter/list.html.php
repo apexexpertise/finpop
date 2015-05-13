@@ -34,20 +34,25 @@ $tpl = 33;
 $template = Template::get($tpl);
 
 ?>
+<div class="container-fluid">
+    <section class="container">
+		<div class="container-page">
  <div class="title-admin">
 <p >Bulletin  </p>
 		<hr />
 		</div>
-<div class="widget board">
-    <p><?php echo utf8_encode("Sélectionnez le modèle. Le contenu traduit est utilisé, peut-être que vous voulez ") ?><a href="/admin/templates?group=massive" target="_blank">le revoir</a></p>
-    <p><strong>NOTE:</strong> <?php echo utf8_encode("ce système ne peut pas ajouter des variables dans le contenu, le même contenu est généré pour tous les destinataires<br/>
-    Pour le contenu personnalisé, vous devez utiliser la fonctionnalité  ") ?><a href="/admin/mailing" >Communications</a>.</p>
+		<p class="text-primary"><?php echo utf8_encode("Sélectionnez le modèle. Le contenu traduit est utilisé, peut-être que vous voulez ") ?><a href="/admin/templates?group=massive" target="_blank" class="link">le revoir</a></p>
+    <p class="text-info"><strong>NOTE:</strong> </p><p class="text-primary"><?php echo utf8_encode("ce système ne peut pas ajouter des variables dans le contenu, le même contenu est généré pour tous les destinataires<br/>
+    Pour le contenu personnalisé, vous devez utiliser la fonctionnalité  ") ?><a href="/admin/mailing" class="link">Communications</a>.</p>
  
+<div class="widget board">
+<div class="form-group col-lg-6">
+    
     <form action="/admin/newsletter/init" method="post" onsubmit="return confirm(<?php echo utf8_encode("L'expédition sera activé automatiquement, nous continuons?") ?>);">
 
     <p>
         <label>Mod&egrave;les massives: 
-            <select id="template" name="template" >
+            <select id="template" name="template" class="form-control">
             <?php foreach ($templates as $tplId=>$tplName) : ?>
                 <option value="<?php echo $tplId; ?>" <?php if ( $tplId == $tpl) echo 'selected="selected"'; ?>><?php echo $tplName; ?></option>
             <?php endforeach; ?>
@@ -63,17 +68,17 @@ $template = Template::get($tpl);
     </p>
         
     <p>
-        <input type="submit" name="init" value="Initialiser" />
+        <input type="submit" name="init" value="Initialiser" class="btn btn-primary" style="float:right"/>
     </p>
 
     </form>
 </div>
-
+</div>
 <?php if (!empty($list)) : ?>
 <div class="widget board">
-    <table>
+    <table class="table table-hover">
         <thead>
-            <tr>
+            <tr class="active">
                 <th></th>
                 <th>Date</th>
                 <th>Question</th>
@@ -98,3 +103,7 @@ $template = Template::get($tpl);
     </table>
 </div>
 <?php endif; ?>
+
+</div>
+</section>
+</div>
