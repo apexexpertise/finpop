@@ -10,12 +10,12 @@
 }
 .sl-slide hr {
 position: absolute;
-top: 346px;	
+top: 334px;	
   height: 3px;
   width: 21%;
   color: white;
   background-color: white;
-  margin-left: 565px;
+  margin-left: 505px;
 }
 .sl-slide h2 { 
   position: absolute;
@@ -29,7 +29,7 @@ top: 346px;
 }
 .sl-slide p{ 
   position: absolute;
-  top: 410px;
+  top: 370px;
   text-align: center;
   width: 100%;
   font-family: Rufina;

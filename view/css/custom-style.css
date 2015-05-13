@@ -834,17 +834,17 @@ div.panel-scroll {
 
 div.features {
   position: absolute;
-  top: 13%; 
+  top: 32em; 
   width: 100%;
   z-index: 1000;
 }
 div.features-blur-box{
   width: 100%;
-  height: 5%;
+  height: 11.5em;
   background: rgba(53, 53, 53, 0.5);
   z-index: 1000;
   position: absolute;
-  top: 13%; 
+  top: 33em; 
   filter: blur(5px);
   -webkit-filter: blur(4px);
   -moz-filter: blur(4px);
@@ -2521,7 +2521,7 @@ div#header div#menu>ul>li.home>a {
 	top: 20%;
 	margin-left: -90px; /*Modified by Amal*/
 	margin-top: -6px;
-	background: url('header/logo-white.png') no-repeat;
+	background: url('header/logo-white.png') no-repeat ;
 	background-size: cover;
 	left: 0px;
 }
