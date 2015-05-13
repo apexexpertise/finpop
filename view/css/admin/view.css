@@ -17,14 +17,10 @@
  *
  */
 @import url('fonts.css');
-section.container-fluid{
-	margin-left:0px;
-	
-}
-div.container{
-	margin-left:0px;
-}
 
+div.board{
+	width:95%;
+}
 .title-admin p{
 	padding-left:20px;
 	color:#555555;
