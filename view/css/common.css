@@ -42,11 +42,6 @@ body {
     position: relative;
 }
 
-.widget {
-width:85%;
-}
-	
-}
 /* body, td, th, a, a:link, a:visited, a:active, a:hover, input, textarea, button {    
     font-size: 12px;
     color: #58595b;

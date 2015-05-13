@@ -17,6 +17,13 @@
  *
  */
 @import url('fonts.css');
+section.container-fluid{
+	margin-left:0px;
+	
+}
+div.container{
+	margin-left:0px;
+}
 
 .title-admin p{
 	padding-left:20px;
@@ -26,9 +33,9 @@
 	
 }
 .title-admin hr{
-	width:110%;
+	width:200%;
 	margin-top:29px;
-	margin-left: -31px; 
+	margin-left: -150px; 
 }
  .item {
  background-color:#f6f6f6;
