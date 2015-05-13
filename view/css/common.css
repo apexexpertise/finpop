@@ -41,10 +41,10 @@ body {
     top: 0;
     position: relative;
 }
-.container-page{
-	  width: 97%;
-  margin-right: 15px;
-  margin-left: 15px;
+
+.widget {
+width:85%;
+}
 	
 }
 /* body, td, th, a, a:link, a:visited, a:active, a:hover, input, textarea, button {    
