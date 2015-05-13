@@ -8,7 +8,7 @@
 .texte{
 font-family: Open Sans Light;
 font-size: 24px;
-width: 780px;
+width: 55%;
 color: white;
 text-align: center;
 margin-left: 23%;
@@ -20,12 +20,12 @@ max-width: 100%;
 
 .itemimg {
  max-width: 100%;	 
- width: 62%;
- height: 82%;
+ width: 180px;
+ height: 180px;
  border-radius:50%;
  box-shadow: 0 0 100px #f0f0f3 inset;
  position: absolute;
- margin: 7% 19%;
+ margin: 19px 19%;
  }
 .pastille{
  background-repeat: no-repeat; 
