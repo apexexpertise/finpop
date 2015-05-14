@@ -35,9 +35,10 @@ foreach ($filters as $key=>$value) {
 
 $pagedResults = new \Paginated($this['posts'], 10, isset($_GET['page']) ? $_GET['page'] : 1);
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+
+    <div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
  <div class="title-admin">
 <p >Blog  </p>
 		<hr/>
@@ -162,5 +163,5 @@ $pagedResults = new \Paginated($this['posts'], 10, isset($_GET['page']) ? $_GET[
 <?php endif; ?>
 </div>
 
-</section>
+</div>
 </div>
