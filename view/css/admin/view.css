@@ -18,6 +18,9 @@
  */
 @import url('fonts.css');
 
+div.board{
+	width:95%;
+}
 .title-admin p{
 	padding-left:20px;
 	color:#555555;
