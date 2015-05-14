@@ -96,7 +96,7 @@ $(document).ready(function(){
 					<div class="widget projects">
 					<h2 class="title-voirproj"><?php echo $list['title']?>
 							<span class="btn-group"> <a class="btn btn-default"
-							href="/discover/view/<?php echo $type; ?>"><i
+							href="/discover/view/<?php echo $type;?>?type=<?php  echo $list['title']; ?>"><i
 								class="fa fa-align-justify"></i>&nbsp;<?php echo Text::get('regular-see_all'); ?></a></span>
 
 					</h2>

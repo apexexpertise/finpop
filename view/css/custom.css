@@ -160,6 +160,24 @@ span.finp {
 	
 	margin-top: 0px;
 }
+
+#type{
+	
+	font-family: 'Open Sans Semibold', sans-serif;
+  text-transform: uppercase;
+  font-size: 60px;
+  padding-top: 60px;
+}
+
+#tit-slid-resultat{
+	font-family: 'Open Sans Light', sans-serif;
+  text-transform: uppercase;
+  font-size: 60px;
+  padding-top: 60px;
+	
+}
+
+
 #tit-slid-voir{
 	font-family: 'Open Sans Semibold', sans-serif;
   text-transform: uppercase;
@@ -333,6 +351,18 @@ p.section-condition {
 	font-family: 'Open Sans', sans-serif;
 	text-align: left;
 	font-size: 18px;
+}
+
+div#resultat_projet{
+	
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-bottom: 0px;
+	text-align: center;
+	background-image: url('/view/css/images/slide-resultat.png');
+	color: white;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 div#voir_projet{

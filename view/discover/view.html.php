@@ -33,18 +33,89 @@ $bodyClass = 'discover';
 include 'view/prologue.html.php';
 
 include 'view/header.html.php' ?>
+<link href="/view/css/custom.css" rel="stylesheet" type="text/css">
 
 
-        <div id="sub-header">
+<script type="text/javascript">
+$(document).ready(function(){
+    // Condition d'affichage du bouton
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100){
+            $('.go_top').fadeIn();
+        }
+        else{
+            $('.go_top').fadeOut();
+        }
+    });
+    // Evenement au clic
+    $('.go_top').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        return false;
+    });
+});
+
+</script>
+
+
+<div class="jumbotron" id="resultat_projet">
+
+	<div class="container"> 
+		<div class="content-center2">
+			<span id="tit-slid-resultat"> les projets&nbsp;</span> <span id="type"><?php echo $_GET['type'];?> </span> 
+			
+			<p id="content-slide2">
+				Par Cat&eacute;gorie, Lieu ou Type de r&eacute;compenses et
+				Retomb&eacute;es,<br> <span id="content-slide3">Localisez le projet
+				</span><span id="content-slide4">qui vous motive le plus</span>
+
+			</p>
+		</div>
+	</div>
+</div>
+
+
+       <!--   <div id="sub-header">
             <div>
                 <h2 class="title"><?php echo $this['title']; ?></h2>
             </div>
 
-        </div>
-<div class="container" id="projects-phares">
-		<div class="row clearfix">
+        </div>-->
+        
+        
+<div class="container" id="projects-area">
+	<div class="row clearfix">
+	
+	<div class="row clearfix">
+			<div class="col-md-3 column">
+			
+			   <?php
+												
+												echo new View ( 
+
+												'view/discover/searcher.html.php', array (
+														'categories' => 
+
+														$categories,
+														'locations' => $locations,
+														'rewards' => $rewards 
+												) );
+												?>
+				</div>
+				
+				<div class="col-md-9 column box-border-left">
+				<a href="#" class="go_top">Remonter</a>
+				
+				
+				
+					<div class="widget projects">
+					<h2 class="title-voirproj"><?php echo $list['title']?>
+
+					</h2>
+
+					<hr id="ligne-voirproj">
+				
                 <?php while ($project = $pagedResults->fetchPagedRow()) :
-                		echo '<div class="col-md-4 column" >';
+                		echo '<div class="col-md-9 column box-border-left">';
                         echo new View('view/project/widget/project.html.php', array(
                             'project' => $project
                             ));
@@ -56,7 +127,9 @@ include 'view/header.html.php' ?>
             </ul>
     </div>
 </div>       
-
+</div>
+</div>
+</div>
         <?php include 'view/footer.html.php' ?>
     
 <?php include 'view/epilogue.html.php' ?>
