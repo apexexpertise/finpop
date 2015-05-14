@@ -23,9 +23,7 @@ use Goteo\Library\Text;
 $filters = $this['filters'];
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 
  <div class="title-admin">
 <p >Reviews  </p>
@@ -150,6 +148,3 @@ $filters = $this['filters'];
 <?php else : ?>
 <p class="text-primary">Pas de r&eacute;sultat</p>
 <?php endif; ?>
-</div>
-</div>
-</div>

@@ -38,13 +38,12 @@ $cols = count($this['columns']);
 $per = 100 / $cols;
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 		<div class="title-admin">
 <p><?php echo $this['name']  ?> </p>
 		<hr/>
 		</div>
+		<div class="widget board">
 <?php if (!empty($this['addbutton'])) : ?>
 <a href="<?php echo $this['url'] ?>/add" class="btn btn-default" style="color:white"><?php echo $this['addbutton'] ?></a>
 <?php endif; ?>
@@ -53,7 +52,7 @@ $per = 100 / $cols;
 <?php endif; ?>
 <!-- Filtro -->
 <?php if (!empty($filters)) : ?>
-
+</div>
 <div class="widget board">
     <form id="filter-form" action="<?php echo $this['url']; ?>" method="get">
         <?php foreach ($filters as $id=>$fil) : ?>
@@ -116,6 +115,4 @@ $per = 100 / $cols;
     <p class="text-primary">Pas de r&eacute;sultat</p>
     <?php endif; ?>
 </div>
-</div>
-</div>
-</div>
+

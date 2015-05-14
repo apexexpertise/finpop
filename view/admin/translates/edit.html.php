@@ -37,9 +37,7 @@ function assign() {
     }
 }
 </script>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <div class="widget">
 <?php if ($this['action'] == 'edit') : ?>
     <h3 class="title">Traducteurs pour le projet <?php echo $project->name ?></h3>
@@ -102,7 +100,4 @@ function assign() {
        <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right;" />
        </div>
     </form>
-</div>
-</div>
-</div>
 </div>

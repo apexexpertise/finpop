@@ -21,13 +21,11 @@
 use Goteo\Library\Text;
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
-<div class="widget board">
+
+<div class="widget board" style="margin-left:10px;">
     <!-- superform -->
     <form action="<?php echo $this['form']['action']; ?>" method="post" enctype="multipart/form-data">
-    	<div class="form-group col-lg-4">
+    	
         <dl>
             <?php foreach ($this['form']['fields'] as $Id=>$field) : ?>
                 <dt><label for="<?php echo $Id; ?>"><?php echo $field['label']; ?></label></dt>
@@ -56,9 +54,6 @@ use Goteo\Library\Text;
             <?php endforeach; ?>
         </dl>
         <input type="submit" class="btn btn-primary" style="float:right;" name="<?php echo $this['form']['submit']['name']; ?>" value="<?php echo $this['form']['submit']['label']; ?>" />
-   </div>
+  
     </form>
-</div>
-</div>
-</div>
 </div>

@@ -23,15 +23,15 @@ use Goteo\Library\Text,
 
 $translator = ACL::check('/translate') ? true : false;
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p>Pages </p>
 		<hr/>
 		</div>
 <?php if (!isset($_SESSION['admin_node'])) : ?>
+<div class="widget board">
 <a href="/admin/pages/add" class="btn btn-default" style="color:white">Nouvelle page</a>
+</div>
 <?php endif; ?>
 
 
@@ -64,10 +64,6 @@ $translator = ACL::check('/translate') ? true : false;
         </tbody>
     </table>
     <?php else : ?>
-    <p class="text-primary">PAS DE RÉSULTAT</p>
+    <p class="text-primary">Pas de r&eacute;sultat</p>
     <?php endif; ?>
-</div>
-
-</div>
-</div>
 </div>

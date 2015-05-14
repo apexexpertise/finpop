@@ -22,15 +22,14 @@ use Goteo\Library\Text;
 
 $filters = $this['filters'];
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p>Traductions du projet </p>
 		<hr/>
 		</div>
+		<div class="widget board">
 <a href="/admin/translates/add" class="btn btn-default" style="color:white">Nouveau projet &aacute; traduire</a>
-
+</div>
 <div class="widget board">
 <form id="filter-form" action="/admin/translates" method="get">
   	<div class="form-group col-lg-4">
@@ -83,6 +82,3 @@ $filters = $this['filters'];
 <?php else : ?>
 <p class="text-primary">Pas de r&eacute;sultat</p>
 <?php endif; ?>
-</div>
-</div>
-</div>

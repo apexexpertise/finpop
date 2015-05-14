@@ -34,9 +34,7 @@ foreach ($filters as $key => $value) {
 $pagedResults = new \Paginated($this['sended'], 20, isset($_GET['page']) ? $_GET['page'] : 1);
 ?>
 
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 		<div class="title-admin">
 <p>Historiques </p>
 		<hr/>
@@ -116,6 +114,3 @@ $pagedResults = new \Paginated($this['sended'], 20, isset($_GET['page']) ? $_GET
 <?php else : ?>
 <p class="text-primary">Pas de r&eacute;sultat</p>
 <?php endif; ?>
-</div>
-</div>
-</div>

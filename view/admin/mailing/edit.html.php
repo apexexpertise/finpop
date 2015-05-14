@@ -29,9 +29,7 @@ $templates = array(
 );
 // lista de destinatarios segun filtros recibidos, todos marcados por defecto
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <script type="text/javascript">
 jQuery(document).ready(function ($) {
 
@@ -117,7 +115,4 @@ jQuery(document).ready(function ($) {
 </div>
     </form>
    
-</div>
-</div>
-</div>
 </div>

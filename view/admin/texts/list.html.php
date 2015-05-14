@@ -36,15 +36,15 @@ $cols = count($this['columns']);
 $per = 100 / $cols;
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p>Interface Textes  </p>
 		<hr/>
 		</div>
 <?php if (!empty($this['addbutton'])) : ?>
+<div class="widget board">
 <a href="<?php echo $this['url'] ?>/add" class="button"><?php echo $this['addbutton'] ?></a>
+</div>
 <?php endif; ?>
 <!-- Filtro -->
 <?php if (!empty($filters)) : ?>
@@ -105,7 +105,4 @@ $per = 100 / $cols;
     <p class="text-primary">Aucun r&eacute;sultat</p>
     <?php endif; ?>
 
-</div>
-</div>
-</div>
 </div>

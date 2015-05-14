@@ -31,9 +31,7 @@ $projects = Model\Promote::available($promo->project, $node);
 $status = Model\Project::status();
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <form method="post" action="/admin/promote">
 <div class="form-group col-lg-4">
     <input type="hidden" name="action" value="<?php echo $this['action'] ?>" />
@@ -72,6 +70,3 @@ $status = Model\Project::status();
     <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right" />
     </div>
 </form>
-</div>
-</div>
-</div>

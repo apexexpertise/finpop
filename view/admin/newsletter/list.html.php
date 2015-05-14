@@ -34,17 +34,16 @@ $tpl = 33;
 $template = Template::get($tpl);
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p >Bulletin  </p>
 		<hr />
 		</div>
+	<div class="widget board">
 		<p class="text-primary"><?php echo utf8_encode("Sélectionnez le modèle. Le contenu traduit est utilisé, peut-être que vous voulez ") ?><a href="/admin/templates?group=massive" target="_blank" class="link">le revoir</a></p>
     <p class="text-info"><strong>NOTE:</strong> </p><p class="text-primary"><?php echo utf8_encode("ce système ne peut pas ajouter des variables dans le contenu, le même contenu est généré pour tous les destinataires<br/>
     Pour le contenu personnalisé, vous devez utiliser la fonctionnalité  ") ?><a href="/admin/mailing" class="link">Communications</a>.</p>
- 
+ </div>
 <div class="widget board">
 <div class="form-group col-lg-6">
     
@@ -104,6 +103,3 @@ $template = Template::get($tpl);
 </div>
 <?php endif; ?>
 
-</div>
-</div>
-</div>

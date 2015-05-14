@@ -33,7 +33,7 @@ $status = Model\Project::status();
 
   
 <form class="form-horizontal" method="post" action="/admin/banners" enctype="multipart/form-data">
-	<div class="form-group col-lg-4">
+	<div class="form-group col-lg-4" style="margin-left:0px">
     <input type="hidden" name="action" value="<?php echo $this['action'] ?>" />
     <input type="hidden" name="order" value="<?php echo $banner->order ?>" />
     <input type="hidden" name="id" value="<?php echo $banner->id; ?>" />

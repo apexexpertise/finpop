@@ -21,9 +21,7 @@
 use Goteo\Library\Text;
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <p class="text-info"><strong><?php echo $this['template']->name; ?></strong>: <?php echo $this['template']->purpose; ?></p>
 
 <div class="widget board">
@@ -43,7 +41,4 @@ use Goteo\Library\Text;
         <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right"/>
         </div>
     </form>
-</div>
-</div>
-</div>
 </div>

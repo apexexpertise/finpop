@@ -12,9 +12,7 @@ foreach ($invest->rewards as $key => $data) {
     $rewards[$data->id] = $data->id;
 }
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <div class="widget">
     <p>
         <strong>Projet:</strong> <?php echo $project->name ?> (<?php echo $this['status'][$project->status] ?>)<br />
@@ -117,6 +115,3 @@ echo new SuperForm(array(
 
 ?>
 </form>
-</div>
-</div>
-</div>

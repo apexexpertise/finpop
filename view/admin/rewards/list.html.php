@@ -6,9 +6,7 @@ $filters = $this['filters'];
 
 $emails = Invest::emails(true);
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p>R&eacute;compenses  </p>
 		<hr />
@@ -82,7 +80,4 @@ $emails = Invest::emails(true);
 <?php else : ?>
     <p>Aucune contribution qui r&eacute;pondent le filtre.</p>
 <?php endif;?>
-</div>
-</div>
-</div>
 </div>

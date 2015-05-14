@@ -24,9 +24,7 @@ $user = $this['user'];
 $roles = $this['roles'];
 $langs = $this['langs'];
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <div class="widget">
     <table>
         <tr>
@@ -139,6 +137,4 @@ $langs = $this['langs'];
     </form>
 </div>
 <?php endif; ?>
-</div>
-</div>
-</div>
+

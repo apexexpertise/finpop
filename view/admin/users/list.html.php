@@ -51,15 +51,14 @@ foreach ($filters as $key=>$value) {
 
 $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] : 1);
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p>Gestion des utilisateurs  </p>
 		<hr/>
 		</div>
+		<div class="widget board">
 <a href="/admin/users/add" class="btn btn-default" style="color:white">Cr&eacute;er un utilisateur</a>
-
+</div>
 <div class="widget board">
     <form id="filter-form" action="/admin/users" method="get">
          <div style="float:left;margin:5px;">
@@ -173,7 +172,4 @@ $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] 
 <?php else : ?>
 <p>Pas de r&eacute;sultat</p>
 <?php endif; ?>
-</div>
-</div>
-</div>
 

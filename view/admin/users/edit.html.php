@@ -26,9 +26,7 @@ $user = $this['user'];
 $roles = $user->roles;
 array_walk($roles, function (&$role) { $role = $role->name; });
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <!-- <span style="font-style:italic;font-weight:bold;">Atención! Le llegará email de verificación al usuario como si se hubiera registrado.</span> -->
 <div class="widget">
     <dl>
@@ -66,7 +64,4 @@ array_walk($roles, function (&$role) { $role = $role->name; });
         <span style="font-style:italic;font-weight:bold;color:red;">Attention! les donn&eacute;es chang&eacute;e seront autmatiquement chang&eacute; aucune notification mail sera envoy&eacute;es.</span>
 
     </form>
-</div>
-</div>
-</div>
 </div>

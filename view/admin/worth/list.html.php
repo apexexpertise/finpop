@@ -21,9 +21,7 @@
 use Goteo\Library\Text;
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 		<div class="title-admin">
 	<p>Niveaux de m&eacute;ritocratie </p>
 		<hr/>
@@ -55,7 +53,4 @@ use Goteo\Library\Text;
     <?php else : ?>
      <p class="text-primary">IMPOSIBLE!!!Aucun Enregistrement Trouv&eacute;</p>
     <?php endif; ?>
-</div>
-</div>
-</div>
 </div>

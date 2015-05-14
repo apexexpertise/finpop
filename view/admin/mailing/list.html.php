@@ -23,9 +23,7 @@ use Goteo\Library\Text;
 $filters = $_SESSION['mailing']['filters'];
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p>Communications  </p>
 		<hr/>
@@ -87,7 +85,4 @@ $filters = $_SESSION['mailing']['filters'];
               <input type="submit" name="select" value="<?php echo Text::_("Recherche b&eacute;n&eacute;ficiaires"); ?>" class="btn btn-primary" style="float:right">
             </div>
     </form>
-</div>
-</div>
-</div>
 </div>

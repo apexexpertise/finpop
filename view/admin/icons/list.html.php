@@ -24,9 +24,7 @@ use Goteo\Library\Text,
 $translator = ACL::check('/translate') ? true : false;
 $filters = $this['filters'];
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p> Types de retour </p>
 		<hr/>
@@ -75,9 +73,6 @@ $filters = $this['filters'];
 
     </table>
     <?php else : ?>
-    <p><?php echo Text::_("Aucun résultat"); ?></p>
+    <p><?php echo Text::_("Aucun r&eacute;sultat"); ?></p>
     <?php endif; ?>
-</div>
-</div>
-</div>
 </div>

@@ -22,9 +22,7 @@ use Goteo\Library\Text;
 
 $data = $this['data'];
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <div class="widget">
     <form action="/admin/users/add" method="post">
     <div class="form-group col-lg-5">
@@ -48,7 +46,4 @@ $data = $this['data'];
 </div>
    </form>
    
-</div>
-</div>
-</div>
 </div>

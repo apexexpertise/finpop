@@ -67,7 +67,7 @@ $(document).ready(function(){
 </script>
 
 <form method="post" action="/admin/glossary/<?php echo $this['action']; ?>/<?php echo $post->id; ?>" enctype="multipart/form-data">
-
+<div class="widget board">
     <?php echo new SuperForm(array(
 
         'action'        => '',
@@ -151,5 +151,5 @@ $(document).ready(function(){
 
     ));
     ?>
-
+</div>
 </form>

@@ -21,9 +21,7 @@
 use Goteo\Library\Text;
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <div class="widget board">
     <!-- super form -->
     <form method="post" action="/admin/icons">
@@ -50,7 +48,4 @@ use Goteo\Library\Text;
         <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right"/>
         </div>
     </form>
-</div>
-</div>
-</div>
 </div>

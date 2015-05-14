@@ -5,9 +5,6 @@ use Goteo\Library\Text,
 $feed = $this['feed'];
 $items = $this['items'];
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
  <div class="title-admin">
 <p >Activit&eacute;s Recentes </p>
 		<hr/>
@@ -29,9 +26,7 @@ $items = $this['items'];
         });
         </script>
       	
-     <p class="text-info">  Voir RSS par:</p>
-
-        <p class="categories" style="margin-left:50%">
+     <p class="text-info">  Voir RSS par:
       
             <?php 
                 foreach (Feed::_admin_types() as $id=>$cat) : ?>
@@ -55,6 +50,4 @@ $items = $this['items'];
             <?php endforeach; ?>
         </div>
 </div>
-</div>
-</div>
-</div>
+

@@ -42,7 +42,7 @@
 	include 'view/prologue.html.php';
 	include 'view/header.html.php'; ?>
 <div class="container" style="width: 100%;">
-	<div class="row" style="position: fixed; width:100%;z-index: 100;margin-top: 7.66%;">
+	<div class="row" style="position: fixed; width:100%;z-index: 100;margin-top: 110px;">
 
 		<div class="col-md-2 column " style="padding:0px;height:51px;background-image: url('/view/css/admin/layer.png');"></div>
 		<div class="col-md-10 column" style="padding:0px;height:51px;background-image: url('/view/css/admin/layer.png');">
