@@ -46,21 +46,25 @@
 	font-family: 'Open Sans Light';
 	src: url('fonts/OpenSans-Light.ttf') format('truetype');
 }
+
 @font-face {
 	font-family: 'Open Sans Regular';
-	src: url('fonts/OpenSans-Regular.ttf') format('truetype');			
+	src: url('fonts/OpenSans-Regular.ttf') format('truetype');
 }
+
 @font-face {
 	font-family: 'Open Sans Bold';
-	src: url('fonts/OpenSans-Bold.ttf') format('truetype');			
+	src: url('fonts/OpenSans-Bold.ttf') format('truetype');
 }
+
 @font-face {
 	font-family: 'Open Sans Semibold';
-	src: url('fonts/OpenSans-Semibold.ttf') format('truetype');			
+	src: url('fonts/OpenSans-Semibold.ttf') format('truetype');
 }
+
 @font-face {
 	font-family: 'Open Sans ExtraBold';
-	src: url('fonts/OpenSans-ExtraBold.ttf') format('truetype');			
+	src: url('fonts/OpenSans-ExtraBold.ttf') format('truetype');
 }
 /***************************************Basic*******************************************************/
 ::-webkit-scrollbar { /* Scrollbars */
@@ -248,7 +252,7 @@ body, html, b, strong {
 }
 
 .text-center {
-		padding-top:15px;
+	padding-top: 15px;
 }
 
 .odin {
@@ -264,15 +268,12 @@ a:hover {
 div#header div#menu-no-home {
 	min-height: 50px;
 	/*height:50px;*/
-	overflow:hidden;
+	overflow: hidden;
 	height: 110px;
 	background-color: white;
 }
 /*tu redefinie ici les regles pour le nouveau menu ok ? */
-
-
-div#header div#menu-no-home>ul>li.explore>a
-	 {
+div#header div#menu-no-home>ul>li.explore>a {
 	max-width: 100%;
 	width: 100%;
 	padding: 23px;
@@ -294,11 +295,8 @@ div#header div#menu-no-home>ul>li.login>a {
 	text-transform: uppercase;
 }
 
-
-div#header div#menu-no-home>ul>li.create>a{
-
-
-max-width: 100%;
+div#header div#menu-no-home>ul>li.create>a {
+	max-width: 100%;
 	width: 100%;
 	padding-left: 335px;
 	padding-top: 50px;
@@ -307,14 +305,12 @@ max-width: 100%;
 	font-weight: bold;
 	color: black;
 	text-transform: uppercase;
-
 }
-
 
 div#header div#menu {
 	min-height: 110px;
-	opacity:0.59;
-    background-color: #14202d; 
+	opacity: 0.59;
+	background-color: #14202d;
 }
 
 .community {
@@ -350,6 +346,7 @@ div#header {
 	transition: all 0.3s ease;
 	z-index: 500;
 }
+
 div#header div#menu-no-home>ul {
 	padding: 0px;
 	height: 66px;
@@ -362,11 +359,11 @@ div#header div#menu>ul {
 	max-width: 1024px;
 }
 
-div#sub-header { /* modified by rayen */  
+div#sub-header { /* modified by rayen */
 	margin-bottom: 0;
 	padding: 14px 0 21px;
 	background: rgba(236, 245, 250, 0.6);
-	background-image:url(images/slider.png);
+	background-image: url(images/slider.png);
 }
 
 div#sub-header>div.clearfix>div {
@@ -382,15 +379,17 @@ div#sub-header>*, div#sub-header>div>h2 {
 	text-transform: capitalize;
 	font-size: 20px;
 }
+
 div#header div#menu-no-home>ul>li.home {
 	height: 100%;
 }
+
 div#header div#menu>ul>li.home {
 	height: 100%;
 }
 
 div#header div#menu ul li>a>*, div#header div#menu ul li>a {
-/*	font-family: Lato;*/
+	/*	font-family: Lato;*/
 	color: #ececec;
 	text-transform: uppercase;
 	font-family: Open Sans ExtraBold;
@@ -398,11 +397,11 @@ div#header div#menu ul li>a>*, div#header div#menu ul li>a {
 	font-weight: bold;
 	/*font-size: 17px;*/
 }
-div#header div#menu ul li>a:hover>*, div#header div#menu ul li>a:hover {
 
+div#header div#menu ul li>a:hover>*, div#header div#menu ul li>a:hover {
 	color: #fffefe;
-	
 }
+
 div#header div#menu-no-home>ul>li.dashboard>a>img {
 	top: -3px;
 }
@@ -520,9 +519,9 @@ div.footer div.shortcuts {
 }
 
 div.footer div.shortcuts h8 {
-  font-family: Open Sans Semibold;
-  font-size: 20px;
-  color: #0387f3;
+	font-family: Open Sans Semibold;
+	font-size: 20px;
+	color: #0387f3;
 }
 
 div.footer div.shortcuts ul {
@@ -538,22 +537,23 @@ div.footer div.shortcuts ul li a {
 	text-decoration: none;
 	text-transform: capitalize;
 	font-family: Open Sans Light;
-    font-size: 16px;
-    color: white;
-}
+	font-size: 16px;
+	color: white;
 }
 
+}
 div.footer div.newsletter {
 	/*padding: 0 30px;*/
-	  padding: 42px;
+	padding: 42px;
 }
+
 div.footer div.newsletter input {
-	font-family:Open Sans Regular;
-	font-size:16px;
+	font-family: Open Sans Regular;
+	font-size: 16px;
 	width: 370px;
-    height: 60px;
-    padding-left: 65px;
-}  
+	height: 60px;
+	padding-left: 65px;
+}
 
 div.footer div.newsletter .btn-news {
 	position: relative;
@@ -611,13 +611,12 @@ div.footer div.copyright div.w940 ul li {
 div.footer div.copyright div.w940 ul li a {
 	text-decoration: none;
 	text-transform: uppercase;
-    font-family: Open Sans Regular;
-    font-size: 14px;
-    color: #FFF;
-     margin-left: 3px;
+	font-family: Open Sans Regular;
+	font-size: 14px;
+	color: #FFF;
+	margin-left: 3px;
 }
 /***********************************************************Projets***********************************************************************/
-
 div#projects-phares {
 	margin-bottom: 30px;
 }
@@ -627,7 +626,7 @@ div#projects-phares div.widget.project .expand {
 }
 
 div.widget.project {
-    border: 1px solid rgba(194, 194, 194, 0.34);
+	border: 1px solid rgba(194, 194, 194, 0.34);
 	border-radius: 4px;
 	height: 440px;
 	padding: 0;
@@ -638,7 +637,6 @@ div.widget.project {
 	border: 1px solid rgba(194, 194, 194, 0.8);
 	border-radius: 4px;
 }*/
-
 div.widget.project div.image {
 	background-color: #FFF;
 	height: 180px;
@@ -661,60 +659,55 @@ div.widget.project div.image a img {
 }
 
 div.widget.project div.image div.categories {
-   background-size: cover;
- -webkit-filter: blur(15px) ;
-  filter: blur(15px) ;
-  opacity: 1 ;
-  transition:0.5s;
-  width:100%;
-
-    top: 113px;
-
-  overflow: hidden;
+	background-size: cover;
+	-webkit-filter: blur(15px);
+	filter: blur(15px);
+	opacity: 1;
+	transition: 0.5s;
+	width: 100%;
+	top: 113px;
+	overflow: hidden;
 }
-div.widget.project div.image p.text{
-  
+
+div.widget.project div.image p.text {
 	font-family: Open Sans Bold;
 	font-size: 20px;
 	/*Added by Amal */
 	top: 113px;
-    text-align: center;
-    color :white;
-    position: absolute;
-    width: 100%;
-    
+	text-align: center;
+	color: white;
+	position: absolute;
+	width: 100%;
 }
-div.widget.project div.image:hover div.obtained{
-    margin-left: -50px;
-     display: inline-flex;
+
+div.widget.project div.image:hover div.obtained {
+	margin-left: -50px;
+	display: inline-flex;
 	top: 100px;
-    color :white;
-    position: absolute;
-    width: 100%;
-    
+	color: white;
+	position: absolute;
+	width: 100%;
 }
-div.widget.project div.image:hover div.obtained div.percent{
-  	height:auto;
-    width: 50px;
-    
+
+div.widget.project div.image:hover div.obtained div.percent {
+	height: auto;
+	width: 50px;
 }
-div.widget.project div.image:hover div.obtained div.euro{
- 	height:auto;
-    width: 50px;
-  
+
+div.widget.project div.image:hover div.obtained div.euro {
+	height: auto;
+	width: 50px;
 }
+
 div.widget.project div.image:hover div.categories {
-
-  top: -5px;
-
+	top: -5px;
 }
-div.widget.project div.image:hover p.text{
 
-  top: 50px;
-  transition:0.5s;
-  
-
+div.widget.project div.image:hover p.text {
+	top: 50px;
+	transition: 0.5s;
 }
+
 div.widget.project>.title a {
 	font-family: Lato;
 }
@@ -729,11 +722,11 @@ div.widget.project>.author, div.widget.project>.author a {
 }
 
 div.widget.project div.description {
-	  font-family: Open Sans Regular;
-  font-size: 14px;
-  text-align: center;
-  color: 8c8c8c;
-  color: #8c8c8c;
+	font-family: Open Sans Regular;
+	font-size: 14px;
+	text-align: center;
+	color: 8c8c8c;
+	color: #8c8c8c;
 }
 
 div.widget.project div.meter h2, div.widget.project div.meter h3, div.widget.project div.meter h4,
@@ -744,11 +737,11 @@ div.widget.project div.meter h2, div.widget.project div.meter h3, div.widget.pro
 }
 
 div.widget.project div.rewards {
-	margin: 40px 12px 8px !important; 
+	margin: 40px 12px 8px !important;
 	padding: 9px 0 0 !important;
 	height: 34px;
 	top: -40px;
-    float: right;
+	float: right;
 }
 
 div.widget.project div.meter {
@@ -761,12 +754,14 @@ div.widget.project div.meter div.graph, div.widget.project div.meter div.graph .
 	border-color: #e7e7e7;
 	border-radius: 7px;
 }
+
 div.widget.project div.meter div.graph, div.widget.project div.meter div.graph .optimum
 	{
 	background-color: #90cbfc;
 	border-color: #e7e7e7;
 	border-radius: 7px;
 }
+
 div.widget.project div.meter>h3.ronda {
 	color: #000;
 }
@@ -775,21 +770,24 @@ div.widget.project div.meter div.obtained strong {
 	color: #000;
 	font-family: raleway;
 }
-div.widget.project div.meter div.obtained span.percent{
-	font-family: raleway;	
+
+div.widget.project div.meter div.obtained span.percent {
+	font-family: raleway;
 }
+
 div.widget.project div.meter dl * {
-  color: #62c0df;
-  font-family: Open Sans Semibold;
-  font-size: 12px;
+	color: #62c0df;
+	font-family: Open Sans Semibold;
+	font-size: 12px;
 }
-	
+
 }
 div.widget.project div.meter dl span {
-  font-family: Open Sans Semibold;
-  font-size: 12px;
-  color: #389ef1;
+	font-family: Open Sans Semibold;
+	font-size: 12px;
+	color: #389ef1;
 }
+
 }
 div.widget.project div.meter dl dd.days>*, div.widget.project div.meter dl dd.days,
 	div.widget.project div.meter dl dt.days>span {
@@ -800,29 +798,28 @@ div.widget.project div.rewards h4 {
 	font-family: Lato;
 }
 
-div.widget.project div.meter div.graph .optimum .left{
-  border: 0px solid #90cbfc;
-  padding: 0.25em;
-  border-radius: 50%;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  
+div.widget.project div.meter div.graph .optimum .left {
+	border: 0px solid #90cbfc;
+	padding: 0.25em;
+	border-radius: 50%;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
 }
 
 div.widget.project div.meter div.graph .minimum .left {
-  border: 0px solid #389ef1;
-  padding: 0.25em;
-  border-radius: 50%;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
+	border: 0px solid #389ef1;
+	padding: 0.25em;
+	border-radius: 50%;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+	border-left-color: transparent;
 }
 
 div.widget.project div.meter dl dt.optimum {
 	color: #62c0df;
-  font-family: Open Sans Semibold;
-  font-size: 12px;
+	font-family: Open Sans Semibold;
+	font-size: 12px;
 }
 /*************************************************************home page*******************************************************************/
 div.panel-scroll {
@@ -833,23 +830,24 @@ div.panel-scroll {
 }
 
 div.features {
-  position: absolute;
-  top: 32em; 
-  width: 100%;
-  z-index: 1000;
+	position: absolute;
+	top: 32em;
+	width: 100%;
+	z-index: 1000;
 }
-div.features-blur-box{
-  width: 100%;
-  height: 11.5em;
-  background: rgba(53, 53, 53, 0.5);
-  z-index: 1000;
-  position: absolute;
-  top: 33em; 
-  filter: blur(5px);
-  -webkit-filter: blur(4px);
-  -moz-filter: blur(4px);
-  -o-filter: blur(4px);
-  -ms-filter: blur(4px);
+
+div.features-blur-box {
+	width: 100%;
+	height: 11.5em;
+	background: rgba(53, 53, 53, 0.5);
+	z-index: 1000;
+	position: absolute;
+	top: 33em;
+	filter: blur(5px);
+	-webkit-filter: blur(4px);
+	-moz-filter: blur(4px);
+	-o-filter: blur(4px);
+	-ms-filter: blur(4px);
 }
 
 h4.service {
@@ -858,12 +856,14 @@ h4.service {
 	color: white;
 	font-size: 18px;
 }
+
 h4.service-number {
 	font-family: Open Sans Semibold;
-    color: white;
+	color: white;
 	font-size: 30px;
 	margin-top: -10px;
 }
+
 div#projects-phares ul {
 	padding: 0;
 	/*padding-top: 65px; */ /*Added by Amal */
@@ -1130,39 +1130,62 @@ body.js div.superform>div.hint {
 }
 
 div.searcher #text-query {
-	width: 100%;
-	margin: 7px 0 0;
-	border: 1px solid rgb(203, 203, 203);
-	border-radius: 3px;
+	width: 94.44%;
+	margin: 7px 10px 0;
+	border: 0px solid rgb(203, 203, 203);
+	background-color: #f2f2f2;
+    height: 60px;
 }
 
-body.project-show div#main>div.side>div . {
-	width: 308px;
-}
+body
+.project-show
+ 
+div
+#main
+>
+div
+.side
+>
+div
+ 
+.
+{
+width
+:
+ 
+308
+px
+;
 
+
+}
 div.searcher {
-	width: 241px;
+	width: 100%;
+	  background-color: #ffffff;
 }
 
 .searcher .filter {
-	width: 194px;
 	margin-bottom: 16px;
+	width: 100%;
 }
 
 .searcher .text-filter label, .searcher .filter label {
-	border-bottom: 1px solid rgb(207, 203, 203);
-	font-family: raleway;
+	font-family: Open Sans Light;
+	font-size: 24px;
+	padding: 10px;
+	width: auto;
 }
 
 .searcher .filter #category, .searcher .filter #reward, .searcher .filter #location
 	{
 	overflow-y: auto;
 	overflow-x: hidden;
-	padding: 8px 15px 0px 0px;
-	margin: 14px 0 0px;
+	padding: 0px 15px 0px 12px;
 	border-radius: 3px;
-	font-family: Lato;
+	font-family: Open Sans Light;
 	max-height: 220px;
+	  color: #8c8c8c;
+	  font-size: 15px;
 }
 
 .searcher .filter #category input[type="checkbox"], .searcher .filter #reward input[type="checkbox"],
@@ -1173,7 +1196,8 @@ div.searcher {
 }
 
 #projects-area {
-	width: 80%;
+	width: 1170px;
+	margin-top: 50px;
 }
 
 div ..projects div.project {
@@ -1206,6 +1230,18 @@ div ..projects>.title .seeall>a {
 	text-decoration: none;
 	font-size: 13px;
 }
+
+
+label#titre-search{
+	 font-family: Open Sans Light;
+	  color: #fff;
+	font-size: 24px;
+  background: #0387f3;
+  padding: 10px;
+  width: auto;
+
+	}
+
 /****************************** Fiche produit**************************************/
 body.project-show div.project-menu ul {
 	height: 35px;
@@ -1572,9 +1608,12 @@ div ..project-support div.graph>div.minimum>div.done strong {
 100%
 {
 background-position
+
+
 :
+
+
 0
- 
 0;
 }
 }
@@ -1586,14 +1625,21 @@ background-position
 100%
 {
 background-position
+
+
 :
-50px
- 
+
+
 50
 px
-;
 
-	
+ 
+
+50
+px
+
+
+;
 }
 }
 div ..project-support div.graph>div.minimum>div.done {
@@ -2494,6 +2540,7 @@ div.gestrew .message {
 div.rewards.reward {
 	
 }
+
 div#header div#menu-no-home>ul>li.home>a {
 	overflow: hidden;
 	text-indent: 2000px;
@@ -2521,7 +2568,7 @@ div#header div#menu>ul>li.home>a {
 	top: 20%;
 	margin-left: -90px; /*Modified by Amal*/
 	margin-top: -6px;
-	background: url('header/logo-white.png') no-repeat ;
+	background: url('header/logo-white.png') no-repeat;
 	background-size: cover;
 	left: 0px;
 }
@@ -3664,8 +3711,8 @@ div ..user-mates div.users h3.supertitle {
 	padding: 9px 0 0;
 }
 
-div ..user-supporters a.more:hover, div ..user-mates a:hover.more, div ..user-mates div.categories ul li a:hover
-	{
+div ..user-supporters a.more:hover, div ..user-mates a:hover.more, div 
+	..user-mates div.categories ul li a:hover {
 	color: #32A2FF;
 }
 
@@ -3673,68 +3720,77 @@ div ..user-supporters a.more, div ..user-mates a.more {
 	font-family: Lato;
 	text-transform: capitalize;
 	font-size: 11px !important;
-	
 }
-.content-press{
+
+.content-press {
 	background: url('images/backg-press.png');
 	background-size: cover;
 }
+
 .left-inner-addon {
-  padding: 30px;
+	padding: 30px;
 }
-.left-inner-addon img{
-  position: absolute;
-  left: 0px;
-  padding: 19px 0px;
-  padding-left: 60px;
+
+.left-inner-addon img {
+	position: absolute;
+	left: 0px;
+	padding: 19px 0px;
+	padding-left: 60px;
 }
 /******************************Header Scroll**********************************/
-#header.scrolling #menu.scrolling{
-background-color: white;
-min-height: 110px;
-opacity: 1;	
-	
+#header.scrolling #menu.scrolling {
+	background-color: white;
+	min-height: 110px;
+	opacity: 1;
 }
-#header.scrolling #menu.scrolling > ul > li.home > a{
-background: url('header/logo-blue.png') no-repeat;	
+
+#header.scrolling #menu.scrolling>ul>li.home>a {
+	background: url('header/logo-blue.png') no-repeat;
 }
-#header.scrolling #menu.scrolling>ul>li.explore>a, #header.scrolling #menu.scrolling>ul>li.create>a, #header.scrolling #menu.scrolling>ul>li.login>a {
-  max-width: 171px;
-  width: 217px;
-  padding: 23px;
-  font-family: Open Sans ExtraBold;
-  font-size: 14px;
-  font-weight: bold;
-  color: #000;
-  text-transform: uppercase;
-	}
-#header.scrolling #menu.scrolling ul li>a>*, #header.scrolling #menu.scrolling ul li>a {
-  color: #000;
-  text-transform: uppercase;
-  font-family: Open Sans ExtraBold;
-  font-size: 14px;
-  font-weight: bold;
+
+#header.scrolling #menu.scrolling>ul>li.explore>a, #header.scrolling #menu.scrolling>ul>li.create>a,
+	#header.scrolling #menu.scrolling>ul>li.login>a {
+	max-width: 171px;
+	width: 217px;
+	padding: 23px;
+	font-family: Open Sans ExtraBold;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+	text-transform: uppercase;
 }
-#header.scrolling #menu.scrolling ul li>a:hover>*, #header.scrolling #menu.scrolling ul li>a:hover {
-color: #0387f3;	
+
+#header.scrolling #menu.scrolling ul li>a>*, #header.scrolling #menu.scrolling ul li>a
+	{
+	color: #000;
+	text-transform: uppercase;
+	font-family: Open Sans ExtraBold;
+	font-size: 14px;
+	font-weight: bold;
 }
-div.widget.project div.meter dl .cus-days{
-	font-family:Open Sans Semibold;
-	font-size:14px;
-	color:#000;
+
+#header.scrolling #menu.scrolling ul li>a:hover>*, #header.scrolling #menu.scrolling ul li>a:hover
+	{
+	color: #0387f3;
+}
+
+div.widget.project div.meter dl .cus-days {
+	font-family: Open Sans Semibold;
+	font-size: 14px;
+	color: #000;
 	margin-top: 78px;
-  display: inline-block;
+	display: inline-block;
 }
-div.widget.project div.meter dl .cus-days span{
-	font-family:Open Sans Semibold;
-	font-size:14px;
-	color:#000;
-      margin-left: 10px;
-    
+
+div.widget.project div.meter dl .cus-days span {
+	font-family: Open Sans Semibold;
+	font-size: 14px;
+	color: #000;
+	margin-left: 10px;
 }
-div.widget.project div.meter dl .cus-days strong{
-	font-family:Open Sans Semibold;
-	font-size:14px;
-	color:#000;
- 
+
+div.widget.project div.meter dl .cus-days strong {
+	font-family: Open Sans Semibold;
+	font-size: 14px;
+	color: #000;
 }

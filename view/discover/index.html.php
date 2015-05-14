@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2012 Platoniq y FundaciÃ³n Fuentes Abiertas (see README for details)
+ * Copyright (C) 2012 Platoniq y Fundación Fuentes Abiertas (see README for details)
  * This file is part of Goteo.
  *
  * Goteo is free software: you can redistribute it and/or modify
@@ -22,49 +22,99 @@ use Goteo\Core\View, Goteo\Library\Text;
 $bodyClass = 'discover';
 include 'view/prologue.html.php';
 include 'view/header.html.php'?>
-<div id="sub-header">
-	<div>
-		<h2><?php echo Text::html('discover-banner-header') ?></h2>
+
+
+<link href="/view/css/custom.css" rel="stylesheet" type="text/css">
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    // Condition d'affichage du bouton
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100){
+            $('.go_top').fadeIn();
+        }
+        else{
+            $('.go_top').fadeOut();
+        }
+    });
+    // Evenement au clic
+    $('.go_top').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        return false;
+    });
+});
+
+</script>
+
+
+<div class="jumbotron" id="voir_projet">
+<div class="transparent"></div>
+	<div class="container">
+		<div class="content-center2">
+			<span id="tit-slid-voir"> voir les projets </span> 
+			
+			<p id="content-slide2">
+				Par Cat&eacute;gorie, Lieu ou Type de r&eacute;compenses et
+				Retomb&eacute;es,<br> <span id="content-slide3">Localisez le projet
+				</span><span id="content-slide4">qui vous motive le plus</span>
+
+			</p>
+		</div>
 	</div>
 </div>
+
 <div class="container" id="projects-area">
 	<div class="row clearfix">
-		<div class="col-md-12 column" >
-			<div class="row clearfix">
-				<div class="col-md-2 column">
+
+		<div class="row clearfix">
+			<div class="col-md-3 column">
+				
 				        <?php
 												
-												echo new View ( 'view/discover/searcher.html.php', array (
-														'categories' => $categories,
+												echo new View ( 
+
+												'view/discover/searcher.html.php', array (
+														'categories' => 
+
+														$categories,
 														'locations' => $locations,
 														'rewards' => $rewards 
 												) );
 												?>
 				</div>
-				<div class="col-md-10 column box-border-left">
+			<div class="col-md-9 column box-border-left">
+				<a href="#" class="go_top">Remonter</a>
 				    <?php
-				
-	foreach ( $this ['lists'] as $type => $list ) :
-					
-					if (array_empty ( $list ))
-						continue;
-					?>
+								
+								foreach ( $this ['lists'] as $type => $list ) :
+									
+									if (array_empty ( $list ))
+										continue;
+									?>
 					
 					<div class="widget projects">
-						<h2 class="title"><i class="fa fa-yelp fa-1x" style="color: rgb(87, 188, 250);font-size: 30px;"></i>&nbsp;&nbsp;<?php echo $list['title'] ?><span class="seeall"><i class="fa fa-chevron-circle-right" style="font-size: 14px;padding: 0 4px;"></i><a class="all" href="/discover/view/<?php echo $type; ?>"><?php echo Text::get('regular-see_all'); ?></a></span></h2>
+					<h2 class="title-voirproj"><?php echo $list['title']?>
+							<span class="btn-group"> <a class="btn btn-default"
+							href="/discover/view/<?php echo $type; ?>"><i
+								class="fa fa-align-justify"></i>&nbsp;<?php echo Text::get('regular-see_all'); ?></a></span>
+
+					</h2>
+
+					<hr id="ligne-voirproj">
             <?php foreach ($list as $group=>$projects) : ?>
                 <div
-							id="discover-group-<?php echo $type ?>-<?php echo $group ?>">
+						id="discover-group-<?php echo $type ?>-<?php echo $group ?>">
 
                     <?php
-						
-						foreach ( $projects ['items'] as $project ) :
-							echo new View ( 'view/project/widget/project.html.php', array (
-									'project' => $project 
-							) );
-						endforeach
-						;
-						?>
+										
+										foreach ( $projects ['items'] as $project ) :
+											echo new View ( 'view/project/widget/project.html.php', array (
+													'project' => $project 
+											) );
+										endforeach
+										;
+										?>
 
 						</div>
             <?php endforeach; ?>
@@ -73,14 +123,15 @@ include 'view/header.html.php'?>
 
     <?php endforeach; ?>
 				</div>
-			</div>
 		</div>
+
 	</div>
 </div>
 <div id="homeMap" class="discover-map">
-<div id="mapDiv"></div>
-<script type="text/javascript" src="http://finpop.dev/view/js/mmc-map-v2.js"></script>
-<script type="text/javascript">
+	<div id="mapDiv"></div>
+	<script type="text/javascript"
+		src="http://finpop.dev/view/js/mmc-map-v2.js"></script>
+	<script type="text/javascript">
 	require(['mfMapv2'], function (mfMapv2) {
         var options = {
             mapCenter: new google.maps.LatLng(46.52863469527167,2.43896484375),
@@ -242,8 +293,10 @@ include 'view/header.html.php'?>
         $('#mapDiv').mfMapv2(options);
 	});
 </script>
-	</div>
+</div>
+
+
 
 <?php include 'view/footer.html.php'?>
 
-<?php include 'view/epilogue.html.php' ?>
+<?php include 'view/epilogue.html.php'?>

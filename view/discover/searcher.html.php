@@ -1,6 +1,6 @@
 <?php
 /*
- *  Copyright (C) 2012 Platoniq y FundaciÃ³n Fuentes Abiertas (see README for details)
+ *  Copyright (C) 2012 Platoniq y Fundación Fuentes Abiertas (see README for details)
  *	This file is part of Goteo.
  *
  *  Goteo is free software: you can redistribute it and/or modify
@@ -32,7 +32,8 @@ $params = $this['params'];
 <div class="widget searcher">
 	<form method="post" action="/discover/results">
 		<div class="filter">
-			<label for="text-query"><?php echo Text::get('discover-searcher-bycontent-header'); ?></label>
+			<label id="titre-search" for="text-query"><?php echo Text::get('discover-searcher-bycontent-header'); ?></label>
+			<label>Contenu :</label>
 			<input type="text" id="text-query" name="query"
 				value="<?php echo \htmlspecialchars($params['query']); ?>" /> <br
 				clear="all" />
@@ -79,8 +80,8 @@ $params = $this['params'];
                 </div>
 		</div>
 
-		<div style="float: left">
-			<button type="submit" class="btn btn-primary" name="searcher"><?php echo Text::get('discover-searcher-button'); ?></button>
+		<div class="boutton-recherche">
+			<button type="submit" class="btn btn-primary search-btn" name="searcher"><?php echo Text::get('discover-searcher-button'); ?></button>
 		</div>
 
 		<br clear="all" />
