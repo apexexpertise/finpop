@@ -23,9 +23,9 @@ use Goteo\Library\Text;
 $filters = $_SESSION['mailing']['filters'];
 
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
  <div class="title-admin">
 <p>Communications  </p>
 		<hr/>
@@ -89,5 +89,5 @@ $filters = $_SESSION['mailing']['filters'];
     </form>
 </div>
 </div>
-</section>
+</div>
 </div>

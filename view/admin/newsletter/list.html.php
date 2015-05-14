@@ -34,9 +34,9 @@ $tpl = 33;
 $template = Template::get($tpl);
 
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
  <div class="title-admin">
 <p >Bulletin  </p>
 		<hr />
@@ -105,5 +105,5 @@ $template = Template::get($tpl);
 <?php endif; ?>
 
 </div>
-</section>
+</div>
 </div>

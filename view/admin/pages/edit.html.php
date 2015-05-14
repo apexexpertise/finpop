@@ -46,9 +46,9 @@ $(document).ready(function(){
 	});
 });
 </script>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
 <div class="widget board">
     <form method="post" action="/admin/pages/edit/<?php echo $this['page']->id; ?>">
 <div class="form-group col-lg-4">
@@ -64,5 +64,5 @@ $(document).ready(function(){
     </form>
 </div>
 </div>
-</section>
+</div>
 </div>

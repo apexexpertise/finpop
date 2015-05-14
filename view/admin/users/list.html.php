@@ -51,9 +51,9 @@ foreach ($filters as $key=>$value) {
 
 $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] : 1);
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
  <div class="title-admin">
 <p>Gestion des utilisateurs  </p>
 		<hr/>
@@ -171,9 +171,9 @@ $pagedResults = new \Paginated($users, 20, isset($_GET['page']) ? $_GET['page'] 
         echo $pagedResults->fetchPagedNavigation($the_filters); ?>
 </ul>
 <?php else : ?>
-<p>PAS DE R&eacute;SULTAT</p>
+<p>Pas de r&eacute;sultat</p>
 <?php endif; ?>
 </div>
-</section>
+</div>
 </div>
 

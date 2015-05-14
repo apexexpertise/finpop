@@ -30,9 +30,9 @@ $projects = Model\Banner::available($banner->project);
 $status = Model\Project::status();
 
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
   
 <form class="form-horizontal" method="post" action="/admin/banners" enctype="multipart/form-data">
 	<div class="form-group col-lg-4">
@@ -96,5 +96,5 @@ $status = Model\Project::status();
    
 </form>
 </div>
-</section>
+</div>
 </div>

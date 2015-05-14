@@ -31,9 +31,9 @@ $projects = Model\Promote::available($promo->project, $node);
 $status = Model\Project::status();
 
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
 <form method="post" action="/admin/promote">
 <div class="form-group col-lg-4">
     <input type="hidden" name="action" value="<?php echo $this['action'] ?>" />
@@ -73,5 +73,5 @@ $status = Model\Project::status();
     </div>
 </form>
 </div>
-</section>
+</div>
 </div>

@@ -21,9 +21,9 @@
 use Goteo\Library\Text;
 
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
 <p class="text-info"><strong><?php echo $this['template']->name; ?></strong>: <?php echo $this['template']->purpose; ?></p>
 
 <div class="widget board">
@@ -45,5 +45,5 @@ use Goteo\Library\Text;
     </form>
 </div>
 </div>
-</section>
+</div>
 </div>

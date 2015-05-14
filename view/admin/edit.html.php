@@ -21,9 +21,9 @@
 use Goteo\Library\Text;
 
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
 <div class="widget board">
     <!-- superform -->
     <form action="<?php echo $this['form']['action']; ?>" method="post" enctype="multipart/form-data">
@@ -60,5 +60,5 @@ use Goteo\Library\Text;
     </form>
 </div>
 </div>
-</section>
+</div>
 </div>

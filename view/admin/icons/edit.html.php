@@ -21,9 +21,9 @@
 use Goteo\Library\Text;
 
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
 <div class="widget board">
     <!-- super form -->
     <form method="post" action="/admin/icons">
@@ -52,5 +52,5 @@ use Goteo\Library\Text;
     </form>
 </div>
 </div>
-</section>
+</div>
 </div>

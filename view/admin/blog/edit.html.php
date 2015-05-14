@@ -68,9 +68,9 @@ if (!$post instanceof Model\Blog\Post) {
     }
 
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
 <script type="text/javascript" src="/view/js/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -248,5 +248,5 @@ $(document).ready(function(){
 
 </form>
 </div>
-</section>
+</div>
 </div>

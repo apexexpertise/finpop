@@ -5,9 +5,9 @@ use Goteo\Library\Text,
 $feed = $this['feed'];
 $items = $this['items'];
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
  <div class="title-admin">
 <p >Activit&eacute;s Recentes </p>
 		<hr/>
@@ -56,5 +56,5 @@ $items = $this['items'];
         </div>
 </div>
 </div>
-</section>
+</div>
 </div>

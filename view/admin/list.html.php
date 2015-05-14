@@ -38,9 +38,9 @@ $cols = count($this['columns']);
 $per = 100 / $cols;
 
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
 		<div class="title-admin">
 <p><?php echo $this['name']  ?> </p>
 		<hr/>
@@ -117,5 +117,5 @@ $per = 100 / $cols;
     <?php endif; ?>
 </div>
 </div>
-</section>
+</div>
 </div>

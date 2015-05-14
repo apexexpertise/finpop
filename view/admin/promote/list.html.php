@@ -22,9 +22,9 @@ use Goteo\Library\Text,
 
 $translator = ACL::check('/translate') ? true : false;
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
  <div class="title-admin">
 <p>Projets &agrave; l&apos;affiche </p>
 		<hr/>
@@ -74,9 +74,9 @@ $translator = ACL::check('/translate') ? true : false;
 
     </table>
     <?php else : ?>
-    <p class="text-primary">PAS DE R&eacute;SULTAT</p>
+    <p class="text-primary">Pas de r&eacute;sultat</p>
     <?php endif; ?>
 </div>
 </div>
-</section>
+</div>
 </div>

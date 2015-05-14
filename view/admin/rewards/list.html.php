@@ -6,9 +6,9 @@ $filters = $this['filters'];
 
 $emails = Invest::emails(true);
 ?>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
  <div class="title-admin">
 <p>R&eacute;compenses  </p>
 		<hr />
@@ -84,5 +84,5 @@ $emails = Invest::emails(true);
 <?php endif;?>
 </div>
 </div>
-</section>
+</div>
 </div>

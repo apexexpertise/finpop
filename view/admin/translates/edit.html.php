@@ -37,9 +37,9 @@ function assign() {
     }
 }
 </script>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
 <div class="widget">
 <?php if ($this['action'] == 'edit') : ?>
     <h3 class="title">Traducteurs pour le projet <?php echo $project->name ?></h3>
@@ -104,5 +104,5 @@ function assign() {
     </form>
 </div>
 </div>
-</section>
+</div>
 </div>

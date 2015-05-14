@@ -183,7 +183,7 @@
                         <?php endforeach; ?>
                     </p>
 
-                   <div class="scroll-pane">
+                   <div class="scroll-pane" style="width:500px;">
             <?php foreach ($items as $item) :
                 $odd = !$odd ? true : false;
                 ?>

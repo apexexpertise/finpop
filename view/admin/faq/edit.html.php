@@ -35,9 +35,9 @@ jQuery(document).ready(function ($) {
 
 });
 </script>
-<div class="container-fluid">
-    <section class="container">
-		<div class="container-page">
+<div class="container">
+		<div class="row">
+		<div class="col-md-12 column">
 <div class="widget board">
     <form method="post" action="/admin/faq">
 		<div class="form-group col-lg-4">
@@ -86,5 +86,5 @@ jQuery(document).ready(function ($) {
     </form>
 </div>
 </div>
-</section>
+</div>
 </div>
