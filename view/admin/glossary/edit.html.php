@@ -65,9 +65,7 @@ $(document).ready(function(){
 	});
 });
 </script>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <form method="post" action="/admin/glossary/<?php echo $this['action']; ?>/<?php echo $post->id; ?>" enctype="multipart/form-data">
 
     <?php echo new SuperForm(array(
@@ -155,6 +153,3 @@ $(document).ready(function(){
     ?>
 
 </form>
-</div>
-</div>
-</div>

@@ -20,15 +20,14 @@
 use Goteo\Library\Text;
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p>Banni&egrave;res  </p>
 		<hr />
 		</div>
+		<div class="widget board">
 <a href="/admin/banners/add" ><?php echo Text::_("Nouvelle Banni&eacute;re"); ?></a>
-
+</div>
 <div class="widget board">
     <?php
 				
@@ -79,9 +78,6 @@ use Goteo\Library\Text;
 
 	</table>
     <?php else : ?>
-    <p>PAS DE R&eacute;SULTAT</p>
+    <p>Pas de r&eacute;sultat</p>
     <?php endif; ?>
-</div>
-</div>
-</div>
 </div>

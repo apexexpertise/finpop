@@ -48,9 +48,6 @@ $admins = Home::_admins();
  *
  */ ?>
 <?php if ($node != \GOTEO_NODE) : ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
 <div class="widget board" style="width:350px; float:left; margin-right: 5px;">
     <h4 class="title">Laterales</h4>
     <?php if (!empty($side_items)) : ?>
@@ -173,8 +170,5 @@ $admins = Home::_admins();
 
    
     
-</div>
-</div>
-</div>
 </div>
 

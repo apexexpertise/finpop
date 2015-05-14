@@ -23,9 +23,7 @@ use Goteo\Library\Text;
 $filters = $this['filters'];
 
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p>Gestion des apports  </p>
 		<hr/>
@@ -52,7 +50,9 @@ $filters = $this['filters'];
         'label' => Text::_("Pour r&eacute;vision"),
         'first' => Text::_("Tous")),
 ); ?>
+<div class="widget board">
 <a href="/admin/accounts/viewer" class="btn btn-default" style="color:white"><?php echo Text::_("Logs"); ?></a>&nbsp;&nbsp;&nbsp;
+</div>
 <div class="widget board">
     <h3 class="title"><?php echo Text::_("Filtres"); ?></h3>
     <form id="filter-form" action="/admin/accounts" method="get">
@@ -136,7 +136,4 @@ $filters = $this['filters'];
 <?php else : ?>
    <p class="text-primary">Aucune transaction qui r&eacute;pond au filtre..</p>
 <?php endif;?>
-</div>
-</div>
-</div>
 </div>

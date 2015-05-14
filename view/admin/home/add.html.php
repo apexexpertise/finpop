@@ -25,9 +25,7 @@ use Goteo\Library\Text,
 $home = $this['home'];
 $availables = $this['availables'];
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <form method="post" action="/admin/home" >
 	<div class="form-group col-lg-4">
     <input type="hidden" name="action" value="<?php echo $this['action'] ?>" />
@@ -46,5 +44,4 @@ $availables = $this['availables'];
     <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right"/>
     </div>
 </form>
-</div></div>
-</div>
+

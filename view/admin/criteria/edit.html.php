@@ -34,9 +34,7 @@ jQuery(document).ready(function ($) {
 
 });
 </script>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 <div class="widget board">
     <form method="post" action="/admin/criteria">
 <div class="form-group col-lg-4">
@@ -83,7 +81,4 @@ jQuery(document).ready(function ($) {
         <input type="submit" name="save" value="Enregistrer" class="btn btn-primary" style="float:right"/>
         </div>
     </form>
-</div>
-</div>
-</div>
 </div>

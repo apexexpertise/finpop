@@ -23,15 +23,14 @@ use Goteo\Library\Text,
 
 $translator = ACL::check('/translate') ? true : false;
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
 		 <div class="title-admin">
 <p>Glossary </p>
 		<hr/>
 		</div>
+		<div class="widget board">
 <a href="/admin/glossary/add" class="btn btn-default" style="color:white"><?php echo Text::_("Nouveau Terme"); ?></a>
-
+</div>
 <div class="widget board">
 
     <?php if (!empty($this['posts'])) : ?>
@@ -62,7 +61,4 @@ $translator = ACL::check('/translate') ? true : false;
     <?php else : ?>
    <p class="text-primary"><?php echo Text::_("Aucun r&eacute;sultat trouv&eacute;"); ?></p>
     <?php endif; ?>
-</div>
-</div>
-</div>
 </div>

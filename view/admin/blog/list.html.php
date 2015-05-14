@@ -36,18 +36,15 @@ foreach ($filters as $key=>$value) {
 $pagedResults = new \Paginated($this['posts'], 10, isset($_GET['page']) ? $_GET['page'] : 1);
 ?>
 
-    <div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
  <div class="title-admin">
 <p >Blog  </p>
 		<hr/>
 		</div>
-	
+	<div class="widget board">
 <a href="/admin/blog/add" class="btn btn-default" style="color:white" ><?php echo Text::_("Nouvelle entr&eacute;e"); ?></a>
 &nbsp;&nbsp;&nbsp;
 <a href="/admin/blog/reorder" class="btn btn-primary" style="color:white" >Trier</a>
-
+</div>
 
 <div class="widget board" style="margin-top:15px;">
     <form id="filter-form" action="/admin/blog" method="get">
@@ -161,7 +158,4 @@ $pagedResults = new \Paginated($this['posts'], 10, isset($_GET['page']) ? $_GET[
 <?php else : ?>
 <p class="text-primary">Aucun r&eacute;sultat trouv&eacute;</p>
 <?php endif; ?>
-</div>
 
-</div>
-</div>

@@ -24,15 +24,14 @@ use Goteo\Library\Text,
 $translator = ACL::check('/translate') ? true : false;
 $filters = $this['filters'];
 ?>
-<div class="container">
-		<div class="row">
-		<div class="col-md-12 column">
+
  <div class="title-admin">
 <p >Review criteria  </p>
 		<hr/>
 		</div>
+		<div class="widget board">
 <a href="/admin/criteria/add" class="btn btn-default" style="color:white"><?php echo Text::_('Ajouter des crit&eacute;res'); ?></a>
-
+</div>
 <div class="widget board">
     <form id="sectionfilter-form" action="/admin/criteria" method="get">
     	<div class="form-group col-lg-4">
@@ -81,7 +80,4 @@ $filters = $this['filters'];
     <?php else : ?>
     <p><?php echo Text::_('Aucun r&eacute;sultat trouv&eacute;'); ?></p>
     <?php endif; ?>
-</div>
-</div>
-</div>
 </div>
