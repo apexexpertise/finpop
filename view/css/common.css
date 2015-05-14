@@ -59,6 +59,10 @@ img {
     border: none;
 }
 
+div.board{
+	width:80%;
+}
+
 input, textarea, button {
     font-size: 14px;
 }
