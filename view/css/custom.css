@@ -39,7 +39,7 @@ button.btn.btn-primary.retour-btn:hover {
 }
 
 button.btn.btn-primary.search-btn {
-  width: 100%;
+  width: 90%;
   background-color: white;
   color: #0387f3;
   font-size: 20px;
@@ -51,7 +51,7 @@ button.btn.btn-primary.search-btn {
 }
 
 button.btn.btn-primary.search-btn:hover{
-  width: 100%;
+  width: 90%;
   background-color: #0387f3;
   color: #ffffff;
   font-size: 20px;

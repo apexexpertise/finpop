@@ -27,23 +27,94 @@ include 'view/prologue.html.php';
 
 include 'view/header.html.php' ?>
 
-        <div id="sub-header">
+<link href="/view/css/custom.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+$(document).ready(function(){
+    // Condition d'affichage du bouton
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100){
+            $('.go_top').fadeIn();
+        }
+        else{
+            $('.go_top').fadeOut();
+        }
+    });
+    // Evenement au clic
+    $('.go_top').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        return false;
+    });
+});
+
+</script>
+
+
+<div class="jumbotron" id="resultat_projet">
+
+	<div class="container">
+		<div class="content-center2">
+			<span id="tit-slid-resultat"> Resultats de recherche</span> <span
+				id="type"><?php echo $_GET['type'];?> </span>
+
+
+			<div id="retour-boutton">
+				<a class="" href="/discover">
+					<button type="submit" class="btn btn-primary retour-btn"
+						name="retour">
+						<i class="fa fa-chevron-left"></i>&nbsp;retour 
+					</button>
+				</a>
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+</div>
+
+
+
+
+     <!--     <div id="sub-header">
             <div>
                 <h2 class="title"><?php echo Text::get('discover-results-header'); ?></h2>
             </div>
 
-        </div>
+        </div>-->
+        
+        
 <div class="container" id="projects-area">
 	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<div class="row clearfix">
-				<div class="col-md-2 column">
-				            <?php echo new View('view/discover/searcher.html.php',
+	<div class="row clearfix">
+	<div class="col-md-3 column">
+			
+			 <?php echo new View('view/discover/searcher.html.php',
                                 array('params'     => $this['params'])); ?>
 				</div>
-				<div class="col-md-10 column box-border-left">
-				<h2 class="header-title"><i class="fa fa-cogs fa-1x" style="color: rgb(87, 188, 250);font-size: 30px;"></i>&nbsp;&nbsp;Projets trouv&eacute;s</h2>
+	
+	
+	
+	
+	
+	
+	
+			
+				
+				<div class="col-md-9 column box-border-left">
+				<a href="#" class="go_top">Remonter</a>
+				
+				
 				<div class="widget projects">
+				<h2 class="title-voirproj">Projets trouv&eacute;s
+
+					</h2>
+					
+					<hr id="ligne-voirproj">
+					
+					
                 <?php if (!empty($this['results'])) :
                     foreach ($this['results'] as $result) :
                         echo new View('view/project/widget/project.html.php', array(
@@ -58,7 +129,7 @@ include 'view/header.html.php' ?>
 			</div>
 		</div>
 	</div>
-</div>
+
   
 
         <?php include 'view/footer.html.php' ?>
