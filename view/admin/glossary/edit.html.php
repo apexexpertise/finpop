@@ -97,7 +97,7 @@ $(document).ready(function(){
             ),
             'text' => array(
                 'type'      => 'textarea',
-                'cols'      => 40,
+                'cols'      => 60,
                 'rows'      => 4,
                 'title'     => Text::_("Explication du terme"),
                 'value'     => $post->text

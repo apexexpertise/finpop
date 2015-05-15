@@ -26,7 +26,7 @@ if (function_exists('ini_set')) {
 }
 
 // Nodo actual
-define('GOTEO_NODE', 'goteo');
+define('GOTEO_NODE', 'finpop');
 
 define('PEAR', GOTEO_PATH . 'library' . '/' . 'pear' . '/');
 if (function_exists('ini_set')) {

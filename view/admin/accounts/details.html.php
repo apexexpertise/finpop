@@ -31,43 +31,46 @@ $user = $this['user'];
 $rewards = $invest->rewards;
 array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
 ?>
-<a href="/admin/accounts/update/<?php echo $invest->id ?>" onclick="return confirm(<?php echo utf8_encode("Voulez vous changer l'état de cette entrée?") ?>)" class="button">Changer l'etat</a>
+<div class="widget board">
+<a href="/admin/accounts/update/<?php echo $invest->id ?>" class="btn btn-default" style="color:white" onclick="return confirm(<?php echo utf8_encode("Voulez vous changer l'état de cette entrée?") ?>)" >Changer l'etat</a>
 &nbsp;&nbsp;&nbsp;
-<a href="/admin/rewards/edit/<?php echo $invest->id ?>" class="button"><?php echo utf8_encode("Gérer la recompense/l'adresse") ?></a>
+<a href="/admin/rewards/edit/<?php echo $invest->id ?>" class="btn btn-info" style="color:white"><?php echo utf8_encode("Gérer la recompense/l'adresse") ?></a>
 <?php if ($invest->issue) : ?>
 &nbsp;&nbsp;&nbsp;
-<a href="/admin/accounts/solve/<?php echo $invest->id ?>" onclick="return confirm(<?php echo utf8_encode("Ce probléme sera considéré résolu.La transcaction sera annulé et la contribution se transformira en argent et son état sera changer. Voulez vous continuez ?") ?>)" class="button"><?php echo utf8_encode("Nous avons fait le transfert") ?></a>
+<a href="/admin/accounts/solve/<?php echo $invest->id ?>" class="btn btn-default" style="color:white" onclick="return confirm(<?php echo utf8_encode("Ce probléme sera considéré résolu.La transcaction sera annulé et la contribution se transformira en argent et son état sera changer. Voulez vous continuez ?") ?>)" class="btn btn-info" style="color:white"><?php echo utf8_encode("Nous avons fait le transfert") ?></a>
 <?php endif; ?>
-<div class="widget">
-    <p>
-        <strong><?php echo Text::_("Proyecto"); ?>:</strong> <?php echo $project->name ?> (<?php echo $this['status'][$project->status] ?>)
-        <strong><?php echo Text::_("Usuario"); ?>: </strong><?php echo $user->name ?> [<?php echo $user->email ?>]
-    </p>
+</div>
+<div class="widget board">
+
+    <label>
+       <?php echo Text::_("Projet"); ?></label> <?php echo $project->name ?> (<?php echo $this['status'][$project->status] ?>) <br/>
+       <label> <?php echo Text::_("Utilisateur"); ?>: </label><?php echo $user->name ?> [<?php echo $user->email ?>]
+  
     <p>
         <?php if ($invest->status < 1 || ($invest->method == 'tpv' && $invest->status < 2) ||($invest->method == 'cash' && $invest->status < 2)) : ?>
-        <a href="/admin/accounts/cancel/<?php echo $invest->id ?>"
+        <a href="/admin/accounts/cancel/<?php echo $invest->id ?>" class="btn btn-info" style="color:white;margin-top:20px"
             onclick="return confirm(<?php echo utf8_encode("Voulez vous vraiment annuler cette contribution et cette approbation préalable?") ?>);"
-            class="button"><?php echo utf8_encode("Annuler cette contribution") ?></a>&nbsp;&nbsp;&nbsp;
+            class="btn btn-info" style="color:white;margin-top:20px"><?php echo utf8_encode("Annuler cette contribution") ?></a>&nbsp;&nbsp;&nbsp;
         <?php endif; ?>
 
         <?php if ($invest->method == 'paypal' && $invest->status == 0) : ?>
         <a href="/admin/accounts/execute/<?php echo $invest->id ?>"
             onclick="return confirm(<?php echo utf8_encode("Voulez vous maintenant géré par l'approbation préalable?") ?>);"
-            class="button"><?php echo utf8_encode("Exécutez maintenant") ?></a>
+            class="btn btn-info" style="color:white;margin-top:15px"><?php echo utf8_encode("Exécutez maintenant") ?></a>
         <?php endif; ?>
 
         <?php if ($invest->method != 'paypal' && $invest->status == 1) : ?>
-        <a href="/admin/accounts/move/<?php echo $invest->id ?>" class="button"><?php echo utf8_encode("Repérez cette contribution") ?></a>
+        <a href="/admin/accounts/move/<?php echo $invest->id ?>"  class="btn btn-info" style="color:white;margin-top:15px"><?php echo utf8_encode("Repérez cette contribution") ?></a>
         <?php endif; ?>
 
         <?php if (!$invest->resign && $invest->status == 1 && $invest->status == 3) : ?>
-        <a href="/admin/accounts/resign/<?php echo $invest->id ?>/?token=<?php echo md5('resign'); ?>" class="button"><?php echo utf8_encode("c'est don") ?></a>
+        <a href="/admin/accounts/resign/<?php echo $invest->id ?>/?token=<?php echo md5('resign'); ?>"  class="btn btn-info" style="color:white;margin-top:15px"><?php echo utf8_encode("c'est don") ?></a>
         <?php endif; ?>
     </p>
     
-    <h3><?php echo Text::_("Detalles de la transaccion"); ?></h3>
+    <center><h3><?php echo Text::_("Details de la transaction"); ?></h3> </center>
     <dl>
-        <dt><?php echo Text::_("Cantidad aportada"); ?>:</dt>
+        <dt><?php echo Text::_("Montant de la contribution"); ?>:</dt>
         <dd><?php echo $invest->amount ?> &euro;
             <?php
                 if (!empty($invest->campaign))
@@ -77,12 +80,12 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
     </dl>
 
     <dl>
-        <dt><?php echo Text::_("Estado"); ?>:</dt>
+        <dt><?php echo Text::_("&Eacute;tat"); ?>:</dt>
         <dd><?php echo $this['investStatus'][$invest->status]; if ($invest->status < 0) echo ' <span style="font-weight:bold; color:red;">OJO! que este aporte no fue confirmado.<span>'; if ($invest->issue) echo ' <span style="font-weight:bold; color:red;">INCIDENCIA!<span>'; ?></dd>
     </dl>
 
     <dl>
-        <dt><?php echo Text::_("Fecha del aporte"); ?>:</dt>
+        <dt><?php echo Text::_("Date de contribution"); ?>:</dt>
         <dd><?php echo $invest->invested . '  '; ?>
             <?php
                 if (!empty($invest->charged))
@@ -95,14 +98,14 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
     </dl>
 
     <dl>
-        <dt><?php echo Text::_("Donativo"); ?>:</dt>
+        <dt><?php echo Text::_("donation"); ?>:</dt>
         <dd>
             <?php echo ($invest->resign) ? Text::_('SI') : Text::_('NO'); ?>
         </dd>
     </dl>
 
     <dl>
-        <dt><?php echo Text::_("MÃ©todo de pago"); ?>:</dt>
+        <dt><?php echo Text::_("Mode de paiement"); ?>:</dt>
         <dd><?php echo $invest->method . '   '; ?>
             <?php
                 if (!empty($invest->campaign))
@@ -121,7 +124,7 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
     </dl>
 
     <dl>
-        <dt><?php echo Text::_("CÃ³digos de seguimiento"); ?>: <a href="/admin/invests/details/<?php echo $invest->id ?>"><?php echo Text::_("Ir al aporte"); ?></a></dt>
+        <dt><?php echo Text::_("Codes de suivi"); ?>: <a href="/admin/invests/details/<?php echo $invest->id ?>"><?php echo Text::_(" Aller &agrave; la contribution"); ?></a></dt>
         <dd><?php
                 if (!empty($invest->preapproval)) {
                     echo 'Preapproval: '.$invest->preapproval . '   ';
@@ -144,7 +147,7 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
     <?php endif; ?>
 
     <dl>
-        <dt><?php echo Text::_("DirecciÃ³n"); ?>:</dt>
+        <dt><?php echo Text::_("Adresse"); ?>:</dt>
         <dd>
             <?php echo $invest->address->address; ?>,
             <?php echo $invest->address->location; ?>,
@@ -162,20 +165,20 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
 
         <?php if (!empty($invest->transaction)) : ?>
         <dl>
-            <dt><strong><?php echo Text::_("Detalles de la devoluciÃ³n"); ?>:</strong></dt>
-            <dd><?php echo Text::_("Hay que ir al panel de paypal para ver los detalles de una devoluciÃ³n"); ?></dd>
+            <dt><strong><?php echo Text::_("D&eacute;tails de retour"); ?>:</strong></dt>
+            <dd><?php echo Text::_("Vous devriez aller au panneau paypal pour afficher les d&eacute;tails d&apos;un retour"); ?></dd>
         </dl>
         <?php endif ?>
     <?php elseif ($invest->method == 'tpv') : ?>
-        <p><?php echo Text::_("Hay que ir al panel del banco para ver los detalles de los aportes mediante TPV."); ?></p>
+        <p><?php echo Text::_("Vous devriez aller dans le panneau de la banque pour voir les d&eacute;tails des contributions par TPV."); ?></p>
     <?php else : ?>
-        <p><?php echo Text::_("No hay nada que hacer con los aportes manuales."); ?></p>
+        <p><?php echo Text::_("Rien &apos; voir avec la saisie manuelle."); ?></p>
     <?php endif ?>
 
     <?php if (!empty($droped)) : ?>
-    <h3><?php echo Text::_("Capital riego asociado"); ?></h3>
+    <h3><?php echo Text::_("Capital de risque associ&eacute;"); ?></h3>
     <dl>
-        <dt><?php echo Text::_("Convocatoria"); ?>:</dt>
+        <dt><?php echo Text::_("Capital de risque associ&eacute;"); ?>:</dt>
         <dd><?php echo $calls[$droped->call] ?></dd>
     </dl>
     <a href="/admin/invests/details/<?php echo $droped->id ?>" target="_blank"><?php echo Text::_("Ver aporte completo de riego"); ?></a>
@@ -184,7 +187,7 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
 </div>
 
 <div class="widget">
-    <h3>Log</h3>
+  <center><h3>Log</h3> </center>
     <?php foreach (\Goteo\Model\Invest::getDetails($invest->id) as $log)  {
         echo "{$log->date} : {$log->log} ({$log->type})<br />";
     } ?>
@@ -192,12 +195,12 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
 
 <?php if (isset($_GET['full']) && $_GET['full'] == 'show') : ?>
 <div class="widget">
-    <h3><?php echo Text::_("Detalles tÃ©cnicos de la transaccion"); ?></h3>
+    <h3><?php echo Text::_("D&eacute;tails techniques de la transaction"); ?></h3>
     <?php if (!empty($invest->preapproval)) :
         $details = Paypal::preapprovalDetails($invest->preapproval);
         ?>
     <dl>
-        <dt><strong><?php echo Text::_("Detalles del preapproval"); ?>:</strong></dt>
+        <dt><strong><?php echo Text::_("D&eacute;tails d&apos;approbation pr&eacute;alable"); ?>:</strong></dt>
         <dd><?php echo \trace($details); ?></dd>
     </dl>
     <?php endif ?>
@@ -206,7 +209,7 @@ array_walk($rewards, function (&$reward) { $reward = $reward->reward; });
         $details = Paypal::paymentDetails($invest->payment);
         ?>
     <dl>
-        <dt><strong><?php echo Text::_("Detalles del cargo"); ?>:</strong></dt>
+        <dt><strong><?php echo Text::_("D&eacute;tails de chargement"); ?>:</strong></dt>
         <dd><?php echo \trace($details); ?></dd>
     </dl>
     <?php endif; ?>

@@ -36,9 +36,7 @@ $pagedResults = new \Paginated ( $this ['projects'], 10, isset ( $_GET ['page'] 
 <p>Project administration </p>
 		<hr/>
 		</div>
-		<div class="widget board">
-		<a href="/admin/translates" class="btn btn-default" style="color:white">Attribuer traducteurs</a>
-</div>
+		
 		<div class="widget board">
 	<form id="filter-form" action="/admin/projects" method="get">
 		<input type="hidden" name="filtered" value="yes" />
@@ -211,7 +209,7 @@ if (! isset ( $_SESSION ['admin_node'] ) || (isset ( $_SESSION ['admin_node'] ) 
 					onclick="return confirm('Le projet d&eacute;butera 40 jours du premier tour de la campagne, Voulez vous continuez?');">[Publier]</a><?php endif; ?>
                     <?php if ($project->status != 1) : ?><a
 					href="<?php echo "/admin/projects/enable/{$project->id}"; ?>"
-					onclick="return confirm('Attention! Le projet est en ligne, Voulez vous l&eacute;dite?');">[rouvrez
+					onclick="return confirm('Attention! Le projet est en ligne, Voulez vous l&eacute;dite?');">[Ouvrez
 						&eacute;dition]</a><?php endif; ?>
                     <?php if ($project->status == 4) : ?><a
 					href="<?php echo "/admin/projects/fulfill/{$project->id}"; ?>"
@@ -236,11 +234,7 @@ if (! isset ( $_SESSION ['admin_node'] ) || (isset ( $_SESSION ['admin_node'] ) 
                     <?php if ($project->status == 2) : ?><a
 					href="<?php echo "/admin/reviews/?project=".urlencode($project->id); ?>">[Allez
 						&aacute; la r&eacute;vision]</a><?php endif; ?>
-                    <?php if ($project->translate) : ?><a
-					href="<?php echo "/admin/translates/edit/{$project->id}"; ?>">[Traduction]</a>
-                    <?php else : ?><a
-					href="<?php echo "/admin/translates/add/?project={$project->id}"; ?>">[Activer
-						la traduction]</a><?php endif; ?>
+                   
                     <a
 					href="/admin/projects/images/<?php echo $project->id; ?>">[Organiser
 						les images]</a>

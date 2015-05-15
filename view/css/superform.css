@@ -27,7 +27,7 @@ body.js div.superform .jshidden {
 }
 
 div.superform fieldset {
-    border: 1px solid #99a2a5;    
+  /*  border: 1px solid #99a2a5;    */
 }
 
 div.superform fieldset legend {

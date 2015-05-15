@@ -62,7 +62,7 @@ namespace Goteo\Controller\Admin {
                         'view/admin/index.html.php',
                         array(
                             'folder' => 'pages',
-                            'file' => 'add'
+                            'file' => 'edit'
                         )
                      );
                     break;

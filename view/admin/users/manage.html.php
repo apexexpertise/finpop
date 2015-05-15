@@ -28,7 +28,7 @@ $langs = $this['langs'];
 <div class="widget">
     <table>
         <tr>
-            <td width="140px"><p class="text-info">Nom d'utlisateur</p></td>
+            <td width="140px"><p class="text-info">Nom d&apos;utilisateur</p></td>
             <td><p class="text-muted"><a href="/user/profile/<?php echo $user->id ?>" target="_blank"><?php echo $user->name ?></a></p></td>
         </tr>
         <tr>
@@ -44,7 +44,7 @@ $langs = $this['langs'];
             <td><p class="text-muted"><?php echo $this['nodes'][$user->node] ?></p></td>
         </tr>
         <tr>
-            <td><p class="text-info">R&oacute;les actuels</p></td>
+            <td><p class="text-info">Roles actuels</p></td>
             <td><p class="text-muted">
                 <?php
                 foreach ($user->roles as $role=>$roleData) {
@@ -62,7 +62,7 @@ $langs = $this['langs'];
             </td>
         </tr>
         <tr>
-            <td><p class="text-info">R&oacute;les disponibles</p></td>
+            <td><p class="text-info">Roles disponibles</p></td>
             <td> <p class="text-muted">
                 <?php
                 foreach ($roles as $roleId=>$roleName) {
@@ -78,7 +78,7 @@ $langs = $this['langs'];
             </td>
         </tr>
         <tr>
-            <td><p class="text-info">Statut du compte</p></td>
+            <td><p class="text-info">Statut de compte</p></td>
             <td> <p class="text-muted">
                 <?php if ($user->active) : ?>
                     <a href="<?php echo "/admin/users/manage/{$user->id}/ban"; ?>" style="text-decoration:none;font-weight:bold;">Active</a>
@@ -121,7 +121,7 @@ $langs = $this['langs'];
 <?php if (isset($user->roles['translator'])) : ?>
 <div class="widget board">
     <h3>Idiomas de traductor</h3>
-    <?php if (empty($user->translangs)) : ?><p style="font-weight: bold; color:red;">Vous n'avez pas de langue publique affect&eacute;!</p><?php endif; ?>
+    <?php if (empty($user->translangs)) : ?><p style="font-weight: bold; color:red;">Vous n&apos;avez pas de langue publique affect&eacute;!</p><?php endif; ?>
     <form method="post" action="/admin/users/translang">
         <input type="hidden" name="user" value="<?php echo $user->id; ?>" />
         <table>

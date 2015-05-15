@@ -245,7 +245,7 @@ jQuery(document).ready(function($) {
 											<button class="btn btn-default" style="padding: 7px 28px;font-family: source sans pro;font-size: 17px;" id="sub-btn">Anuuler</button> 
 											<button class="disabled btn btn-primary" disabled="disabled"
 												id="register_continue" name="register" type="submit"
-												value="register"
+												value="register"  data-toggle="modal" data-target="#myModal"
 												style="padding: 7px 28px;font-family: source sans pro;font-size: 17px;"
 												>Valider</button>
 										</div>
@@ -259,4 +259,25 @@ jQuery(document).ready(function($) {
 		</div>
 	</div>
 </div>
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Information</h4>
+        </div>
+        <div class="modal-body">
+          <p>Vous pouvez calculer votre taux d'endettement</p>
+          <p>Cliquer  <a href="/deptratio/">ici</a> </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 <?php include 'view/footer.html.php' ?>

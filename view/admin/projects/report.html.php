@@ -20,6 +20,6 @@
 
 use Goteo\Core\View;
 
-echo new View('view/project/report.html.php', $this);
+echo new View('view/admin/invests/report.html.php', $this);
 
 ?>

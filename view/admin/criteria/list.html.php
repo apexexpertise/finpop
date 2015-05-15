@@ -68,9 +68,7 @@ $filters = $this['filters'];
                 <td><?php echo $criteria->order; ?></td>
                 <td><a href="/admin/criteria/up/<?php echo $criteria->id; ?>">[&uarr;]</a></td>
                 <td><a href="/admin/criteria/down/<?php echo $criteria->id; ?>">[&darr;]</a></td>
-                <?php if ($translator) : ?>
-                <td><a href="/translate/criteria/edit/<?php echo $criteria->id; ?>" >[Traduire]</a></td>
-                <?php endif; ?>
+                
                 <td><a href="/admin/criteria/remove/<?php echo $criteria->id; ?>" onclick="return confirm('Seguro que deseas eliminar este registro?');">[Supprimer]</a></td>
             </tr>
             <?php endforeach; ?>

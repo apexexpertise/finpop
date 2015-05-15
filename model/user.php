@@ -1337,7 +1337,7 @@ namespace Goteo\Model {
                 $roles[$rol->id] = $rol;
             }
             // añadimos el de usuario normal
-            $roles['user'] = (object) array('id'=>'user', 'name'=>'Usuario registrado');
+            $roles['user'] = (object) array('id'=>'user', 'name'=>'Utilisateur inscrit');
             
             return $roles;
 

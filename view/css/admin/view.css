@@ -18,6 +18,10 @@
  */
 @import url('fonts.css');
 
+div.superform>div.elements {
+	-webkit-box-shadow:none;
+	box-shadow:none;	
+}
 
 .title-admin p{
 	padding-left:20px;

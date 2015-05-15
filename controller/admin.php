@@ -41,7 +41,7 @@ namespace Goteo\Controller {
             return array(
                 'supervisor' => array(
                     // paneles de admin permitidos
-                    'texts',
+                 //   'texts',
                     'faq',
                     'pages',
                     'licenses',
@@ -59,7 +59,7 @@ namespace Goteo\Controller {
 
             return array(
                 'accounts' => array(
-                    'label' => Text::_('Gestión de aportes'),
+                    'label' => Text::_('Gestion des apports'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'details' => array('label' => Text::_('Detalles del aporte'), 'item' => true),
@@ -74,7 +74,7 @@ namespace Goteo\Controller {
                     'filters' => array('id' => '', 'methods' => '', 'investStatus' => 'all', 'projects' => '', 'name' => '', 'calls' => '', 'review' => '', 'types' => '', 'date_from' => '', 'date_until' => '', 'issue' => 'all', 'procStatus' => 'all', 'amount' => '')
                 ),
                 'banners' => array(
-                    'label' => Text::_('Banners'),
+                    'label' => Text::_('Banni&egrave;res'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'add' => array('label' => Text::_('Nuevo Banner'), 'item' => false),
@@ -95,7 +95,7 @@ namespace Goteo\Controller {
                     'filters' => array('show' => 'owned', 'blog' => '')
                 ),
                 'categories' => array(
-                    'label' => Text::_('Categorías'),
+                    'label' => Text::_('Categories'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'add' => array('label' => Text::_('Nueva Categoría'), 'item' => false),
@@ -105,7 +105,7 @@ namespace Goteo\Controller {
                     )
                 ),
                 'criteria' => array(
-                    'label' => Text::_('Criterios de revisión'),
+                    'label' => Text::_('Crit&egrave;res de r&eacute;vision'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'add' => array('label' => Text::_('Nuevo Criterio'), 'item' => false),
@@ -115,7 +115,7 @@ namespace Goteo\Controller {
                     'filters' => array('section' => 'project')
                 ),
                 'faq' => array(
-                    'label' => Text::_('FAQs'),
+                    'label' => 'FAQs',
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'add' => array('label' => Text::_('Nueva Pregunta'), 'item' => false),
@@ -131,7 +131,7 @@ namespace Goteo\Controller {
                 )
             ),
                 'glossary' => array(
-                    'label' => Text::_('Glosario'),
+                    'label' => Text::_('Glossaires'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'edit' => array('label' => Text::_('Editando Término'), 'item' => true),
@@ -139,7 +139,7 @@ namespace Goteo\Controller {
                     )
                 ),
                 'icons' => array(
-                    'label' => Text::_('Tipos de Retorno'),
+                    'label' => Text::_('Types de retour'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'edit' => array('label' => Text::_('Editando Tipo'), 'item' => true),
@@ -175,7 +175,7 @@ namespace Goteo\Controller {
                     )
                 ),
                 'news' => array(
-                    'label' => Text::_('Journal'),
+                    'label' => Text::_('Journaux'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'add' => array('label' => Text::_('Nueva Micronoticia'), 'item' => false),
@@ -184,7 +184,7 @@ namespace Goteo\Controller {
                     )
             ),
             'newsletter' => array(
-                'label' => _('Boletín'),
+                'label' => _('Bulletins'),
                 'actions' => array(
                     'list' => array('label' => _('Estado del envío automático'), 'item' => false),
                     'init' => array('label' => _('Iniciando un nuevo boletín'), 'item' => false),
@@ -201,7 +201,7 @@ namespace Goteo\Controller {
                     )
                 ),
                 'projects' => array(
-                    'label' => Text::_('Gestión de proyectos'),
+                    'label' => Text::_('Gestion des projets'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'dates' => array('label' => Text::_('Fechas del proyecto'), 'item' => true),
@@ -230,7 +230,7 @@ namespace Goteo\Controller {
                     )
                 ),
                 'reviews' => array(
-                    'label' => Text::_('Revisiones'),
+                    'label' => Text::_('Revues'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'add' => array('label' => Text::_('Iniciando briefing'), 'item' => false),
@@ -240,7 +240,7 @@ namespace Goteo\Controller {
                     'filters' => array('project' => '', 'status' => 'open', 'checker' => '')
                 ),
                 'rewards' => array(
-                    'label' => Text::_('Recompensas'),
+                    'label' => Text::_('R&eacute;compenses'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'edit' => array('label' => Text::_('Gestionando recompensa'), 'item' => true)
@@ -248,7 +248,7 @@ namespace Goteo\Controller {
                     'filters' => array('project' => '', 'name' => '', 'status' => '')
                 ),
                 'sended' => array(
-                    'label' => Text::_('Historial envíos'),
+                    'label' => Text::_('Historiques des destinataires'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Emails enviados'), 'item' => false)
                     ),
@@ -272,7 +272,7 @@ namespace Goteo\Controller {
                     )
                 ),
                 'templates' => array(
-                    'label' => Text::_('Plantillas de email'),
+                    'label' => Text::_('Mod&egrave;les des emails'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'edit' => array('label' => Text::_('Editando Plantilla'), 'item' => true),
@@ -280,26 +280,26 @@ namespace Goteo\Controller {
                     ),
                     'filters' => array('group' => '', 'name' => '')
                 ),
-                'texts' => array(
-                    'label' => Text::_('Textos interficie'),
-                    'actions' => array(
-                        'list' => array('label' => Text::_('Listando'), 'item' => false),
-                        'edit' => array('label' => Text::_('Editando Original'), 'item' => true),
-                        'translate' => array('label' => Text::_('Traduciendo Texto'), 'item' => true)
-                    ),
-                    'filters' => array('group' => '', 'text' => '')
-                ),
-                'translates' => array(
-                    'label' => Text::_('Traducciones de proyectos'),
-                    'actions' => array(
-                        'list' => array('label' => Text::_('Listando'), 'item' => false),
-                        'add' => array('label' => Text::_('Habilitando traducción'), 'item' => false),
-                        'edit' => array('label' => Text::_('Asignando traducción'), 'item' => true)
-                    ),
-                    'filters' => array('owner' => '', 'translator' => '')
-                ),
+//                 'texts' => array(
+//                     'label' => Text::_('Textos interficie'),
+//                     'actions' => array(
+//                         'list' => array('label' => Text::_('Listando'), 'item' => false),
+//                         'edit' => array('label' => Text::_('Editando Original'), 'item' => true),
+//                         'translate' => array('label' => Text::_('Traduciendo Texto'), 'item' => true)
+//                     ),
+//                     'filters' => array('group' => '', 'text' => '')
+//                 ),
+//                 'translates' => array(
+//                     'label' => Text::_('Traducciones de proyectos'),
+//                     'actions' => array(
+//                         'list' => array('label' => Text::_('Listando'), 'item' => false),
+//                         'add' => array('label' => Text::_('Habilitando traducción'), 'item' => false),
+//                         'edit' => array('label' => Text::_('Asignando traducción'), 'item' => true)
+//                     ),
+//                     'filters' => array('owner' => '', 'translator' => '')
+//                 ),
                 'users' => array(
-                    'label' => Text::_('Gestión de usuarios'),
+                    'label' => Text::_('Gestion des utilisateurs'),
                     'actions' => array(
                         'list' => array('label' => Text::_('Listando'), 'item' => false),
                         'add' => array('label' => Text::_('Creando Usuario'), 'item' => true),
@@ -572,7 +572,7 @@ namespace Goteo\Controller {
                             'options' => array(
                                 'projects' => $options['projects'], // proyectos del nodo
                                 'reviews' => $options['reviews'], // revisiones de proyectos del nodo
-                                'translates' => $options['translates'], // traducciones de proyectos del nodo
+                           //     'translates' => $options['translates'], // traducciones de proyectos del nodo
                                 'invests' => $options['invests'], // gestión de aportes avanzada
                             )
                         ),
@@ -605,12 +605,12 @@ namespace Goteo\Controller {
                             'label' => $labels['texts'],
                             'options' => array(
                                 'blog' => $options['blog'],
-                                'texts' => $options['texts'],
+                              //  'texts' => $options['texts'],
                                 'faq' => $options['faq'],
                                 'pages' => $options['pages'],
                                 'categories' => $options['categories'],
                                 /*'licenses' => $options['licenses'],*/
-                                'icons' => $options['icons'],
+                               // 'icons' => $options['icons'],
                                 /*'tags' => $options['tags'],*/
                                 'criteria' => $options['criteria'],
                                 'templates' => $options['templates'],
@@ -623,7 +623,7 @@ namespace Goteo\Controller {
                                 'projects' => $options['projects'],
                                 'accounts' => $options['accounts'],
                                 'reviews' => $options['reviews'],
-                                'translates' => $options['translates'],
+                             //   'translates' => $options['translates'],
                                 'rewards' => $options['rewards'],
                             )
                         ),
@@ -644,7 +644,7 @@ namespace Goteo\Controller {
                                 'banners' => $options['banners'],
                                 'blog' => $options['blog'],
                                 'promote' => $options['promote'],
-                                'footer' => $options['footer'],
+                              //  'footer' => $options['footer'],
                                 'recent' => $options['recent'],
                                 'home' => $options['home'],
                                 'sponsors' => $options['sponsors'],
@@ -655,7 +655,7 @@ namespace Goteo\Controller {
                             'label' => $labels['services'],
                             'options' => array(
                                 'newsletter' => $options['newsletter'],
-                                'tasks' => $options['tasks']  // gestión de tareas
+                             //   'tasks' => $options['tasks']  // gestión de tareas
                             )
                         )
                     );

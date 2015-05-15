@@ -42,7 +42,7 @@ $elements = array(
     ),
     'updated' => array(
         'type'      => 'datebox',
-        'title'     => 'Date d\'envoi à la r&eacute;vision',
+        'title'     => 'Date d\'envoi &agrave; la r&eacute;vision',
         'value'     => !empty($project->updated) ? $project->updated : null
     ),
     'published' => array(
@@ -53,7 +53,7 @@ $elements = array(
     ),
     'success' => array(
         'type'      => 'datebox',
-        'title'     => 'Date de succès',
+        'title'     => 'Date de succ&egrave;s',
         'subtitle'  => '(Date du second tour)',
         'value'     => !empty($project->success) ? $project->success : null
     ),
@@ -84,21 +84,22 @@ $elements = array(
 
 </p>
 
-    <p> <?php echo utf8_encode("La modification des dates peut provoquer des changements dans les jours de campagne d'un projet.") ?></p>
+    <p class="text-info"> <?php echo utf8_encode("La modification des dates peut provoquer des changements dans les jours de campagne d'un projet.") ?></p>
 
     <form method="post" action="/admin/projects" >
+     	<div class="form-group col-lg-4">
         <input type="hidden" name="id" value="<?php echo $project->id ?>" />
 
 <?php foreach ($elements as $id=>$element) : ?>
     <div id="<?php echo $id ?>">
-        <h4><?php echo $element['title'] ?>:</h4>
-        <?php echo new View('library/superform/view/element/datebox.html.php', array('value'=>$element['value'], 'id'=>$id, 'name'=>$id)); ?>
+        <label><?php echo $element['title'] ?>:</label>
+        <?php echo new View('library/superform/view/element/datebox.html.php', array('value'=>$element['value'],'class'=>'form-control', 'id'=>$id, 'name'=>$id)); ?>
         <?php if (!empty($element['subtitle'])) echo $element['subtitle'].'<br />'; ?>
     </div>
         <br />
 <?php endforeach; ?>
 
-        <input type="submit" name="save-dates" value="Enregistrer" />
-
+        <input type="submit" name="save-dates" value="Enregistrer" class="btn btn-primary" style="margin-top:10px;float:right" />
+</div>
     </form>
 </div>

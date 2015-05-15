@@ -1204,7 +1204,7 @@ msgstr "Translating Text"
 
 #: /home/zilog/development/webapps/Goteo/controller/admin.php:5200
 msgid "FAQs"
-msgstr "FAQsddd"
+msgstr "FAQs"
 
 #: /home/zilog/development/webapps/Goteo/controller/admin.php:5203
 msgid "Nueva Pregunta"

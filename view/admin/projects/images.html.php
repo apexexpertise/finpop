@@ -23,7 +23,7 @@ $images = $this['images'];
 $sections = $this['sections'];
 
 function the_section($current, $image, $sections) {
-    $select = '<select name="section_image_'.$image.'">';
+    $select = '<select class="form-control" name="section_image_'.$image.'">';
     foreach ($sections as $secId => $secName) {
         $curSec = ($secId == $current) ? ' selected="selected"' : '';
         $select .= '<option value="'.$secId.'"'.$curSec.'>'.$secName.'</option>';
@@ -34,7 +34,7 @@ function the_section($current, $image, $sections) {
 }
 
 function the_link($current, $image) {
-    return '<input type="text" name="url_image_'.$image.'"  value="'.$current.'" style="width: 100%;"/>';
+    return '<input  class="form-control" type="text" name="url_image_'.$image.'"  value="'.$current.'" style="width: 100%;"/>';
 }
 
 ?>
@@ -46,59 +46,44 @@ function move (img, direction, section) {
     document.getElementById('images_form').submit();
 }
 </script>
+<div class="widget board">
+<a href="/admin/projects"  class="btn btn-default" style="color:white">Retour</a>
 
-<a href="/admin/projects" class="button">Volver</a>
-&nbsp;&nbsp;&nbsp;
-<a href="/project/<?php echo $project->id; ?>" class="button" target="_blank">Voir le projet</a>
-&nbsp;&nbsp;&nbsp;
-<a href="/project/edit/<?php echo $project->id; ?>" class="button" target="_blank">Editer le projet</a>
+<a href="/project/<?php echo $project->id; ?>" class="btn btn-primary" style="color:white" target="_blank">Voir le projet</a>
+
+<a href="/project/edit/<?php echo $project->id; ?>"  class="btn btn-primary" style="color:white" target="_blank">Editer le projet</a>
+</div>
 <div class="widget board">
     <?php if (!empty($images)) : ?>
     <form id="images_form" action="/admin/projects/images/<?php echo $project->id; ?>" method="post">
+    
         <input type="hidden" name="id" value="<?php echo $project->id; ?>" />
         <input type="hidden" id="the_action" name="action" value="apply" />
         <input type="hidden" id="the_section" name="section" value="" />
         <input type="hidden" id="move_pos" name="move" value="" />
-    <table>
-        <thead>
-            <tr>
-                <th></th>
-                <th></th>
-                <th style="width:30px;"></th>
-                <th colspan="2"></th> <!-- posicion -->
-            </tr>
-        </thead>
+    
 
-        <tbody>
+      
         <?php foreach ($sections as $sec=>$secName) : 
             if (empty($images[$sec])) continue; 
             ?>
-            <tr>
-                <td colspan="5" style="text-align: left;"><h3><?php echo $secName; ?></h3></td>
-            </tr>
-            <?php foreach ($images[$sec] as $image) : ?>
-            <tr>
-                <td style="width:105px;text-align: left;"><img src="<?php echo $image->imageData->getLink(175, 100); ?>" alt="image" /></td>
-                <td>
-                    <table>
-                        <tr>
-                            <td><label>Section:<br /><?php echo the_section($image->section, $image->image, $sections); ?></label></td>
-                        </tr>
-                        <tr>
-                            <td><label>Lien:<br /><?php echo the_link($image->url, $image->image); ?></label></td>
-                        </tr>
-                    </table>
-                </td>
-                <td>&nbsp;</td>
-                <td><a href="#" onclick="move('<?php echo $image->image; ?>', 'up', '<?php echo $image->section; ?>'); return false;">[&uarr;]</a></td>
-                <td><a href="#" onclick="move('<?php echo $image->image; ?>', 'down', '<?php echo $image->section; ?>'); return false;">[&darr;]</a></td>
-            </tr>
+            <center> <h3><?php echo $secName; ?> </h3> 
+           
+            <?php foreach ($images[$sec] as $image) : ?>     
+               <div style="background-image:url(<?php echo $image->imageData->getLink(175, 100); ?>);border: 1px solid #dce4ec;border-radius: 4px;width:175px;height:100px;"></div>
+          </center>
+          	<div class="form-group col-lg-5">
+                           <label>Section:</label><?php echo the_section($image->section, $image->image, $sections); ?>
+                      <label>Lien:</label><?php echo the_link($image->url, $image->image); ?>
+            
+               <a href="#" onclick="move('<?php echo $image->image; ?>', 'up', '<?php echo $image->section; ?>'); return false;">[&uarr;]</a>
+                <a href="#" onclick="move('<?php echo $image->image; ?>', 'down', '<?php echo $image->section; ?>'); return false;">[&darr;]</a>
+         
             <?php endforeach; ?>
         <?php endforeach; ?>
-        </tbody>
-
-    </table>
-        <input type="submit" name="apply_changes" value="Appliquer" />
+      
+        <input type="submit" name="apply_changes" value="Appliquer"  class="btn btn-primary" style="margin-top:10px;float:right"/>
+        </div>
     </form>
     <?php else : ?>
     <p>PAS DE R&eacute;SULTAT</p>

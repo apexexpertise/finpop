@@ -65,7 +65,7 @@ $filters = $this['filters'];
                 <td><?php echo $icon->description; ?></td>
                 <td><?php echo !empty($icon->group) ? $this['groups'][$icon->group] : Text::_('les deux'); ?></td>
                 <?php if ($translator) : ?>
-                <td><a href="/translate/icon/edit/<?php echo $icon->id; ?>" ><?php echo Text::_("[Traduire]"); ?></a></td>
+              
                 <?php endif; ?>
             </tr>
             <?php endforeach; ?>

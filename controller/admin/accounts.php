@@ -556,7 +556,7 @@ namespace Goteo\Controller\Admin {
                     'view/admin/index.html.php',
                     array(
                         'folder' => 'accounts',
-                        'file' => 'viewer'
+                        'file' => 'details'
                     )
                 );
             }

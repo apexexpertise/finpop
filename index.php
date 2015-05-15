@@ -94,7 +94,7 @@ set_error_handler (
 /**
  * Sesión.
  */
-session_name('goteo');
+session_name('finpop');
 session_start();
 
 // set Lang
