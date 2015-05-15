@@ -14,6 +14,30 @@
   text-align: center;
 }
 
+div#retour-boutton {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+button.btn.btn-primary.retour-btn {
+ background-color: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  border-color: #ffffff;
+  font-family: Open Sans Semibold;
+  border-radius: 0px;
+  text-transform: uppercase;
+}
+
+button.btn.btn-primary.retour-btn:hover {
+  background-color: #0387f3;
+  color: #ffffff;
+  font-size: 20px;
+  border-color: #ffffff;
+  font-family: Open Sans Semibold;
+  border-radius: 0px;
+  text-transform: uppercase;
+}
+
 button.btn.btn-primary.search-btn {
   width: 100%;
   background-color: white;
