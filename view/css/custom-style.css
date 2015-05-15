@@ -1174,6 +1174,7 @@ div.searcher {
 	font-size: 24px;
 	padding: 10px;
 	width: auto;
+	  text-transform: initial;
 }
 
 .searcher .filter #category, .searcher .filter #reward, .searcher .filter #location
@@ -1239,6 +1240,7 @@ label#titre-search{
   background: #0387f3;
   padding: 10px;
   width: auto;
+    text-transform: initial;
 
 	}
 
