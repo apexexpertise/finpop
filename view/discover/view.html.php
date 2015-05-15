@@ -132,14 +132,16 @@ $(document).ready(function(){
 																?>
 																
 																</div>
-            <ul id="pagination">
+																 <ul id="pagination">
                 <?php
 																
 																$pagedResults->setLayout ( new DoubleBarLayout () );
 																echo $pagedResults->fetchPagedNavigation ();
 																?>
             </ul>
+          
 				</div>
+				 
 			</div>
 		</div>
 	</div>
