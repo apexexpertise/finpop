@@ -1,6 +1,6 @@
 <?php
 /*
- *  Copyright (C) 2012 Platoniq y Fundación Fuentes Abiertas (see README for details)
+ *  Copyright (C) 2012 Platoniq y FundaciÃ³n Fuentes Abiertas (see README for details)
  *	This file is part of Goteo.
  *
  *  Goteo is free software: you can redistribute it and/or modify
@@ -21,49 +21,22 @@
  use Goteo\Core\ACL,
     Goteo\Library\Text;
 ?>
-<?php 
-	$current_page=array_pop(explode("/", $_SERVER['REQUEST_URI']));
-	if($current_page==""):
-?>
-<script text="javascript">
-	var lastScrollTop = 0;
-	var i = 0.7;
-	var pathname = window.location.pathname;
-	if(pathname=="/"){
-		$(window).scroll(function(event){
-		   var st = $(this).scrollTop();
-		   if (st > lastScrollTop){
-		       // downscroll code
-		       if(i<1){
-			       i=i+0.05;
-		       		$("#header").css('background','rgba(255, 255, 255, '+i+')');	       		
-		       }
-		       if(st>800)
-	      		{
-	      			$("#header").css('box-shadow','3px 3px 4px rgb(234, 234, 234)');
-	      		}
-		   }else{
-		      // upscroll code
-			   if(i>=0.7){
-				   i=i-0.05;
-				   $("#header").css('background','rgba(255, 255, 255, '+i+')');	       		
-				}
-			   if(st<800)
-	      		{
-	      			$("#header").css('box-shadow','');
-	      		}
-			   
-		   }
-		   lastScrollTop = st;
-		});
-	}
-	else{
-		$("#header").css('position','relative');
-	}
+<script>
+$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
 
-
+    if (scroll >= 500) {
+        $("#header").addClass("scrolling");
+        $("#menu").addClass("scrolling");
+    } else {
+        $("#header").removeClass("scrolling");
+        $("#menu").removeClass("scrolling");
+    }
+});
 </script>
-    <div id="menu">     
+
+    <div id="menu">  
+       
         <ul>
             <li class="home"><a href="/"><?php echo Text::get('regular-home'); ?></a></li>
             <li class="explore"><a class="" href="/discover"><?php echo Text::get('regular-discover'); ?></a></li>
@@ -105,49 +78,10 @@
             </li>            
             <?php else: ?>            
             <li class="connexion">
-                <a href="#">Inscription</a>
                 <a href="/user/login"><?php echo Text::get('Connexion'); ?></a>
             </li>
             
             <?php endif ?>
-        </ul>	       
+        </ul>
+        
     </div>
- <?php else :?>  
- 
- 
- <div id="menu-no-home"> 
- 
- <div class="navbar navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="/view/css/images/top_logo.png"></a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-           <li><a class="" href="/discover">VOIR LES PROJETS</a></li>
-            <li><a class="" href="/project/create">CREER UN PROJET</a></li>
-             <li><a href="/community">FONCTIONNEMENT</a>
-           
-             
-             </li>
-
-            <li><a href="#" style="margin-left:120px">INSCRIPTION</a></li>
-            <li><a href="/user/login">CONNEXION</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
- </div>
- 
-  
- 
- 
- 
- <?php endif?>
-   

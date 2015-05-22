@@ -9,13 +9,13 @@
    width: 100%;
 }
 .sl-slide hr {
-position: absolute;
+position: relative;
 top: 334px;	
   height: 3px;
   width: 21%;
   color: white;
   background-color: white;
-  margin-left: 505px;
+ margin-top:20px;
 }
 .sl-slide h2 { 
   position: absolute;
@@ -28,7 +28,8 @@ top: 334px;
   text-align: center; 
 }
 .sl-slide p{ 
-  position: absolute;
+	padding-bottom:10px;
+  position: relative;
   top: 370px;
   text-align: center;
   width: 100%;
@@ -37,7 +38,7 @@ top: 334px;
   font-size: 24px; 
 }
 .sl-slide .button {
-	padding: 90px 30px 10px 30px;
+	/*padding: 90px 30px 10px 30px;*/
 	width: 80%;
 	max-width: 1920px;
 	color: #fff;
@@ -48,13 +49,13 @@ top: 334px;
 }
 .sl-slide .button .first
 	{
-	padding: 20px 60px;
-	margin: 0 35px 0px 0px;
+	padding: 15px 25px;
+	/*margin: 0 35px 0px 0px;*/
 /*	border: 2px solid white;*/
 	font-family: Open Sans Semibold;
 	font-size: 20px;
 	color: #0387f3;
-	border-radius: 3px;
+	/*border-radius: 3px;*/
 	text-decoration: none;
 	background-image: url(../images/button-slider.png);
 	
@@ -88,3 +89,5 @@ top: 334px;
 	z-index: 10000;
 	margin-left: 60px;
 }
+
+

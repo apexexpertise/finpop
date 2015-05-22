@@ -63,7 +63,7 @@ $sponsors = Sponsor::getList ();
 						</div>
 					</div>
 					<div class="col-md-4 column newsletter">
-						<form class="form-horizontal" role="form">
+						<form method="post" action="/newsletter/">
 							<div class="form-group">
 								<label for="exampleInputEmail1" class="news-label">&nbsp;</label>
 								<div class="row">
@@ -71,7 +71,7 @@ $sponsors = Sponsor::getList ();
 			                        <div class="left-inner-addon">
 			                        <img src="/view/home/img/msg.png" />
 			                            <!--    <i class="fa fa-envelope"></i>  -->
-										<input type="text" class="form-control" placeholder="<?php echo utf8_encode("INSCRIVEZ-VOUS À LA NEWSLETTER") ?>">	
+										<input type="text" class="form-control" name="email" placeholder="<?php echo utf8_encode("INSCRIVEZ-VOUS À LA NEWSLETTER") ?>">	
 									</div>
 									</div>
 								<!-- <button type="submit" class="btn btn-primary btn-news">Ok</button>-->

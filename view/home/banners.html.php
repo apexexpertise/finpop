@@ -21,9 +21,16 @@ use Goteo\Library\Text;
 
 $banners= $this ['banners'];
 ?>
+
+<head>
+    <!-- Des choses -->
+    <meta name="viewport" content="width=device-width"/>
+    <!-- Encore des choses -->
+
+ 
 <link rel="stylesheet" type="text/css"
 	href="<?php echo SRC_URL ?>/view/css/Slidesjs/style.css" />
-	
+	</head>
 <div id="slides">
 
 	<?php foreach ($banners as $banner) : ?>
@@ -31,7 +38,7 @@ $banners= $this ['banners'];
       <img class="image" src="<?php echo SRC_URL."/image/".$banner->image."/940/528"; ?>" alt="" />
       
       <h2><?php echo $banner->title?></h2>
-      <hr ></hr>
+      <hr>
        <p><?php echo $banner->description?></p>
        
        <p class="button">
@@ -47,10 +54,11 @@ $banners= $this ['banners'];
     <?php endforeach; ?>
 
 	
-</div>
+
+    
    
     
-
+</div>
 
 <!-- /slider-wrapper -->
 
@@ -109,5 +117,4 @@ $(function(){
 		</div>
 	</div>
 </div>
-
 

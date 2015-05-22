@@ -51,6 +51,8 @@ if (! empty ( $this ['posts'] )) {
 include 'view/prologue.html.php';
 include 'view/header.html.php';
 ?>
+<link rel="stylesheet" media="screen and (max-width: 1170px)" href="responsive.css" />
+
 <?php if(isset($_SESSION['messages'])) { include 'view/header/message.html.php'; } ?>
 
 
@@ -61,7 +63,7 @@ include 'view/header.html.php';
 	
 <?php include 'view/home/banners.html.php'; ?>
 <?php include 'view/home/projects.html.php'; ?>
-
+<?php include 'view/home/posts.html.php'; ?>
  <?php
    foreach ( $this ['order'] as $item => $itemData ) 
    {  if (! empty ( $this [$item] ))

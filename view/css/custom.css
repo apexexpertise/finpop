@@ -1,5 +1,4 @@
- 
- 
+
  .transparent{
  
   background-image: url('/view/css/images/barre.png');
@@ -153,8 +152,8 @@ div#wrapper{
     background: url('/view/css/images/haut.png') no-repeat;
     display: none;
     position: fixed;
-    width: 128px;            
-    height: 128px;            
+    width: 70px;            
+    height: 70px;            
     bottom: 0;                
     right: 0;                
     text-indent: -9999px;

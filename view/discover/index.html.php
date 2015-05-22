@@ -24,6 +24,9 @@ include 'view/prologue.html.php';
 include 'view/header.html.php'?>
 
 
+<!--  <link rel="stylesheet" media="screen" href="screen.css"-->
+
+
 <link href="/view/css/custom.css" rel="stylesheet" type="text/css">
 
 
@@ -64,6 +67,10 @@ $(document).ready(function(){
 	</div>
 </div>
 
+<div>
+<a href="#" class="go_top">Remonter</a>
+</div>
+
 <div class="container" id="projects-area">
 	<div class="row clearfix">
 
@@ -84,7 +91,8 @@ $(document).ready(function(){
 												?>
 				</div>
 			<div class="col-md-9 column box-border-left">
-				<a href="#" class="go_top">Remonter</a>
+				
+				
 				    <?php
 								
 								foreach ( $this ['lists'] as $type => $list ) :
